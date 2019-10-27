@@ -1,2 +1,1 @@
-# boilerplate-for-fp
-Boilerplate for Final projects
+# Boilerplate for Final projects
