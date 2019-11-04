@@ -1,6 +1,6 @@
 # Boilerplate for Final projects
 
-## This boilerplate is for Final Projects use and includes:
+## This boilerplate is for Final Projects use and it includes:
 
 Knex   
 Swagger  
