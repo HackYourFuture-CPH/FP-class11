@@ -2,8 +2,8 @@
 
 ## This boilerplate is for Final Projects use and includes:
 
-Knex
-Storybook
-Prettier
-Server and Client side structure
+Knex   
+Storybook  
+Prettier   
+Server and Client side structure   
 
