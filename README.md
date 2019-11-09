@@ -42,6 +42,7 @@ This repository is a boilerplate and instructions to how to setup the Final Proj
 Notes:
 
 Change [favicon](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico)
+Delete GitHub, Heroku, AWS, S3 logos
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
@@ -104,10 +105,10 @@ This can be used as a checklist for every PR you make. Go through the list and s
 ###  <img width=20px height=20px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/git-logo.png" alt="GitHub logo"></a> Working with GIT   
 [Working with GIT](/working-with-git.md)   
  
-###  <img width=16px height=25px src=" https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/heroku-logo.svg" alt="Heroku logo"></a> Working with Heroku and Deployment
+###  <img width=16px height=25px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
 [Working with Heroku and Deployment](/deployment.md)
-
-### Working with API Documentation - Swagger
+  
+###  <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger
 
 When running the API, you will automatically be running the API Documentation
 which is based on Swagger. Just go to
