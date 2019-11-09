@@ -37,12 +37,12 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is a boilerplate and instructions to how to setup the Final Project
+This repository is a boilerplate and instructions to how to setup the Final Project.
 
 When forking this repository for a New Final project you should read this first [HERE](/forking-instructions.md)
 
-After these previouse steps you have new repository ready but you need to Scope the project,
-find a Team, a few other things, check [HERE](/scope-team.md) before you go more down 
+After the previous steps, you have new repository ready but you need plan the project, 
+check [HERE](/planning.md) before you go more down.
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
