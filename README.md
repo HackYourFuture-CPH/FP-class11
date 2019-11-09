@@ -14,6 +14,8 @@
 ## 📝 Table of Contents
 
 - [About](#about)   
+        - [Setting up the boilerplate](/setting-up-instructions.md)   
+        - [Plan the project](/planning.md)
 - [Project's Calendar](#-projects-calendar)   
 - [Class Daily Agenda](#-class-daily-agenda-)   
 - [The Customer](#-the-customer)   
@@ -39,11 +41,12 @@
 
 This repository is a boilerplate and instructions to how to setup the Final Project.
 
-When forking this repository for a New Final project you should read this first [HERE](/forking-instructions.md)
+To setup the boilerplate for a New Final project you MUST read this first [HERE](/setting-up-instructions.md)
 
 After the previous steps, you have new repository ready but you need plan the project, 
 check [HERE](/planning.md) before you go more down.
 
+Delete the About Topic from you new repository README.MD file
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
