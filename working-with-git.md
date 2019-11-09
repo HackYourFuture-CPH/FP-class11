@@ -1,10 +1,8 @@
 
 ## 💻 Working with GIT <a name="git"></a>
 
-Note: previously we were working with forks, but changed the workflow, so now
-you should be working directly on the main repo instead. This guide is now
-updated to the current workflow. To see the old workflow, refer to
-[this version of the readme](https://github.com/HackYourFuture-CPH/ov-class09-fp/blob/4bb51148314ba2f6f2a1642b284bc57592ae16d4/README.md).
+You will be working directly on the main repo and making Pull Request on the Develop Branch, 
+NEVER on the Master branch. PR on the Master Branch *will not be merged*, they will be closed.
 
 Working with git is a HUGE part of the final project. This is how you should be
 working with git in the final project:
