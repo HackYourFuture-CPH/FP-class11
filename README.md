@@ -20,7 +20,7 @@
 - [Built Using](#built_using)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Getting the certificate](#certificate)
+- [Getting the certificate](/certificate.md)
 - [Working with git](#git)
 - [Working with code](#code)
 
