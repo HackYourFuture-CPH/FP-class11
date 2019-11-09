@@ -92,7 +92,7 @@ When forking this repository for a New Final project you should read this first 
 - ALWAYS run code before a PR is made.
 - No committing `console.log`
 - No committing merge conflicts!
-- Work in seperate files! When you make a new feature, the first thing you do is create a new file for that (of course if it makes sense). Especially for components. 
+- Work in separate files! When you make a new feature, the first thing you do is create a new file for that (of course if it makes sense). Especially for components. 
 
 ### 👍🏽 Code best practices
 Follow these best practices for coding: https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/review-checklist.md
