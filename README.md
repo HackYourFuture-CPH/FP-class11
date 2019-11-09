@@ -122,25 +122,25 @@ If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
 
-### Working with Storybook 
+### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png"  alt="Storybook logo"></a> Working with Storybook 
 Tool for developing UI components in isolation 
 
 Check here https://storybook.js.org/
 
-### Working with AWS - Amazon Services
+### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.png"  alt="AWS S3 logo"></a> <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
 
 REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
-## Getting Started
+## 🏁 Getting Started
 First clone the repo on your local machine using a terminal or a git client.
 
 #### [Installations](/installations.md)
 
 
-## Authors
+## 👨🏾‍💻 Authors
 
 * [**Shanawaz Islam**](https://github.com/h09shais)
 
