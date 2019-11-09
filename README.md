@@ -42,7 +42,7 @@ This repository is a boilerplate and instructions to how to setup the Final Proj
 Notes:
 
 Change [favicon](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico)
-Delete GitHub, Heroku, AWS, S3 logos
+Delete GitHub, Heroku, AWS, S3, Storybook, Swagger logos
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
@@ -79,7 +79,7 @@ Delete GitHub, Heroku, AWS, S3 logos
 
 *Add here information about the customer/partner*
 
-##### 💼 Business Glossary
+#### 💼 Business Glossary
 
 *Add here information about the Business Glossary*
 [Business Glossary](/BusinessGlossary.md)
@@ -122,12 +122,12 @@ If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
 
-### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png"  alt="Storybook logo"></a> Working with Storybook 
+### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/storybook.svg"  alt="Storybook logo"></a> Working with Storybook 
 Tool for developing UI components in isolation 
 
 Check here https://storybook.js.org/
 
-### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.png"  alt="AWS S3 logo"></a> <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
+### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg"  alt="AWS S3 logo"></a> <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
