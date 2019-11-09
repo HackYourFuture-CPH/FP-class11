@@ -22,7 +22,7 @@
 ### Heroku
 
 #### Setup Production on Git Master branch
-#### Setup Production on Git Develop branch
+#### Setup Staging on Git Develop branch
 #### Setup DB
 #### Add Env. variables
 
