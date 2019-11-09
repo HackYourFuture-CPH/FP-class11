@@ -19,10 +19,8 @@
         - [Database Model Diagram](#️database-model)
 - [Getting Started](#getting_started)
         - [Installations](/installations.md)
-        - [API Documentation](
+        - [API Documentation - Swagger](#api-documentation)
         - [AWS - Amazon Services](#aws)
-
-
 - [Process](#process)
 - ## 💻 Working with code
 - ## [Working with git](/working-with-git.md)
@@ -84,7 +82,9 @@ This can be used as a checklist for every PR you make. Go through the list and s
 ## Getting Started
 First clone the repo on your local machine using a terminal or a git client.
 
-#### API Documentation
+#### [Installations](/installations.md)
+
+#### API Documentation - Swagger
 
 When running the API, you will automatically be running the API Documentation
 which is based on Swagger. Just go to
