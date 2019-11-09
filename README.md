@@ -47,7 +47,10 @@ To setup the boilerplate for a New Final project you MUST read this first [HERE]
 After the previous steps, you have new repository ready but you need plan the project, 
 check [HERE](/planning.md) before you go more down.
 
-Delete the About Topic from you new repository README.MD file
+🚨Delete the About Topic from you new repository README.MD file
+🚨Delete the instructions files:
+[Setting up Instructions](/setting-up-instructions.md)
+[Panning](/planning.md)
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
