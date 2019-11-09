@@ -7,6 +7,8 @@
 <h3 align="center">Boilerplate for Final projects
 </h3>
 
+
+
 ---
 
 ## 📝 Table of Contents
@@ -99,7 +101,7 @@ Follow these best practices for coding: https://github.com/HackYourFuture-CPH/cu
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
 
-### Working with GIT   
+###  <img width=50px height=50px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/git-logo.png" alt="GitHub logo"></a> Working with GIT   
 [Working with GIT](/working-with-git.md)   
  
 ### Working with Heroku and Deployment
