@@ -1,12 +1,16 @@
 ## Forking-instructions
 
-### Create 
-💥 A Develop branch ➡️ this boilerplate doesn't have a develop branch ➡️ [check here](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/branches))
+### AFTER FORKING
 
-### Change:
+
+#### Create 
+💥 A Develop branch ➡️ this boilerplate doesn't have a develop branch ➡️ [check here](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/branches)
+
+
+#### Change:
 🚼[favicon](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico)
 
-### Delete: 
+#### Delete: 
 ❌[GitHub logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/git-logo.png),  
 ❌[Heroku logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/heroku-logo.svg),   
 ❌[AWS logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg),  
