@@ -40,26 +40,26 @@ Server and Client side structure
 
 Add the dates for the project and study groups
 
-## Class Daily Agenda
+## 🕛 Class Daily Agenda 🕓
 
 12:00 - 13:30 - ...   
 13:30 - 14:00 - ...   
 14:00 - 14:30 - Lunch   
 14:30 - 16:00 - ...   
 
-### The Customer 
+## 👩‍💼💡👨‍💼 The Customer 
 
 Add here information about the customer/partner
 
-##### Business Glossary
+##### 💼 Business Glossary
 
 Add here information about the Business Glossary
 
-#### Database model
+#### 🗄️ Database model
 
 Add here the DB Model Diagram
 
-## Process
+## 📈 📉 📈  Process
 
 ## Working with GIT, Heroku and handing in iterations
 Working with git is a HUGE part of the final project. This is how you should be working with git in the final project:
@@ -88,7 +88,7 @@ Lets get started with our first feature. Lets say we should build a cookies popu
 - No committing merge conflicts!
 - Work in seperate files! When you make a new feature, the first thing you do is create a new file for that (of course if it makes sense). Especially for components. 
 
-### Code best practices
+### 👍🏽 Code best practices
 Follow these best practices for coding: https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/review-checklist.md
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
@@ -163,13 +163,13 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
 ## Authors
 
-* **Shanawaz Islam**(https://github.com/h09shais)
+* [**Shanawaz Islam**(https://github.com/h09shais)
 
 ## Other contributions
 
-* **Benjamin Hughes**(https://github.com/benna100)
-* **Zaki Wasik**(https://github.com/zkwsk/)
-* **Filip Malek**(https://github.com/REX500)
+* [**Benjamin Hughes**](https://github.com/benna100)
+* [**Zaki Wasik**](https://github.com/zkwsk/)
+* [**Filip Malek**](https://github.com/REX500)
 * **Daniel Fernandes**
 
 
