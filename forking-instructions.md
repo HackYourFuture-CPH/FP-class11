@@ -1,7 +1,7 @@
 ## Forking-instructions
 
 ### Create 
-💥 A Develop branch (this boilerplate doesn't have a develop branch - [check here](/https://github.com/HackYourFuture-CPH/boilerplate-for-fp/branches))
+💥 A Develop branch ➡️ this boilerplate doesn't have a develop branch ➡️ [check here](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/branches))
 
 ### Change:
 🚼[favicon](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico)
