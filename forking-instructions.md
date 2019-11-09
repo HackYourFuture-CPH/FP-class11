@@ -16,4 +16,16 @@
 ❌[AWS logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg),  
 ❌[S3 logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png),  
 ❌[Storybook logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/storybook.svg),   
-❌[Swagger logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png) . 
+❌[Swagger logo](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png)  
+
+
+### Heroku
+
+#### Setup Production on Git Master branch
+#### Setup Production on Git Develop branch
+#### Setup DB
+#### Add Env. variables
+
+### AWS
+#### Add Env. variables
+
