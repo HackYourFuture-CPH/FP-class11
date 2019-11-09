@@ -111,10 +111,9 @@ This can be used as a checklist for every PR you make. Go through the list and s
 ###  <img width=20px height=20px src="/git-logo.png" alt="GitHub logo"></a> Working with GIT   
 [Working with GIT](/working-with-git.md)   
  
-###  <img width=58px height=20px src="/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
-[Working with Heroku and Deployment](/deployment.md)
+###  <img width=20px height=50px src="/heroku-logo.svg" alt="Heroku logo"></a> Working with Heroku and Deployment [Working with Heroku and Deployment](/deployment.md)
   
-###  <img width=16px height=25px src="/knex-logo.png"  alt="Knex logo"></a> Working with Knex and Migrations
+###  <img width=59x height=20px src="/knex-logo.png"  alt="Knex logo"></a> Working with Knex and Migrations
 [Working Knex and migrations](/knex-and-migrations.md)   
   
   
