@@ -34,6 +34,8 @@
 
 ## 🧐 About <a name = "about"></a>
 
+This repository is a boilerplate and instructions to how to setup the Final Project
+
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [React](https://reactjs.org/) - Web Framework
@@ -51,8 +53,13 @@
 ## 📅 Project's Calendar
 
 *Add the dates for the project and study groups*
+*Class Dates*
+*Study groups dates*
+
 
 ## 🕛 Class Daily Agenda 🕓
+
+*Add the Class schedule for the project*
 
 12:00 - 13:30 - ...   
 13:30 - 14:00 - ...   
@@ -90,13 +97,7 @@ This can be used as a checklist for every PR you make. Go through the list and s
 
 ### [Working with Heroku and Deployment](/deployment.md)
 
-
-## Getting Started
-First clone the repo on your local machine using a terminal or a git client.
-
-#### [Installations](/installations.md)
-
-#### API Documentation - Swagger
+### [API Documentation - Swagger](#api-documentation---swagger)
 
 When running the API, you will automatically be running the API Documentation
 which is based on Swagger. Just go to
@@ -108,6 +109,16 @@ perform test calls against the API directly from Swagger.
 
 If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
+
+
+### [Storybook)(#storybook) - Tool for developing UI components in isolation 
+
+Check here https://storybook.js.org/
+
+## Getting Started
+First clone the repo on your local machine using a terminal or a git client.
+
+#### [Installations](/installations.md)
 
 
 #### AWS (Amazon Services)
