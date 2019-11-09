@@ -5,7 +5,7 @@
  <img width=200px height=200px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Optimum Voyage</h3>
+<h3 align="center">BOILER PLATE</h3>
 
 ---
 
