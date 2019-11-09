@@ -79,7 +79,7 @@ Delete the About Topic from you new repository README.MD file
 14:00 - 14:30 - Lunch   
 14:30 - 16:00 - ...   
 
-## 👩‍💼💡👨‍💼 The Customer 
+## 👩🏻‍💼💡👨🏽‍💼 The Customer 
 
 *Add here information about the customer/partner*
 
