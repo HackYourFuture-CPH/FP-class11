@@ -14,7 +14,7 @@
 - [About](#about)   
 - [Project's Calendar](#projects-calendar)   
 - [Class Daily Agenda](#class-daily-agenda)   
-- [The Customer](#the-customer)   
+- [The Customer](#-the-customer)   
         - [Business Glossary](/BusinessGlossary.md)   
         - [Database Model Diagram](#️database-model)   
 - [Process](#process)   
