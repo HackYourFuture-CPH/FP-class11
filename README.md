@@ -13,7 +13,7 @@
 
 - [About](#about)
 - [Process](#process)
-- [Class Daily Agenda](#Class Daily Agenda)
+- [Class Daily Agenda](#class-daily-agenda)
 
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
@@ -49,10 +49,10 @@ Add here the DB Model Diagram
 
 ## Class Daily Agenda
 
-12:00 - 13:30 - ...
-13:30 - 14:00 - ...
-14:00 - 14:30 - Lunch
-14:30 - 16:00 - ...
+12:00 - 13:30 - ...   
+13:30 - 14:00 - ...   
+14:00 - 14:30 - Lunch   
+14:30 - 16:00 - ...   
 
 ## Process
 
