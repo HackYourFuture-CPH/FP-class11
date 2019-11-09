@@ -37,6 +37,11 @@
 
 This repository is a boilerplate and instructions to how to setup the Final Project
 
+Notes:
+
+Change [favicon](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico)
+
+
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [React](https://reactjs.org/) - Web Framework
@@ -130,7 +135,6 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 First clone the repo on your local machine using a terminal or a git client.
 
 #### [Installations](/installations.md)
-#### Change favico - https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico
 
 
 ## Authors
