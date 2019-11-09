@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=100px height=100px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
+ <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Boilerplate for Final projects
@@ -12,19 +12,26 @@
 ## 📝 Table of Contents
 
 - [About](#about)
-- [Project's Calendar](#project's-calendar)
+- [Project's Calendar](#projects-calendar)
 - [Class Daily Agenda](#class-daily-agenda)
-- [Process](#process)
-- [Installations](/installations.md)
+- [The Customer](#the-customer)
+        - [Business Glossary](/BusinessGlossary.md)
+        - [Database Model Diagram](#️database-model)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
+        - [Installations](/installations.md)
+        - [API Documentation](
+        - [AWS - Amazon Services](#aws)
+
+
+- [Process](#process)
+- ## 💻 Working with code
+- ## [Working with git](/working-with-git.md)
+- ## [Working with Heroku and Deployment](#code)
 - [Getting the certificate](/certificate.md)
-- [Working with git](#git)
-- [Working with code](#code)
+- [Authors](#authors)
+- [License](#license)
+
+
 
 ## 🧐 About <a name = "about"></a>
 
@@ -38,7 +45,7 @@ Server and Client side structure
 
 ## 📅 Project's Calendar
 
-Add the dates for the project and study groups
+*Add the dates for the project and study groups*
 
 ## 🕛 Class Daily Agenda 🕓
 
@@ -54,35 +61,15 @@ Add the dates for the project and study groups
 ##### 💼 Business Glossary
 
 *Add here information about the Business Glossary*
-[Click here to check the Business Glossary](/BusinessGlossary.md)
+[Business Glossary](/BusinessGlossary.md)
 
-#### 🗄️ Database model
+#### 🗄️ Database Model Diagram*
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
 
 ## 📈 Process 📉📈
 
-## Working with GIT, Heroku and handing in iterations
-Working with git is a HUGE part of the final project. This is how you should be working with git in the final project:
-
-This repo has two branches:
-- `master` - Used for deployment. This branch should be as clean as is possible. NEVER directly commit to this branch!
-- `develop` - A branch where we do all development. That means that all feature branches should be merged into this branch. Very important! 
-
-Lets get started with our first feature. Lets say we should build a cookies popup:
-1. Fork this repo. You now have a version of this repo on your profile.
-2. BEFORE WE WRITE ONE SINGLE LINE OF CODE, create the feature branch where we will do all our cookies popup development. `git checkout -b cookies-popup`
-3. Now we write all our code in the `cookies-popup` branch, we make good commits that are not too bit, not too small! We push our branch so it is to be found in our forked repo. Cool, so far so good!
-4. We now want the `cookies-popup` branch to go into https://github.com/HackYourFuture-CPH/boilerplate-for-fp. We do this with a pull request (PR). BUT BEFORE we do that, there are a couple of thing we need to do before:
-   1. Lets say it took a week for us to write `cookies-popup` and in that time there were 5 branches merged into the `develop` branch of https://github.com/HackYourFuture-CPH/boilerplate-for-fp. Hmm that means that our `develop` branch on https://github.com/YOURUSERNAME/boilerplate-for-fp is out of date. So if we just created our PR we our feature might not work (because the codebase was changed). Lets say that in one of the 5 commits someone gave the body a `z-index` of 1. Our popup has no `z-index`, so when the cookies popup should be shown it is not visible. So we need to sync our `develop` branch with class07 `develop` branch. Marta talked about that, but read this aswell: https://help.github.com/en/articles/syncing-a-fork
-   2. Okay, so now our  `develop` branch is in sync with class07 `develop`. Perfect! To get those 5 changes lets merge `develop` into `cookies-popup`
-   3. **We now run our code** and see that the popup is not shown (see above why). Lets fix it by giving our `cookies-popup` a `z-index` of 2, create a new commit to our branch. 
-   4. NEVER commit something that is not running! You will break the build for everyone! so ALWAYS run the code before you create your PR. 
-5. Now we can go to https://github.com/HackYourFuture-CPH/boilerplate-for-fp and create a PR that merges `cookies-popup` into `develop`. This PR is really nice, check it out: https://github.com/HackYourFuture-CPH/class07-final-project/pull/89
-6. Now we have made our PR, great. Someone is going to review this PR and might tell us to change a variable name. Now we simply make the change locally on the `cookies-popup`, make that commit, push it and this commit will automatically show up on the PR.
-7. Everything look nice now and someone merges `cookies-popup` into `develop`. Awesome that was our first feature :) This maybe seems like a big hassle, but once you get used to it, it is not so bad!
-
-## 💻 Working with code
+### 💻 Working with code
 
 - ALWAYS run code before a PR is made.
 - No committing `console.log`
@@ -94,68 +81,24 @@ Follow these best practices for coding: https://github.com/HackYourFuture-CPH/cu
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
 
-# Node template project
-Template project to kickstart your Node development process using Express routing framework
-
 ## Getting Started
 First clone the repo on your local machine using a terminal or a git client.
-Run `npm install` to install all required dependencies.
-Refer to [Deployment](#Deployment) section on how to deploy and run.
 
-Node will run on any linux based kernel system as well as Microsoft Windows.
+#### API Documentation
 
-Refer to this points on how to install on your OS:
-* [Linux](https://nodejs.org/en/download/package-manager/)
-* [Windows](https://nodejs.org/en/download/)
-* [Mac](https://nodejs.org/en/download/)
+When running the API, you will automatically be running the API Documentation
+which is based on Swagger. Just go to
+[localhost:3000/api/documentation](http://localhost:3000/api/documentation) to
+read the specifications for the API.
 
-### Mysql workbench
-Install it from here: 
+You can use your api token to authorize in Swagger and you will be able to
+perform test calls against the API directly from Swagger.
 
-Windows:
-https://dev.mysql.com/downloads/windows/installer/
+If you need to make changes to the specification, this can be done via the
+[Swagger.json](/src/server/config/swagger.json) file.
 
-Mac:
-https://dev.mysql.com/doc/refman/5.7/en/osx-installation-pkg.html
 
-### Installing
-In order to start the project make sure that you have Node, mysql workbench and npm installed.
-Refer to section [Prerequisites](#Prerequisites) on how to install both.
-
-When done run the following commands:
-* `npm install`
-
-### Environment variables
-Environment variables are used for working with sensitive data like passwords and usernames. 
-
-Fx connecting to a database, we dont want to commit the code that shows our password. Therefore we use environment variables instead. The .env SHOULD NEVER be commited and is in the .gitignore file (ignored by git). 
-
-Here is how to get started:
-* Create a new file in source folder and name it .env
-* Copy contents from .env.example into newly created file .env
-* Change the database part to fit your database user and password
-
-#### Setting up on Windows
-Only thing Windows users have to do is run the following command anywhere in their terminal
-(not necessarily the project folder):
-`npm install -g win-node-env`
-
-Refer to [this](https://stackoverflow.com/questions/11928013/node-env-is-not-recognized-as-an-internal-or-external-command-operable-comman) post on stackoverflow for more info.
-
-## Database setup
-Working with sql we use a tool called knex which helps with writing queries and with changing the database structure. Check these out: https://www.quora.com/What-is-Knex-js https://knexjs.org/#Builder-identifier-syntax
-
-* Install knex cli globally with: `npm i -g knex`
-* after the server runs and you see a `connection to <db_name> db successful!` message you are ready to migrate tables
-* to migrate tables and get the seed data. First change your `pass` and `user` string to your real password and username. That's because the `process.env` is not run on db:setup. Now write `npm run db:setup`. Go to your mysql workbench and see the database called `hack_your_future`, you should be able to see some tables and some data in the tables. 
-
-## `Deployment`
-
-Navigate to project folder in your terminal:
-* On Linux or Mac run the following command: `npm run dev`
-* On Windows first refer to [Setting up on Windows] section and then run: `npm run dev`
-
-## AWS
+#### AWS (Amazon Services)
 AWS is used for uploading the podcast files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
@@ -166,7 +109,7 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
 * [**Shanawaz Islam**](https://github.com/h09shais)
 
-## Other contributions
+### Other contributions
 
 * [**Benjamin Hughes**](https://github.com/benna100)
 * [**Zaki Wasik**](https://github.com/zkwsk/)
