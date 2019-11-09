@@ -22,11 +22,11 @@
         - [API Documentation - Swagger](#api-documentation)    
         - [AWS - Amazon Services](#aws)   
 - [Process](#process)   
-        - [Working with code](#working-with-code)
-        - [Code best practices](#code-best-practices)
-        - [Working with git](/working-with-git.md)   
-        - [Working with Heroku and Deployment](#code)   
-- [Getting the certificate](/certificate.md)  
+        - [Working with code](#working-with-code)  
+        - [Code best practices](#code-best-practices)  
+        - [Working with git](/working-with-git.md)     
+        - [Working with Heroku and Deployment](#code)      
+- [Getting the certificate](/certificate.md)    
 - [Authors](#authors)   
 - [License](#license)  
 
@@ -82,7 +82,7 @@ This can be used as a checklist for every PR you make. Go through the list and s
 
 ### [Working with git](/working-with-git.md)   
 
-### [Working with Heroku and Deployment]](/deployment.md)
+### [Working with Heroku and Deployment](/deployment.md)
 
 
 ## Getting Started
