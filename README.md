@@ -85,6 +85,8 @@ When forking this repository for a New Final project you should read this first 
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
 
+
+
 ## 📈 Process 📉📈
 
 ### 💻 Working with code
@@ -118,7 +120,6 @@ perform test calls against the API directly from Swagger.
 If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
-
 ### <img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook 
 Tool for developing UI components in isolation 
 
@@ -131,10 +132,13 @@ If you need the key and secret to put into the .env file, write to the project m
 
 REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
+
+
 ## 🏁 Getting Started
 First clone the repo on your local machine using a terminal or a git client.
 
 #### 💾 [Installations](/installations.md)
+
 
 
 ## 📜 [Getting the HackYourFuture certificate](/certificate.md)
