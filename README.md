@@ -115,11 +115,12 @@ If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
 
-### Working with Storybook - Tool for developing UI components in isolation 
+### Working with Storybook 
+Tool for developing UI components in isolation 
 
 Check here https://storybook.js.org/
 
-### Working with AWS - Amazon Services)
+### Working with AWS - Amazon Services
 AWS is used for uploading the podcast files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
