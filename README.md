@@ -99,13 +99,13 @@ Follow these best practices for coding: [HERE](https://github.com/HackYourFuture
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
 
-###  <img width=20px height=20px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/git-logo.png" alt="GitHub logo"></a> Working with GIT   
+###  <img width=20px height=20px src="/git-logo.png" alt="GitHub logo"></a> Working with GIT   
 [Working with GIT](/working-with-git.md)   
  
-###  <img width=16px height=25px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
+###  <img width=16px height=25px src="/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
 [Working with Heroku and Deployment](/deployment.md)
   
-###  <img width=25px height=25x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger
+###  <img width=25px height=25x src="/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger
 
 When running the API, you will automatically be running the API Documentation
 which is based on Swagger. Just go to
@@ -119,12 +119,12 @@ If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
 
-### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/storybook.svg"  alt="Storybook logo"></a> Working with Storybook 
+### <img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook 
 Tool for developing UI components in isolation 
 
 Check here https://storybook.js.org/
 
-### <img width=30px height=30x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
+### <img width=30px height=30x src="/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
@@ -137,7 +137,7 @@ First clone the repo on your local machine using a terminal or a git client.
 #### 💾 [Installations](/installations.md)
 
 
-## 📜 [Getting the HackYourFuture certificate](/https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/certificate.md)
+## 📜 [Getting the HackYourFuture certificate](/certificate.md)
 
 
 ## 👨🏾‍💻 Authors
