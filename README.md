@@ -34,13 +34,19 @@
 
 ## 🧐 About <a name = "about"></a>
 
-### This boilerplate is for Final Projects use and it includes:
+## ⛏️ Built Using <a name = "built_using"></a>
 
-Knex - http://knexjs.org/    
-Swagger - https://swagger.io/        
-Storybook - https://storybook.js.org/       
-Prettier - https://prettier.io/      
-Server and Client side structure  
+- [React](https://reactjs.org/) - Web Framework
+- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [MySQL](https://www.mysql.com/) - Database
+- [Express](https://expressjs.com/) - Server Framework
+      - Server and Client side structure  
+- [Knex](http://knexjs.org/) - Database management
+- [Swagger](https://swagger.io/) - API Documentation
+- [Storybook](https://storybook.js.org/) - Tool for developing UI components in isolation 
+- [Prettier](https://prettier.io/) - Code formatter
+
+     
 
 ## 📅 Project's Calendar
 
@@ -62,7 +68,7 @@ Server and Client side structure
 *Add here information about the Business Glossary*
 [Business Glossary](/BusinessGlossary.md)
 
-#### 🗄️ Database Model Diagram*
+#### 🗄️ Database Model Diagram
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
 
