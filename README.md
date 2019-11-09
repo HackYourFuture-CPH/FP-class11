@@ -12,8 +12,10 @@
 ## 📝 Table of Contents
 
 - [About](#about)
+- [Project's Calendar](#project's-calendar)
 - [Class Daily Agenda](#class-daily-agenda)
 - [Process](#process)
+- [Installations](/installations.md)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
@@ -34,7 +36,18 @@ Storybook - https://storybook.js.org/
 Prettier - https://prettier.io/      
 Server and Client side structure  
 
-### The Customer - Optimum Voyage
+## 📅 Project's Calendar
+
+Add the dates for the project and study groups
+
+## Class Daily Agenda
+
+12:00 - 13:30 - ...   
+13:30 - 14:00 - ...   
+14:00 - 14:30 - Lunch   
+14:30 - 16:00 - ...   
+
+### The Customer 
 
 Add here information about the customer/partner
 
@@ -45,13 +58,6 @@ Add here information about the Business Glossary
 #### Database model
 
 Add here the DB Model Diagram
-
-## Class Daily Agenda
-
-12:00 - 13:30 - ...   
-13:30 - 14:00 - ...   
-14:00 - 14:30 - Lunch   
-14:30 - 16:00 - ...   
 
 ## Process
 
@@ -75,17 +81,12 @@ Lets get started with our first feature. Lets say we should build a cookies popu
 6. Now we have made our PR, great. Someone is going to review this PR and might tell us to change a variable name. Now we simply make the change locally on the `cookies-popup`, make that commit, push it and this commit will automatically show up on the PR.
 7. Everything look nice now and someone merges `cookies-popup` into `develop`. Awesome that was our first feature :) This maybe seems like a big hassle, but once you get used to it, it is not so bad!
 
-## Working with code
+## 💻 Working with code
 
 - ALWAYS run code before a PR is made.
 - No committing `console.log`
 - No committing merge conflicts!
 - Work in seperate files! When you make a new feature, the first thing you do is create a new file for that (of course if it makes sense). Especially for components. 
-
-### Prettier
-Install Prettier - Code formatter
-
-Enable format on save: https://github.com/prettier/prettier-vscode#format-on-save
 
 ### Code best practices
 Follow these best practices for coding: https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/review-checklist.md
@@ -162,13 +163,13 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
 ## Authors
 
-* **Shanawaz Islam** 
+* **Shanawaz Islam**(https://github.com/h09shais)
 
 ## Other contributions
 
-* **Benjamin Hughes** 
-* **Zaki Wasik** 
-* **Filip Malek** 
+* **Benjamin Hughes**(https://github.com/benna100)
+* **Zaki Wasik**(https://github.com/zkwsk/)
+* **Filip Malek**(https://github.com/REX500)
 * **Daniel Fernandes**
 
 
