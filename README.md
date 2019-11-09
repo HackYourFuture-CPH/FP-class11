@@ -1,12 +1,51 @@
 # Boilerplate for Final projects
 
-## This boilerplate is for Final Projects use and it includes:
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
+</p>
+
+<h3 align="center">Optimum Voyage</h3>
+
+---
+
+## 📝 Table of Contents
+
+- [About](#about)
+- [Process](#process)
+- [Class Daily Agenda](#Class Daily Agenda)
+
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Getting the certificate](#certificate)
+- [Working with git](#git)
+- [Working with code](#code)
+
+## 🧐 About <a name = "about"></a>
+
+### This boilerplate is for Final Projects use and it includes:
 
 Knex - http://knexjs.org/    
 Swagger - https://swagger.io/        
 Storybook - https://storybook.js.org/       
 Prettier - https://prettier.io/      
-Server and Client side structure     
+Server and Client side structure  
+
+### The Customer - Optimum Voyage
+
+Add here information about the customer/partner
+
+##### Business Glossary
+
+Add here information about the Business Glossary
+
+#### Database model
+
+Add here the DB Model Diagram
 
 ## Class Daily Agenda
 
@@ -15,9 +54,7 @@ Server and Client side structure
 14:00 - 14:30 - Lunch
 14:30 - 16:00 - ...
 
-
 ## Process
-
 
 ## Working with GIT, Heroku and handing in iterations
 Working with git is a HUGE part of the final project. This is how you should be working with git in the final project:
@@ -131,6 +168,8 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 ## Other contributions
 
 * **Benjamin Hughes** 
+* **Zaki Wasik** 
+* **Filip Malek** 
 * **Daniel Fernandes**
 
 
