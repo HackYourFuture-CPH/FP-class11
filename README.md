@@ -130,6 +130,7 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 First clone the repo on your local machine using a terminal or a git client.
 
 #### [Installations](/installations.md)
+#### Change favico - https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico
 
 
 ## Authors
