@@ -95,7 +95,7 @@ When forking this repository for a New Final project you should read this first 
 - Work in seperate files! When you make a new feature, the first thing you do is create a new file for that (of course if it makes sense). Especially for components. 
 
 ### 👍🏽 Code best practices
-Follow these best practices for coding: https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/review-checklist.md
+Follow these best practices for coding: [HERE](https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/review-checklist.md)
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
 
