@@ -39,10 +39,7 @@
 
 This repository is a boilerplate and instructions to how to setup the Final Project
 
-Notes:
-
-Change [favicon](https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/public/favicon.ico)
-Delete GitHub, Heroku, AWS, S3, Storybook, Swagger logos
+When forking this repository for a New Final project you should read this first [HERE](/forking-instructions.md)
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
@@ -108,7 +105,7 @@ This can be used as a checklist for every PR you make. Go through the list and s
 ###  <img width=16px height=25px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
 [Working with Heroku and Deployment](/deployment.md)
   
-###  <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger
+###  <img width=25px height=25x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger
 
 When running the API, you will automatically be running the API Documentation
 which is based on Swagger. Just go to
@@ -127,7 +124,7 @@ Tool for developing UI components in isolation
 
 Check here https://storybook.js.org/
 
-### <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg"  alt="AWS S3 logo"></a> <img width=20px height=20x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
+### <img width=25px height=25x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg"  alt="AWS S3 logo"></a><img width=25px height=25x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
@@ -137,7 +134,10 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 ## 🏁 Getting Started
 First clone the repo on your local machine using a terminal or a git client.
 
-#### [Installations](/installations.md)
+#### 💾 [Installations](/installations.md)
+
+
+## 📜 [Getting the HackYourFuture certificate](/https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/certificate.md)
 
 
 ## 👨🏾‍💻 Authors
