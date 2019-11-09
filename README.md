@@ -22,9 +22,10 @@
         - [API Documentation - Swagger](#api-documentation)    
         - [AWS - Amazon Services](#aws)   
 - [Process](#process)   
-- ## Working with code   
-- ## [Working with git](/working-with-git.md)   
-- ## [Working with Heroku and Deployment](#code)   
+        - [Working with code](#working-with-code)
+        - [Code best practices](#code-best-practices)
+        - [Working with git](/working-with-git.md)   
+        - [Working with Heroku and Deployment](#code)   
 - [Getting the certificate](/certificate.md)  
 - [Authors](#authors)   
 - [License](#license)  
@@ -78,6 +79,11 @@ Server and Client side structure
 Follow these best practices for coding: https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/review-checklist.md
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
+
+### [Working with git](/working-with-git.md)   
+
+### [Working with Heroku and Deployment]](/deployment.md)
+
 
 ## Getting Started
 First clone the repo on your local machine using a terminal or a git client.
