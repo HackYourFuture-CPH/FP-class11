@@ -124,7 +124,7 @@ Tool for developing UI components in isolation
 
 Check here https://storybook.js.org/
 
-### <img width=25px height=25x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg"  alt="AWS S3 logo"></a><img width=25px height=25x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
+### <img width=30px height=30x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services
 AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
