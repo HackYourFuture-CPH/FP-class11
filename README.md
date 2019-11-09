@@ -26,7 +26,7 @@
         - [Code best practices](#-code-best-practices)        
         - [Working with GIT](/working-with-git.md)    
         - [Working with Heroku and Deployment](/deployment.md)  
-        - [Working Knex and migrations](/knex-and-migrations.md)
+        - [Working Knex and migrations](/knex-and-migrations.md)   
         - [Working with API Documentation - Swagger](#working-with-api-documentation---swagger)   
         - [Working with Storybook](#working-with-storybook)   
         - [Working with AWS - Amazon Services](#working-with-aws---amazon-services)   
@@ -111,8 +111,12 @@ This can be used as a checklist for every PR you make. Go through the list and s
 ###  <img width=20px height=20px src="/git-logo.png" alt="GitHub logo"></a> Working with GIT   
 [Working with GIT](/working-with-git.md)   
  
-###  <img width=16px height=25px src="/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
+###  <img width=58px height=20px src="/heroku-logo.svg"  alt="Heroku logo"></a> Working with Heroku and Deployment
 [Working with Heroku and Deployment](/deployment.md)
+  
+###  <img width=16px height=25px src="/knex-logo.png"  alt="Knex logo"></a> Working with Knex and Migrations
+[Working Knex and migrations](/knex-and-migrations.md)   
+  
   
 ###  <img width=25px height=25x src="/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger
 
