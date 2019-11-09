@@ -20,13 +20,14 @@
 - [Process](#process)   
         - [Working with code](#working-with-code)     
         - [Code best practices](#code-best-practices)     
-        - [Working with git](/working-with-git.md)       
+        - [Working with GIT](/working-with-git.md)       
         - [Working with Heroku and Deployment](/deployment.md)    
+        - [Working with API Documentation - Swagger](#api-documentation)   
+        - [Working with Storybook](#storybook)    
+        - [Working with AWS - Amazon Services](#aws)            
+
 - [Getting Started](#getting_started)     
         - [Installations](/installations.md)     
-        - [API Documentation - Swagger](#api-documentation)   
-        - [Storybook](#storybook)    
-        - [AWS - Amazon Services](#aws)            
 - [Getting the certificate](/certificate.md)      
 - [Authors](#authors)     
 - [License](#license)    
@@ -94,11 +95,13 @@ Follow these best practices for coding: https://github.com/HackYourFuture-CPH/cu
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
 
-### [Working with git](/working-with-git.md)   
+### Working with GIT   
+[Working with GIT](/working-with-git.md)   
+ 
+### Working with Heroku and Deployment
+[Working with Heroku and Deployment](/deployment.md)
 
-### [Working with Heroku and Deployment](/deployment.md)
-
-### [API Documentation - Swagger](#api-documentation---swagger)
+### Working with API Documentation - Swagger
 
 When running the API, you will automatically be running the API Documentation
 which is based on Swagger. Just go to
@@ -112,22 +115,22 @@ If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
 
-### [Storybook](#storybook) - Tool for developing UI components in isolation 
+### Working with Storybook - Tool for developing UI components in isolation 
 
 Check here https://storybook.js.org/
+
+### Working with AWS - Amazon Services)
+AWS is used for uploading the podcast files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
+
+If you need the key and secret to put into the .env file, write to the project manager of the project. 
+
+REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
 ## Getting Started
 First clone the repo on your local machine using a terminal or a git client.
 
 #### [Installations](/installations.md)
 
-
-#### AWS (Amazon Services)
-AWS is used for uploading the podcast files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
-
-If you need the key and secret to put into the .env file, write to the project manager of the project. 
-
-REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
 ## Authors
 
