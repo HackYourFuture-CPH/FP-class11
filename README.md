@@ -101,10 +101,10 @@ Follow these best practices for coding: https://github.com/HackYourFuture-CPH/cu
 
 This can be used as a checklist for every PR you make. Go through the list and see if you have used all the best practices
 
-###  <img width=25px height=25px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/git-logo.png" alt="GitHub logo"></a> Working with GIT   
+###  <img width=20px height=20px src="https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/git-logo.png" alt="GitHub logo"></a> Working with GIT   
 [Working with GIT](/working-with-git.md)   
  
-### Working with Heroku and Deployment
+###  <img width=16px height=25px src=" https://github.com/HackYourFuture-CPH/boilerplate-for-fp/blob/master/heroku-logo.svg" alt="Heroku logo"></a> Working with Heroku and Deployment
 [Working with Heroku and Deployment](/deployment.md)
 
 ### Working with API Documentation - Swagger
