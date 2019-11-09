@@ -1,20 +1,19 @@
-# Boilerplate for Final projects
 
 <p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">BOILER PLATE</h3>
+<h3 align="center">Boilerplate for Final projects
+</h3>
 
 ---
 
 ## 📝 Table of Contents
 
 - [About](#about)
-- [Process](#process)
 - [Class Daily Agenda](#class-daily-agenda)
-
+- [Process](#process)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
