@@ -32,12 +32,12 @@
 
 ## 🎯 Scope of the Project 
 #### ↘️ 🧭 Define a Scope and write user or work stories that includes all the modules of the course:   
-  ➡️ React   
-  ➡️ Node   
-  ➡️ MySQL   
-  ➡️ Check what libraries can help implement some of the features and add them to the project   
+  ❇️ React   
+  ❇️ Node   
+  ❇️ MySQL   
+  ❇️ Check what libraries can help implement some of the features and add them to the project   
 #### ↘️ Add something new and exciting to the Project   
 #### ↘️ Use [Trello](https://trello.com/) to communicate your tasks to the development Team    
 #### ↘️ Create Wireframes & Mockups with:    
-   ➡️ [Invision](https://www.invisionapp.com/)    
-   ➡️ [Figma](https://www.figma.com/)    
+   ❇️ [Invision](https://www.invisionapp.com/)    
+   ❇️ [Figma](https://www.figma.com/)    
