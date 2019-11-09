@@ -40,7 +40,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is a boilerplate and instructions to how to setup the Final Project.
+This repository is a boilerplate and set-up instructions for the Final Project.
 
 To setup the boilerplate for a New Final project you MUST read this first [HERE](/setting-up-instructions.md)
 
