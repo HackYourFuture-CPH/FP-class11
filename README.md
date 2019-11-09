@@ -11,26 +11,25 @@
 
 ## 📝 Table of Contents
 
-- [About](#about)
-- [Project's Calendar](#projects-calendar)
-- [Class Daily Agenda](#class-daily-agenda)
+- [About](#about)   
+- [Project's Calendar](#projects-calendar)   
+- [Class Daily Agenda](#class-daily-agenda)   
 - [The Customer](#the-customer)   
         - [Business Glossary](/BusinessGlossary.md)   
-        - [Database Model Diagram](#️database-model)       
+        - [Database Model Diagram](#️database-model)   
 - [Process](#process)   
-        - [Working with code](#working-with-code)     
-        - [Code best practices](#code-best-practices)     
-        - [Working with GIT](/working-with-git.md)       
-        - [Working with Heroku and Deployment](/deployment.md)    
+        - [Working with code](#working-with-code)   
+        - [Code best practices](#code-best-practices)        
+        - [Working with GIT](/working-with-git.md)    
+        - [Working with Heroku and Deployment](/deployment.md)   
         - [Working with API Documentation - Swagger](#api-documentation)   
-        - [Working with Storybook](#storybook)    
-        - [Working with AWS - Amazon Services](#aws)            
-
-- [Getting Started](#getting_started)     
-        - [Installations](/installations.md)     
+        - [Working with Storybook](#storybook)   
+        - [Working with AWS - Amazon Services](#aws)   
+- [Getting Started](#getting_started)   
+        - [Installations](/installations.md)   
 - [Getting the certificate](/certificate.md)      
-- [Authors](#authors)     
-- [License](#license)    
+- [Authors](#authors)   
+- [License](#license)   
 
 
 
@@ -121,7 +120,7 @@ Tool for developing UI components in isolation
 Check here https://storybook.js.org/
 
 ### Working with AWS - Amazon Services
-AWS is used for uploading the podcast files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
+AWS is used for uploading files on a AWS S3 bucket. There is a user on the AWS that has `AmazonS3FullAccess`. There is not a AWS root key, but ONLY a key and a secret key for the AWS user. 
 
 If you need the key and secret to put into the .env file, write to the project manager of the project. 
 
