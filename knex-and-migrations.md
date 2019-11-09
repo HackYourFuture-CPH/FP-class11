@@ -1,8 +1,9 @@
-✈️ Working with migrations(## ✈️ Working with migrations)
-KnexJS - Working with Knex.js(### Working with Knex.js)
-🔌Database connection(### 🔌 Database connection)
-🌱Seed files in Knex.js(### 🌱 Seed files in Knex.js)
-⌨️ Knex CLI(### ⌨️ Knex CLI)
+[✈️ Working with migrations](#️-working-with-migrations)   
+[Up 🛫 and down 🛬 migrations](#up--and-down--migrations)    
+[KnexJS - Working with Knex.js](#working-with-knexjs)     
+[🔌Database connection](#-database-connection)     
+[🌱Seed files in Knex.js](#️-migration-files-in-knexjs)      
+[⌨️ Knex CLI](#️-knex-cli)       
 
 
 ## ✈️ Working with migrations
