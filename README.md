@@ -19,7 +19,8 @@
         - [Database Model Diagram](#️database-model)   
 - [Getting Started](#getting_started)   
         - [Installations](/installations.md)   
-        - [API Documentation - Swagger](#api-documentation)    
+        - [API Documentation - Swagger](#api-documentation) 
+        - [Storybook](#storybook)
         - [AWS - Amazon Services](#aws)   
 - [Process](#process)   
         - [Working with code](#working-with-code)  
@@ -53,8 +54,8 @@ This repository is a boilerplate and instructions to how to setup the Final Proj
 ## 📅 Project's Calendar
 
 *Add the dates for the project and study groups*
-*Class Dates*
-*Study groups dates*
+*Class Dates*   
+*Study groups dates*    
 
 
 ## 🕛 Class Daily Agenda 🕓
@@ -111,7 +112,7 @@ If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
 
 
-### [Storybook)(#storybook) - Tool for developing UI components in isolation 
+### [Storybook](#storybook) - Tool for developing UI components in isolation 
 
 Check here https://storybook.js.org/
 
