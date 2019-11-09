@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
+ <img width=100px height=100px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Boilerplate for Final projects
@@ -49,17 +49,18 @@ Add the dates for the project and study groups
 
 ## 👩‍💼💡👨‍💼 The Customer 
 
-Add here information about the customer/partner
+*Add here information about the customer/partner*
 
 ##### 💼 Business Glossary
 
-Add here information about the Business Glossary
+*Add here information about the Business Glossary*
+[Click here to check the Business Glossary](/BusinessGlossary.md)
 
 #### 🗄️ Database model
 
-Add here the DB Model Diagram
+*Add here the DB Model Diagram* - Use https://dbdiagram.io/
 
-## 📈 📉 📈  Process
+## 📈 Process 📉📈
 
 ## Working with GIT, Heroku and handing in iterations
 Working with git is a HUGE part of the final project. This is how you should be working with git in the final project:
@@ -163,7 +164,7 @@ REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
 ## Authors
 
-* [**Shanawaz Islam**(https://github.com/h09shais)
+* [**Shanawaz Islam**](https://github.com/h09shais)
 
 ## Other contributions
 
