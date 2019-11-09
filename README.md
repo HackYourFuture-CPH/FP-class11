@@ -156,7 +156,7 @@ First clone the repo on your local machine using a terminal or a git client.
 * **Daniel Fernandes**
 
 
-## License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
