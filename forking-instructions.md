@@ -1,6 +1,6 @@
-# Forking-instructions
+# ⚠ Forking-instructions ⚠
 
-## AFTER FORKING
+## 🐣 AFTER FORKING
 
 
 ### Create 
@@ -21,23 +21,23 @@
 
 ## <img width=16px height=25px src="/heroku-logo.svg"  alt="Heroku logo"></a> Heroku
 
-### Setup Production on Git Master branch
-### Setup Staging on Git Develop branch
-### Setup DB
-### Add Env. variables
+➡️ Setup Production on Git Master branch
+➡️ Setup Staging on Git Develop branch
+➡️ Setup DB
+➡️ Add Env. variables
 
 
 ##  <img width=30px height=30x src="/aws.svg" alt="AWS logo"></a> AWS
-### Add Env. variables
+➡️ Add Env. variables
 
 ## 🎯 Scope of the Project 
-### 🧭 Define a Scope and write user or work stories that includes all the modules of the course:
-  React
-  Node
-  MySQL
-  Study what libraries can help implement some of the features and add them to the project
-  Add something new and exciting to the Project
-  Use Trello to communicate your tasks to the development Team https://trello.com/
-  Create Wireframes & Mockups with:
-       [Invision](https://www.invisionapp.com/)
-       [Figma](https://www.figma.com/)
+➡️ 🧭 Define a Scope and write user or work stories that includes all the modules of the course:
+  ➡️ React
+  ➡️ Node
+  ➡️ MySQL
+  ➡️ Check what libraries can help implement some of the features and add them to the project
+  ➡️ Add something new and exciting to the Project
+  ➡️ Use [Trello](https://trello.com/) to communicate your tasks to the development Team 
+  ➡️ Create Wireframes & Mockups with:
+      ➡️ [Invision](https://www.invisionapp.com/)
+      ➡️ [Figma](https://www.figma.com/)
