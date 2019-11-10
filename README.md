@@ -77,10 +77,10 @@ check [HERE](/planning.md) before you go more down.
 
 *Add the Class schedule for the project*
 
-12:00 - 13:30 - ...   
-13:30 - 14:00 - ...   
-14:00 - 14:30 - Lunch   
-14:30 - 16:00 - ...   
+- 12:00 - 13:30 - ...   
+- 13:30 - 14:00 - ...   
+- 14:00 - 14:30 - Lunch   
+- 14:30 - 16:00 - ...   
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer 
 
@@ -94,6 +94,8 @@ check [HERE](/planning.md) before you go more down.
 #### 🗄️ Database Model Diagram
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
+
+[How to make changes on the diagram](https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/diagram.md)
 
 
 
