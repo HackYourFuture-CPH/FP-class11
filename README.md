@@ -49,8 +49,8 @@ check [HERE](/planning.md) before you go more down.
 
 🚨Delete the About Topic from you new repository README.MD file     
 🚨Delete the instructions files:    
-[Setting up Instructions](/setting-up-instructions.md)     
-[Panning](/planning.md)    
+- [Setting up Instructions](/setting-up-instructions.md)     
+- [Panning](/planning.md)    
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -95,7 +95,7 @@ check [HERE](/planning.md) before you go more down.
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
 
-[How to make changes on the diagram](/diagram.md)
+- [How to make changes on the diagram](/diagram.md)
 
 
 
