@@ -95,7 +95,7 @@ check [HERE](/planning.md) before you go more down.
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
 
-[How to make changes on the diagram](https://github.com/HackYourFuture-CPH/curriculum/blob/master/review/diagram.md)
+[How to make changes on the diagram](/diagram.md)
 
 
 
