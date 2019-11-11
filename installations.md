@@ -53,7 +53,7 @@ https://knexjs.org/#Builder-identifier-syntax
 - Update the connection details to the database in the `.env` file
 - after the server runs and you see a `connection to <db_name> db successful!`
   message you are ready to migrate tables
-- To make a new migration make sure you terminal is where the `knexfile.js` is.
+- To make a new migration make sure your terminal is where the `knexfile.js` is.
   Otherwise `cd` into that folder! run `knex migrate:make MIGRATION_NAME`. Fx if
   i want to make a new users table i would run `knex migrate:make users`. This
   would set up the migration file (under the `migrations` folder) for me to
