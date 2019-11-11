@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Final Project",
   "main": "index.js",
-  "engines": {
-    "node": "8.11.1"
-  },
   "scripts": {
     "build": "webpack --mode production",
     "start": "npm run build && node ./src/server/bin/server",
