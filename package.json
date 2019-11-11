@@ -12,7 +12,8 @@
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon ./src/server/bin/server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run"
+    "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
+    "storybook": "cd ./src/client/ && start-storybook -p 3007"
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
@@ -38,6 +39,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@storybook/react": "^5.2.6",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^4.1.0",
