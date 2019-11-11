@@ -19,7 +19,7 @@ We are trying to solve two main things with migrations:
 - The challenge of making schema changes to a database with real production data
   in a predictable manner.
 
-Since are typically managed by writing ad hoc SQL to create the database, create
+Since migrations are typically managed by writing ad hoc SQL to create the database, create
 new tables, change tables and change the data inside the database, migrations
 makes all of these tasks repeatable and predictable by basically adding all of
 these changes to git. Essentially the solution is to never manipulate the
