@@ -31,16 +31,27 @@ In VS Code you can press CTRL+P (CMD+P on Mac) and type ext install esbenp.prett
 
 Remember to enable "format on save" in VS Code settings. You can also enable formatting on pasting or while editing, depending on your taste.
 
+
 #### Environment variables
-Environment variables are used for working with sensitive data like passwords and usernames.
 
-Fx connecting to a database, we dont want to commit the code that shows our password. Therefore we use environment variables instead. The .env SHOULD NEVER be commited!!!! Therefore it is in the .gitignore file (ignored by git).
+Environment variables are used for working with sensitive data like passwords
+and usernames.
 
-Here is how to get started with the .env file
+Fx connecting to a database, we dont want to commit the code that shows our
+password. Therefore we use environment variables instead. The `.env` **SHOULD
+NEVER** be commited!!!! Therefore it is in the `.gitignore` file (ignored by
+git).
 
-Copy and rename the .env.example file to .env:
+Here is how to get started with the `.env` file
+
+- Copy and rename the `.env.example` file to `.env`:
+
+```
 cp .env.example .env
-Open the .env file and update any parameters according to the environment you are running.
+```
+
+- Open the `.env` file and update any parameters according to the environment
+  you are running.
 
 #### Database setup
 
