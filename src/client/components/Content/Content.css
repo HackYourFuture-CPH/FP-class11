@@ -1,0 +1,18 @@
+.contentTitle {
+  padding-top: 1em;
+}
+.contentText {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  display: inline-block;
+  margin: 1em 1em 0 0;
+  padding: 0.1% 13%;
+}
+.contentFooter {
+  display: flex;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  margin-top: -19px;
+  top: 0em;
+}
