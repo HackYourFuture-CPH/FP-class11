@@ -21,21 +21,23 @@ const paginate = (knex, { limit = 50, offset = 0, orderBy, order = "asc" }) => {
  *
  * @param {Object} query All url query parameters
  */
-const getOptions = query => {
+const getOptions = (query) => {
+  const paginatedQuery = { ...query };
+
   if (query.limit) {
-    query[limit] = parseInt(query.limit, 10);
+    paginatedQuery.limit = parseInt(query.limit, 10);
   }
   if (query.offset) {
-    query[offset] = parseInt(query.offset, 10);
+    paginatedQuery.offset = parseInt(query.offset, 10);
   }
   if (query.order) {
-    query[order] = parseInt(query.order, 10);
+    paginatedQuery.order = parseInt(query.order, 10);
   }
 
-  return query;
+  return paginatedQuery;
 };
 
 module.exports = {
   paginate,
-  getOptions
+  getOptions,
 };

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Home extends Component {
+class Home extends React.PureComponent {
   render() {
-    return <section>Final project!</section>;
+    return <div>Final project!</div>;
   }
 }
 

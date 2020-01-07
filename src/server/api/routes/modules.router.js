@@ -1,7 +1,6 @@
-"use strict";
-
-// router setup
+/* eslint-disable no-console */
 const express = require("express");
+
 const router = express.Router({ mergeParams: true });
 
 // controllers
@@ -17,22 +16,18 @@ router.get("/", (req, res, next) => {
 
 // ENDPOINT: /api/modules/:id :GET to get one module
 router.get("/:id", (req, res, next) => {
-  modulesController.getModuleById(req.params.id).then(results => {
-    // Check if the result is empty
-    if (!results.propertyIsEnumerable(0)) {
-      res.status(404).send("Record not found");
-    } else {
-      res.status(200).json(results[0]);
-    }
-  });
+  modulesController
+  .getModuleById(req.params.id)
+  .then((result) => res.json(result))
+    .catch(next);
 });
 
 // ENDPOINT: /api/modules/ :POST
-router.post("/", (req, res, next) => {
+router.post("/", (req, res) => {
   modulesController
     .createModule(req.body)
     .then(result => res.json(result))
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
 
       res
@@ -51,7 +46,7 @@ router.patch("/:id", (req, res, next) => {
 });
 
 // ENDPOINT: /api/example/ :DELETE
-router.delete("/:id", (req, res, next) => {
+router.delete("/:id", (req, res) => {
   modulesController
     .deleteModule(req.params.id, req)
     .then(result => {

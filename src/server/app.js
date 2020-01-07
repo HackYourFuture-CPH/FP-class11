@@ -1,5 +1,3 @@
-"use strict";
-
 require("dotenv").config();
 
 const express = require("express");
@@ -9,12 +7,14 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const HttpError = require("./api/lib/utils/http-error");
+
 const buildPath = path.join(__dirname, "../../dist");
 
 const apiRouter = require("./api/routes/api-router");
 
 require("./config/db");
-let app = express();
+
+const app = express();
 
 app.use(express.static(buildPath));
 
@@ -30,29 +30,26 @@ app.use(
   bodyParser.urlencoded({
     limit: "50mb",
     extended: true,
-    parameterLimit: 50000
-  })
+    parameterLimit: 50000,
+  }),
 );
 app.use(cookieParser());
 app.use(cors());
 
 app.use(process.env.API_PATH, apiRouter);
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   if (err instanceof HttpError) {
     res.status(err.httpStatus);
     if (err.body) {
       return res.json(err.body);
-    } else {
-      return res.send({ error: err.message });
     }
-  } else {
-    console.log(err);
-    res.sendStatus(500);
+    return res.send({ error: err.message });
   }
+  res.sendStatus(500);
 });
 
-app.use("/api/", function(req, res, next) {
+app.use("/api/", function(req, res) {
   res.status(404).send("Sorry can't find that!");
 });
 
