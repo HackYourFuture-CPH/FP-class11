@@ -32,7 +32,8 @@
         - [Working with AWS - Amazon Services](#working-with-aws---amazon-services)
         - [Testing](#testing)
 - [Getting Started](#getting-started)   
-        - [Installations](/installations.md)   
+        - [Installations](/installations.md)
+        - [Code linting](#code-linting)
 - [Getting the certificate](/certificate.md)      
 - [Authors](#authors)   
 - [License](#license)   
@@ -170,6 +171,12 @@ First clone the repo on your local machine using a terminal or a git client.
 If you get this error: `Error: ENOENT: no such file or directory, scandir`
 
 Then try and run this script: `npm rebuild node-sass`
+
+#### Code linting
+
+To ensure we all code the same way, we are using linting in this project! We use prettier to do the linting for us. To Use the linting in this project, set your code editor up with the `.prettierrc.js` files. 
+
+In Visual Studio code, go to file -> Preferences -> settings -> Search for `prettier: config path` -> In the input write `.prettierrc.js`
 
 ## 📜 [Getting the HackYourFuture certificate](/certificate.md)
 
