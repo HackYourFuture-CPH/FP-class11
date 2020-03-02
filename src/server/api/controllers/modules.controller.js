@@ -1,12 +1,9 @@
-const knex = require("../../config/db");
-const Error = require("../lib/utils/http-error");
+const knex = require('../../config/db');
+const Error = require('../lib/utils/http-error');
 
 const getModules = async () => {
   try {
-    return await knex("modules").select(
-      "modules.id",
-      "modules.title"
-    );
+    return await knex('modules').select('modules.id', 'modules.title');
   } catch (error) {
     return error.message;
   }
@@ -14,11 +11,8 @@ const getModules = async () => {
 
 const getModuleById = async (id) => {
   try {
-    const modules = await knex("modules")
-      .select(
-        "modules.id as id",
-        "title"
-      )
+    const modules = await knex('modules')
+      .select('modules.id as id', 'title')
       .where({ id });
     if (modules.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
@@ -30,7 +24,7 @@ const getModuleById = async (id) => {
 };
 
 const editModule = async (moduleId, updatedModule) => {
-  return knex("modules")
+  return knex('modules')
     .where({ id: moduleId })
     .update({
       title: updatedModule.title,
@@ -41,13 +35,13 @@ const editModule = async (moduleId, updatedModule) => {
 };
 
 const deleteModule = async (modulesId) => {
-  return knex("modules")
+  return knex('modules')
     .where({ id: modulesId })
     .del();
 };
 
 const createModule = async (body) => {
-  await knex("modules").insert({
+  await knex('modules').insert({
     title: body.title,
     startdate: body.start_date,
     enddate: body.end_date,

@@ -14,6 +14,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
+    "test": "jest",
     "test:watch": "jest --watch",
     "code:check": "npm run code:lint && npm run code:format --check",
     "code:clean": "npm run code:lint --fix && npm run code:format --write",
