@@ -1,16 +1,16 @@
 export const themeContent = {
-  textAlign: "center",
+  textAlign: 'center',
   fontFamily: {
     title: "'Pacifico', cursive",
     main: "'Open Sans', sans-serif",
-    sizeTitle: "2em",
-    sizeText: "1em"
+    sizeTitle: '2em',
+    sizeText: '1em',
   },
   colors: {
-    primary: "#F0F0F0"
+    primary: '#F0F0F0',
   },
   images: {
-    width: "10em",
-    height: "auto"
-  }
+    width: '10em',
+    height: 'auto',
+  },
 };

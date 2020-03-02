@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 const styles = {
   log: chalk.bold,
   info: chalk.bold.blue,
   error: chalk.bold.red,
   warn: chalk.bold.yellow,
-  success: chalk.bold.green
+  success: chalk.bold.green,
 };
 
 module.exports = {
@@ -30,5 +30,5 @@ module.exports = {
 
   success(message, ...args) {
     console.log(styles.success(` ✅  ${message}`, ...args));
-  }
+  },
 };

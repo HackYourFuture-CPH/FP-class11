@@ -1,15 +1,15 @@
-require("dotenv").config();
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+require('dotenv').config();
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const outputDirectory = "dist";
+const outputDirectory = 'dist';
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/client/index.js"],
+  entry: ['babel-polyfill', './src/client/index.js'],
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: "bundle.js"
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -17,40 +17,40 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(css|scss)$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: "url-loader?limit=100000"
-      }
-    ]
+        loader: 'url-loader?limit=100000',
+      },
+    ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ['*', '.js', '.jsx'],
   },
   devServer: {
-    publicPath: "/",
+    publicPath: '/',
     historyApiFallback: true,
     port: parseInt(process.env.CLIENT_PORT, 10),
-    open: process.env.OPEN_BROWSER === "true" ? true : false,
+    open: process.env.OPEN_BROWSER === 'true' ? true : false,
     proxy: {
-      "/api": `http://localhost:${process.env.API_PORT}`
-    }
+      '/api': `http://localhost:${process.env.API_PORT}`,
+    },
   },
   node: {
-    net: "empty",
-    tls: "empty",
-    dns: "empty"
+    net: 'empty',
+    tls: 'empty',
+    dns: 'empty',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      favicon: "./public/favicon.ico"
-    })
-  ]
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
+    }),
+  ],
 };
