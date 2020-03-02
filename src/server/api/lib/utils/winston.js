@@ -1,13 +1,13 @@
 // const winston = require('winston');
-const appRoot = require("app-root-path");
-const moment = require("moment-timezone");
-const JSON = require("circular-json");
-const { createLogger, format, transports } = require("winston");
+const appRoot = require('app-root-path');
+const moment = require('moment-timezone');
+const JSON = require('circular-json');
+const { createLogger, format, transports } = require('winston');
 
 const { combine, label, printf } = format;
 
 // nicer output
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 const styles = {
   log: chalk.bold,
@@ -21,7 +21,7 @@ const styles = {
 const myFormatFile = printf(
   (info) =>
     `${info.timestamp} [${info.level}]: ${info.label} - ${
-      typeof info.message === "object"
+      typeof info.message === 'object'
         ? JSON.stringify(info.message)
         : info.message
     }`,
@@ -29,7 +29,7 @@ const myFormatFile = printf(
 const myFormatConsole = printf((info) =>
   styles.info(
     ` ℹ️ ${
-      typeof info.message === "object"
+      typeof info.message === 'object'
         ? JSON.stringify(info.message)
         : info.message
     }`,
@@ -49,14 +49,14 @@ const appendTimestamp = format((info, opts) => {
 });
 
 const customFormat = combine(
-  label({ label: "main" }),
-  appendTimestamp({ tz: "Europe/Copenhagen" }),
+  label({ label: 'main' }),
+  appendTimestamp({ tz: 'Europe/Copenhagen' }),
   myFormatFile,
 );
 
 const options = {
   file: {
-    level: "info",
+    level: 'info',
     filename: `${appRoot}/logs/app.log`,
     handleExceptions: true,
     json: true,
@@ -66,7 +66,7 @@ const options = {
     format: customFormat,
   },
   console: {
-    level: "debug",
+    level: 'debug',
     handleExceptions: true,
     json: false,
     colorize: true,

@@ -29,7 +29,8 @@
         - [Working Knex and migrations](/knex-and-migrations.md)   
         - [Working with API Documentation - Swagger](#working-with-api-documentation---swagger)   
         - [Working with Storybook](#working-with-storybook)   
-        - [Working with AWS - Amazon Services](#working-with-aws---amazon-services)   
+        - [Working with AWS - Amazon Services](#working-with-aws---amazon-services)
+        - [Testing](#testing)
 - [Getting Started](#getting-started)   
         - [Installations](/installations.md)   
 - [Getting the certificate](/certificate.md)      
@@ -148,7 +149,17 @@ If you need the key and secret to put into the .env file, write to the project m
 
 REMEMBER, this key should be kept super secret!!! NEVER add this to any PR!!
 
+### Testing
 
+To make a new test, add a `COMPONENT_NAME.test.js` to a component. See fx the `Home` component to get an example of a simple test.
+
+To run all test, write this command:
+
+`npm run test`
+
+To run the tests when you change a test file, run:
+
+`npm run test:watch`
 
 ## 🏁 Getting Started
 First clone the repo on your local machine using a terminal or a git client.
