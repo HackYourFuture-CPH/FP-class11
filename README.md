@@ -155,7 +155,10 @@ First clone the repo on your local machine using a terminal or a git client.
 
 #### 💾 [Installations](/installations.md)
 
+##### Errors
+If you get this error: `Error: ENOENT: no such file or directory, scandir`
 
+Then try and run this script: `npm rebuild node-sass`
 
 ## 📜 [Getting the HackYourFuture certificate](/certificate.md)
 
