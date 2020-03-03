@@ -1,0 +1,99 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "Final Project",
+  "main": "index.js",
+  "engines": {
+    "node": "12.9.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "npm run build && node ./src/server/bin/server",
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "server": "nodemon ./src/server/bin/server",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
+    "storybook": "cd ./src/client/ && start-storybook -p 3007",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "code:check": "npm run code:lint && npm run code:format --check",
+    "code:clean": "npm run code:lint --fix && npm run code:format --write",
+    "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
+    "code:format": "prettier ./src/**/**.{js,jsx,ts,tsx}",
+    "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+  },
+  "author": "Shanawaz Islam",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@storybook/react": "^5.2.6",
+    "@storybook/theming": "^5.2.8",
+    "app-root-path": "^2.2.1",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "circular-json": "^0.5.9",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.0.4",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "final-form": "^4.18.2",
+    "formik": "^1.5.8",
+    "interactjs": "^1.5.3",
+    "jest-css-modules-transform": "^3.1.0",
+    "jest-styled-components": "^7.0.0-beta.2",
+    "knex": "^0.19.5",
+    "moment-timezone": "^0.5.26",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.3.0",
+    "react-social-login-buttons": "^3.0.0",
+    "serve-favicon": "^2.5.0",
+    "swagger-ui-express": "^4.1.2",
+    "winston": "^3.2.1",
+    "webpack": "4.35.0",
+    "webpack-cli": "3.3.5",
+    "clean-webpack-plugin": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "node-sass": "^4.12.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "concurrently": "^4.1.0",
+    "express-form-data": "^2.0.10",
+    "husky": "^2.4.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "mock-knex": "^0.4.7",
+    "nodemon": "^1.12.1",
+    "poetic": "^1.2.6",
+    "sequelize-cli": "^5.4.0",
+    "webpack-dev-server": "3.7.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run code:clean"
+    }
+  }
+}

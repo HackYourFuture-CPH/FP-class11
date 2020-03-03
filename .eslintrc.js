@@ -1,0 +1,31 @@
+module.exports = {
+  extends: ['./node_modules/poetic/config/eslint/eslint-config.js'],
+  // Add custom rules here
+  rules: {
+    'arrow-parens': 0,
+    quotes: [
+      'error',
+      'double',
+      { avoidEscape: true, allowTemplateLiterals: false },
+    ],
+    'no-unexpected-multiline': 0,
+    'react/jsx-filename-extension': 0,
+    'react/prefer-stateless-function': 1,
+    'react/prop-types': 1,
+    'import/prefer-default-export': 0,
+    '@typescript-eslint/camelcase': 1,
+    'func-names': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    'no-restricted-globals': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    'no-use-before-define': 0,
+    'consistent-return': 0,
+    'jsx-a11y/label-has-associated-control': 0,
+    'import/no-unresolved': 0,
+    'import/extensions': 0,
+    'import/order': 0,
+    'react/destructuring-assignment': 0,
+    'react/state-in-constructor': 0,
+    'react/no-access-state-in-setstate': 0,
+  },
+};
