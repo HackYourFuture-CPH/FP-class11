@@ -81,6 +81,9 @@ For more information about Seasony, please visit https://www.seasony.dk/
 *Add here information about the Business Glossary*
 [Business Glossary](/BusinessGlossary.md)
 
+### :art: Design
+UI Design can be found [HERE](https://www.figma.com/proto/BGeghDJzrIq4rq8QsbGa5p/Seasony-final-flow?node-id=1%3A12&viewport=892%2C250%2C0.032988328486680984&scaling=scale-down-width)
+
 #### 🗄️ Database Model Diagram
 
 *Add here the DB Model Diagram* - Use https://dbdiagram.io/
