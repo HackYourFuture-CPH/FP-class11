@@ -14,8 +14,6 @@
 ## 📝 Table of Contents
 
 - [About](#about)   
-        - [Setting up the boilerplate](/setting-up-instructions.md)   
-        - [Plan the project](/planning.md)
 - [Project's Calendar](#-projects-calendar)   
 - [Class Daily Agenda](#-class-daily-agenda-)   
 - [The Customer](#-the-customer)   
@@ -42,17 +40,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is a boilerplate and set-up instructions for the Final Project.
-
-To setup the boilerplate for a New Final project you MUST read this first [HERE](/setting-up-instructions.md)
-
-After the previous steps, you have new repository ready but you need plan the project, 
-check [HERE](/planning.md) before you go more down.
-
-🚨Delete the About Topic from you new repository README.MD file     
-🚨Delete the instructions files:    
-- [Setting up Instructions](/setting-up-instructions.md)     
-- [Planning](/planning.md)    
+This repository is for the Final Project of Class11. A collaboration bettwen HYF and Seasony.   
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -70,23 +58,23 @@ check [HERE](/planning.md) before you go more down.
 
 ## 📅 Project's Calendar
 
-*Add the dates for the project and study groups*
-*Class Dates*   
-*Study groups dates*    
+- 08/03 - Week01 Sunday’s Class  
+- 15/03 - Week02 Sunday’s Class  
+- 22/03 - Week03 Sunday’s Class  
+- 29/03 - Week04 Sunday’s Class 
+- 05/04 - Week05 Sunday’s Class
+- 12/04 - Easter Holidays - NO CLASSES
+- 19/04 - Week06 Sunday’s Class 
+- 26/04 - Week07 Sunday’s Class 
 
+- 29/04 - Graduation
 
-## 🕛 Class Daily Agenda 🕓
-
-*Add the Class schedule for the project*
-
-- 12:00 - 13:30 - ...   
-- 13:30 - 14:00 - ...   
-- 14:00 - 14:30 - Lunch   
-- 14:30 - 16:00 - ...   
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer 
 
-*Add here information about the customer/partner*
+Seasony is a startup specializing in vertical farming with robotics. We dream about contributing to more local and healthier food production. We do this by combining vertical farming and hydroponics with high-tech and robotics. This automation of vertical farming enables us to support a scalable and sustainable development of healthy food production.
+
+For more information about Seasony, please visit https://www.seasony.dk/
 
 #### 💼 Business Glossary
 
