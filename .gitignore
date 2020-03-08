@@ -33,7 +33,6 @@ jspm_packages/
 .env
 
 # add gitignore for .vscode and .vscode/settings.json
-.vscode 
 .vscode/settings.json
 
 # React build
