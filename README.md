@@ -4,8 +4,7 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Boilerplate for Final projects
-</h3>
+<h3 align="center">Hack Your Future Class 11 Final Project</h3>
 
 
 
@@ -40,7 +39,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is for the Final Project of Class11. A collaboration bettwen HYF and Seasony.   
+This repository is for the Final Project of Class11. A collaboration between HYF and Seasony.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -194,7 +193,7 @@ Besides extensions for Prettier and Eslint in VSCode, we run a small script that
 * [**Benjamin Hughes**](https://github.com/benna100)
 * [**Zaki Wasik**](https://github.com/zkwsk/)
 * [**Filip Malek**](https://github.com/REX500)
-* **Daniel Fernandes**
+* [**Daniel Fernandes**](https://github.com/dpfernandes)
 
 
 ## 📝 License
