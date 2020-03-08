@@ -88,7 +88,9 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 
 #### 🗄️ Database Model Diagram
 
-*Add here the DB Model Diagram* - Use https://dbdiagram.io/
+*Check the DB Model Diagram* - Use https://dbdiagram.io/d/5e58dfd24495b02c3b878ba4
+
+
 
 - [How to make changes on the diagram](/diagram.md)
 
