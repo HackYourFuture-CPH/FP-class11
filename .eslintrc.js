@@ -3,11 +3,7 @@ module.exports = {
   // Add custom rules here
   rules: {
     'arrow-parens': 0,
-    quotes: [
-      'error',
-      'double',
-      { avoidEscape: true, allowTemplateLiterals: false },
-    ],
+    'quotes': 0,
     'no-unexpected-multiline': 0,
     'react/jsx-filename-extension': 0,
     'react/prefer-stateless-function': 1,
