@@ -16,8 +16,8 @@
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
     "test": "jest",
     "test:watch": "jest --watch",
-    "code:check": "npm run code:lint && npm run code:format --check",
-    "code:clean": "npm run code:lint --fix && npm run code:format --write",
+    "code:check": "npm run code:lint && npm run code:format -- --check",
+    "code:clean": "npm run code:lint -- --fix && npm run code:format -- --write",
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
     "code:format": "prettier ./src/**/**.{js,jsx,ts,tsx}",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
@@ -93,7 +93,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run code:clean"
+      "pre-commit": "npm run code:check"
     }
   }
 }
