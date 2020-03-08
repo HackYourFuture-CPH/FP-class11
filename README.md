@@ -190,7 +190,7 @@ In Visual Studio code, go to file -> Preferences -> settings -> Search for `pret
 * [**Benjamin Hughes**](https://github.com/benna100)
 * [**Zaki Wasik**](https://github.com/zkwsk/)
 * [**Filip Malek**](https://github.com/REX500)
-* **Daniel Fernandes**
+* [**Daniel Fernandes**](https://github.com/dpfernandes)
 
 
 ## 📝 License
