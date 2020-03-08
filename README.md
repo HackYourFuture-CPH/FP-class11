@@ -91,6 +91,7 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 *Check the DB Model Diagram* - Use https://dbdiagram.io/d/5e58dfd24495b02c3b878ba4
 
 
+ <img width="40%" height="40%" src="/seasony_data_model.png" alt="DB Diagram"></a> 
 
 - [How to make changes on the diagram](/diagram.md)
 
