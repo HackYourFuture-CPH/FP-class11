@@ -32,15 +32,8 @@ jspm_packages/
 # dotenv environment variables file
 .env
 
-# add gitignore for .vscode and .vscode/settings.json
-.vscode 
-.vscode/settings.json
-
 # React build
 build
-
 dist/
 
 .DS_Store
-
-package-lock.json
