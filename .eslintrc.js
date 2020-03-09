@@ -3,7 +3,7 @@ module.exports = {
   // Add custom rules here
   rules: {
     'arrow-parens': 'off',
-    'quotes': 'off',
+    quotes: 'off',
     'no-unexpected-multiline': 'off',
     'react/jsx-filename-extension': 'off',
     'react/prefer-stateless-function': 'warn',
