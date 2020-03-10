@@ -108,6 +108,30 @@ Generally there are 2 types of components: _presentational_ and _container_ comp
 
 These are general distinctions. In the past you could only make container components as class components as functions could not have state, but with React Hooks functional components can now have state. And with the addition of Context API components can easily communicate with their siblings and jump multiple steps in the hierarchy outside of how props are used to communicate between components. This is very powerful and can be convenient, but can easily make the application overly complex, so the advice is to stick to the separation between Presentational and Container components as closely as possible and only apply for example Context API where there is a justified need.
 
+#### Proptypes
+
+It is highly recommended, but not a requirement, to add proptypes to your components. Proptypes does two things:
+
+- Give you an understandable error in the browser console when you try to use a component with wrong props specified.
+- Provide a way for others to quickly reason about how to use your component when they read your code.
+
+To add proptypes, simply import the proptypes package and specify exactly what data you expect your props to contain on the propTypes property of your component:
+
+    ...
+
+    import PropTypes from 'prop-types;
+
+    ...
+    [your component code]
+    ....
+
+    YourComponent.propTypes = {
+      firstProp: PropTypes.string.isRequired,
+      secondProp: PropTypes.number.isRequired
+    }
+
+Note the capitalization in the example above. It's easy to get wrong. Refer to the [proptypes npm package for further documentation](https://www.npmjs.com/package/prop-types).
+
 #### Using Storybook
 
 Storybook provides a _sandbox environment_ where it is easy to mock components in a visual way. When you create a _presentational component_ you should always add a story so it shows up in storybook. Benefits of using Storybook is:
@@ -126,15 +150,54 @@ Some components may have "knobs" which are UI controls that allows you to intera
 
 #### How to create a new story
 
-...
+The most basic way to create a story for your component is to put this code in your the stories file for your component (my-component.stories.js):
+
+    import React from 'react';
+    import MyComponent from './my-component.component';
+
+    export default { title: 'Some title' };
+
+    export const basicStory = () => <MyComponent firstProp={1} secondProp={2} />;
+
+If you open Storybook, you should see your component under the headline "Some title".
+
+You can have multiple Stories (i.e. multiple mutations of the same component) in your stories file. Just add another export. The story will take its name from the exported variable name:
+
+    ...
+
+    export const basicStory = () => <MyComponent firstProp={1} secondProp={2} />;
+    export const advancedStory = () => <MyComponent firstProp={() => callMagicFunction()} secondProp={{ ...mysteriousObject }} />;
+
+This will result in two stories under the headline "Some title".
+
+You can also add folders to add hierarchical organization to your stories:
+
+    ...
+
+    export default { title: 'Secret Folder/Some title' };
+
+    ...
 
 ##### Adding knobs (optional)
 
-...
+You can add "knobs", i.e. form elements that will allow you to interact with your component by manipulating props in real time, by importing `withKnobs` from the `@storybook/addon-knobs` package and using it as a decorator.
+
+    import React from 'react';
+    import MyComponent from './my-component.component';
+    import { withKnobs, boolean, number } from "@storybook/addon-knobs";
+
+    export default { title: 'CardLayouts/Status Card', decorators: [withKnobs] };
+
+    export const WithKnobs = () => <MyComponent isTrue={boolean('Toggle is true', true)} theNumber={number('Change the number', 42)} />;
+
+Boolean and number which are also imported are widgets to manipulate the props. Boolean will provide a simple true/false checkbox and number will provide a number input. But you can add [many different knobs](https://www.npmjs.com/package/@storybook/addon-knobs), including dropdown selects and color pickers.
+
 
 #### Breaking down components
 
-...
+Always think about how you can break your UI into meaningful reuseable components. On one hand you want to be able to re-use your code as much as possible and on the other you want to avoid premature abstraction into components, meaning that you don't want to create a lot of components that are never actually re-used.
+
+Please refer to (this article)[https://reactjs.org/docs/thinking-in-react.html] for the basics about breaking UI elements into components.
 
 #### Coding guidelines for components
 
@@ -146,7 +209,7 @@ Some components may have "knobs" which are UI controls that allows you to intera
    - `/motorcycle-list/motorcycle-list.container.js`
    - `/motorcycle-card/momotorcycle-card.component.js`
    - `/motorcycle-card/motorcycle-card.styles.js`
-   - `/motorcycle-card/motorcycle-card.story.js`
+   - `/motorcycle-card/motorcycle-card.stories.js`
    - `/motorcycle-card/motorcycle-card.test.js`
 6. File names should be lowercase and composite words `kebab-case` to avoid problems across filesystems.
 7. Component names (i.e. the name of the function in JS) should be ClassCased by general React conventions. Don't include `.component` or `.container` in the JS name.
