@@ -6,7 +6,7 @@ import './stage-details.style.css';
 export default function StageDetails() {
   const [selectedStage, setSelectedStage] = useState('harvest');
 
-  const inputLabelNamePairs = {
+  const inputNameTitlePairs = {
     temperature: 'Temperature (°C)',
     humidity: 'Humidity (g/m3)',
     ph: 'PH',
@@ -43,9 +43,9 @@ export default function StageDetails() {
         {/* First column containing row titles */}
         <div className="stage-values-container">
           <div className="title-column">
-            {Object.keys(inputLabelNamePairs).map((name) => (
+            {Object.keys(inputNameTitlePairs).map((name) => (
               <p className="stage-details-title-item" key={name}>
-                {inputLabelNamePairs[name]}
+                {inputNameTitlePairs[name]}
               </p>
             ))}
           </div>
@@ -54,7 +54,7 @@ export default function StageDetails() {
           {['Optimum', 'Min', 'Max'].map((level) => {
             return (
               <div className={`${level.toLowerCase()}-column`}>
-                {Object.keys(inputLabelNamePairs).map((name) => (
+                {Object.keys(inputNameTitlePairs).map((name) => (
                   <label className="stage-details-value-item">
                     {level}:{' '}
                     <input
