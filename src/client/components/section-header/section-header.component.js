@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SectionHeader.style.css';
+import './section-header.style.css';
 
 export default function SectionHeader({ children, onClick, tabIndex }) {
   return (

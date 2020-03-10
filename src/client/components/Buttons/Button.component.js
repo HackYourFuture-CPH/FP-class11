@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.style.css';
+import './button.style.css';
 import PropTypes from 'prop-types';
 
 /* Button variants: save, delete-crop, export, logout, delete, cancel, toggle */

@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionHeader from './SectionHeader.component';
+import SectionHeader from './section-header.component';
 import { storiesOf } from '@storybook/react';
 
 storiesOf('Headers', module).add('Section Headers', () => {

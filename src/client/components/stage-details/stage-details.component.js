@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SectionHeader from '../SectionHeader/SectionHeader.component';
-import Button from '../Buttons/Button.component';
-import './StageDetails.style.css';
+import SectionHeader from '../section-header/section-header.component';
+import Button from '../buttons/button.component';
+import './stage-details.style.css';
 
 export default function StageDetails() {
   const [selectedStage, setSelectedStage] = useState('harvest');
