@@ -212,7 +212,7 @@ Please refer to [this article](https://reactjs.org/docs/thinking-in-react.html) 
    - `/motorcycle-card/motorcycle-card.stories.js`
    - `/motorcycle-card/motorcycle-card.test.js`
 6. File names should be lowercase and composite words `kebab-case` to avoid problems across filesystems.
-7. Component names (i.e. the name of the function in JS) should be ClassCased by general React conventions. Don't include `.component` or `.container` in the JS name.
+7. Component names (i.e. the name of the function in JS) should be `PascalCased` by general React conventions. Don't include `.component` or `.container` in the JS name.
 
 ### 👍🏽 Code best practices
 
