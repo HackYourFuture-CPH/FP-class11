@@ -207,7 +207,7 @@ Please refer to [this article](https://reactjs.org/docs/thinking-in-react.html) 
 4. All assets (styles, test, stories) associated with a component lives in the component folder.
 5. Postfix filenames with type of the file to make it easier to search for a given file in VSCode. Examples:
    - `/motorcycle-list/motorcycle-list.container.js`
-   - `/motorcycle-card/momotorcycle-card.component.js`
+   - `/motorcycle-card/motorcycle-card.component.js`
    - `/motorcycle-card/motorcycle-card.styles.js`
    - `/motorcycle-card/motorcycle-card.stories.js`
    - `/motorcycle-card/motorcycle-card.test.js`
