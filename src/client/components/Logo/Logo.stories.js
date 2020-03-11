@@ -3,10 +3,8 @@ import Logo from './Logo.component';
 import imageFile from '../../assets/images/logo.png';
 
 export default {
-    title: 'Logo',
-    component: Logo
+  title: 'Logo',
+  component: Logo,
 };
-  
+
 export const LogoImage = () => <Logo srcPath={imageFile} altText="Seasony" />;
-
-

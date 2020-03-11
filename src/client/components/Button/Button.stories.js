@@ -10,8 +10,5 @@ export default {
 };
 
 export const Default = () => (
-  <Button
-    onClick={action('clicked')}
-    text={text('Button Text', 'Login')}
-  />
+  <Button onClick={action('clicked')} text={text('Button Text', 'Login')} />
 );

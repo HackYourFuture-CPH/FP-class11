@@ -6,13 +6,13 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 export default {
   title: 'Input',
   component: Input,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const Default = () => (
   <Input
-    type={text('Input Type','text')} 
-    placeholder={text('Input Placeholder Text', 'Enter value') }
+    type={text('Input Type', 'text')}
+    placeholder={text('Input Placeholder Text', 'Enter value')}
     onChange={action('value changed')}
   />
 );

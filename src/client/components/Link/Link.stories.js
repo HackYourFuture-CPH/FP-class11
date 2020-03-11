@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 export default {
   title: 'Link',
   component: Link,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const ForgotPassword = () => (
