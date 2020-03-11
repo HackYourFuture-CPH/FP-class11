@@ -8,4 +8,5 @@ export const withHTML = () => (
   <Card>
     <h2>Nice card</h2>
     <p>This is a card with some HTML</p>
-  </Card>);
+  </Card>
+);
