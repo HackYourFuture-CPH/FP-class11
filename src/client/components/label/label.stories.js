@@ -1,6 +1,7 @@
 import React from 'react';
 import Label from './label.component';
 import theme from '../../theme';
+
 export default { title: 'Label' };
 
 export const OnTime = () => (
