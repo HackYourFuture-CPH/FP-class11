@@ -1,0 +1,16 @@
+input{
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    box-shadow: inset 4px 4px 8px #C9CBD8,
+                inset -3px -3px 10px rgba(255,255,255,0.9);
+    font-size: 1em;
+    margin: 1.2em 0;
+    outline: none;
+    padding: 1.2em;
+    width: 90%;
+}
+
+input:-webkit-autofill {
+    background:#EBECF0;
+}
