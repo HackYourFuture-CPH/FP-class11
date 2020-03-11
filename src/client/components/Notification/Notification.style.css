@@ -1,0 +1,8 @@
+div.error {
+  background: #f27eb1;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 0.6em 1.6em;
+  text-align: left;
+}

@@ -16,3 +16,12 @@ export const Default = () => (
     onChange={action('value changed')}
   />
 );
+
+export const Disabled = () => (
+  <Input
+    type={text('Input Type', 'text')}
+    placeholder={text('Input Placeholder Text', 'Enter value')}
+    onChange={action('button is disabled, not possible to change value')}
+    disabled
+  />
+);

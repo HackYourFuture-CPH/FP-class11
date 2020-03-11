@@ -3,30 +3,53 @@ import './Container.style.css';
 import PropTypes from 'prop-types';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
-import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faKey,
+  faExclamationCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
 import InputLogin from '../InputLogin/InputLogin.component';
 import Button from '../Button/Button.component';
 import Logo from '../Logo/Logo.component';
 import Link from '../Link/Link.component';
+import Notification from '../Notification/Notification.component';
 
 import imageFile from '../../assets/images/logo.png';
 
-export default function Container({ title }) {
+export default function Container({ title, error }) {
   return (
     <div className="container">
       <Logo srcPath={imageFile} altText="Seasony" />
       <h2>{title}</h2>
       <form>
-        <InputLogin
-          type={text('Input Type', 'email')}
-          placeholder={text('Input Placeholder Text', 'Email')}
-          onChange={action('email value changed')}
-          icon={faUser}
-        />
+        {error && (
+          <Notification
+            text={text(
+              'Error text',
+              'This is error message for wrong email address.',
+            )}
+          />
+        )}
+        {error ? (
+          <InputLogin
+            type={text('Input Type', 'email')}
+            placeholder={text('Input Placeholder Text Email', 'Email')}
+            onChange={action('email value changed')}
+            icon={faExclamationCircle}
+            error
+          />
+        ) : (
+          <InputLogin
+            type={text('Input Type', 'email')}
+            placeholder={text('Input Placeholder Text Email', 'Email')}
+            onChange={action('email value changed')}
+            icon={faUser}
+          />
+        )}
         <InputLogin
           type={text('Input Type', 'password')}
-          placeholder={text('Input Placeholder Text', 'Password')}
+          placeholder={text('Input Placeholder Text pAssword', 'Password')}
           onChange={action('password value changed')}
           icon={faKey}
         />
@@ -45,6 +68,11 @@ export default function Container({ title }) {
   );
 }
 
+Container.defaultProps = {
+  error: false,
+};
+
 Container.propTypes = {
   title: PropTypes.string.isRequired,
+  error: PropTypes.bool,
 };

@@ -11,3 +11,7 @@ export default {
 export const LoginContainer = () => (
   <Container title={text('title', 'Login')} />
 );
+
+export const ErrorContainer = () => (
+  <Container title={text('title', 'Login')} error />
+);

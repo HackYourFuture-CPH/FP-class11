@@ -1,26 +1,37 @@
 .form-input {
-    position: relative;
+  position: relative;
 }
 
 .form-input input {
-    padding-left: 70px;
-    width:80%;
+  padding-left: 70px;
+  width: 80%;
 }
 
 .form-input i {
-    background-color: #C9CBD8;
-    border-radius: 40px 0 0 40px;
-    color: #666;
-    left: 0px;
-    position: absolute;
-    padding: 20px 17px 20px 23px;
-    transition: 0.3s;
-    top: 21px;
+  background-color: #c9cbd8;
+  border-radius: 2.2em 0 0 2.2em;
+  color: #666;
+  left: 0px;
+  position: absolute;
+  padding: 1.1em 0.8em 1em 1.3em;
+  transition: 0.3s;
+  top: 1.2em;
 }
 
 .form-input input:focus + i,
 .form-input input:focus + i {
-    background: #898B94;
-    color:#fff;
+  background: #898b94;
+  color: #fff;
 }
 
+.form-input input.error {
+  background-color: transparent;
+  border: 2px solid #f27eb1;
+}
+
+.form-input input.error + i,
+.form-input input.error + i {
+  background: #f27eb1;
+  color: #fff;
+  padding-bottom: 1.1em;
+}
