@@ -9,7 +9,7 @@
 
 ## 📝 Table of Contents
 
-- [About](#about)
+- [About](#about-)
 - [Project's Calendar](#-projects-calendar)
 - [The Customer](#-the-customer)
   - [Business Glossary](/BusinessGlossary.md)
@@ -24,10 +24,10 @@
   - [Working with Storybook](#-working-with-storybook)
   - [Working with AWS - Amazon Services](#-working-with-aws---amazon-services) - [Testing](#testing)
 - [Getting Started](#getting-started)
-  - [Installations](/installations.md) - [Code linting](#code-linting)
+  - [Installations](/installations.md) - [Code linting](#code-linting-and-formatting)
 - [Getting the certificate](/certificate.md)
-- [Authors](#authors)
-- [License](#license)
+- [Authors](#-authors)
+- [License](#-license)
 
 ## 🧐 About <a name = "about"></a>
 

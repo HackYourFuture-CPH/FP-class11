@@ -1,7 +1,16 @@
 import React from 'react';
 import Label from './label.component';
-
+import theme from '../../theme';
 export default { title: 'Label' };
 
-export const active = () => <Label title="An active label" active={true} />;
-export const inactive = () => <Label title="An inactive label" active={false} />;
+export const OnTime = () => (
+  <Label title="On time" backgroundColor={theme.colors.primary} />
+);
+
+export const checkPH = () => (
+  <Label title="Check PH" backgroundColor={theme.colors.danger} />
+);
+
+export const delayed = () => (
+  <Label title="Delayed" backgroundColor={theme.colors.danger} />
+);
