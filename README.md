@@ -197,7 +197,7 @@ Boolean and number which are also imported are widgets to manipulate the props. 
 
 Always think about how you can break your UI into meaningful reuseable components. On one hand you want to be able to re-use your code as much as possible and on the other you want to avoid premature abstraction into components, meaning that you don't want to create a lot of components that are never actually re-used.
 
-Please refer to (this article)[https://reactjs.org/docs/thinking-in-react.html] for the basics about breaking UI elements into components.
+Please refer to [this article](https://reactjs.org/docs/thinking-in-react.html) for the basics about breaking UI elements into components.
 
 #### Coding guidelines for components
 
