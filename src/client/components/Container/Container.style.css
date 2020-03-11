@@ -1,0 +1,29 @@
+.container {
+    background: #EBECF0;
+    box-shadow: 5px 5px 20px #C9CBD8,
+                -7px -7px 20px rgba(255,255,255,0.8);
+    border-radius: 20px;
+    color: #666;
+    font-family: Proxima Nova, sans-serif;
+    height: 28em;
+    padding:40px;
+    text-align: center;
+    width: 30em;
+}
+
+.container h2 {
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin-top: 1em;
+}
+
+.right {
+    margin: -1em 0 0;
+    text-align: right;
+}

@@ -1,0 +1,26 @@
+.form-input {
+    position: relative;
+}
+
+.form-input input {
+    padding-left: 70px;
+    width:80%;
+}
+
+.form-input i {
+    background-color: #C9CBD8;
+    border-radius: 40px 0 0 40px;
+    color: #666;
+    left: 0px;
+    position: absolute;
+    padding: 20px 17px 20px 23px;
+    transition: 0.3s;
+    top: 21px;
+}
+
+.form-input input:focus + i,
+.form-input input:focus + i {
+    background: #898B94;
+    color:#fff;
+}
+
