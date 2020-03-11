@@ -21,12 +21,16 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(PropTypes.string),
+  children: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf([
+    'save',
+    'delete-crop',
+    'export',
+    'cancel',
+    'delete',
+    'logout',
+    'toggle',
   ]).isRequired,
-  variant: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   toggled: PropTypes.bool,
 };
