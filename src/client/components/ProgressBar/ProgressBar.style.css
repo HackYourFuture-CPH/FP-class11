@@ -1,0 +1,60 @@
+.progressbar {
+  width: 1000px;
+  background-color: gainsboro;
+  height: 2em;
+  border-style: groove;
+  border-radius: 1em;
+  padding: 0;
+}
+.comp-left {
+  background-color: blueviolet;
+  width: 25%;
+  height: 2em;
+  margin: 0;
+  border-bottom-left-radius: 2em;
+  border-top-left-radius: 2em;
+  padding: 0;
+}
+.compmid {
+  background-color: rgb(86, 86, 214);
+  width: 25%;
+  height: 2.4em;
+  margin: 0;
+  padding: 0;
+  border-style:groove;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+    box-sizing: border-box;
+}
+.compmid:first-child {
+  background-color: rgb(86, 86, 214);
+  width: 25%;
+  height: 2.4em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-bottom-left-radius: 2em;
+  border-top-left-radius: 2em;
+  border-left: none;
+}
+.compmid:last-child {
+  background-color: rgb(86, 86, 214);
+  width: 25%;
+  height: 2.4em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+  border-right: none;
+}
+.comp-right {
+  background-color: blueviolet;
+  width: 25%;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+}
