@@ -1,12 +1,14 @@
+/* to be deleted later when we use use global style */
 * {
   margin: 0;
   padding: 0;
   color: #3b4349;
   font-family: Proxima Nova, sans-serif;
-} /* to be deleted later when we use use global vars */
+}
 
 .footer {
-  background-color: #ebecf0; /* to be deleted later when we use use global vars */
+  /* background-color to be deleted later when we use use global style */
+  background-color: #ebecf0;
   height: 5em;
   text-align: center;
   line-height: 5em;
