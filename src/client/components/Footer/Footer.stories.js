@@ -1,7 +1,7 @@
-import React from "react";
-import Footer from "./Footer.component";
+import React from 'react';
+import Footer from './Footer.component';
 
-export default { title: "FooterLayouts/Footer" };
+export default { title: 'FooterLayouts/Footer' };
 
 export const AppFooter = () => (
   <Footer>
