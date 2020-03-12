@@ -5,9 +5,9 @@ import './ProgressBar.style.css';
 export default function ProgressBar() {
   const passedDays = 13;
   // const [state, setSate] = useState(60);
-  const days = 60
+  const days = 60;
   const data = [];
-  for (let i = 0; i < days; i+1) {
+  for (let i = 0; i < days; i + 1) {
     data.push(i);
   }
   return (
@@ -25,15 +25,14 @@ export default function ProgressBar() {
                 }}
               />
             );
-          } else {
-            return (
-              <div
-                className="dayComponents"
-                key={element}
-                style={{ width: 1000 / data.length }}
-              />
-            );
           }
+          return (
+            <div
+              className="dayComponents"
+              key={element}
+              style={{ width: 1000 / data.length }}
+            />
+          );
         })}
       </div>
     </div>
