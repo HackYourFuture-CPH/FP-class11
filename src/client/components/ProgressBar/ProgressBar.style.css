@@ -6,31 +6,23 @@
   border-radius: 1em;
   padding: 0;
 }
-.comp-left {
-  background-color: blueviolet;
-  width: 25%;
-  height: 2em;
-  margin: 0;
-  border-bottom-left-radius: 2em;
-  border-top-left-radius: 2em;
-  padding: 0;
-}
 .compmid {
   background-color: rgb(86, 86, 214);
   width: 25%;
-  height: 2.4em;
+  height: 2em;
   margin: 0;
   padding: 0;
-  border-style:groove;
+  border-style: groove;
   border-left: none;
   border-top: none;
   border-bottom: none;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
 }
 .compmid:first-child {
   background-color: rgb(86, 86, 214);
   width: 25%;
-  height: 2.4em;
+  height: 2em;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -41,7 +33,7 @@
 .compmid:last-child {
   background-color: rgb(86, 86, 214);
   width: 25%;
-  height: 2.4em;
+  height: 2em;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,12 +41,39 @@
   border-top-right-radius: 2em;
   border-right: none;
 }
-.comp-right {
-  background-color: blueviolet;
-  width: 25%;
-  height: 2em;
-  margin: 0;
-  padding: 0;
-  border-bottom-right-radius: 2em;
-  border-top-right-radius: 2em;
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 60px;
+  background-color: rgb(86, 86, 214);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%;
+  left: 90%;
+  margin-left: -30px;
+}
+
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  rgb(86, 86, 214) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
