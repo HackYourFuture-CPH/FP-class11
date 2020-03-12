@@ -1,4 +1,4 @@
-/* to be deleted later when we use use global style */
+/* TODO: to be deleted later when we use use global style */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 .footer {
-  /* background-color to be deleted later when we use use global style */
+  /* TODO: background-color to be deleted later when we use use global style */
   background-color: #ebecf0;
   height: 5em;
   text-align: center;
