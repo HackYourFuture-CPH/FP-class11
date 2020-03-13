@@ -1,0 +1,114 @@
+/*Log button on front end styling */
+.Logbutton {
+  position: absolute;
+  transition: 0.5s ease;
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(255, 105, 180);
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  left: 80%;
+  top: 2%;
+}
+
+.Logbutton:hover {
+  background-color: rgb(255, 105, 180);
+  color: white;
+}
+
+/* styling whole popup window */
+.popup-content {
+  width: 400px !important;
+  height: 350px !important;
+  background-color: #d5d8dc !important;
+  -webkit-box-shadow: 5px 5px 6px -1px rgba(213, 216, 220, 0.68);
+  box-shadow: 7px 7px 6px -1px rgba(213, 216, 220, 0.68);
+  border-radius: 5%;
+}
+
+.modal {
+  font-size: 20px;
+  height: 325px;
+  width: 400px;
+  background-color: #d5d8dc;
+  border-radius: 5%;
+}
+/*styling modal header*/
+.modal > .header {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+  margin: 1em 0 0.5em 0;
+  font-weight: 1000;
+  font-family: 'Courier', sans-serif;
+  position: relative;
+  font-size: 30px;
+  color: black;
+  text-transform: uppercase;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 700;
+  text-align: center;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+/*close button on top right corner of pop up window styling*/
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+/* Confoirm Logout button on pop up window styling */
+.ConfirmLogout {
+  transition: 0.5s ease;
+  background-color: white;
+  background: rgb(255, 105, 180);
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.ConfirmLogout:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* Confoirm Cancellation button on pop up window styling*/
+.ConfirmCancel {
+  transition: 0.5s ease;
+  background-color: white;
+  background: #aeb6bf;
+  color: black;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-transform: uppercase;
+  box-shadow: 5px 10px 5px #888888;
+  margin-top: 2%;
+}
+
+.ConfirmCancel:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
