@@ -6,7 +6,7 @@ export default function ProgressBar() {
   const CropDaysPassed = 50;
   let show = "hidden";
   const arr = [];
-  // const [days, setDays] = useState(CropTotalDays);
+  // // const [days, setDays] = useState(CropTotalDays);
   for (let i = 0; i < CropTotalDays; i += 1) arr.push(i);
 
   return (
@@ -32,6 +32,7 @@ export default function ProgressBar() {
               </div>
             );
           }
+
           return (
             <div
               type="text"
