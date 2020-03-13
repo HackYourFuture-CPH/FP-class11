@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './stage-details.style.css';
 import SectionHeader from '../section-header/section-header.component';
-import Button from '../buttons/button.component';
+import Button from '../button/button.component';
 
 export default function StageDetails({
   inputNameTitlePairsObj,
