@@ -8,7 +8,7 @@ const ModalApp = () => {
 
   return (
     <div>
-      <button className="base-btn" onClick={toggle}>
+      <button type="button" className="base-btn" onClick={toggle}>
         DELETE CROP
       </button>
       <ModalList
