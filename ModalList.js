@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const ModalList = ({ isShowing, hide }) =>
   isShowing
@@ -37,7 +37,7 @@ const ModalList = ({ isShowing, hide }) =>
             </div>
           </div>
         </React.Fragment>,
-        document.body
+        document.body,
       )
     : null;
 

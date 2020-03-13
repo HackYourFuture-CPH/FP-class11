@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Modal = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -9,7 +9,7 @@ const Modal = () => {
 
   return {
     isShowing,
-    toggle
+    toggle,
   };
 };
 
