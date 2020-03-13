@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.chart-container {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 2rem 0;
+}
