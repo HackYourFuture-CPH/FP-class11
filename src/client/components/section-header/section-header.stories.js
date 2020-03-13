@@ -1,8 +1,15 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
+import { withKnobs } from '@storybook/addon-knobs';
 import SectionHeader from './section-header.component';
-import { storiesOf } from '@storybook/react';
 
-storiesOf('Headers', module).add('Section Headers', () => {
+export default {
+  component: SectionHeader,
+  title: 'Headers',
+  decorators: [withKnobs],
+};
+
+export const SectionHeaders = () => {
   return (
     <>
       <div
@@ -17,7 +24,10 @@ storiesOf('Headers', module).add('Section Headers', () => {
         {['Crop', 'Stage Details', 'Trays and Tanks', 'Costs'].map(
           (title, index) => {
             return (
-              <SectionHeader onClick={() => null} tabIndex={index}>
+              <SectionHeader
+                onClick={action('header clicked')}
+                tabIndex={index}
+              >
                 {title}
               </SectionHeader>
             );
@@ -27,4 +37,4 @@ storiesOf('Headers', module).add('Section Headers', () => {
       <pre>{`<SectionHeader onClick={handleClick} tabIndex={0}>Crop</SectionHeader>`}</pre>
     </>
   );
-});
+};
