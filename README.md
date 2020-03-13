@@ -4,8 +4,7 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Boilerplate for Final projects
-</h3>
+<h3 align="center">Hack Your Future Class 11 Final Project</h3>
 
 
 
@@ -40,7 +39,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is for the Final Project of Class11. A collaboration bettwen HYF and Seasony.   
+This repository is for the Final Project of Class11. A collaboration between HYF and Seasony.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -88,7 +87,10 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 
 #### 🗄️ Database Model Diagram
 
-*Add here the DB Model Diagram* - Use https://dbdiagram.io/
+*Check the DB Model Diagram* - Use https://dbdiagram.io/d/5e58dfd24495b02c3b878ba4
+
+
+ <img width="40%" height="40%" src="/seasony_data_model.png" alt="DB Diagram"></a> 
 
 - [How to make changes on the diagram](/diagram.md)
 
@@ -165,11 +167,19 @@ If you get this error: `Error: ENOENT: no such file or directory, scandir`
 
 Then try and run this script: `npm rebuild node-sass`
 
-#### Code linting
+##### Recommended plugins
 
-To ensure we all code the same way, we are using linting in this project! We use prettier to do the linting for us. To Use the linting in this project, set your code editor up with the `.prettierrc.js` files. 
+This repository comes with some recommended plugins. Currently Eslint, Prettier and a spellchecking plugin. You will be prompted to install these plugins when you first open VSCode. Please accept installing these plugins as they are there to make it more convenient for you to work with the codebase. If you close the notification by mistake you can go to the extensions sidebar and search for `@recommended` to view the workspace recommendations.
 
-In Visual Studio code, go to file -> Preferences -> settings -> Search for `prettier: config path` -> In the input write `.prettierrc.js`
+##### Code linting and formatting
+
+To ensure we all code the same way, we are using linting and automatic code formatting in this project.
+
+For linting we use Eslint, which will check your code for "common bad coding practices" that may introduce bugs that are hard to debug. Eslint will run as an extension inside VSCode that will give you small hints when you performing poor coding practices.
+
+For code formatting we use Prettier. The purpose of code formatting is to ensure that everyone formats their code in the same way so we don't get commits where one person is changing all quotes from single to double quotes and then the next commit another person is doing the reverse. This would fill the PRs with a lot of noise and make it hard to focus on essential changes. Prettier works by running an extension in VSCode that will format your code on every save. If you're surprised that your code is changing when you save, don't worry. This is Prettier doing it's job. You may disagree on some of the formatting rules, but Prettier works according to the rules we have specified for the project, so don't try to counteract it.
+
+Besides extensions for Prettier and Eslint in VSCode, we run a small script that will check that Prettier and ESlint has done their job right before you commit. If you get an error when committing you may need to lint and format your code. If it is not done automatically in VSCode, you can run `npm run code:clean` to do it on the command line instead.
 
 ## 📜 [Getting the HackYourFuture certificate](/certificate.md)
 
@@ -183,7 +193,7 @@ In Visual Studio code, go to file -> Preferences -> settings -> Search for `pret
 * [**Benjamin Hughes**](https://github.com/benna100)
 * [**Zaki Wasik**](https://github.com/zkwsk/)
 * [**Filip Malek**](https://github.com/REX500)
-* **Daniel Fernandes**
+* [**Daniel Fernandes**](https://github.com/dpfernandes)
 
 
 ## 📝 License
