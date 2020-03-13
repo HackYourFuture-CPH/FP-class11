@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './button.component';
 import { storiesOf } from '@storybook/react';
+import Button from './button.component';
 
 storiesOf('Buttons', module)
   .add('Save Crop Details', () => {
