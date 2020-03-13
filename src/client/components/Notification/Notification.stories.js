@@ -1,5 +1,5 @@
 import React from 'react';
-import Notification from './Notification.component';
+import Notification from './notification.component';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {

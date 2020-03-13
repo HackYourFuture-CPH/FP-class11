@@ -1,5 +1,5 @@
 import React from 'react';
-import './Logo.style.css';
+import './logo.style.css';
 import PropTypes from 'prop-types';
 
 export default function Logo({ srcPath, altText }) {

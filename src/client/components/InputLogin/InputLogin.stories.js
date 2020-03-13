@@ -1,5 +1,5 @@
 import React from 'react';
-import InputLogin from './InputLogin.component';
+import InputLogin from './inputLogin.component';
 import { action } from '@storybook/addon-actions';
 import {
   faUser,
@@ -23,7 +23,7 @@ export const Email = () => (
   />
 );
 
-export const Paswword = () => (
+export const Password = () => (
   <InputLogin
     type={text('Input Type', 'password')}
     placeholder={text('Input Placeholder Text', 'Password')}

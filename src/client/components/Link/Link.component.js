@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.style.css';
+import './link.style.css';
 import PropTypes from 'prop-types';
 
 export default function Link({ href, text }) {

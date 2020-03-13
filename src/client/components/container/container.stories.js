@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from './Container.component';
+import Container from './container.component';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {

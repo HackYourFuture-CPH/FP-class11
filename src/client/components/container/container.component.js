@@ -1,5 +1,5 @@
 import React from 'react';
-import './Container.style.css';
+import './container.style.css';
 import PropTypes from 'prop-types';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
@@ -9,11 +9,11 @@ import {
   faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
-import InputLogin from '../InputLogin/InputLogin.component';
-import Button from '../Button/Button.component';
-import Logo from '../Logo/Logo.component';
-import Link from '../Link/Link.component';
-import Notification from '../Notification/Notification.component';
+import InputLogin from '../inputLogin/inputLogin.component';
+import Button from '../button/button.component';
+import Logo from '../logo/logo.component';
+import Link from '../link/link.component';
+import Notification from '../notification/notification.component';
 
 import imageFile from '../../assets/images/logo.png';
 

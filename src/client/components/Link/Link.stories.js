@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link.component';
+import Link from './link.component';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {

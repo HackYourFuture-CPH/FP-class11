@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './Logo.component';
+import Logo from './logo.component';
 import imageFile from '../../assets/images/logo.png';
 
 export default {

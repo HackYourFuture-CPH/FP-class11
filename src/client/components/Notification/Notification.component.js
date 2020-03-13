@@ -1,5 +1,5 @@
 import React from 'react';
-import './Notification.style.css';
+import './notification.style.css';
 import PropTypes from 'prop-types';
 
 export default function Notification({ text }) {

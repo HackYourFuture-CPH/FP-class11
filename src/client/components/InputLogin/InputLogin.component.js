@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Input/Input.style.css';
-import './InputLogin.style.css';
+import '../input/input.style.css';
+import './inputLogin.style.css';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

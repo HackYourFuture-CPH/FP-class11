@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './Input.component';
+import Input from './input.component';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
@@ -21,7 +21,6 @@ export const Disabled = () => (
   <Input
     type={text('Input Type', 'text')}
     placeholder={text('Input Placeholder Text', 'Enter value')}
-    onChange={action('button is disabled, not possible to change value')}
     disabled
   />
 );
