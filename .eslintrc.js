@@ -13,6 +13,7 @@ module.exports = {
     'import/order': 'off',
     'import/prefer-default-export': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    'no-plusplus': 'off',
     'no-restricted-globals': 'off',
     'no-unexpected-multiline': 'off',
     'no-use-before-define': 'off',
