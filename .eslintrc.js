@@ -5,6 +5,7 @@ module.exports = {
     'arrow-parens': 'off',
     quotes: 'off',
     'no-unexpected-multiline': 'off',
+    'react/jsx-boolean-value': 'off',
     'react/jsx-filename-extension': 'off',
     'react/prefer-stateless-function': 'warn',
     'react/prop-types': 'warn',
