@@ -3,7 +3,7 @@ import Container from './container.component';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Container',
+  title: 'ContainerLayouts/Container',
   component: Container,
   decorators: [withKnobs],
 };

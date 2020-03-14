@@ -29,9 +29,12 @@
   border: 2px solid #f27eb1;
 }
 
-.form-input input.error + i,
 .form-input input.error + i {
   background: #f27eb1;
   color: #fff;
-  padding-bottom: 1.1em;
+  padding-bottom: 1.2em;
+}
+
+.form-input input.error + i path {
+  color: #fff !important;
 }

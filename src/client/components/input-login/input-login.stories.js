@@ -1,5 +1,5 @@
 import React from 'react';
-import InputLogin from './inputLogin.component';
+import InputLogin from './input-login.component';
 import { action } from '@storybook/addon-actions';
 import {
   faUser,

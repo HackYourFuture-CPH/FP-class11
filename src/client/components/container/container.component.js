@@ -9,7 +9,7 @@ import {
   faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
-import InputLogin from '../inputLogin/inputLogin.component';
+import InputLogin from '../input-login/input-login.component';
 import Button from '../button/button.component';
 import Logo from '../logo/logo.component';
 import Link from '../link/link.component';
