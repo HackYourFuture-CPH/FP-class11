@@ -1,6 +1,6 @@
 import React from 'react';
 import LineChartForDashboard from './LineChartForDashboard.component';
-import { withKnobs, array, number, color } from '@storybook/addon-knobs';
+import { withKnobs, number, color } from '@storybook/addon-knobs';
 
 export default {
   title: 'LineChart',

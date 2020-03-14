@@ -18,7 +18,7 @@ const UpdateDateRange = ({ date, text }) => {
 };
 
 UpdateDateRange.propTypes = {
-  type: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };
 
