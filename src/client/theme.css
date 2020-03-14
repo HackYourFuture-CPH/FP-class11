@@ -5,7 +5,6 @@
   --red: #f27eb1;
   --green: #709d68;
   --light-blue: #73abd7;
-  --custom-magenta: magenta;
 
   /* Map colors to logical names */
   --interaction-color: var(--light-blue);
