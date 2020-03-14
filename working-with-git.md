@@ -36,8 +36,8 @@ When you create a new branch:
     git checkout -b [branch-name]
 
 👍 You should do:
-  
- git checkout -b [branch-name] origin/develop
+
+    git checkout -b [branch-name] origin/develop
 
 This will make your new branch from the copy of develop that is on github, so if you accidentally get some changes in your local develop that will not matter.
 
