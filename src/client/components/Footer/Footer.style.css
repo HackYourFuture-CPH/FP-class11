@@ -9,7 +9,6 @@
 .footer {
   /* TODO: background-color to be deleted later when we use use global style */
   background-color: #ebecf0;
-  background-color: var(--custom-magenta);
   height: 5em;
   text-align: center;
   line-height: 5em;

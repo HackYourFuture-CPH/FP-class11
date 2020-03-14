@@ -1,21 +1,21 @@
 .label {
   background-color: var(--interaction-color);
-  color: white;
+  color: var(--white);
   display: inline-block;
   padding: 10px;
 }
 
 .label-primary {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--white);
 }
 
 .label-interaction {
   background-color: var(--interaction-color);
-  color: white;
+  color: var(--white);
 }
 
 .label-danger {
   background-color: var(--danger-color);
-  color: white;
+  color: var(--white);
 }
