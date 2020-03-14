@@ -1,5 +1,3 @@
-@import '../../theme.css';
-
 .label {
   background-color: var(--interaction-color);
   color: white;
