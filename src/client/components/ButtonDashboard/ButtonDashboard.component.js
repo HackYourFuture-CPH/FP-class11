@@ -4,9 +4,9 @@ import UpdateDateRange from '../DateRange/UpdateDateRange.component';
 
 const ButtonDashboard = ({ buttonText, active }) => {
   return (
-    <button>
+    <button type="button">
       {active ? (
-        <UpdateDateRange type="date" text="update range" />
+        <UpdateDateRange date="date" text="update range" />
       ) : (
         buttonText
       )}

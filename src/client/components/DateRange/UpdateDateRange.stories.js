@@ -1,7 +1,9 @@
 import React from 'react';
 
-import UpdateDateRange from './UpdateDateRange.component'
+import UpdateDateRange from './UpdateDateRange.component';
 
-export default {title: 'updaterange'}
+export default { title: 'updaterange' };
 
-export const renderDateRange = () => <UpdateDateRange type='date' text='Update range'/>
+export const renderDateRange = () => (
+  <UpdateDateRange date="date" text="Update range" />
+);
