@@ -22,7 +22,7 @@ export const CropSummaryCard = () => {
   const prodEndDate = '11/03/2020';
   const stageName = 'Seeding';
   const dayCount = 2;
-  const stat = 1;
+  const stat = 4;
   let classname;
   let msg;
 
@@ -67,7 +67,7 @@ export const CropSummaryCard = () => {
     <div className="card">
       <div className="card-header">
         <Header title="STATUS"> </Header>
-        <Status message={msg} classname={classname} />
+        <Status message={msg} classname={classname} stat={stat} />
       </div>
       <Content
         harvestDayLeft={harvestDayLeft}
@@ -134,11 +134,5 @@ export const Content = ({
 };
 
 CropSummaryCard.propTypes = {
-  harvestDayLeft: PropTypes.node.string,
-  projDayLeft: PropTypes.isRequire,
-  prodStartDate: PropTypes.string,
-  prodEndDate: PropTypes.string,
-  stageName: PropTypes.string,
-  dayCount: PropTypes.string,
   title: PropTypes.string,
 };
