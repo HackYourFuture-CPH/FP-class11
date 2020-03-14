@@ -1,0 +1,9 @@
+.form-container {
+  margin-top: 0px;
+  position: relative;
+  height: 250px;
+  font-size: 1.6rem;
+  border-radius: 40px;
+  align-items: left;
+  width: 69em;
+}

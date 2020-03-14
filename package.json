@@ -58,6 +58,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-light-accordion": "^0.1.4",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
     "react-social-login-buttons": "^3.0.0",
@@ -69,6 +70,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^5.3.14",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "concurrently": "^4.1.0",
@@ -79,6 +81,7 @@
     "mock-knex": "^0.4.7",
     "nodemon": "^1.12.1",
     "poetic": "^1.2.6",
+    "prop-types": "^15.7.2",
     "sequelize-cli": "^5.4.0",
     "webpack-dev-server": "3.7.2"
   },

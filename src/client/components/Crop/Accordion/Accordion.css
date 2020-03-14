@@ -1,0 +1,96 @@
+.accordion {
+  border-radius: 5px;
+  width: 69em;
+}
+.accordion .accordion-item:first-child .title {
+  width: 69em;
+  background: #709d68;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2em;
+  margin: 0.5em;
+  color: #ffffff;
+  font-family: Proxima Nova, sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 62.5%;
+  line-height: 10px;
+  /* button-shadow */
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
+  border-radius: 40px;
+
+  z-index: 2000;
+  margin-top: 2px;
+  transition: all 0.2s ease-in;
+}
+.accordion .accordion-item:last-child .title {
+  width: 69em;
+  background: #709d68;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2em;
+  margin: 0.5em;
+  color: #ffffff;
+  font-family: Proxima Nova, sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 62.5%;
+  line-height: 10px;
+  /* button-shadow */
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
+  border-radius: 40px;
+
+  z-index: 2000;
+  margin-top: 2px;
+  transition: all 0.2s ease-in;
+}
+.accordion .accordion-item .title {
+  text-align: start;
+  width: 69em;
+  background: #709d68;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2em;
+  margin: 0.5em;
+  color: #ffffff;
+  font-family: Proxima Nova, sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 62.5%;
+  line-height: 10px;
+  /* button-shadow */
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
+  border-radius: 40px;
+
+  z-index: 2000;
+  margin-top: 2px;
+  transition: all 0.2s ease-in;
+}
+
+.accordion .accordion-item .panel {
+  max-height: 0;
+  width: 69em;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
+}
+.accordion .accordion-item.active .title {
+  font-family: Proxima Nova, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 62.5%;
+  line-height: 10px;
+  /* button-shadow */
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
+  border-radius: 40px;
+}
+
+.accordion .accordion-item.active .panel {
+  max-height: 400px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 62.5%;
+  line-height: 4px;
+  margin: 0.5em;
+  padding-left: 2em;
+}

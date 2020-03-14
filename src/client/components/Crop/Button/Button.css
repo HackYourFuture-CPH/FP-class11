@@ -1,0 +1,22 @@
+.Button-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  float: left;
+  background-color: lightblue;
+  color: white;
+
+  width: 22em;
+  height: 2.5em;
+
+  font-family: Proxima Nova, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  /* Button shadow */
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
+  border-radius: 40px;
+  border: none;
+}
