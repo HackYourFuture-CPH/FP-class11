@@ -1,0 +1,10 @@
+.sidebar-wrapper {
+    text-align: center;
+     display:flex;
+     flex-direction: column;
+     position: relative;
+     width: 130px;
+     height:100vh;
+     border: none;
+     background-color: #ECEDF1;
+ }
