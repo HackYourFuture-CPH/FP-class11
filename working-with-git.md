@@ -1,8 +1,7 @@
-
 ## 💻 Working with GIT <a name="git"></a>
 
-You will be working directly on the main repo and making Pull Request on the Develop Branch, 
-NEVER on the Master branch. PR on the Master Branch *will not be merged*, they will be closed.
+You will be working directly on the main repo and making Pull Request on the Develop Branch,
+NEVER on the Master branch. PR on the Master Branch _will not be merged_, they will be closed.
 
 Working with git is a HUGE part of the final project. This is how you should be
 working with git in the final project:
@@ -14,6 +13,66 @@ This repo has two branches:
 - `develop` - A branch where we do all development. That means that all feature
   branches should be merged into this branch. Very important!
 
+Both branches are "protected" on github, meaning that you cannot push to them directly.
+Instead you need to create a new branch, push that branch and create a pull request and
+get your code reviewed through the github interface before merging into develop.
+
+Mentors will take care of regularly merging develop into master, so you don't need to
+worry about that.
+
+When you clone your repository you will have a local copy of the develop and master
+branches, respectively, but we promote a branching strategy where should not use
+these branches at all. Instead you make new branches off of the remote master branch.
+
+Here is how to do that.
+
+### Branching off remote develop branch directly
+
+When you create a new branch:
+
+👎 Instead of doing:
+
+    git checkout develop
+    git checkout -b [branch-name]
+
+👍 You should do:
+  
+ git checkout -b [branch-name] origin/develop
+
+This will make your new branch from the copy of develop that is on github, so if you accidentally get some changes in your local develop that will not matter.
+
+Similarly, when you merge new changes into your branch from develop:
+
+👎 Instead of doing this:
+
+    git checkout develop
+    git pull
+    git checkout [branch-name]
+    git merge develop
+
+👍 Do this:
+
+    git checkout [branch-name]
+    git pull origin develop
+
+💡 As a final tip, it is recommended to make things a little smoother, it is recommended to set this git configuration:
+
+    git config --global push.default current
+
+Doing so means that git will use your current branchname as default whenever you push, so instead of doing this when pushing:
+
+    git push --set-upstream origin [branch-name]
+
+You can simply do this:
+
+    git push
+
+And the branch should be pushed to the same branchname on github as you gave your branch locally. (Why would you have different names locally and remote anyway?)
+
+Check this article for more details: https://dev.to/slashgear_/git-tip-why-you-should-not-keep-a-local-master-branch-3400
+
+### Detailed example of pushing a feature to git
+
 Lets get started with our first feature. Lets say we should build a cookies
 popup:
 
@@ -21,7 +80,7 @@ popup:
 2. BEFORE WE WRITE ONE SINGLE LINE OF CODE, create the feature branch where we
    will do all our cookies popup development. First make sure that you are
    branching out from develop: `git checkout develop`, then create a new branch:
-   `git checkout -b feature/cookies-popup`.
+   `git checkout -b feature/cookies-popup origin/develop`.
    - If you fail to checkout develop and branch out from master or some other
      branch, you will see strange changes pop up when you try to make your pull
      request and merge it into develop. This means you have to "move" all of
@@ -29,7 +88,7 @@ popup:
      develop, which is a pain. _This is probably the most common beginners
      mistake when using git!_
    - The `feature/` prefix is not mandatory for this project, but is used by
-     many comapnies and is a good habit to indicate that this branch will add a
+     many companies and is a good habit to indicate that this branch will add a
      new "feature" containing a cookie popup.
    - In contrast you can prefix a branch with `hotfix/` to indicate that you are
      fixing an urgent bug that may need to bypass some of the regular testing
@@ -190,4 +249,3 @@ origin	git@github.com:HackYourFuture-CPH/ov-class09-fp.git (push)
         - When you have a merge conflict, git is in a state of being "in the middle of a commit". If you run `git status` you can confirm that you are in the middle of a merge.
         - You must tell git that you have fixed the merge conflict by adding the conflicted files to the staging area with `git add [file-path]` for each of the implicated files.
         - Finally run `git commit`. This will finish the commit and ommitting the `-m` option will allow git to automatically write a merge commit messages with description of what files you have solved conflicts in.
-
