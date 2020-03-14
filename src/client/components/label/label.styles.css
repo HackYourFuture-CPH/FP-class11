@@ -1,11 +1,23 @@
+@import '../../theme.css';
+
 .label {
-  background-color: blue;
+  background-color: var(--interaction-color);
   color: white;
   display: inline-block;
   padding: 10px;
 }
 
-.label.active {
-  background-color: yellow;
-  color: black;
+.label-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.label-interaction {
+  background-color: var(--interaction-color);
+  color: white;
+}
+
+.label-danger {
+  background-color: var(--danger-color);
+  color: white;
 }
