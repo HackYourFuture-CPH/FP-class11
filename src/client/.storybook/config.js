@@ -1,2 +1,1 @@
-
-import '!style-loader!css-loader!../theme.css'
+import '!style-loader!css-loader!../index.css';
