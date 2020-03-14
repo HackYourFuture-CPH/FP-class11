@@ -2,7 +2,7 @@ import React from 'react';
 import './page404.style.css';
 import PropTypes from 'prop-types';
 
-export default function Page404({srcPath, altText}) {
+export default function Page404({ srcPath, altText }) {
   return (
     <div className="block-404">
       <div className="text-404">
