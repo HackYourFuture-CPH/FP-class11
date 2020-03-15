@@ -1,0 +1,11 @@
+.label {
+  background-color: blue;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+}
+
+.label.active {
+  background-color: yellow;
+  color: black;
+}

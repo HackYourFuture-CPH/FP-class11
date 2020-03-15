@@ -1,4 +1,4 @@
-export const themeContent = {
+export default {
   textAlign: 'center',
   fontFamily: {
     title: "'Pacifico', cursive",
@@ -7,7 +7,9 @@ export const themeContent = {
     sizeText: '1em',
   },
   colors: {
-    primary: '#F0F0F0',
+    primary: '#709D68',
+    interaction: '#73ABD7',
+    danger: '#F27EB1',
   },
   images: {
     width: '10em',
