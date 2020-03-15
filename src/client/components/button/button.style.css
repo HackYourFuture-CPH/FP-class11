@@ -9,7 +9,7 @@ button {
   outline: none;
   padding: 0.6em;
   text-transform: uppercase;
-  width: 50%;
+  width: 100%;
 }
 
 button:active {

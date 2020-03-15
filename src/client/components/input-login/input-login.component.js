@@ -32,7 +32,7 @@ InputLogin.defaultProps = {
 };
 
 InputLogin.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['email', 'password']).isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   icon: PropTypes.oneOfType([PropTypes.object]).isRequired,

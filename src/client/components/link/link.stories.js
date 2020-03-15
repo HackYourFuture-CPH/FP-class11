@@ -8,9 +8,8 @@ export default {
   decorators: [withKnobs],
 };
 
-export const ForgotPassword = () => (
-  <Link
-    href={text('Link URL', '/forgotpassword')}
-    text={text('Link text', 'Forgot password')}
-  />
-);
+export const ForgotPassword = () => {
+  const href = text('Link URL', '/forgotpassword');
+  const txtLink = text('Link text', 'Forgot password');
+  return <Link href={href} text={txtLink} />;
+};

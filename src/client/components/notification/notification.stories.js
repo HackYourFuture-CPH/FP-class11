@@ -8,8 +8,10 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Error = () => (
-  <Notification
-    text={text('Error text', 'This is error message for wrong email address.')}
-  />
-);
+export const Error = () => {
+  const txt = text(
+    'Error text',
+    'This is error message for wrong email address.',
+  );
+  return <Notification text={txt} />;
+};
