@@ -2,12 +2,12 @@
   /* Available colors */
   --black: #000;
   --white: #fff;
-  --red: #f27eb1;
+  --pink: #f27eb1;
   --green: #709d68;
   --light-blue: #73abd7;
 
   /* Map colors to logical names */
   --interaction-color: var(--light-blue);
   --primary-color: var(--green);
-  --danger-color: var(--red);
+  --danger-color: var(--pink);
 }
