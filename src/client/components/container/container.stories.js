@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from './container.component';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 export default {
   title: 'ContainerLayouts/Container',
@@ -8,10 +9,17 @@ export default {
   decorators: [withKnobs],
 };
 
-export const LoginContainer = () => (
-  <Container title={text('title', 'Login')} />
-);
-
-export const ErrorContainer = () => (
-  <Container title={text('title', 'Login')} error />
-);
+export const LoginContainer = () => {
+  const txtTitle = text('title', 'Login');
+  const error = boolean('isError', false);
+  const handleChange = action('changed input field');
+  const loginFunc = action('login to dashboard');
+  return (
+    <Container
+      title={txtTitle}
+      error={error}
+      handleChange={handleChange}
+      loginFunc={loginFunc}
+    />
+  );
+};

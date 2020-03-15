@@ -19,7 +19,7 @@
 }
 
 .form-input input:focus + i,
-.form-input input:focus + i {
+.form-input input:focus + i path {
   background: #898b94;
   color: #fff;
 }

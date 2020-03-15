@@ -1,8 +1,6 @@
 import React from 'react';
 import './container.style.css';
 import PropTypes from 'prop-types';
-import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
 import {
   faUser,
   faKey,
@@ -17,52 +15,41 @@ import Notification from '../notification/notification.component';
 
 import imageFile from '../../assets/images/logo.png';
 
-export default function Container({ title, error }) {
+export default function Container({ title, error, handleChange, loginFunc }) {
   return (
     <div className="container">
       <Logo srcPath={imageFile} altText="Seasony" />
       <h2>{title}</h2>
       <form>
         {error && (
-          <Notification
-            text={text(
-              'Error text',
-              'This is error message for wrong email address.',
-            )}
-          />
+          <Notification text="This is error message for wrong email address." />
         )}
         {error ? (
           <InputLogin
-            type={text('Input Type', 'email')}
-            placeholder={text('Input Placeholder Text Email', 'Email')}
-            onChange={action('email value changed')}
+            type="email"
+            placeholder="Email"
+            onChange={handleChange}
             icon={faExclamationCircle}
             error
           />
         ) : (
           <InputLogin
-            type={text('Input Type', 'email')}
-            placeholder={text('Input Placeholder Text Email', 'Email')}
-            onChange={action('email value changed')}
+            type="email"
+            placeholder="Email"
+            onChange={handleChange}
             icon={faUser}
           />
         )}
         <InputLogin
-          type={text('Input Type', 'password')}
-          placeholder={text('Input Placeholder Text pAssword', 'Password')}
-          onChange={action('password value changed')}
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
           icon={faKey}
         />
         <div className="right">
-          <Link
-            href={text('Link URL', '/forgotpassword')}
-            text={text('Link text', 'Forgot password')}
-          />
+          <Link href="/forgotpassword" text="Forgot password" />
         </div>
-        <Button
-          onClick={action('clicked')}
-          text={text('Button Text', 'Login')}
-        />
+        <Button onClick={loginFunc} text="Login" />
       </form>
     </div>
   );
@@ -75,4 +62,6 @@ Container.defaultProps = {
 Container.propTypes = {
   title: PropTypes.string.isRequired,
   error: PropTypes.bool,
+  handleChange: PropTypes.func.isRequired,
+  loginFunc: PropTypes.func.isRequired,
 };
