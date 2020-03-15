@@ -6,12 +6,17 @@ import {
   faKey,
   faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 
 export default {
   title: 'InputLogin',
   component: InputLogin,
   decorators: [withKnobs],
+};
+
+const types = {
+  Email: 'email',
+  Password: 'password',
 };
 
 const icons = {
@@ -21,17 +26,23 @@ const icons = {
 };
 
 export const Email = () => {
-  const type = text('Input Type', 'email');
-  const placeholder = text('Input Placeholder Text', 'Email');
+  const type = select('Input Type', types, 'email');
   const onChange = action('value changed');
   const error = boolean('isError', false);
-  const icon = select('Icon', icons, faUser);
+
   return (
     <InputLogin
       type={type}
-      placeholder={placeholder}
+      placeholder={
+        (type === types.Email && 'Email') ||
+        (type === types.Password && 'Password')
+      }
       onChange={onChange}
-      icon={icon}
+      icon={
+        (error && icons.Error) ||
+        (type === types.Email && icons.User) ||
+        (type === types.Password && icons.Password)
+      }
       error={error}
     />
   );

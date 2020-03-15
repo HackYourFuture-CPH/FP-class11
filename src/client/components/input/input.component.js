@@ -3,16 +3,20 @@ import './input.style.css';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Input({ type, placeholder, onChange, disabled }) {
+export default function Input({ name, type, placeholder, onChange, disabled }) {
   const className = classNames({ disabled });
   return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      onChange={onChange}
-      className={className}
-      disabled={disabled}
-    />
+    <div className="input-wrapper">
+      <label htmlFor={name}>{placeholder}</label>
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+        className={className}
+        disabled={disabled}
+      />
+    </div>
   );
 }
 
@@ -22,6 +26,7 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+  name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['text', 'email', 'password', 'number']).isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func,

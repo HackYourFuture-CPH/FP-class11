@@ -1,4 +1,8 @@
-input {
+.input-wrapper label {
+  display: none;
+}
+
+.input-wrapper input {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 2.2em;
@@ -11,15 +15,15 @@ input {
   width: 90%;
 }
 
-input:-webkit-autofill {
+.input-wrapper input:-webkit-autofill {
   background: #ebecf0;
 }
 
-input.disabled {
+.input-wrapper input.disabled {
   background: #dedfe3;
   color: rgba(59, 67, 73, 0.4);
 }
 
-input.disabled::placeholder {
+.input-wrapper input.disabled::placeholder {
   color: rgba(59, 67, 73, 0.4);
 }
