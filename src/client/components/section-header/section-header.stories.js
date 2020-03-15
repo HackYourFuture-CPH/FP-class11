@@ -9,6 +9,8 @@ export default {
   decorators: [withKnobs],
 };
 
+const sectionTitles = ['Crop', 'Stage Details', 'Trays and Tanks', 'Costs'];
+
 export const SectionHeaders = () => {
   return (
     <>
@@ -21,18 +23,13 @@ export const SectionHeaders = () => {
           justifyContent: 'space-around',
         }}
       >
-        {['Crop', 'Stage Details', 'Trays and Tanks', 'Costs'].map(
-          (title, index) => {
-            return (
-              <SectionHeader
-                onClick={action('header clicked')}
-                tabIndex={index}
-              >
-                {title}
-              </SectionHeader>
-            );
-          },
-        )}
+        {sectionTitles.map((title, index) => {
+          return (
+            <SectionHeader onClick={action('header clicked')} tabIndex={index}>
+              {title}
+            </SectionHeader>
+          );
+        })}
       </div>
       <pre>{`<SectionHeader onClick={handleClick} tabIndex={0}>Crop</SectionHeader>`}</pre>
     </>
