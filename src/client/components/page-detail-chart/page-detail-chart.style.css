@@ -1,13 +1,12 @@
 .detail-page {
   background: #e5e5e5;
 }
-.page-header {
+.detail-page-header {
   font-family: Proxima Nova;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
   line-height: 39px;
-  /* identical to box height */
 
   display: flex;
   align-items: center;
