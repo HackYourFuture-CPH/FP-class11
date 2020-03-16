@@ -3,21 +3,16 @@ import "./Style.css";
 import ModalList from "./ModalList";
 import Modal from "./Modal";
 
-const ModalApp = () => {
-  const { isShowing, toggle, approveModal } = Modal();
+const App = () => {
+  const { isShowing, toggle } = Modal();
   return (
     <div>
       <button className="base-btn" onClick={toggle}>
         DELETE CROP
       </button>
-      <ModalList
-        isShowing={isShowing}
-        hide={toggle}
-        onApprove={approveModal}
-        onClose={toggle}
-      />
+      <ModalList isShowing={isShowing} hide={toggle} onClose={toggle} />
     </div>
   );
 };
 
-export default ModalApp;
+export default App;
