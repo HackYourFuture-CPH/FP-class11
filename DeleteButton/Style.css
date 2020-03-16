@@ -6,7 +6,7 @@
 .modal-overlay {
   position: absolute;
   width: 1440px;
-  height: 1024px;
+  height: 102px;
   left: 0px;
   top: 0px;
 
@@ -17,8 +17,9 @@
   position: absolute;
   width: 600px;
   height: 502.86px;
-  left: 420px;
-  top: 160px;
+  left: 300px;
+  top: 80px;
+  margin-bottom: 20px;
 
   background: #ebecf0;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -28,7 +29,7 @@
   box-shadow: -7px -7px 20px rgba(255, 255, 255, 0.8), 5px 5px 20px #c9cbd8;
   border-radius: 20px;
 }
-modal-header {
+.modal-header {
   display: flex;
   justify-content: flex-end;
 }
@@ -89,7 +90,7 @@ h4 {
 
   color: #666666;
 }
-.P2 {
+.p2 {
   position: absolute;
   width: 366px;
   height: 27px;
@@ -144,7 +145,7 @@ h4 {
   position: absolute;
   width: 286.79px;
   height: 57.23px;
-  left: 700p;
+  left: 950px;
   top: 0px;
   color: #ffffff;
   background: #f27eb1;
