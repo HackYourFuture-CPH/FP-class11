@@ -1,8 +1,8 @@
 import React from 'react';
 import './page404.style.css';
-import PropTypes from 'prop-types';
+import image from '../../assets/images/plants.jpg';
 
-export default function Page404({ srcPath, altText }) {
+export default function Page404() {
   return (
     <div className="block-404">
       <div className="text-404">
@@ -13,14 +13,9 @@ export default function Page404({ srcPath, altText }) {
       </div>
       <div className="img-404">
         <div className="img-mask">
-          <img src={srcPath} alt={altText} />
+          <img src={image} alt="Seasony Page Not Found" />
         </div>
       </div>
     </div>
   );
 }
-
-Page404.propTypes = {
-  srcPath: PropTypes.string.isRequired,
-  altText: PropTypes.string.isRequired,
-};
