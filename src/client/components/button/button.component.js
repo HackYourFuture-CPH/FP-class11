@@ -2,8 +2,14 @@ import React from 'react';
 import './button.style.css';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import theme from '../../theme';
 
 export default function Button({ children, type, size, onClick, toggled }) {
+  const background = {
+    primary: theme.colors.interaction,
+    danger: theme.colors.danger,
+  };
+
   const btnClass = classNames({
     btn: true,
     'btn-primary': type === 'primary',
@@ -17,6 +23,7 @@ export default function Button({ children, type, size, onClick, toggled }) {
   return (
     <input
       className={btnClass}
+      style={background[type] ? { backgroundColor: background[type] } : null}
       type="submit"
       onClick={onClick}
       value={children}

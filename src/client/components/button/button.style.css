@@ -25,18 +25,17 @@
 
 /* BTN PRIMARY */
 .btn-primary {
-  background: #73abd7;
+  /* background: #73abd7; */
 }
 
 /* BTN SECONDARY */
 .btn-secondary {
-  background: #c9cbd8;
+  background-color: #c9cbd8;
   color: #666666;
 }
 
 /* BTN DANGER  */
 .btn-danger {
-  background: #f27eb1;
 }
 
 /* "LARGE"  ------------------ */
