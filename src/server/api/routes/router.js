@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const modulesRouter = require('./modules.router');
+const mealsRouter = require('./meals.router');
 
-router.use('/modules', modulesRouter);
+router.use('/meals', mealsRouter);
 
 module.exports = router;
