@@ -9,7 +9,7 @@ export default {
   decorators: [withKnobs],
 };
 
-const label = 'Variant';
+const label = 'Example';
 const options = {
   Save: 'save',
   'Delete Crop': 'delete-crop',
@@ -19,30 +19,46 @@ const options = {
   Cancel: 'cancel',
   Toggle: 'toggle',
 };
-const defaultVariant = 'save';
 
-const btnText = {
-  save: 'Save Crop Details',
-  'delete-crop': 'Delete Crop',
-  export: 'Export data ▼',
-  logout: 'Log Out',
-  delete: 'Delete',
-  cancel: 'Cancel',
-  toggle: 'Harvest',
+const defaultExample = 'save';
+
+const btnDetails = {
+  save: { text: 'Save Crop Details', type: 'primary' },
+  'delete-crop': { text: 'Delete Crop', type: 'danger' },
+  export: { text: 'Export data ▼', type: 'primary' },
+  logout: { text: 'Log Out', type: 'danger', size: 'large' },
+  delete: { text: 'Delete', type: 'danger', size: 'large' },
+  cancel: { text: 'Cancel', type: 'secondary', size: 'large' },
+  toggle: { text: 'Harvest', type: 'toggle' },
 };
 
 export const ButtonsAll = () => {
-  const variant = select(label, options, defaultVariant);
+  const variant = select(label, options, defaultExample);
+
   return (
     <div style={{ padding: '1em' }}>
-      <p>Note: Change button type using knobs</p>
+      <p>Note: Change between examples using knobs</p>
       <hr style={{ margin: '1em' }} />
-      <Button variant={variant} onClick={action('clicked')}>
-        {variant === 'toggle' ? text('Label', 'Harvest') : btnText[variant]}
+
+      <Button
+        type={btnDetails[variant].type}
+        size={btnDetails[variant].size ? btnDetails[variant].size : ''}
+        onClick={action('clicked')}
+      >
+        {variant === 'toggle'
+          ? text('Label', 'Harvest')
+          : btnDetails[variant].text}
       </Button>
+
       <hr style={{ margin: '1em' }} />
-      <pre>{`<Button variant="${variant}" onClick={handleClick}>${
-        variant === 'toggle' ? text('Label', 'Harvest') : btnText[variant]
+      <pre style={{ fontFamily: 'Lucida Console' }}>{`<Button type="${
+        btnDetails[variant].type
+      }" ${
+        btnDetails[variant].size ? 'size="large"' : ''
+      } onClick={handleClick}>${
+        variant === 'toggle'
+          ? text('Label', 'Harvest')
+          : btnDetails[variant].text
       }</Button>`}</pre>
     </div>
   );
