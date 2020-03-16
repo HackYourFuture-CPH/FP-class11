@@ -28,7 +28,7 @@ export default function StageDetails({
           {buttonValuesArr.map((stage) => {
             return (
               <Button
-                variant="toggle"
+                type="toggle"
                 onClick={(e) => {
                   e.preventDefault();
                   setSelectedStage(stage.toLowerCase());
@@ -74,7 +74,7 @@ export default function StageDetails({
 
         {/* Save button */}
         <div className="save-btn-container">
-          <Button className="save-btn" variant="save" onClick={saveFunc}>
+          <Button type="primary" onClick={saveFunc}>
             Save Crop Details
           </Button>
         </div>
