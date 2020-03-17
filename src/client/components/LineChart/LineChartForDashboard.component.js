@@ -81,8 +81,8 @@ const LineChartForDashboard = ({
 
 LineChartForDashboard.propTypes = {
   strokeGrid: PropTypes.string.isRequired,
-  strokeAxisAndrefArea: PropTypes.string.isRequired,
-  maxColor: PropTypes.string.isRequired,
+  strokeAxis: PropTypes.string.isRequired,
+  minColor: PropTypes.string.isRequired,
   maxColor: PropTypes.string.isRequired,
   optimalValue: PropTypes.string.isRequired,
   strokeWidthRef: PropTypes.number.isRequired,
