@@ -1,11 +1,3 @@
-/* TODO: to be deleted later when we use global style */
-* {
-  margin: 0;
-  padding: 0;
-  color: #3b4349;
-  font-family: Proxima Nova, sans-serif;
-}
-
 .footer {
   /* TODO: background-color to be deleted later when we use global style */
   background-color: #ebecf0;
