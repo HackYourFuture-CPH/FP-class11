@@ -14,12 +14,14 @@ import data from './data.json';
 
 const LineChartForDashboard = ({
   strokeGrid,
-  strokeAxisAndrefArea,
-  maxAndmin,
+  strokeAxis,
+  minColor,
+  maxColor,
   optimalValue,
   strokeWidthRef,
   strokeLine,
   strokeWidthLine,
+  ReferanceAreaColor,
 }) => {
   return (
     <LineChart
@@ -35,21 +37,21 @@ const LineChartForDashboard = ({
     >
       <CartesianGrid strokeDasharray="3,3" stroke={strokeGrid} />
       <XAxis
-        stroke={strokeAxisAndrefArea}
+        stroke={strokeAxis}
         dateKey="timestamp"
         domain={['dataMin', 'dataMax']}
-        tick={{ fontSize: 8, fill: strokeAxisAndrefArea }}
+        tick={{ fontSize: 8, fill: strokeAxis }}
       />
       <YAxis
-        stroke={strokeAxisAndrefArea}
+        stroke={strokeAxis}
         type="number"
         domain={['dataMin', 'dataMax']}
-        tick={{ fontSize: 8, fill: strokeAxisAndrefArea }}
+        tick={{ fontSize: 8, fill: strokeAxis }}
         fill="none"
         ticks={[0, 5, 10, 15, 20, 25]}
       />
       <Tooltip />
-      <ReferenceLine y={5} stroke={maxAndmin} strokeWidth={strokeWidthRef} />
+      <ReferenceLine y={5} stroke={minColor} strokeWidth={strokeWidthRef} />
       <ReferenceLine
         y={12}
         stroke={optimalValue}
@@ -57,7 +59,7 @@ const LineChartForDashboard = ({
       />
       <ReferenceLine
         y={22}
-        stroke={maxAndmin}
+        stroke={maxColor}
         label="Max"
         strokeWidth={strokeWidthRef}
       />
@@ -70,7 +72,7 @@ const LineChartForDashboard = ({
       <ReferenceArea
         y1={7}
         y2={17}
-        stroke={strokeAxisAndrefArea}
+        stroke={ReferanceAreaColor}
         strokeOpacity={0.3}
       />
     </LineChart>
@@ -80,10 +82,12 @@ const LineChartForDashboard = ({
 LineChartForDashboard.propTypes = {
   strokeGrid: PropTypes.string.isRequired,
   strokeAxisAndrefArea: PropTypes.string.isRequired,
-  maxAndmin: PropTypes.string.isRequired,
+  maxColor: PropTypes.string.isRequired,
+  maxColor: PropTypes.string.isRequired,
   optimalValue: PropTypes.string.isRequired,
   strokeWidthRef: PropTypes.number.isRequired,
   strokeLine: PropTypes.string.isRequired,
   strokeWidthLine: PropTypes.number.isRequired,
+  ReferanceAreaColor: PropTypes.string.isRequired,
 };
 export default LineChartForDashboard;
