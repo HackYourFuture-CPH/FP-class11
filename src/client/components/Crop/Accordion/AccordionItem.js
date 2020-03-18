@@ -4,29 +4,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 class AccordionItem extends Component {
-  static propTypes = {
-    title: PropTypes.string
-  };
-
-  static defaultProps = {
-    title: 'TITLE'
-  };
-
   constructor(props) {
     super(props);
     this.state = { isOpen: false };
     this.mounted = true;
   }
-
-  handleDocumentClick = (event) => {
-    if (
-      this.mounted &&
-      !ReactDOM.findDOMNode(this).contains(event.target) &&
-      this.state.isOpen
-    ) {
-      this.setState({ isOpen: false });
-    }
-  };
 
   componentDidMount() {
     if (this.props.atomic) {
@@ -40,6 +22,16 @@ class AccordionItem extends Component {
     document.removeEventListener('click', this.handleDocumentClick, false);
     document.removeEventListener('touchend', this.handleDocumentClick, false);
   }
+
+  handleDocumentClick = (event) => {
+    if (
+      this.mounted &&
+      !ReactDOM.this.node.contains(event.target) &&
+      this.state.isOpen
+    ) {
+      this.setState({ isOpen: false });
+    }
+  };
 
   onClick = () => {
     this.setState({ isOpen: !this.state.isOpen });
@@ -55,7 +47,7 @@ class AccordionItem extends Component {
 
     return (
       <div className={accordionItemClassNames}>
-        <button className="title" onClick={this.onClick}>
+        <button type="submit" className="title" onClick={this.onClick}>
           {this.props.title}
         </button>
         <div className="panel">{this.props.children}</div>
@@ -65,3 +57,9 @@ class AccordionItem extends Component {
 }
 
 export default AccordionItem;
+
+AccordionItem.propTypes = {
+  atomic: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};

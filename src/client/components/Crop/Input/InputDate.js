@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './InputDate.css';
 
-function InputDate({ text, placeholder, handleInputChange }) {
+function InputDate({ text, placeholder, handleChange }) {
   const onFocus = (e) => {
     e.currentTarget.type = 'date';
   };
@@ -13,10 +14,16 @@ function InputDate({ text, placeholder, handleInputChange }) {
         type={text}
         placeholder={placeholder}
         onFocus={onFocus}
-        onChange={handleInputChange}
+        onChange={handleChange}
       />
     </div>
   );
 }
 
 export default InputDate;
+
+InputDate.propTypes = {
+  text: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired
+};

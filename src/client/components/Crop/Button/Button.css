@@ -6,9 +6,10 @@
   float: left;
   background-color: lightblue;
   color: white;
+  float: right;
 
-  width: 22em;
-  height: 2.5em;
+  width: 200px;
+  height: 32px;
 
   font-family: Proxima Nova, sans-serif;
   font-style: normal;

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import './FormField.css';
 import InputText from '../Input/InputText';
@@ -14,7 +15,6 @@ function FormField() {
   const handleSubmit = (e) => {
     try {
       e.preventDefault();
-      console.log('hi');
       console.log(plantVariety);
       console.log(seedPot);
       console.log(startSeedDate);
@@ -32,31 +32,31 @@ function FormField() {
           <InputText
             type="text"
             placeholder="Name plant variety"
-            handleInputChange={(e) => setPlantVariety(e.target.value)}
+            handleChange={(e) => setPlantVariety(e.target.value)}
           />
           <br />
           <InputText
             type="text"
             placeholder="Number of seeded pots"
-            handleInputChange={(e) => setSeedPot(e.target.value)}
+            handleChange={(e) => setSeedPot(e.target.value)}
           />
           <br />
           <InputDate
             type="text"
             placeholder="Start Seed Date"
-            handleInputChange={(e) => setStartSeedDate(e.target.value)}
+            handleChange={(e) => setStartSeedDate(e.target.value)}
           />
           <br />
           <InputDate
             type="date"
             placeholder="Harvest Date"
-            handleInputChange={(e) => setHarvestSeedDate(e.target.value)}
+            handleChange={(e) => setHarvestSeedDate(e.target.value)}
           />
           <br />
           <InputText
             type="text"
             placeholder="Customer Name"
-            handleInputChange={(e) => setCustomerName(e.target.value)}
+            handleChange={(e) => setCustomerName(e.target.value)}
           />
           <br />
 

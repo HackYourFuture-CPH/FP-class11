@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Accordion extends Component {
   constructor(props) {
@@ -20,3 +21,8 @@ class Accordion extends Component {
 }
 
 export default Accordion;
+
+Accordion.propTypes = {
+  atomic: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Button.css';
 
 const Button = ({ submit, handleSubmit, placeholder }) => {
@@ -10,3 +11,8 @@ const Button = ({ submit, handleSubmit, placeholder }) => {
 };
 
 export default Button;
+Button.propTypes = {
+  submit: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired
+};
