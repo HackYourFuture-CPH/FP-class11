@@ -9,5 +9,6 @@ storiesOf('Button', module).add('Save Crop Details', () => (
       type="submit"
       placeholder="save crop details"
     ></Button>
+  {''}
   </div>
 ));
