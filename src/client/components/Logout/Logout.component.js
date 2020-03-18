@@ -2,11 +2,19 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import './Logout.style.css';
 
+const userName = 'Some UserName';
+
 export default function Logout() {
+  function logout(event) {
+    event.preventDefault(); // prevent page transition
+    fetch('/logout', { method: 'POST' }).then(
+      () => window.location.reload(), // stay at the same url
+    );
+  }
   return (
     <Popup
       trigger={
-        <button type="submit" className="logbutton">
+        <button type="submit" className="Logbutton">
           {' '}
           LOG OUT{' '}
         </button>
@@ -21,18 +29,18 @@ export default function Logout() {
           <div className="header"> LOG OUT </div>
           <div className="content">
             <p>
-              Hi Servet <br />
+              Hi {userName} <br />
               Do you really want to Logout ?{' '}
             </p>
           </div>
           <div className="actions">
-            <button className="confirm-logout" type="submit">
+            <button className="ConfirmLogout" type="submit" onClick={logout}>
               Logout
             </button>
             <br />
             <button
               type="submit"
-              className="confirm-cancel"
+              className="ConfirmCancel"
               onClick={() => {
                 close();
               }}
