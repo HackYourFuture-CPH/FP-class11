@@ -1,5 +1,5 @@
 exports.up = function(knex) {
-  return knex.schema.creatTable('crop_stage_defaults', function(table) {
+  return knex.schema.createTable('crop_stage_defaults', function(table) {
     table
       .increments('id')
       .primary()
