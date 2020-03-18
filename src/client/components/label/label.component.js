@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import './label.styles.css';
 
-export default function Label({ title, backgroundColor }) {
-  return (
-    <span style={{ backgroundColor }} className="label">
-      {title}
-    </span>
-  );
+export default function Label({ title, className }) {
+  return <span className={classNames('label', className)}>{title}</span>;
 }
 
 Label.propTypes = {
-  backgroundColor: PropTypes.string.isRequired,
+  className: PropTypes.string,
   title: PropTypes.string.isRequired,
+};
+
+Label.defaultProps = {
+  className: 'label-interaction',
 };
