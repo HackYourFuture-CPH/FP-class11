@@ -1,5 +1,5 @@
 /*Log button on front end styling */
-.Logbutton {
+.logbutton {
   position: absolute;
   transition: 0.5s ease;
   background-color: white;
@@ -12,7 +12,7 @@
   top: 2%;
 }
 
-.Logbutton:hover {
+.logbutton:hover {
   background-color: rgb(255, 105, 180);
   color: white;
 }
@@ -76,7 +76,7 @@
 }
 
 /* Confoirm Logout button on pop up window styling */
-.ConfirmLogout {
+.confirm-logout {
   transition: 0.5s ease;
   background-color: white;
   background: rgb(255, 105, 180);
@@ -88,13 +88,13 @@
   text-transform: uppercase;
 }
 
-.ConfirmLogout:active {
+.confirm-logout:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
 /* Confoirm Cancellation button on pop up window styling*/
-.ConfirmCancel {
+.confirm-cancel {
   transition: 0.5s ease;
   background-color: white;
   background: #aeb6bf;
@@ -108,7 +108,7 @@
   margin-top: 2%;
 }
 
-.ConfirmCancel:active {
+.confirm-cancel:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

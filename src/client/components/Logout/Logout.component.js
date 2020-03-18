@@ -6,7 +6,7 @@ export default function Logout() {
   return (
     <Popup
       trigger={
-        <button type="submit" className="Logbutton">
+        <button type="submit" className="logbutton">
           {' '}
           LOG OUT{' '}
         </button>
@@ -26,13 +26,13 @@ export default function Logout() {
             </p>
           </div>
           <div className="actions">
-            <button className="ConfirmLogout" type="submit">
+            <button className="confirm-logout" type="submit">
               Logout
             </button>
             <br />
             <button
               type="submit"
-              className="ConfirmCancel"
+              className="confirm-cancel"
               onClick={() => {
                 close();
               }}
