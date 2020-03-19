@@ -51,11 +51,8 @@
 
   color: #666666;
 }
-.modal {
-  align-items: center;
-}
 
-h4 {
+.modal-headline {
   position: relative;
   width: 23px;
   height: 44px;
