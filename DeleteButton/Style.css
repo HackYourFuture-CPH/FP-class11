@@ -1,12 +1,7 @@
-.App {
-  text-align: center;
-  padding-top: 2rem;
-}
-
 .modal-overlay {
   position: absolute;
-  width: 1440px;
-  height: 500px;
+  width: 1260px;
+  height: 590px;
   left: 0px;
   top: 0px;
 
