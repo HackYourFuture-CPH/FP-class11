@@ -1,5 +1,6 @@
 import React from 'react';
 import './detail-chart.style.css';
+import PropTypes from 'prop-types';
 
 import {
   ResponsiveContainer,
@@ -12,9 +13,7 @@ import {
   ReferenceLine,
 } from 'recharts';
 
-import lettuce from './lettuce.json';
-
-export default function DetailChart() {
+export default function DetailChart({ data }) {
   return (
     <div className="App">
       <ResponsiveContainer
@@ -22,7 +21,7 @@ export default function DetailChart() {
         width="100%"
         height={400}
       >
-        <LineChart data={lettuce} margin={{ right: 80 }}>
+        <LineChart data={data} margin={{ right: 80 }}>
           <XAxis
             stroke="#DDE0E3"
             dataKey="timestamp"
@@ -32,7 +31,6 @@ export default function DetailChart() {
               transform: 'translate(-20, 0)',
               fontFamily: 'Roboto',
               textAlign: 'right',
-              lineHeight: '10px',
               fontSize: 10,
               fill: '#A3A3A3',
             }}
@@ -79,3 +77,7 @@ export default function DetailChart() {
     </div>
   );
 }
+
+DetailChart.propTypes = {
+  data: PropTypes.string.isRequired,
+};
