@@ -6,7 +6,7 @@
 .modal-overlay {
   position: absolute;
   width: 1440px;
-  height: 102px;
+  height: 500px;
   left: 0px;
   top: 0px;
 
@@ -41,7 +41,7 @@
   left: 550px;
   top: 10.86px;
 
-  font-family: Proxima Nova;
+  font-family: "Proxima Nova", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 50px;
@@ -51,18 +51,26 @@
 
   color: #666666;
 }
+.modal {
+  position: absolute;
+  width: 500px;
+  height: 450px;
+  left: 10px;
+  top: 3px;
+}
 
 .modal-headline {
-  position: relative;
-  width: 23px;
+  position: absolute;
+  width: 400px;
   height: 44px;
-  left: 250px;
+  left: 80px;
   top: 40px;
 
-  font-family: Proxima Nova;
+  font-family: "Proxima Nova", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 36px;
+  line-height: 44px;
 
   /* identical to box height */
 
@@ -73,12 +81,12 @@
 
 .p1 {
   position: absolute;
-  width: 145px;
-  height: 29px;
-  left: 220px;
+  width: 200px;
+  height: 36px;
+  left: 170px;
   top: 150px;
 
-  font-family: Proxima Nova;
+  font-family: "Proxima Nova", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -89,12 +97,12 @@
 }
 .p2 {
   position: absolute;
-  width: 366px;
+  width: 400px;
   height: 27px;
   left: 120px;
-  top: 180px;
+  top: 190px;
 
-  font-family: Proxima Nova;
+  font-family: "Proxima Nova", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
@@ -109,16 +117,34 @@
   height: 57.23px;
   left: 150px;
   top: 290px;
-  color: #ffffff;
   background: #f27eb1;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
   cursor: pointer;
   /* button-shadow */
 
-  color: #ffffff;
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
   border-radius: 40px;
+}
+.text-btn-delete {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  left: 80px;
+  top: 0px;
+
+  font-family: "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 37px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
 }
 .btn-cancel {
   position: absolute;
@@ -136,12 +162,32 @@
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
   border-radius: 40px;
 }
+.text-btn-cancel {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  left: 80px;
+  top: 0px;
+
+  font-family: "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 37px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #666666;
+}
 .base-btn {
   position: absolute;
-  width: 286.79px;
-  height: 57.23px;
-  left: 950px;
-  top: 0px;
+  width: 200px;
+  height: 50px;
+  left: 1050px;
+  top: 290px;
   color: #ffffff;
   background: #f27eb1;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -152,4 +198,24 @@
   color: #ffffff;
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
   border-radius: 40px;
+}
+.text-base-btn {
+  position: absolute;
+  width: 200px;
+  height: 10px;
+  left: 30px;
+  top: 0px;
+
+  font-family: "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
 }
