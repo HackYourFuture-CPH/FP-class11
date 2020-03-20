@@ -18,10 +18,9 @@ const userOptions = {
   notuser: false,
 };
 
-export const SidebarActive = () => (
-  <SidebarMenu
-    text={('value', 'dashbord')}
-    active={boolean('active', false, options)}
-    user={boolean('isuser', true, userOptions)}
-  />
-);
+export const SidebarActive = () => {
+  const text = ('value', 'dashbord');
+  const isactive = boolean('active', false, options);
+  const isuser = boolean('isuser', true, userOptions);
+  return <SidebarMenu text={text} isactive={isactive} isuser={isuser} />;
+};

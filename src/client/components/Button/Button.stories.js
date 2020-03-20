@@ -14,7 +14,7 @@ export default {
 
 // export const DashbordActive = () => <ButtonM icon={faThLarge} text="DashBoard" active={true}    />;
 // export const DashbordInactive = () => <ButtonM icon={faThLarge} text="DashBoard"  active={false} />;
-export const Dashbord = () => <ButtonM icon={faThLarge} text="Dashbord" />;
+export const Dashbord = () => <ButtonM icon={faThLarge} text="DashBord" />;
 export const CropDetails = () => (
   <ButtonM icon={faSeedling} text="Crop Details" />
 );

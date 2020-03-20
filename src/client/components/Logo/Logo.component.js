@@ -1,13 +1,17 @@
 import React from 'react';
 import './Logo.style.css';
-import Seasony from './seasony.jpg';
+import PropTypes from 'prop-types';
 
-const Logo = () => {
+const Logo = ({ srcImg, altText }) => {
   return (
     <div>
-      <img src={Seasony} alt="avatar" className="avatar-img" />
+      <img src={srcImg} alt={altText} className="avatar-img" />
     </div>
   );
+};
+Logo.propTypes = {
+  srcImg: PropTypes.string.isRequired,
+  altText: PropTypes.string.isRequired,
 };
 
 export default Logo;

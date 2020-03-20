@@ -1,14 +1,8 @@
 import React from 'react';
 import '../Button/Button.style.css';
+import PropTypes from 'prop-types';
 
-const DashbordItems = () => {
-  const items = [
-    { id: 1, value: 'Temperature' },
-    { id: 2, value: 'Humidity' },
-    { id: 3, value: 'PH' },
-    { id: 4, value: 'EC' },
-    { id: 5, value: 'Water' },
-  ];
+const DashbordItems = ({ items }) => {
   return (
     <ul className="list">
       {items.map((item) => (
@@ -18,4 +12,7 @@ const DashbordItems = () => {
   );
 };
 
+DashbordItems.propTypes = {
+  items: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
 export default DashbordItems;

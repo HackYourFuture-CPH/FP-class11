@@ -4,6 +4,7 @@ import Button from '../Button/Button.component';
 import PropTypes from 'prop-types';
 import '../Button/Button.style.css';
 import Logo from '../Logo/Logo.component';
+import Seasony from '../Logo/seasony.jpg';
 
 import {
   faUserCircle,
@@ -12,21 +13,21 @@ import {
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SidebarMenu = ({ active, user }) => {
+const SidebarMenu = ({ isactive, isuser }) => {
   return (
     <div className="sidebar-wrapper">
-      <Logo />
-      <Button icon={faThLarge} text="DashBord" active={active} />
+      <Logo src={Seasony} alt="Seasony-img" />
+      <Button icon={faThLarge} text="Dashbord" isactive={isactive} />
       <Button icon={faSeedling} text="Crop Details" />
       <Button icon={faPlusCircle} text="Add Crop" />
-      <Button icon={faUserCircle} text="LogOut" user={user} />
+      <Button icon={faUserCircle} text="LogOut" isuser={isuser} />
     </div>
   );
 };
 
 SidebarMenu.propTypes = {
-  active: PropTypes.bool.isRequired,
-  user: PropTypes.bool.isRequired,
+  isactive: PropTypes.bool.isRequired,
+  isuser: PropTypes.bool.isRequired,
 };
 
 export default SidebarMenu;
