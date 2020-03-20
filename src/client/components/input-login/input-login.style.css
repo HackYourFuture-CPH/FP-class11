@@ -3,38 +3,41 @@
 }
 
 .login input {
-  padding-left: 70px;
-  width: 80%;
+  padding-left: 4em;
 }
 
 .login i {
-  background-color: #c9cbd8;
+  background-color: var(--grey);
   border-radius: 2.2em 0 0 2.2em;
   color: #666;
   left: 0px;
   position: absolute;
-  padding: 1.1em 0.8em 1em 1.3em;
+  padding: 1.1em 1.1em 1em 1.2em;
   transition: 0.3s;
-  top: 1.2em;
+  top: 1.2rem;
+}
+
+.login i svg {
+  margin: 0 !important;
 }
 
 .login input:focus + i,
 .login input:focus + i path {
-  background: #898b94;
-  color: #fff;
+  background: var(--fontawesome-gray);
+  color: var(--white);
 }
 
 .login input.error {
   background-color: transparent;
-  border: 2px solid #f27eb1;
+  box-shadow: 0 0 0 2px inset var(--danger-color);
 }
 
 .login input.error + i {
-  background: #f27eb1;
-  color: #fff;
-  padding-bottom: 1.2em;
+  background: var(--danger-color);
+  color: var(--white);
+  padding-bottom: 1em;
 }
 
 .login input.error + i path {
-  color: #fff !important;
+  color: var(--white) !important;
 }

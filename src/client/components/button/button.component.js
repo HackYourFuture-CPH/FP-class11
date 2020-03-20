@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 
 export default function Button({ text, onClick, color }) {
   return (
-    <button className={color} type="button" onClick={onClick}>
-      {text}
-    </button>
+    <div className="btn-wrapper">
+      <button className={color} type="button" onClick={onClick}>
+        {text}
+      </button>
+    </div>
   );
 }
 

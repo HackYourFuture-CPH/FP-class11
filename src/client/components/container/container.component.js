@@ -21,9 +21,11 @@ export default function Container({ title, error, handleChange, loginFunc }) {
       <Logo srcPath={imageFile} altText="Seasony" />
       <h2>{title}</h2>
       <form>
-        {error && (
-          <Notification text="This is error message for wrong email address." />
-        )}
+        <div className="error-notification">
+          {error && (
+            <Notification text="This is error message for wrong email address." />
+          )}
+        </div>
         {error ? (
           <InputLogin
             type="email"
@@ -46,7 +48,7 @@ export default function Container({ title, error, handleChange, loginFunc }) {
           onChange={handleChange}
           icon={faKey}
         />
-        <div className="right">
+        <div className="right-link">
           <Link href="/forgotpassword" text="Forgot password" />
         </div>
         <Button onClick={loginFunc} text="Login" />

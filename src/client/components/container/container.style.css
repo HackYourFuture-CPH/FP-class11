@@ -1,10 +1,10 @@
 .container {
-  background: #ebecf0;
-  box-shadow: 5px 5px 20px #c9cbd8, -7px -7px 20px rgba(255, 255, 255, 0.8);
+  background: var(--light-grey);
+  box-shadow: var(--container-shadow);
   border-radius: 1.2em;
-  color: #3b4349;
-  font-family: Proxima Nova, sans-serif;
-  height: 28em;
+  color: var(--font-color);
+  font-weight: normal;
+  height: 30em;
   padding: 1.6em;
   text-align: center;
   width: 30em;
@@ -18,12 +18,20 @@
   padding: 0;
 }
 
-form {
+.container .error-notification {
+  min-height: 2.1em;
+}
+
+.container form {
   margin-top: 1em;
 }
 
-.right {
+.right-link {
   margin: -0.2em 0 0;
   padding-right: 0.6em;
   text-align: right;
+}
+
+.container .btn-wrapper button {
+  width: 50%;
 }
