@@ -1,12 +1,11 @@
 import React from 'react';
-import Card from './card.component';
+import Card from './Card.component';
+import { CropSummary } from './CropSummary/CropSummary.component';
 
-export default { title: 'CardLayouts/Card' };
+export default { title: 'Cards' };
 
-export const withText = () => <Card>This is a card</Card>;
-export const withHTML = () => (
+export const defaultCard = () => (
   <Card>
-    <h2>Nice card</h2>
-    <p>This is a card with some HTML</p>
+    <CropSummary />
   </Card>
 );
