@@ -42,7 +42,7 @@ const appendTimestamp = format((info, opts) => {
       ...info,
       timestamp: moment()
         .tz(opts.tz)
-        .format()
+        .format(),
     };
   }
   return info;
@@ -51,7 +51,7 @@ const appendTimestamp = format((info, opts) => {
 const customFormat = combine(
   label({ label: 'main' }),
   appendTimestamp({ tz: 'Europe/Copenhagen' }),
-  myFormatFile
+  myFormatFile,
 );
 
 const options = {
@@ -70,7 +70,7 @@ const options = {
     handleExceptions: true,
     json: false,
     colorize: true,
-    format: myFormatConsole
+    format: myFormatConsole,
   },
 };
 
@@ -90,5 +90,5 @@ logger.stream = {
 };
 
 module.exports = {
-  logger
+  logger,
 };
