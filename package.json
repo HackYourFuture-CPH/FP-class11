@@ -51,6 +51,7 @@
     "jest-css-modules-transform": "^3.1.0",
     "jest-styled-components": "^7.0.0-beta.2",
     "knex": "^0.19.5",
+    "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
