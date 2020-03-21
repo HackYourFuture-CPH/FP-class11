@@ -4,15 +4,15 @@ export default {
     title: "'Pacifico', cursive",
     main: "'Open Sans', sans-serif",
     sizeTitle: '2em',
-    sizeText: '1em',
+    sizeText: '1em'
   },
   colors: {
     primary: '#709D68',
     interaction: '#73ABD7',
-    danger: '#F27EB1',
+    danger: '#F27EB1'
   },
   images: {
     width: '10em',
-    height: 'auto',
-  },
+    height: 'auto'
+  }
 };
