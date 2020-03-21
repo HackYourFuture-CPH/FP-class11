@@ -41,8 +41,8 @@ class AccordionItem extends Component {
     const accordionItemClassNames = classNames([
       'accordion-item',
       {
-        active: this.state.isOpen
-      }
+        active: this.state.isOpen,
+      },
     ]);
 
     return (
@@ -61,5 +61,5 @@ export default AccordionItem;
 AccordionItem.propTypes = {
   atomic: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
