@@ -42,7 +42,7 @@ const appendTimestamp = format((info, opts) => {
       ...info,
       timestamp: moment()
         .tz(opts.tz)
-        .format(),
+        .format()
     };
   }
   return info;
@@ -51,7 +51,7 @@ const appendTimestamp = format((info, opts) => {
 const customFormat = combine(
   label({ label: 'main' }),
   appendTimestamp({ tz: 'Europe/Copenhagen' }),
-  myFormatFile,
+  myFormatFile
 );
 
 const options = {
@@ -70,14 +70,14 @@ const options = {
     handleExceptions: true,
     json: false,
     colorize: true,
-    format: myFormatConsole,
+    format: myFormatConsole
   },
 };
 
 const logger = createLogger({
   transports: [
     new transports.File(options.file),
-    new transports.Console(options.console),
+    new transports.Console(options.console)
   ],
   exitOnError: false, // do not exit on handled exceptions
 });
@@ -90,5 +90,5 @@ logger.stream = {
 };
 
 module.exports = {
-  logger,
+  logger
 };
