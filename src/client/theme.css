@@ -1,0 +1,13 @@
+:root {
+  /* Available colors */
+  --black: #000;
+  --white: #fff;
+  --pink: #f27eb1;
+  --green: #709d68;
+  --light-blue: #73abd7;
+
+  /* Map colors to logical names */
+  --interaction-color: var(--light-blue);
+  --primary-color: var(--green);
+  --danger-color: var(--pink);
+}
