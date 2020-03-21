@@ -1,105 +1,127 @@
 import React from 'react';
 import './progress-bar.style.css';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 
-export default function ProgressBar() {
-  const cropSeedingDays = 3;
-  const cropPropagationDays = 14;
-  const cropMaturityDays = 28;
-  const cropHarvestDays = 3;
-  let showToolTip = 'hidden';
-  let showStageTip = 'hidden';
-  let phaseChangeBorder = '';
-  let phaseChangeBorderColor = '';
-  const cropPassedDays = 13;
-  const cropTotalDays = 52;
-  let index = -1;
-  const stages = ['Seeding', 'Propagation', 'Maturity', 'Harvest', 'delivery'];
-  const data = [];
-  for (let i = 0; i < cropTotalDays; i += 1) {
-    data.push(i);
+function generateDays(totalDays) {
+  const daysArr = [];
+  for (let i = 0; i < totalDays; i += 1) {
+    daysArr.push(i);
   }
-  return (
-    <div className="progressBarComponent">
-      <h3>Progress Bar</h3>
-      <div className="section">
-        {data.map((e) => {
-          if (e + 1 === cropPassedDays) showToolTip = 'visible';
-          else showToolTip = 'hidden';
-          if (
-            e === cropSeedingDays - cropSeedingDays ||
-            e === cropSeedingDays ||
-            e === cropSeedingDays + cropPropagationDays ||
-            e === cropSeedingDays + cropPropagationDays + cropMaturityDays ||
-            e ===
-              cropSeedingDays +
-                cropPropagationDays +
-                cropMaturityDays +
-                cropHarvestDays
-          ) {
-            showStageTip = 'visible';
-            index += 1;
-          } else showStageTip = 'hidden';
+  return daysArr;
+}
 
-          if (
-            e + 1 === cropSeedingDays ||
-            e + 1 - cropSeedingDays === cropPropagationDays ||
-            e + 1 - cropSeedingDays - cropPropagationDays ===
-              cropMaturityDays ||
-            e + 1 - cropSeedingDays - cropPropagationDays - cropMaturityDays ===
-              cropHarvestDays
-          ) {
-            phaseChangeBorder = '.5em';
-            phaseChangeBorderColor = 'rgb(18, 121, 161)';
-          } else {
-            phaseChangeBorder = '.05em';
-            phaseChangeBorderColor = 'white';
-          }
-          if (e < cropPassedDays) {
-            return (
-              <div
-                className="dayComponents toolTip  tooltip-stage"
-                style={{
-                  backgroundColor: 'skyblue',
-                  width: 1000 / data.length,
-                  borderWidth: phaseChangeBorder,
-                  borderColor: phaseChangeBorderColor,
-                }}
-              >
-                <span
-                  className="toolTipText"
-                  style={{ visibility: showToolTip }}
-                >
-                  Day:{e + 1}
-                </span>
-                <span
-                  className="tooltiptext-stage"
-                  style={{ visibility: showStageTip }}
-                >
-                  {stages[index]}
-                </span>
-              </div>
-            );
-          }
-          return (
-            <div
-              className="dayComponents tooltip-stage"
-              key={e}
-              style={{
-                width: 1000 / data.length,
-                borderWidth: phaseChangeBorder,
-                backgroundColor: 'rgb(246, 246, 246)',
-              }}
-            >
-              <span
-                className="tooltiptext-stage"
-                style={{ visibility: showStageTip }}
-              >
-                {stages[index]}
-              </span>
-            </div>
-          );
-        })}
-      </div>
+function stageDays(stages) {
+  let sum = 0;
+  const stageLimit = stages.map((day) => {
+    sum += day.duration;
+    return sum;
+  });
+  return stageLimit;
+}
+
+function Tooltip({ day }) {
+  return (
+    <span className="toolTipText" style={{ visibility: 'visible' }}>
+      Day: {day}
+    </span>
+  );
+}
+
+function TooltipStage({ stageName }) {
+  return (
+    <span className="tooltiptext-stage" style={{ visibility: 'visible' }}>
+      {stageName}
+    </span>
+  );
+}
+
+function DayComponent({ classStyle, styling, children }) {
+  return (
+    <div className={classStyle} style={styling}>
+      {children}
     </div>
   );
 }
+
+function ProgressBar({ startDate, currentDate, stages }) {
+  const start = moment(startDate);
+  const end = moment(currentDate);
+  const daysPassed = end.diff(start, 'days');
+
+  const totalDays = stages.reduce((prev, current) => {
+    return prev + current.duration;
+  }, 0);
+
+  const stageDaysArr = stageDays(stages);
+  const baseStage = [0];
+  const stageDiv = baseStage.concat(stageDaysArr);
+  const dayWidth = (1 / totalDays) * 100;
+  let stageNameIndex = 0;
+  const days = generateDays(totalDays);
+
+  const dayBlock = days.map((day) => {
+    const isPassed = day <= daysPassed;
+    const bgColor = isPassed ? 'skyblue' : 'rgb(204, 201, 201)';
+    const classStyle = isPassed
+      ? 'dayComponents tooltip tooltip-stage'
+      : 'dayComponents tooltip-stage';
+    const stageBorder = stageDaysArr.includes(day) ? '.3em' : '';
+    const stageBorderColor = stageDaysArr.includes(day) ? '#4d94ff' : '';
+
+    return (
+      <DayComponent
+        key={day}
+        classStyle={classStyle}
+        styling={{
+          backgroundColor: bgColor,
+          width: `${dayWidth}%`,
+          borderWidth: stageBorder,
+          borderColor: stageBorderColor,
+        }}
+      >
+        {day === daysPassed && <Tooltip day={day} className="toolTipText" />}
+        {stageDiv.includes(day) && (
+          <TooltipStage
+            stageName={stages[stageNameIndex++].name}
+            className="tooltiptext-stage"
+          />
+        )}
+      </DayComponent>
+    );
+  });
+
+  return (
+    <div className="container">
+      <h1>PROGRESS BAR</h1>
+      <div className="progressBar">{dayBlock}</div>
+    </div>
+  );
+}
+
+export default ProgressBar;
+
+TooltipStage.propTypes = {
+  stageName: PropTypes.string.isRequired,
+};
+
+Tooltip.propTypes = {
+  day: PropTypes.string.isRequired,
+};
+
+DayComponent.propTypes = {
+  classStyle: PropTypes.string.isRequired,
+  styling: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+};
+
+ProgressBar.propTypes = {
+  currentDate: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  stages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      duration: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
