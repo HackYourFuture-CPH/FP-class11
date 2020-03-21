@@ -33,10 +33,8 @@ const getOptions = (query) => {
   if (query.order) {
     paginatedQuery.order = parseInt(query.order, 10);
   }
-
   return paginatedQuery;
 };
-
 module.exports = {
   paginate,
   getOptions,

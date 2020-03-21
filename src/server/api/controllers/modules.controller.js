@@ -8,7 +8,6 @@ const getModules = async () => {
     return error.message;
   }
 };
-
 const getModuleById = async (id) => {
   try {
     const modules = await knex('modules')
