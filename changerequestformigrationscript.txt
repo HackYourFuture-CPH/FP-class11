@@ -1,9 +1,0 @@
-Compared the tablenames and data types:(DB with JSON file)
------------
-1>area_users /area_material_logs/batch_area_crop_stages/batch_area_nonreusable_resource_consumption/batch_area_status/user_roles
-These all tables are populated on DB with fieldname and data type but on JSON file only table names are displaying.
-It seems like there are no data on the table.
-2> On DB  the table names are displayed as  “area_material” /“material” but on JSON file table names are  “area_materials/materials”.
-3>On DB field name is displaying “deleted_at”  on all tables but on JSON file its  “deleted” .
-4>On DB field name “fk_user_id” is there but on JSON file it’s not there on the Crops table.
-5> On DB field name “created_at”/“updated_at” is not there on Units table but its there on the JSON file.
