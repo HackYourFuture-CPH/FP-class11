@@ -1,0 +1,16 @@
+.detail-page {
+  background: #e5e5e5;
+}
+.detail-page-header {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  color: #3b4349;
+}
