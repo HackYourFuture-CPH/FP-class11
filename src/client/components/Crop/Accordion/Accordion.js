@@ -10,7 +10,7 @@ class Accordion extends Component {
   renderChildren() {
     return React.Children.map(this.props.children, (child) => {
       return React.cloneElement(child, {
-        atomic: this.props.atomic
+        atomic: this.props.atomic,
       });
     });
   }
@@ -24,5 +24,5 @@ export default Accordion;
 
 Accordion.propTypes = {
   atomic: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

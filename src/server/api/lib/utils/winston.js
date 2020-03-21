@@ -14,7 +14,7 @@ const styles = {
   info: chalk.bold.blue,
   error: chalk.bold.red,
   warn: chalk.bold.yellow,
-  success: chalk.bold.green
+  success: chalk.bold.green,
 };
 
 // formats
@@ -33,7 +33,7 @@ const myFormatConsole = printf((info) =>
         ? JSON.stringify(info.message)
         : info.message
     }`,
-  )
+  ),
 );
 
 const appendTimestamp = format((info, opts) => {
@@ -63,7 +63,7 @@ const options = {
     maxsize: 5242880, // 5MB
     maxFiles: 5,
     colorize: false,
-    format: customFormat
+    format: customFormat,
   },
   console: {
     level: 'debug',
@@ -77,7 +77,7 @@ const options = {
 const logger = createLogger({
   transports: [
     new transports.File(options.file),
-    new transports.Console(options.console)
+    new transports.Console(options.console),
   ],
   exitOnError: false, // do not exit on handled exceptions
 });
