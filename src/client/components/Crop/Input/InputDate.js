@@ -25,5 +25,5 @@ export default InputDate;
 InputDate.propTypes = {
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
 };

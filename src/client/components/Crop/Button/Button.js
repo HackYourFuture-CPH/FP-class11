@@ -14,5 +14,5 @@ export default Button;
 Button.propTypes = {
   submit: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired
+  placeholder: PropTypes.string.isRequired,
 };

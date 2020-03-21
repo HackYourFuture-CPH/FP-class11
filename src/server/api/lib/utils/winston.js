@@ -24,7 +24,7 @@ const myFormatFile = printf(
       typeof info.message === 'object'
         ? JSON.stringify(info.message)
         : info.message
-    }`
+    }`,
 );
 const myFormatConsole = printf((info) =>
   styles.info(
@@ -32,7 +32,7 @@ const myFormatConsole = printf((info) =>
       typeof info.message === 'object'
         ? JSON.stringify(info.message)
         : info.message
-    }`
+    }`,
   )
 );
 
@@ -42,7 +42,7 @@ const appendTimestamp = format((info, opts) => {
       ...info,
       timestamp: moment()
         .tz(opts.tz)
-        .format()
+        .format(),
     };
   }
   return info;
@@ -51,7 +51,7 @@ const appendTimestamp = format((info, opts) => {
 const customFormat = combine(
   label({ label: 'main' }),
   appendTimestamp({ tz: 'Europe/Copenhagen' }),
-  myFormatFile
+  myFormatFile,
 );
 
 const options = {
@@ -70,25 +70,25 @@ const options = {
     handleExceptions: true,
     json: false,
     colorize: true,
-    format: myFormatConsole
-  }
+    format: myFormatConsole,
+  },
 };
 
 const logger = createLogger({
   transports: [
     new transports.File(options.file),
-    new transports.Console(options.console)
+    new transports.Console(options.console),
   ],
-  exitOnError: false // do not exit on handled exceptions
+  exitOnError: false, // do not exit on handled exceptions
 });
 
 // for morgan generated outputs
 logger.stream = {
   write(message) {
     logger.info(message);
-  }
+  },
 };
 
 module.exports = {
-  logger
+  logger,
 };
