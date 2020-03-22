@@ -62,19 +62,19 @@ function ProgressBar({ startDate, currentDate, stages }) {
 
   const dayBlock = days.map((day) => {
     const isPassed = day <= daysPassed;
-    const bgColor = isPassed ? 'skyblue' : 'rgb(204, 201, 201)';
+    const restOfDays = day >= daysPassed;
     const classStyle = isPassed
-      ? 'dayComponents tooltip tooltip-stage'
+      ? 'dayComponents tooltip tooltip-stage passedDays'
       : 'dayComponents tooltip-stage';
     const stageBorder = stageDaysArr.includes(day) ? '.3em' : '';
-    const stageBorderColor = stageDaysArr.includes(day) ? '#4d94ff' : '';
+    const stageBorderColor =
+      stageDaysArr.includes(day) && restOfDays ? 'skyblue' : '#004280';
 
     return (
       <DayComponent
         key={day}
         classStyle={classStyle}
         styling={{
-          backgroundColor: bgColor,
           width: `${dayWidth}%`,
           borderWidth: stageBorder,
           borderColor: stageBorderColor,

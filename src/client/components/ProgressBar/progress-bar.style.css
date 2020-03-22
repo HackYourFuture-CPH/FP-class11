@@ -14,9 +14,13 @@
   margin-left: 1%;
 }
 .dayComponents {
+  background-color: rgb(204, 201, 201);
   height: 2.5em;
   border-right: 0 solid transparent;
   box-sizing: border-box;
+}
+.passedDays {
+  background-color: skyblue;
 }
 .dayComponents:first-child {
   border-top-left-radius: 1.5em;
@@ -46,7 +50,6 @@
   margin-left: -27px;
 }
 .tooltip .toolTipText::after {
-  content: '';
   position: absolute;
   top: 100%;
   left: 50%;
