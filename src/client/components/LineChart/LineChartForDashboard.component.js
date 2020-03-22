@@ -10,9 +10,9 @@ import {
   Line,
   ReferenceArea,
 } from 'recharts';
-import data from './data.json';
 
 const LineChartForDashboard = ({
+  tempData,
   strokeGrid,
   strokeAxis,
   minColor,
@@ -27,7 +27,7 @@ const LineChartForDashboard = ({
     <LineChart
       width={500}
       height={300}
-      data={data}
+      data={tempData}
       margin={{
         top: 5,
         right: 30,
@@ -80,6 +80,7 @@ const LineChartForDashboard = ({
 };
 
 LineChartForDashboard.propTypes = {
+  tempData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   strokeGrid: PropTypes.string.isRequired,
   strokeAxis: PropTypes.string.isRequired,
   minColor: PropTypes.string.isRequired,
