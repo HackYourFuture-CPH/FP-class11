@@ -20,7 +20,7 @@ export const Status = ({ stat }) => {
       classname = 'cancelled';
       break;
     default:
-      msg = 'on time';
+      msg = 'ON TIME';
       classname = 'on-time';
       break;
   }
