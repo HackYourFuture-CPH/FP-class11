@@ -14,7 +14,7 @@ exports.up = function(knex) {
       .timestamp('created_at')
       .defaultTo(knex.fn.now())
       .notNullable();
-    table.timestamp('deleted_at');
+    table.timestamp('deleted_at').defaultTo(knex.fn.now());
     table
       .foreign('fk_parent_area_id')
       .references('id')
