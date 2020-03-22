@@ -8,6 +8,11 @@
   padding: 0;
 }
 
+.crop-summary {
+  padding: 1.5rem;
+  border-radius: 1.6rem;
+}
+
 .card-contents > li {
   display: flex;
   justify-content: space-between;

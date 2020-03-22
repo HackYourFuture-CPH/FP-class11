@@ -4,7 +4,7 @@ import { Status } from '../status/status.component';
 import { Summary } from './summary.component';
 import { withKnobs, number, date, select } from '@storybook/addon-knobs';
 
-export default { title: 'cards/status', decorators: [withKnobs] };
+export default { title: 'Cards/Status', decorators: [withKnobs] };
 
 const moment = require('moment');
 
