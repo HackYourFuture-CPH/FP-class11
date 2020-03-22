@@ -22,10 +22,6 @@ exports.up = function(knex) {
       .foreign('fk_area_id')
       .references('id')
       .inTable('areas');
-    table
-      .foreign('fk_user_id')
-      .references('id')
-      .inTable('users');
   });
 };
 exports.down = function(knex) {

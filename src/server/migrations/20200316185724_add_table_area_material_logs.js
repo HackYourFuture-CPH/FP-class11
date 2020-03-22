@@ -20,10 +20,6 @@ exports.up = function(knex) {
       .notNullable();
     table.timestamp('deleted_at');
     table
-      .foreign('fk_batch_area_crop_stage_id')
-      .references('id')
-      .inTable('batch_area_crop_stages');
-    table
       .foreign('fk_area_material_id')
       .references('id')
       .inTable('area_material');
