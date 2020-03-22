@@ -38,7 +38,7 @@ export const WithKnobs = () => {
   };
 
   return (
-    <div>
+    <div className="card">
       <div className="card-header">
         <CardTitle title="STATUS" />
         <Status stat={knobs.status} />
