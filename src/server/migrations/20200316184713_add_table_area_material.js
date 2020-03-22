@@ -5,7 +5,10 @@ exports.up = function(knex) {
       .string('name')
       .unique()
       .notNullable();
-    table.integer('fk_area_id').notNullable();
+    table
+      .integer('fk_area_id')
+      .notNullable()
+      .unsigned();
     table
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())

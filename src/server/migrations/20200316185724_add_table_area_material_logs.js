@@ -1,8 +1,14 @@
 exports.up = function(knex) {
   return knex.schema.createTable('area_material_logs', function(table) {
     table.increments('id').primary();
-    table.integer('fk_batch_area_crop_stage_id').notNullable();
-    table.integer('fk_area_material_id').notNullable();
+    table
+      .integer('fk_batch_area_crop_stage_id')
+      .notNullable()
+      .unsigned();
+    table
+      .integer('fk_area_material_id')
+      .notNullable()
+      .unsigned();
     table.string('entry').notNullable();
     table
       .timestamp('updated_at')

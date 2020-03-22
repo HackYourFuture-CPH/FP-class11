@@ -2,7 +2,10 @@ exports.up = function(knex) {
   return knex.schema.createTable('areas', function(table) {
     table.increments('id').primary();
     table.string('name').notNullable();
-    table.integer('fk_parent_area_id');
+    table
+      .integer('fk_parent_area_id')
+      .notNullable()
+      .unsigned();
     table
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())

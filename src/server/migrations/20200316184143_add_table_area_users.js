@@ -1,8 +1,14 @@
 exports.up = function(knex) {
   return knex.schema.createTable('area_users', function(table) {
     table.increments('area_user_id').primary();
-    table.integer('fk_area_id').notNullable();
-    table.integer('fk_user_id').notNullable();
+    table
+      .integer('fk_area_id')
+      .notNullable()
+      .unsigned();
+    table
+      .integer('fk_user_id')
+      .notNullable()
+      .unsigned();
     table
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())
