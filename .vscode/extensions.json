@@ -2,6 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "ban.spellright",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "ms-vsliveshare.vsliveshare"
   ]
 }
