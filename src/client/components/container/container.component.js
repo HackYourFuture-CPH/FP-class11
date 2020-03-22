@@ -15,7 +15,7 @@ import Notification from '../notification/notification.component';
 
 import imageFile from '../../assets/images/logo.png';
 
-export default function Container({ title, error, handleChange, loginFunc }) {
+export default function Login({ title, error, handleChange, loginFunc }) {
   return (
     <div className="container">
       <Logo srcPath={imageFile} altText="Seasony" />
@@ -51,17 +51,19 @@ export default function Container({ title, error, handleChange, loginFunc }) {
         <div className="right-link">
           <Link href="/forgotpassword" text="Forgot password" />
         </div>
-        <Button onClick={loginFunc} text="Login" />
+        <Button type="primary" size="large" onClick={loginFunc}>
+          Login
+        </Button>
       </form>
     </div>
   );
 }
 
-Container.defaultProps = {
+Login.defaultProps = {
   error: false,
 };
 
-Container.propTypes = {
+Login.propTypes = {
   title: PropTypes.string.isRequired,
   error: PropTypes.bool,
   handleChange: PropTypes.func.isRequired,

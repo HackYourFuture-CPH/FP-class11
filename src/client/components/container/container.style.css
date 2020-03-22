@@ -1,7 +1,7 @@
 .container {
   background: var(--light-grey);
-  box-shadow: var(--container-shadow);
-  border-radius: 1.2em;
+  box-shadow: var(--embossed-shadow-high);
+  border-radius: var(--border-radius-low);
   color: var(--font-color);
   font-weight: normal;
   height: 30em;
@@ -32,6 +32,6 @@
   text-align: right;
 }
 
-.container .btn-wrapper button {
-  width: 50%;
+.container .btn-wrapper {
+  justify-content: center;
 }

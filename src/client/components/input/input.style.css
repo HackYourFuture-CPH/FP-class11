@@ -5,8 +5,8 @@
 .input-wrapper input {
   background: transparent;
   border: var(--border-inputs);
-  border-radius: var(--border-radius);
-  box-shadow: var(--input-shadow);
+  border-radius: var(--border-radius-high);
+  box-shadow: var(--debossed-shadow-high);
   font-size: 1em;
   margin: 1.1em 0 0.5em;
   outline: none;

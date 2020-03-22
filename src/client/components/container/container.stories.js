@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from './container.component';
+import Login from './container.component';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 export default {
-  title: 'ContainerLayouts/Container',
-  component: Container,
+  title: 'ContainerLayouts/Login',
+  component: Login,
   decorators: [withKnobs],
 };
 
@@ -15,7 +15,7 @@ export const LoginContainer = () => {
   const handleChange = action('changed input field');
   const loginFunc = action('login to dashboard');
   return (
-    <Container
+    <Login
       title={txtTitle}
       error={error}
       handleChange={handleChange}
