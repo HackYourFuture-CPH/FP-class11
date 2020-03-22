@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../Card/Card.component';
+import Card from '../Card/card.component';
 import Label from '../label/label.component';
 
 export default function StatusCard({

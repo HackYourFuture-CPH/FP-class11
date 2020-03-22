@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { CardTitle } from '../CardTitle.component';
-import { Status } from '../Status/Status.component';
-import { Content } from '../Content.component';
-import { Summary } from './Summary.component';
-import './CropSummary.style.css';
+import { CardTitle } from '../card-title.component';
+import { Status } from '../Status/status.component';
+import { Content } from '../content.component';
+import { Summary } from './summary.component';
+import './crop-summary.style.css';
 
 const moment = require('moment');
 
