@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from './Card.component';
-import { CropSummary } from './CropSummary/CropSummary.component';
+import Card from './card.component';
+import { CropSummary } from './crop-summary/crop-summary.component';
 
 export default { title: 'Cards' };
 

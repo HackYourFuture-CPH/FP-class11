@@ -1,10 +1,10 @@
 import React from 'react';
-import { CardTitle } from '../CardTitle.component';
-import { Status } from '../Status/Status.component';
-import { Summary } from './Summary.component';
+import { CardTitle } from '../card-title.component';
+import { Status } from '../status/status.component';
+import { Summary } from './summary.component';
 import { withKnobs, number, date, select } from '@storybook/addon-knobs';
 
-export default { title: 'Cards/Status', decorators: [withKnobs] };
+export default { title: 'cards/status', decorators: [withKnobs] };
 
 const moment = require('moment');
 

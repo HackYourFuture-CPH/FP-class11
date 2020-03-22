@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CropSummary.style.css';
+import './crop-summary.style.css';
 
 export const Summary = ({
   harvestDayLeft,

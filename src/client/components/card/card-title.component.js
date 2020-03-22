@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Card.style.css';
+import './card.style.css';
 
 export const CardTitle = ({ title }) => {
   return <h1 className="card-title">{title}</h1>;
