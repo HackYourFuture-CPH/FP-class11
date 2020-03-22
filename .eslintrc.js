@@ -3,6 +3,7 @@ module.exports = {
   // Add custom rules here
   rules: {
     '@typescript-eslint/camelcase': 'warn',
+    camelcase: 'warn',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'arrow-parens': 'off',
