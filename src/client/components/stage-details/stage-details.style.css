@@ -5,7 +5,7 @@
   max-width: 840px;
 
   background: #ebecf0;
-  color: #3B4349;
+  color: #3b4349;
   font-family: Proxima Nova, sans-serif;
   font-size: 20px;
 }
@@ -30,6 +30,10 @@
   flex-wrap: wrap;
   width: auto;
   margin: 1.5em 0;
+}
+
+.btn-toggle {
+  margin: 0 0.5em;
 }
 
 .stage-values-container {
@@ -76,7 +80,7 @@
 }
 
 .optimum-column {
-    width: 25%;
+  width: 25%;
 }
 
 .save-btn-container {

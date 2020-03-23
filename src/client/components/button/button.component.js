@@ -2,12 +2,12 @@ import React from 'react';
 import './button.style.css';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import theme from '../../theme';
 
 export default function Button({ children, type, size, onClick, toggled }) {
+  /* To do: use vars from theme.css file when complete */
   const background = {
-    primary: theme.colors.interaction,
-    danger: theme.colors.danger,
+    primary: '#73ABD7',
+    danger: '#F27EB1',
   };
 
   const btnClass = classNames({
