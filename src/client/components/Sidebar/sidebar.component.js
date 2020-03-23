@@ -1,10 +1,10 @@
 import React from 'react';
-import './Sidebar.style.css';
-import Button from '../Button/Button.component';
+import './sidebar.style.css';
+import Button from '../navigation-button/navigation-button.component';
 import PropTypes from 'prop-types';
-import '../Button/Button.style.css';
-import Logo from '../Logo/Logo.component';
-import Seasony from '../Logo/seasony.jpg';
+import '../navigation-button/navigation-button.style.css';
+import Logo from '../logo/logo.component';
+import Seasony from '../logo/seasony.jpg';
 
 import {
   faUserCircle,

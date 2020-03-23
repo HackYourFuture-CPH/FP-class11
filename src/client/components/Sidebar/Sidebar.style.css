@@ -4,8 +4,8 @@
      flex-direction: column;
      position: relative;
      width: 130px;
-     height:100vh;
+     min-height: 100vh;
      border: none;
      background-color: #ECEDF1;
  }
-
+ 

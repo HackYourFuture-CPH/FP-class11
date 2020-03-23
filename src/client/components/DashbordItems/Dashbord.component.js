@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Button/Button.style.css';
+import '../navigation-button/navigation-button.style.css';
 import PropTypes from 'prop-types';
 
 const DashbordItems = ({ items }) => {

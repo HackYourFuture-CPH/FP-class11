@@ -1,17 +1,17 @@
 import React from 'react';
-import './Logo.style.css';
+import './logo.style.css';
 import PropTypes from 'prop-types';
 
-const Logo = ({ srcImg, altText }) => {
+const Logo = ({ src, alt }) => {
   return (
     <div>
-      <img src={srcImg} alt={altText} className="avatar-img" />
+      <img src={src} alt={alt} className="avatar-img" />
     </div>
   );
 };
 Logo.propTypes = {
-  srcImg: PropTypes.string.isRequired,
-  altText: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Logo;

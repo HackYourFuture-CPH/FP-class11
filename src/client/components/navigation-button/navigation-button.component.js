@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import DashbordItems from '../DashbordItems/Dashbord.component';
-import '../DashbordItems/Dashbord.style.css';
+import DashbordItems from '../dashbordItems/dashbord.component';
+import '../dashbordItems/dashbord.style.css';
 
-const ButtonM = ({ icon, text, isactive, isuser }) => {
+const NavigationButton = ({ icon, text, isactive, isuser }) => {
   const className = `${isactive ? 'itemActive' : 'item'} ${
     isuser ? 'user' : ''
   }`;
@@ -28,10 +28,10 @@ const ButtonM = ({ icon, text, isactive, isuser }) => {
     </button>
   );
 };
-ButtonM.propTypes = {
+NavigationButton.propTypes = {
   icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   isactive: PropTypes.bool.isRequired,
   isuser: PropTypes.bool.isRequired,
 };
-export default ButtonM;
+export default NavigationButton;
