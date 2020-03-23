@@ -1,0 +1,55 @@
+name: ESLint & Migrations Check
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: test
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Verify DB connection
+      env:
+        PORT: 33306
+      run: |
+        while ! mysqladmin ping -h"127.0.0.1" -P"$PORT" --silent; do
+          sleep 1
+        done
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm install
+    - run: npm run code:check
+      env:
+        CI: true
+    - name: Run DB Migrations
+      run: npm run db:setup
+      env:
+        DB_HOST: "127.0.0.1"
+        DB_PORT: 33306
+        DB_NAME: "test"
+        DB_USER: "root"
+        DB_PASSWORD: "password"
+    - name: Run DB Migrations Rollback
+      run: npm run db:clean
+      env:
+        DB_HOST: "127.0.0.1"
+        DB_PORT: 33306
+        DB_NAME: "test"
+        DB_USER: "root"
+        DB_PASSWORD: "password"
