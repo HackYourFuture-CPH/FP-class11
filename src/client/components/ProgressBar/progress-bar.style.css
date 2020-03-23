@@ -14,10 +14,11 @@
   margin-left: 1%;
 }
 .dayComponents {
-  background-color: rgb(204, 201, 201);
+  background-color: rgb(228, 220, 220);
   height: 2.5em;
   border-right: 0 solid transparent;
   box-sizing: border-box;
+  box-shadow: inset .5px -30px 20px -30px;
 }
 .passedDays {
   background-color: skyblue;
@@ -30,7 +31,7 @@
   border-top-right-radius: 1.5em;
   border-bottom-right-radius: 1.5em;
 }
-.tooltip {
+.tooltip {  
   position: relative;
   display: inline-block;
 }
@@ -50,6 +51,7 @@
   margin-left: -27px;
 }
 .tooltip .toolTipText::after {
+  content: '';
   position: absolute;
   top: 100%;
   left: 50%;
@@ -65,7 +67,7 @@
   position: relative;
   display: inline-block;
 }
-.tooltip-stage .tooltiptext-stage {
+.tooltip-stage .tooltiptext-stage {  
   visibility: hidden;
   width: auto;
   background-color: rgb(228, 220, 220);
