@@ -13,6 +13,7 @@
     "server": "nodemon ./src/server/bin/server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
+    "db:clean": "cd ./src/server/ && knex migrate:rollback",
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
     "test": "jest",
     "test:watch": "jest --watch",
