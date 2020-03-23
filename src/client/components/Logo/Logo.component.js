@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Logo = ({ src, alt }) => {
   return (
     <div>
-      <img src={src} alt={alt} className="avatar-img" />
+      <img src={src} alt={alt} className="logo-img" />
     </div>
   );
 };
