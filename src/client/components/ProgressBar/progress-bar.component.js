@@ -116,8 +116,8 @@ DayComponent.propTypes = {
 };
 
 ProgressBar.propTypes = {
-  currentDate: PropTypes.string.isRequired,
   startDate: PropTypes.string.isRequired,
+  currentDate: PropTypes.string.isRequired,
   stages: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

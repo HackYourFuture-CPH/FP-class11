@@ -6,7 +6,7 @@
   text-align: center;
   width: 100%;
   height: 15em;
-  background-color: rgb(228, 220, 220);
+  background-color: rgb(243, 241, 241);
 }
 .progressBar {
   margin-top: 5em;
@@ -70,7 +70,7 @@
 .tooltip-stage .tooltiptext-stage {  
   visibility: hidden;
   width: auto;
-  background-color: rgb(228, 220, 220);
+  background-color: rgb(243, 241, 241);
   color: #352626;
   font-size: 12px;
   text-align: left;
