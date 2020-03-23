@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './container.component';
+import Login from './login.component';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
