@@ -83,7 +83,7 @@ function ProgressBar({ startDate, currentDate, stages }) {
         {day === daysPassed && <Tooltip day={day} className="toolTipText" />}
         {stageDiv.includes(day) && (
           <TooltipStage
-            stageName={capitalize(stages[stageNameIndex++].name)}
+            stageName={capitalizeFirstLetter(stages[stageNameIndex++].name)}
             className="tooltiptext-stage"
           />
         )}
@@ -125,6 +125,6 @@ ProgressBar.propTypes = {
     }).isRequired,
   ).isRequired,
 };
-function capitalize(string){
+function capitalizeFirstLetter(string){
   return string.charAt(0).toUpperCase() + string.slice(1);
   }
