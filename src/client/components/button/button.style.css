@@ -1,47 +1,54 @@
-.btn {
+.btn-wrapper {
+  display: flex;
+  margin: 1.4em 0;
+}
+
+.btn-wrapper .btn {
+  background: var(--interaction-color);
+  box-shadow: var(--embossed-shadow-low);
+  border-radius: var(--border-radius-high);
+  border: var(--border-inputs);
+  color: var(--white);
   display: flex;
   flex-direction: row;
+  font-size: 1.3em;
   justify-content: center;
+  outline: none;
+  padding: 0.4em 1.3em;
   text-align: center;
-  font-family: Proxima Nova, sans-serif;
-  color: #ffffff;
-  font-weight: bold;
   text-transform: uppercase;
-  font-size: 20px;
-  padding: 0.7em 1.2em;
-  border-radius: 40px;
-  border: none;
-  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
 }
 
-.btn:active {
-  box-shadow: inset 2px 2px 10px rgba(102, 102, 102, 0.6),
-    inset -3px -3px 10px rgba(255, 255, 255, 0.9);
+.btn-wrapper .btn:active {
+  box-shadow: var(--debossed-shadow-low);
 }
 
-.btn-secondary {
-  background-color: #c9cbd8;
-  color: #666666;
+.btn-wrapper .btn-danger {
+  background: var(--pink);
 }
 
-.btn-large {
-  font-size: 30px;
-  line-height: 37px;
-  padding: 0.4em 2.3em;
+.btn-wrapper .btn-secondary {
+  background: var(--grey);
+  color: var(--font-color);
 }
 
-.btn-toggle {
-  background: #ebecf0;
-  font-size: 16px;
-  color: #3b4349;
-  text-transform: none;
+.btn-wrapper .btn-large {
+  font-size: 1.7em;
+  line-height: 1.2em;
+  padding: 0.3em 3em;
+}
+
+.btn-wrapper .btn-toggle {
+  background: var(--light-grey);
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-medium);
+  color: var(--font-color);
+  font-size: 1em;
   font-weight: normal;
+  text-transform: none;
   padding: 0.7em 1.2em;
-  border-radius: 20px;
-  box-shadow: -7px -7px 20px rgba(255, 255, 255, 0.8), 5px 5px 20px #c9cbd8;
 }
 
-.btn.toggled {
-  box-shadow: inset -3px -3px 10px rgba(255, 255, 255, 0.9),
-    inset 4px 4px 8px #c9cbd8;
+.btn-wrapper .btn.toggled {
+  box-shadow: var(--debossed-shadow-medium);
 }

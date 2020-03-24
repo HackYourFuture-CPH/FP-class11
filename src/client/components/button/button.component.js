@@ -4,14 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function Button({ children, type, size, onClick, toggled }) {
-  /* To do: use vars from theme.css file when complete */
-  const background = {
-    primary: '#73ABD7',
-    danger: '#F27EB1',
-  };
-
-  const btnClass = classNames({
-    btn: true,
+  const btnClass = classNames('btn', {
     'btn-primary': type === 'primary',
     'btn-secondary': type === 'secondary',
     'btn-danger': type === 'danger',
@@ -21,13 +14,11 @@ export default function Button({ children, type, size, onClick, toggled }) {
   });
 
   return (
-    <input
-      className={btnClass}
-      style={background[type] ? { backgroundColor: background[type] } : null}
-      type="submit"
-      onClick={onClick}
-      value={children}
-    />
+    <div className="btn-wrapper">
+      <button className={btnClass} type="submit" onClick={onClick}>
+        {children}
+      </button>
+    </div>
   );
 }
 

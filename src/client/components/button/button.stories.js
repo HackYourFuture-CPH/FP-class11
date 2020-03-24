@@ -1,11 +1,11 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Button from './button.component';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 export default {
-  component: Button,
   title: 'Button',
+  component: Button,
   decorators: [withKnobs],
 };
 
@@ -14,6 +14,7 @@ const options = {
   Save: 'save',
   'Delete Crop': 'delete-crop',
   'Export Data': 'export',
+  Login: 'login',
   'Log out': 'logout',
   Delete: 'delete',
   Cancel: 'cancel',
@@ -25,7 +26,8 @@ const defaultExample = 'save';
 const btnDetails = {
   save: { text: 'Save Crop Details', type: 'primary' },
   'delete-crop': { text: 'Delete Crop', type: 'danger' },
-  export: { text: 'Export data ▼', type: 'primary' },
+  export: { text: 'Export data ▾', type: 'primary' },
+  login: { text: 'Login', type: 'primary', size: 'large' },
   logout: { text: 'Log Out', type: 'danger', size: 'large' },
   delete: { text: 'Delete', type: 'danger', size: 'large' },
   cancel: { text: 'Cancel', type: 'secondary', size: 'large' },
