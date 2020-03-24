@@ -1,0 +1,6 @@
+.link {
+  color: var(--dark-grey);
+  font-size: 0.9em;
+  margin: 0.2em 0.4em 0 0;
+  text-decoration: underline;
+}
