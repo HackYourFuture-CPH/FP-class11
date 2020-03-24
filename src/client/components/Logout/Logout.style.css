@@ -1,5 +1,5 @@
 /*Log button on front end styling */
-.logbutton {
+.logout-button {
   position: absolute;
   transition: 0.5s ease;
   background-color: white;
@@ -12,7 +12,7 @@
   top: 2%;
 }
 
-.logbutton:hover {
+.logout-button:hover {
   background-color: rgb(255, 105, 180);
   color: white;
 }

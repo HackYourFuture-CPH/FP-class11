@@ -2,11 +2,13 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import './Logout.style.css';
 
+const userName = 'Servet';
+
 export default function Logout() {
   return (
     <Popup
       trigger={
-        <button type="submit" className="logbutton">
+        <button type="submit" className="logout-button">
           {' '}
           LOG OUT{' '}
         </button>
@@ -21,12 +23,16 @@ export default function Logout() {
           <div className="header"> LOG OUT </div>
           <div className="content">
             <p>
-              Hi Servet <br />
+              Hi {userName} <br />
               Do you really want to Logout ?{' '}
             </p>
           </div>
           <div className="actions">
-            <button className="confirm-logout" type="submit">
+            <button
+              className="confirm-logout"
+              type="submit"
+              onClick="location.href='/login?dis=yes'"
+            >
               Logout
             </button>
             <br />
