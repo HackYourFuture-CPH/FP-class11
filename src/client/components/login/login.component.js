@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './login.style.css';
 import PropTypes from 'prop-types';
 import {
@@ -15,38 +15,43 @@ import Notification from '../notification/notification.component';
 
 import imageFile from '../../assets/images/logo.png';
 
-export default function Login({ title, error, handleChange, loginFunc }) {
+export default function Login({
+  title,
+  errorNotifications,
+  handleChange,
+  loginFunc,
+}) {
+  const [errorMessage, setErrorMessage] = useState('');
+  useEffect(() => {
+    if (errorNotifications) {
+      if (errorNotifications === 'email')
+        setErrorMessage('This is error message for wrong email address');
+      else if (errorNotifications === 'password')
+        setErrorMessage('This is error message for wrong password.');
+      else setErrorMessage('Something went wrong. Try again later.');
+    }
+  }, [errorNotifications]);
   return (
     <div className="container">
       <Logo srcPath={imageFile} altText="Seasony" />
       <h2>{title}</h2>
       <form>
         <div className="error-notification">
-          {error && (
-            <Notification text="This is error message for wrong email address." />
-          )}
+          {errorNotifications && <Notification text={errorMessage} />}
         </div>
-        {error ? (
-          <InputLogin
-            type="email"
-            placeholder="Email"
-            onChange={handleChange}
-            icon={faExclamationCircle}
-            error
-          />
-        ) : (
-          <InputLogin
-            type="email"
-            placeholder="Email"
-            onChange={handleChange}
-            icon={faUser}
-          />
-        )}
+        <InputLogin
+          type="email"
+          placeholder="Email"
+          onChange={handleChange}
+          icon={errorNotifications === 'email' ? faExclamationCircle : faUser}
+          error={errorNotifications === 'email'}
+        />
         <InputLogin
           type="password"
           placeholder="Password"
           onChange={handleChange}
-          icon={faKey}
+          icon={errorNotifications === 'password' ? faExclamationCircle : faKey}
+          error={errorNotifications === 'password'}
         />
         <div className="right-link">
           <Link href="/forgotpassword" text="Forgot password" />
@@ -60,12 +65,12 @@ export default function Login({ title, error, handleChange, loginFunc }) {
 }
 
 Login.defaultProps = {
-  error: false,
+  errorNotifications: null,
 };
 
 Login.propTypes = {
   title: PropTypes.string.isRequired,
-  error: PropTypes.bool,
+  errorNotifications: PropTypes.oneOf(['email', 'password', 'general', null]),
   handleChange: PropTypes.func.isRequired,
   loginFunc: PropTypes.func.isRequired,
 };
