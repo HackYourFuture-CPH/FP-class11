@@ -9,9 +9,9 @@ export default {
 };
 
 export const Error = () => {
-  const txt = text(
+  const errorText = text(
     'Error text',
     'This is error message for wrong email address.',
   );
-  return <Notification text={txt} />;
+  return <Notification text={errorText} />;
 };

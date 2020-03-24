@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function Button({ children, type, size, onClick, toggled }) {
-  const btnClass = classNames({
-    btn: true,
+  const btnClass = classNames('btn', {
     'btn-primary': type === 'primary',
     'btn-secondary': type === 'secondary',
     'btn-danger': type === 'danger',

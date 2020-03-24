@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './login.style.css';
 import PropTypes from 'prop-types';
 import {
@@ -18,26 +18,17 @@ import imageFile from '../../assets/images/logo.png';
 export default function Login({
   title,
   errorNotifications,
+  errorMessages,
   handleChange,
   loginFunc,
 }) {
-  const [errorMessage, setErrorMessage] = useState('');
-  useEffect(() => {
-    if (errorNotifications) {
-      if (errorNotifications === 'email')
-        setErrorMessage('This is error message for wrong email address');
-      else if (errorNotifications === 'password')
-        setErrorMessage('This is error message for wrong password.');
-      else setErrorMessage('Something went wrong. Try again later.');
-    }
-  }, [errorNotifications]);
   return (
     <div className="container">
       <Logo srcPath={imageFile} altText="Seasony" />
       <h2>{title}</h2>
       <form>
         <div className="error-notification">
-          {errorNotifications && <Notification text={errorMessage} />}
+          {errorNotifications && <Notification text={errorMessages} />}
         </div>
         <InputLogin
           type="email"
@@ -66,11 +57,13 @@ export default function Login({
 
 Login.defaultProps = {
   errorNotifications: null,
+  errorMessages: ''
 };
 
 Login.propTypes = {
   title: PropTypes.string.isRequired,
   errorNotifications: PropTypes.oneOf(['email', 'password', 'general', null]),
+  errorMessages: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   loginFunc: PropTypes.func.isRequired,
 };
