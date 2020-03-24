@@ -57,7 +57,7 @@ export default function Login({
 
 Login.defaultProps = {
   errorNotifications: null,
-  errorMessages: ''
+  errorMessages: '',
 };
 
 Login.propTypes = {
