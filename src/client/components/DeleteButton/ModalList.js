@@ -14,15 +14,15 @@ const ModalList = ({ isShowing, hide }) =>
             role="dialog"
           >
             <div className="modal-header">
-              <button
+              <span
                 type="button"
                 className="modal-close-button"
-                data-dismiss="modal"
                 aria-label="Close"
                 onClick={hide}
+                aria-hidden="true"
               >
-                <span aria-hidden="true">&times;</span>
-              </button>
+                &times;
+              </span>
             </div>
             <div className="modal">
               <h4 className="modal-headline">DELETE CROP</h4>
