@@ -1,16 +1,13 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs';
 import StageDetails from './stage-details.component';
 import data from './crop_stage_default_values.json';
 
 export default {
   component: StageDetails,
   title: 'Accordion Options',
-  decorators: [withKnobs],
 };
 
-const CropID = 1;
+const cropID = 1;
 
 const parametersAndLabels = {
   temperature: 'Temperature (°C)',
@@ -33,12 +30,11 @@ export const StageDetailsComponent = () => {
 
   return (
     <StageDetails
-      cropID={CropID}
+      cropID={cropID}
       parametersAndLabels={parametersAndLabels}
       stages={stages}
       levels={levels}
       data={data}
-      saveFunc={action('save stage details')}
     />
   );
 };

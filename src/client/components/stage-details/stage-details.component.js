@@ -4,13 +4,16 @@ import './stage-details.style.css';
 import SectionHeader from '../section-header/section-header.component';
 import Button from '../button/button.component';
 
+function capitalizeString(str) {
+  return str[0].toUpperCase().concat(str.slice(1, str.length));
+}
+
 export default function StageDetails({
   cropID,
   parametersAndLabels,
   stages,
   levels,
   data,
-  saveFunc,
 }) {
   // Get the parameter data for crop with id of cropID
   const [cropData, setCropData] = useState([]);
@@ -40,14 +43,42 @@ export default function StageDetails({
     );
   }, [selectedStageNumber, cropData]);
 
+  function handleInputChange(e, level, parameter) {
+    const valueEntered = e.target.value;
+    e.preventDefault();
+    setCropData((prev) => {
+      return prev.map((dataPoint) => {
+        if (
+          Number(dataPoint.fk_crop_stage_id) === selectedStageNumber &&
+          dataPoint.parameter === parameter
+        ) {
+          const updatedDataPoint = {
+            ...dataPoint,
+            [`${level}_value`]: valueEntered,
+          };
+          return updatedDataPoint;
+        }
+        return dataPoint;
+      });
+    });
+  }
+
+  function saveUpdatedCropData(e) {
+    e.preventDefault();
+    /* TO DO: SAVE UPDATED cropData */
+  }
+
   return (
     <div className="stage-details-container">
       {/* Section header */}
-      <SectionHeader onClick={() => null} index={1}>
+      <SectionHeader onClick={() => null} tabIndex={0}>
         Stage Details
       </SectionHeader>
 
-      <form className="stage-values-form">
+      <form
+        className="stage-values-form"
+        onSubmit={(e) => saveUpdatedCropData(e)}
+      >
         {/* Toggle buttons to select stage */}
         <div className="stage-buttons-container">
           {stages.map((stage) => {
@@ -80,7 +111,10 @@ export default function StageDetails({
           {/* Columns containing values per parameter and level */}
           {levels.map((level) => {
             return (
-              <div className={`${level}-column`}>
+              <div
+                className={`${level}-column`}
+                key={`stage-${selectedStageNumber}-${level}-column`}
+              >
                 {Object.keys(parametersAndLabels).map((parameter) => {
                   const dataForParameter = dataForStage.filter((dataPoint) => {
                     return dataPoint.parameter === parameter;
@@ -88,23 +122,26 @@ export default function StageDetails({
                   const value = dataForParameter[0]
                     ? dataForParameter[0][`${level}_value`]
                     : '';
+                  const name = `${level}-${parameter}-${
+                    stages[selectedStageNumber - 1].name
+                  }`;
+                  const title = `${level} ${parameter} in ${
+                    stages[selectedStageNumber - 1].name
+                  }`;
                   return (
-                    <label className="stage-details-value-item">
-                      {level}:
+                    <label
+                      className="stage-details-value-item"
+                      key={`stage-${selectedStageNumber}-${level}-${parameter}`}
+                    >
+                      {capitalizeString(level)}:
                       <input
                         className="stage-value-input"
                         type="text"
-                        pattern="[0-9]{4}"
-                        name={`${level}-${parameter}-${
-                          stages[selectedStageNumber - 1].name
-                        }`}
-                        title={`${level} ${parameter} in ${
-                          stages[selectedStageNumber - 1].name
-                        }`}
+                        pattern="^[0-9]+([,.][0-9]+)?$"
+                        name={name}
+                        title={title}
                         value={value}
-                        onChange={(e) => {
-                          e.preventDefault();
-                        }}
+                        onChange={(e) => handleInputChange(e, level, parameter)}
                       />
                     </label>
                   );
@@ -116,7 +153,7 @@ export default function StageDetails({
 
         {/* Save button */}
         <div className="save-btn-container">
-          <Button type="primary" onClick={saveFunc}>
+          <Button type="primary" onClick={() => null}>
             Save Crop Details
           </Button>
         </div>
@@ -131,5 +168,4 @@ StageDetails.propTypes = {
   stages: PropTypes.instanceOf(Array).isRequired,
   levels: PropTypes.instanceOf(Array).isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
-  saveFunc: PropTypes.func.isRequired,
 };
