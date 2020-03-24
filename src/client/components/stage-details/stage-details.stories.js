@@ -2,6 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import StageDetails from './stage-details.component';
+import data from './crop_stage_default_values.json';
 
 export default {
   component: StageDetails,
@@ -9,23 +10,34 @@ export default {
   decorators: [withKnobs],
 };
 
-const stageDetailsNameTitlePairs = {
+const CropID = 1;
+
+const parametersAndLabels = {
   temperature: 'Temperature (°C)',
   humidity: 'Humidity (g/m3)',
   ph: 'PH',
   ec: 'EC (ppm)',
-  'water-level': 'Water level (cm)',
+  // eslint-disable-next-line @typescript-eslint/camelcase
+  water_level: 'Water level (cm)',
 };
 
 export const StageDetailsComponent = () => {
-  const stages = ['Seeding', 'Propagation', 'Maturity', 'Harvest'];
-  const levels = ['Optimum', 'Min', 'Max'];
+  const stages = [
+    { id: 1, name: 'Seeding' },
+    { id: 2, name: 'Propagation' },
+    { id: 3, name: 'Maturity' },
+    { id: 4, name: 'Harvest' },
+  ];
+
+  const levels = ['min', 'optimum', 'max'];
 
   return (
     <StageDetails
-      inputNameTitlePairsObj={stageDetailsNameTitlePairs}
-      buttonValuesArr={stages}
-      labelValuesArr={levels}
+      cropID={CropID}
+      parametersAndLabels={parametersAndLabels}
+      stages={stages}
+      levels={levels}
+      data={data}
       saveFunc={action('save stage details')}
     />
   );
