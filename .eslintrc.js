@@ -22,7 +22,6 @@ module.exports = {
     'react/jsx-boolean-value': 'off',
     'react/jsx-filename-extension': 'off',
     'react/no-access-state-in-setstate': 'off',
-    'no-plusplus': 'off',
     'react/prefer-stateless-function': 'warn',
     'react/prop-types': 'warn',
     'react/state-in-constructor': 'off',
