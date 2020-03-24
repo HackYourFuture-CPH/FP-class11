@@ -5,9 +5,43 @@
   --pink: #f27eb1;
   --green: #709d68;
   --light-blue: #73abd7;
+  --light-grey: #ebecf0;
+  --grey: #c9cbd8;
+  --dark-grey: #666;
+  --dark-blue: #3b4349;
+  --fontawesome-gray: #898b94;
 
   /* Map colors to logical names */
   --interaction-color: var(--light-blue);
   --primary-color: var(--green);
   --danger-color: var(--pink);
+  --font-color: var(--dark-blue);
+
+  /*Shadows*/
+  /*buttons*/
+  --embossed-shadow-low: 5px 5px 8px #c9cbd8,
+    -7px -7px 8px rgba(255, 255, 255, 0.8);
+  --debossed-shadow-low: inset 2px 2px 10px rgba(102, 102, 102, 0.6),
+    inset -3px -3px 10px rgba(255, 255, 255, 0.9);
+
+  /*big blocks*/
+  --embossed-shadow-high: 5px 5px 20px #c9cbd8,
+    -7px -7px 20px rgba(255, 255, 255, 0.8);
+
+  /*inputs*/
+  --debossed-shadow-high: inset 4px 4px 8px #c9cbd8,
+    inset -3px -3px 10px rgba(255, 255, 255, 0.9);
+
+  /*sidebar nav, majority of components */
+  --embossed-shadow-medium: 3px 3px 15px #c9cbd8,
+    -3px -3px 10px rgba(255, 255, 255, 0.8);
+  --debossed-shadow-medium: inset 2px 2px 8px #c9cbd8,
+    inset -3px -3px 10px rgba(255, 255, 255, 0.9);
+
+  /*Default border*/
+  --border-inputs: 1px solid rgba(255, 255, 255, 0.2);
+
+  /*Border radius*/
+  --border-radius-high: 2.2em;
+  --border-radius-low: 1.2em;
 }
