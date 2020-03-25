@@ -10,10 +10,6 @@ exports.up = function(knex) {
     table.timestamp('created_at').notNullable();
     table.timestamp('updated_at').notNullable();
     table.timestamp('deleted_at').notNullable();
-    table
-      .foreign('fk_user_id')
-      .references('id')
-      .inTable('users');
   });
 };
 exports.down = function(knex) {
