@@ -1,0 +1,37 @@
+import React from 'react';
+import FormTitle from '../FormTitle/formtitle';
+import FormField from '../FormField/formfield';
+import { Accordion, AccordionItem } from 'react-light-accordion';
+import './addcrop.css';
+import '../../../index.css';
+
+function AddCrop() {
+  return (
+    <>
+      <FormTitle title="Add Crop" />
+
+      <div>
+        <Accordion>
+          <AccordionItem title="CROP">
+            <br />
+            <br />
+            <FormField />
+          </AccordionItem>
+
+          <AccordionItem title="STAGE DETAILS">
+            <FormTitle title="Section under development" />
+          </AccordionItem>
+
+          <AccordionItem title="TRAYS AND TANKS">
+            <FormTitle title="Section under development" />
+          </AccordionItem>
+
+          <AccordionItem title="COSTS">
+            <FormTitle title="Section under development" />
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </>
+  );
+}
+export default AddCrop;

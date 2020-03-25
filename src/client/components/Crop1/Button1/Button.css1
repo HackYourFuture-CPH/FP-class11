@@ -1,10 +1,10 @@
-.Button-class {
+.Btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
   float: left;
-  background-color: lightblue;
+  background-color: var(--interaction-color);
   color: white;
   float: right;
 

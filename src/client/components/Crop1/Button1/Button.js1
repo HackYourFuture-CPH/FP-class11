@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.css';
+import './button.css';
 
-const Button = ({ submit, handleSubmit, placeholder }) => {
+const Button = ({ type, submit, handleSubmit, placeholder }) => {
   return (
-    <button className="Button-class" type={submit} onClick={handleSubmit}>
+    <Button className="Btn" type={submit} onClick={handleSubmit}>
       {placeholder}
-    </button>
+    </Button>
   );
 };
-
 export default Button;
 Button.propTypes = {
-  submit: PropTypes.string.isRequired,
+  type: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
 };

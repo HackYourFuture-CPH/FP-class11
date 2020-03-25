@@ -72,7 +72,6 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "^5.3.14",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "concurrently": "^4.1.0",

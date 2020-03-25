@@ -1,7 +1,10 @@
-.input-date {
+.input-text {
+  display: flex;
+  align-items: center;
+
   width: 600px;
   height: 32px;
-  background: lightgray;
+  background: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
   padding: 16px;
@@ -10,12 +13,13 @@
   font-family: Proxima Nova, sans-serif;
   font-style: normal;
   font-size: 62.5%;
-  line-height: 24px;
+  line-height: 1.5em;
   /* button-shadow */
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.8), 3px 3px 15px #c9cbd8;
   border-radius: 40px;
 }
-.input-date:hover {
+
+.input-text:hover {
   background-color: #ccc;
   cursor: pointer;
 }
