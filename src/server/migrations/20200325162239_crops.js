@@ -8,7 +8,10 @@ exports.up = function(knex) {
       .unsigned()
       .notNullable();
     table.timestamp('created_at').notNullable();
-    table.timestamp('updated_at').notNullable();
+    table
+      .timestamp('updated_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
     table.timestamp('deleted_at').notNullable();
   });
 };
