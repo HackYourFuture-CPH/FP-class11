@@ -1,0 +1,28 @@
+.input-wrapper label {
+  display: none;
+}
+
+.input-wrapper input {
+  background: transparent;
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-high);
+  box-shadow: var(--debossed-shadow-high);
+  font-size: 1em;
+  margin: 1.1em 0 0.5em;
+  outline: none;
+  padding: 1em 1.2em 0.9em;
+  width: 100%;
+}
+
+.input-wrapper input:-webkit-autofill {
+  background: var(--light-grey);
+}
+
+.input-wrapper input.disabled {
+  background: #dedfe3;
+  color: rgba(59, 67, 73, 0.4);
+}
+
+.input-wrapper input.disabled::placeholder {
+  color: rgba(59, 67, 73, 0.4);
+}
