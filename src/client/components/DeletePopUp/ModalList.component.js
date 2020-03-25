@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Button from '../button/button.component';
 
 const ModalList = ({ isShowing, hide }) =>
   isShowing
@@ -25,15 +26,17 @@ const ModalList = ({ isShowing, hide }) =>
               </span>
             </div>
             <div className="modal">
-              <h4 className="modal-headline">DELETE CROP</h4>
+              <h4 className="text-headline">DELETE CROP</h4>
               <p className="p1">Are you sure?</p>
               <p className="p2">Do you really want to delete the crop?</p>
-              <button className="btn-delete" type="button">
-                <p className="text-btn-delete">DELETE</p>
-              </button>
-              <button className="btn-cancel" type="button">
-                <p className="text-btn-cancel">CANCEL</p>
-              </button>
+              <div className="modal-buttons">
+                <Button type="danger" size="large">
+                  Delete
+                </Button>
+                <Button type="secondary" size="large">
+                  Cancel
+                </Button>
+              </div>
             </div>
           </div>
         </div>,
