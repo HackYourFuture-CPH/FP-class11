@@ -5,8 +5,14 @@ exports.up = function(knex) {
       .primary()
       .unsigned();
     table.enu('name', []).notNullable();
-    table.timestamp('created_at').notNullable();
-    table.timestamp('updated_at').notNullable();
+    table
+      .timestamp('created_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
+    table
+      .timestamp('updated_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
   });
 };
 exports.down = function(knex) {

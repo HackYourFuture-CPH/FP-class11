@@ -7,12 +7,18 @@ exports.up = function(knex) {
       .integer('fk_user_id')
       .unsigned()
       .notNullable();
-    table.timestamp('created_at').notNullable();
+    table
+      .timestamp('created_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
     table
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
-    table.timestamp('deleted_at').notNullable();
+    table
+      .timestamp('deleted_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
   });
 };
 exports.down = function(knex) {

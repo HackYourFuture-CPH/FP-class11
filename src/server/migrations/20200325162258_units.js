@@ -13,9 +13,18 @@ exports.up = function(knex) {
       .varchar('name')
       .unique()
       .notNullable();
-    table.timestamp('created_at').notNullable();
-    table.timestamp('updated_at').notNullable();
-    table.timestamp('deleted_at').notNullable();
+    table
+      .timestamp('created_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
+    table
+      .timestamp('updated_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
+    table
+      .timestamp('deleted_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
   });
 };
 exports.down = function(knex) {
