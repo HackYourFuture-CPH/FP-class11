@@ -1,0 +1,83 @@
+.body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  text-align: center;
+  width: 100%;
+  height: 15em;
+  background-color: rgb(243, 241, 241);
+}
+.progressBar {
+  margin-top: 5em;
+  width: 98%;
+  margin-left: 1%;
+}
+.dayComponents {
+  background-color: rgb(228, 220, 220);
+  height: 2.5em;
+  border-right: 0 solid transparent;
+  box-sizing: border-box;
+  box-shadow: inset 0.5px -30px 20px -30px;
+}
+.passedDays {
+  background-color: skyblue;
+}
+.dayComponents:first-child {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+}
+.dayComponents:last-child {
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .toolTipText {
+  visibility: hidden;
+  width: 60px;
+  background-color: skyblue;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  bottom: 125%;
+  left: 70%;
+  margin-left: -27px;
+}
+.tooltip .toolTipText::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: skyblue transparent transparent transparent;
+}
+.tooltip .toolTipText {
+  visibility: visible;
+}
+.tooltip-stage {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-stage .tooltiptext-stage {
+  visibility: hidden;
+  width: auto;
+  background-color: rgb(243, 241, 241);
+  color: #352626;
+  font-size: 12px;
+  text-align: left;
+  position: absolute;
+  top: 110%;
+  left: 140%;
+}
+.tooltip-stage .tooltiptext-stage {
+  visibility: hidden;
+}
