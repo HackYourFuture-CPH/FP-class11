@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import './Logout.style.css';
+import './logout.style.css';
 
 const userName = 'Servet';
 
@@ -38,7 +38,7 @@ export default function Logout() {
             <br />
             <button
               type="submit"
-              className="ConfirmCancel"
+              className="confirm-cancel"
               onClick={() => {
                 close();
               }}
