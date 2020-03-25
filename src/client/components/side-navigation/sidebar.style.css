@@ -1,16 +1,14 @@
 .sidebar-wrapper {
-    text-align: center;
-     display:flex;
-     flex-direction: column;
-     position: relative;
-     width: 130px;
-     min-height: 100vh;
-     border: none;
-     background-color: #ECEDF1;
- }
- 
- .sidebar-wrapper .logo{
-    margin: 1em 0;  
- }
+  background: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  width: 130px;
+  min-height: 100vh;
+  border: none;
+}
 
- 
+.sidebar-wrapper .logo {
+  margin: 1em 0;
+}
