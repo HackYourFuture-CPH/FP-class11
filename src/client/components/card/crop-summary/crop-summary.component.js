@@ -13,7 +13,7 @@ export const CropSummary = () => {
   const currentDate = moment();
   const harvestDate = moment({
     y: 2020,
-    M: 2,
+    M: 3,
     d: 24,
     h: currentDate.hours(),
     m: currentDate.minutes(),
