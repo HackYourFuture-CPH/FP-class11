@@ -3,9 +3,8 @@ import './sidebar.style.css';
 import NavigationButton from '../navigation-button/navigation-button.component';
 import PropTypes from 'prop-types';
 import '../navigation-button/navigation-button.style.css';
-import Logo from '../logo-t/logo.component';
+import Logo from '../logo/logo.component';
 import imageFile from '../../assets/images/logo.png';
-
 import {
   faUserCircle,
   faThLarge,
