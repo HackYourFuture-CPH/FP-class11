@@ -38,7 +38,7 @@ export default function Logout() {
             <br />
             <button
               type="submit"
-              className="confirm-cancel"
+              className="ConfirmCancel"
               onClick={() => {
                 close();
               }}
