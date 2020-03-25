@@ -1,5 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Lato&display=swap');
+@import 'theme.css';
+
 * {
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  color: #3b4349;
+  font-family: Proxima Nova, 'Lato', 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.4em;
 }

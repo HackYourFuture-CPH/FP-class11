@@ -74,7 +74,7 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 
 #### 🗄️ Database Model Diagram
 
-_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e58dfd24495b02c3b878ba4
+_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e79e58e4495b02c3b88b043
 
 <img width="40%" height="40%" src="/seasony_data_model.png" alt="DB Diagram"></a>
 
@@ -191,7 +191,6 @@ You can add "knobs", i.e. form elements that will allow you to interact with you
 
 Boolean and number which are also imported are widgets to manipulate the props. Boolean will provide a simple true/false checkbox and number will provide a number input. But you can add [many different knobs](https://www.npmjs.com/package/@storybook/addon-knobs), including dropdown selects and color pickers.
 
-
 #### Breaking down components
 
 Always think about how you can break your UI into meaningful reuseable components. On one hand you want to be able to re-use your code as much as possible and on the other you want to avoid premature abstraction into components, meaning that you don't want to create a lot of components that are never actually re-used.
@@ -207,11 +206,40 @@ Please refer to [this article](https://reactjs.org/docs/thinking-in-react.html) 
 5. Postfix filenames with type of the file to make it easier to search for a given file in VSCode. Examples:
    - `/motorcycle-list/motorcycle-list.container.js`
    - `/motorcycle-card/motorcycle-card.component.js`
-   - `/motorcycle-card/motorcycle-card.styles.js`
+   - `/motorcycle-card/motorcycle-card.styles.css`
    - `/motorcycle-card/motorcycle-card.stories.js`
    - `/motorcycle-card/motorcycle-card.test.js`
 6. File names should be lowercase and composite words `kebab-case` to avoid problems across filesystems.
 7. Component names (i.e. the name of the function in JS) should be `PascalCased` by general React conventions. Don't include `.component` or `.container` in the JS name.
+
+### 🎨 Theming and global styling
+
+For global styles (i.e. styles that shall affect all components) use `src/client/index.css`. Global styles should be very rare and should typically be reserved for things like CSS resets, importing fonts and utilities.
+
+For theming, use the file `src/client/theme.css`. Theming covers everything related to the visual presentation of the site that needs to be re-used often. That means colors, borders, paddings, shadows, etc.
+
+### 🧱 Component styling
+
+Components should always have a unique CSS class to make it easy to apply styles and styles. For example the "label" component should have a class "label". To easily concatenate different classes or apply classes conditionally, use the `classnames` npm package. Example of a label component that has a class "label" and will receive additional classes as props:
+
+    ...
+    import classNames from 'classnames';
+
+    export default function Label({ title, className }) {
+      return <span className={classNames('label', className)}>{title}</span>;
+    }
+    ...
+
+Only put styling that is relevant to the individual component in the component CSS file. If it covers multiple components, put it in `theme.css` or `index.css`.
+
+### 📤 📥 Inline CSS vs Stylesheets
+
+Generally components should be styled using a dedicated stylesheet per component (see naming conventions in the section above). Exceptions can be made for values that are dynamically updated - i.e. a width that can any arbitrary value. If you need to change between two colors, apply css classes to the element in question style those classes and use react to switch out the css classes. For example:
+
+    .label-primary {
+      background-color: var(--primary-color);
+      color: var(--white);
+    }
 
 ### 👍🏽 Code best practices
 

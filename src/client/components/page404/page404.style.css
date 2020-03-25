@@ -1,0 +1,29 @@
+.block-404 {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.text-404 {
+  padding: 1em;
+  width: 25em;
+}
+
+.text-404 > * {
+  margin: 0.4em 0;
+}
+
+.img-404 {
+  height: 10em;
+  width: 10em;
+}
+
+.img-404 img {
+  border-radius: 10em;
+  clip-path: circle(10em at center);
+  width: 100%;
+}

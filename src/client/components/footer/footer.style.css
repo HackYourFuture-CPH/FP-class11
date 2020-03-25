@@ -1,0 +1,6 @@
+footer {
+  background-color: var(--light-grey);
+  height: 5em;
+  line-height: 5em;
+  text-align: center;
+}
