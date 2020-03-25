@@ -102,4 +102,4 @@
       "pre-commit": "npm run code:check"
     }
   }
-}
+
