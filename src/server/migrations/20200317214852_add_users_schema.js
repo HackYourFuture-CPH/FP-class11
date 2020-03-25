@@ -6,15 +6,15 @@ exports.up = function(knex) {
       .primary();
     table.string('name').notNullable();
     table
-      .string('email', 60)
+      .string('email')
       .unique()
       .notNullable();
     table
-      .timestamp('updated_at')
+      .timestamp('created_at')
       .defaultTo(knex.fn.now())
       .notNullable();
     table
-      .timestamp('created_at')
+      .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
     table.timestamp('deleted_at');

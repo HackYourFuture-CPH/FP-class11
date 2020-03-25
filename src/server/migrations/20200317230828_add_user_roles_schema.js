@@ -13,11 +13,11 @@ exports.up = function(knex) {
       .unsigned()
       .notNullable();
     table
-      .timestamp('updated_at')
+      .timestamp('created_at')
       .defaultTo(knex.fn.now())
       .notNullable();
     table
-      .timestamp('created_at')
+      .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
     table.timestamp('deleted_at');
