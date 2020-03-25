@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import DetailChart from '../../components/detail-chart/detail-chart.component';
 import SidebarMenu from '../components/sidebar/sidebar.component';
 import ProgressBar from '../components/progress-bar/progress-bar.component';
+import Footer from '../components/footer/footer.component';
 import DateRange from '../components/date-range/date-range.component';
 import data from '../assets/lettuce.json';
 
@@ -18,6 +19,7 @@ const ChartDetailPage = ({ title }) => {
         <ProgressBar />
         <DateRange />
         <DetailChart data={data} />;
+        <Footer />
       </div>
     </>
   );

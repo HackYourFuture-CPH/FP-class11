@@ -1,6 +1,7 @@
 import React from 'react';
 import SidebarMenu from '../components/sidebar/sidebar.component';
 import Page404 from '../../components/page404/page404.component';
+import Footer from '../../components/footer/footer.component';
 
 const Page404Container = () => {
   return (
@@ -10,6 +11,7 @@ const Page404Container = () => {
       </div>
       <div>
         <Page404 />
+        <Footer />
       </div>
     </>
   );
