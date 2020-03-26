@@ -212,6 +212,12 @@ Please refer to [this article](https://reactjs.org/docs/thinking-in-react.html) 
 6. File names should be lowercase and composite words `kebab-case` to avoid problems across filesystems.
 7. Component names (i.e. the name of the function in JS) should be `PascalCased` by general React conventions. Don't include `.component` or `.container` in the JS name.
 
+#### Using Recharts charting library
+
+Recharts documentation: http://recharts.org/en-US
+Git repository: https://github.com/recharts/recharts (you can look for help in the issues tab)
+How to work with the package: https://www.youtube.com/watch?v=KF1XM5CvB3U
+
 ### 🎨 Theming and global styling
 
 For global styles (i.e. styles that shall affect all components) use `src/client/index.css`. Global styles should be very rare and should typically be reserved for things like CSS resets, importing fonts and utilities.
