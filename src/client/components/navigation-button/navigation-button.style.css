@@ -1,13 +1,13 @@
 .icon {
-  color: var(--dark-grey);
+  color: var(--dark-blue);
   font-size: 2.1875rem;
   margin-top: 0.2em;
 }
 p {
-  color: var(--dark-grey);
-  font-size: 1em;
+  color: var(--dark-blue);
+  font-size: 0.9em;
   font-weight: 300;
-  line-height: 1.1em;
+  line-height: 1em;
   margin: 0.5em 0;
 }
 .item {
@@ -21,7 +21,7 @@ p {
   text-align: center;
   align-items: center;
   margin: 1em auto;
-  padding: 1em 0;
+  padding:0.5em 0;
   transition: none;
   width: 75%;
   outline: none;
@@ -39,7 +39,7 @@ p {
 .item:hover p {
   color: var(--light-blue);
 }
-.itemActive {
+.item-active {
   background: var(--light-grey);
   border: var(--border-inputs);
   border-radius: var(--border-radius-low);

@@ -1,5 +1,5 @@
 import React from 'react';
-import DashbordItems from './dashbord.component';
+import DashbordItems from './dashboard-items.component';
 
 export default { title: 'DashbordItems', component: 'DashbordItems' };
 const items = [
