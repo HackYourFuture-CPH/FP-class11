@@ -9,7 +9,7 @@ import {
 import './navigation-button.style.css';
 
 export default {
-  title: 'button',
+  title: 'NavigationButton',
 };
 
 export const Dashbord = () => (
