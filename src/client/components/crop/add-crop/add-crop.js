@@ -1,16 +1,15 @@
 import React from 'react';
-import FormTitle from '../FormTitle/formtitle';
-import FormField from '../FormField/formfield';
+import FormTitle from '../form-title/form-title';
+import FormField from '../form-field/form-field';
 import { Accordion, AccordionItem } from 'react-light-accordion';
-import './addcrop.css';
-import '../../../index.css';
+import './add-crop.css';
 
 function AddCrop() {
   return (
     <>
       <FormTitle title="Add Crop" />
 
-      <div>
+      <div className="addcrop-container">
         <Accordion>
           <AccordionItem title="CROP">
             <br />

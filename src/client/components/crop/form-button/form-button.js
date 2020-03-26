@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import './form-button.css';
 
-const Button = ({ type, submit, handleSubmit, placeholder }) => {
+const Button = ({ handleSubmit, placeholder }) => {
   return (
-    <Button className="Btn" type={submit} onClick={handleSubmit}>
+    <button className="btn" type="submit" onClick={handleSubmit}>
       {placeholder}
-    </Button>
+    </button>
   );
 };
 export default Button;
 Button.propTypes = {
-  type: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
 };

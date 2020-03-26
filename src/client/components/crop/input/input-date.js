@@ -1,22 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './inputtext.css';
-import '../../../index.css';
+import './input-date.css';
 
-export default function InputText({ text, placeholder, handleChange }) {
+function InputDate({ text, placeholder, handleChange }) {
+  const onFocus = (e) => {
+    e.currentTarget.type = 'date';
+  };
+
   return (
     <div>
       <input
-        className="input-text"
+        className="input-date"
         type={text}
         placeholder={placeholder}
+        onFocus={onFocus}
         onChange={handleChange}
       />
     </div>
   );
 }
 
-InputText.propTypes = {
+export default InputDate;
+
+InputDate.propTypes = {
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,

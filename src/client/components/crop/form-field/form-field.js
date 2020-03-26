@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-import './formfield.css';
-import InputText from '../Input/inputtext';
-import InputDate from '../Input/inputdate';
-import Button from '../Button/button';
+import './form-field.css';
+import InputText from '../input/input-text';
+import InputDate from '../input/input-date';
+import Button from '../form-button/form-button';
 
 function FormField() {
   const [plantVariety, setPlantVariety] = useState(null);
@@ -28,7 +28,7 @@ function FormField() {
   return (
     <div>
       <div className="form-container">
-        <form onSubmit={handleSubmit.bind(this)}>
+        <form onSubmit={handleSubmit}>
           <InputText
             type="text"
             placeholder="Name plant variety"
@@ -40,7 +40,7 @@ function FormField() {
             handleChange={(e) => setSeedPot(e.target.value)}
           />
           <InputDate
-            type="text"
+            type="date"
             placeholder="Start Seed Date"
             handleChange={(e) => setStartSeedDate(e.target.value)}
           />
@@ -54,7 +54,6 @@ function FormField() {
             placeholder="Customer Name"
             handleChange={(e) => setCustomerName(e.target.value)}
           />
-          <br />
           <Button placeholder="Save Crop Details" />
         </form>
       </div>

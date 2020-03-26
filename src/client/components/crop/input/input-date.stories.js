@@ -1,5 +1,5 @@
 import React from 'react';
-import InputDate from './inputdate';
+import InputDate from './input-date';
 
 export default {
   title: 'InputDate',

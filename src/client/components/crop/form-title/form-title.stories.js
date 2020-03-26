@@ -1,5 +1,5 @@
 import React from 'react';
-import FormTitle from './formtitle';
+import FormTitle from './form-title';
 
 export default {
   title: 'FormTitle',

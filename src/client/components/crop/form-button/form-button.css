@@ -1,0 +1,17 @@
+.btn {
+  display: flex;
+  margin: 1.4em 0;
+  background: var(--interaction-color);
+  box-shadow: var(--embossed-shadow-low);
+  border-radius: var(--border-radius-high);
+  border: var(--border-inputs);
+  color: var(--white);
+  flex-direction: row;
+  font-size: 1.3em;
+  justify-content: center;
+  outline: none;
+  padding: 0.3em 1.3em;
+  text-align: center;
+  text-transform: uppercase;
+  float: right;
+}
