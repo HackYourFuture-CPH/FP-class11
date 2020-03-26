@@ -7,16 +7,7 @@ export default {
   title: 'Accordion Options',
 };
 
-const cropID = 1;
-
-const parametersAndLabels = {
-  temperature: 'Temperature (°C)',
-  humidity: 'Humidity (g/m3)',
-  ph: 'PH',
-  ec: 'EC (ppm)',
-  // eslint-disable-next-line @typescript-eslint/camelcase
-  water_level: 'Water level (cm)',
-};
+const cropId = 1;
 
 export const StageDetailsComponent = () => {
   const stages = [
@@ -29,12 +20,6 @@ export const StageDetailsComponent = () => {
   const levels = ['min', 'optimum', 'max'];
 
   return (
-    <StageDetails
-      cropID={cropID}
-      parametersAndLabels={parametersAndLabels}
-      stages={stages}
-      levels={levels}
-      data={data}
-    />
+    <StageDetails cropId={cropId} stages={stages} levels={levels} data={data} />
   );
 };

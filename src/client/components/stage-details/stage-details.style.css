@@ -22,6 +22,7 @@
   display: inline;
   margin: auto 0;
   text-align: end;
+  text-transform: capitalize;
 }
 
 .stage-buttons-container {

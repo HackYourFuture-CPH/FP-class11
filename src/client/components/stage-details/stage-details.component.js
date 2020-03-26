@@ -4,68 +4,73 @@ import './stage-details.style.css';
 import SectionHeader from '../section-header/section-header.component';
 import Button from '../button/button.component';
 
-function capitalizeString(str) {
-  return str[0].toUpperCase().concat(str.slice(1, str.length));
-}
-
 export default function StageDetails({
-  cropID,
-  parametersAndLabels,
+  cropId,
   stages,
   levels,
   data,
+  onChange,
 }) {
-  // Get the parameter data for crop with id of cropID
+  const PARAMETERS = {
+    temperature: 'Temperature (°C)',
+    humidity: 'Humidity (g/m3)',
+    ph: 'PH',
+    ec: 'EC (ppm)',
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    water_level: 'Water level (cm)',
+  };
+
+  // Get the parameter data for crop with id of cropId
   const [cropData, setCropData] = useState([]);
 
   useEffect(() => {
     setCropData(
-      data.filter((dataPoint) => parseInt(dataPoint.fk_crop_id, 10) === cropID),
+      data.filter((dataPoint) => parseInt(dataPoint.fk_crop_id, 10) === cropId),
     );
-  }, [cropID, data]);
+  }, [cropId, data]);
 
   // Select the last stage to display as default
-  const [selectedStageNumber, setSelectedStageNumber] = useState(
-    Math.max(...stages.map((s) => s.id)),
-  );
+  const lastStage = Math.max(...stages.map((s) => s.id));
+  const [selectedStageIndex, setSelectedStageIndex] = useState(lastStage);
 
   // Get data for the currently selected stage
   const [dataForStage, setDataForStage] = useState([]);
 
   useEffect(() => {
-    setDataForStage(
-      cropData
-        ? cropData.filter(
-            (dataPoint) =>
-              parseInt(dataPoint.fk_crop_stage_id, 10) === selectedStageNumber,
-          )
-        : [],
+    const selectedStages = cropData.filter(
+      (dataPoint) =>
+        parseInt(dataPoint.fk_crop_stage_id, 10) === selectedStageIndex,
     );
-  }, [selectedStageNumber, cropData]);
+    setDataForStage(selectedStages);
+  }, [selectedStageIndex, cropData]);
 
   function handleInputChange(e, level, parameter) {
     const valueEntered = e.target.value;
     e.preventDefault();
     setCropData((prev) => {
-      return prev.map((dataPoint) => {
-        if (
-          Number(dataPoint.fk_crop_stage_id) === selectedStageNumber &&
-          dataPoint.parameter === parameter
-        ) {
-          const updatedDataPoint = {
-            ...dataPoint,
-            [`${level}_value`]: valueEntered,
-          };
-          return updatedDataPoint;
-        }
-        return dataPoint;
-      });
+      return updateCropDataOnInput(prev, valueEntered, level, parameter);
+    });
+  }
+
+  function updateCropDataOnInput(prevData, valueEntered, level, parameter) {
+    return prevData.map((dataPoint) => {
+      if (
+        Number(dataPoint.fk_crop_stage_id) === selectedStageIndex &&
+        dataPoint.parameter === parameter
+      ) {
+        const updatedDataPoint = {
+          ...dataPoint,
+          [`${level}_value`]: valueEntered,
+        };
+        return updatedDataPoint;
+      }
+      return dataPoint;
     });
   }
 
   function saveUpdatedCropData(e) {
     e.preventDefault();
-    /* TO DO: SAVE UPDATED cropData */
+    onChange(cropData);
   }
 
   return (
@@ -75,10 +80,7 @@ export default function StageDetails({
         Stage Details
       </SectionHeader>
 
-      <form
-        className="stage-values-form"
-        onSubmit={(e) => saveUpdatedCropData(e)}
-      >
+      <form className="stage-values-form" onSubmit={saveUpdatedCropData}>
         {/* Toggle buttons to select stage */}
         <div className="stage-buttons-container">
           {stages.map((stage) => {
@@ -88,9 +90,9 @@ export default function StageDetails({
                 type="toggle"
                 onClick={(e) => {
                   e.preventDefault();
-                  setSelectedStageNumber(stage.id);
+                  setSelectedStageIndex(stage.id);
                 }}
-                toggled={selectedStageNumber === stage.id}
+                toggled={selectedStageIndex === stage.id}
               >
                 {stage.name}
               </Button>
@@ -101,9 +103,9 @@ export default function StageDetails({
         {/* Column containing parameter labels */}
         <div className="stage-values-container">
           <div className="title-column">
-            {Object.keys(parametersAndLabels).map((name) => (
-              <p className="stage-details-title-item" key={name}>
-                {parametersAndLabels[name]}
+            {Object.keys(PARAMETERS).map((param) => (
+              <p className="stage-details-title-item" key={param}>
+                {PARAMETERS[param]}
               </p>
             ))}
           </div>
@@ -113,27 +115,27 @@ export default function StageDetails({
             return (
               <div
                 className={`${level}-column`}
-                key={`stage-${selectedStageNumber}-${level}-column`}
+                key={`stage-${selectedStageIndex}-${level}-column`}
               >
-                {Object.keys(parametersAndLabels).map((parameter) => {
-                  const dataForParameter = dataForStage.filter((dataPoint) => {
+                {Object.keys(PARAMETERS).map((parameter) => {
+                  const dataForParameter = dataForStage.find((dataPoint) => {
                     return dataPoint.parameter === parameter;
                   });
-                  const value = dataForParameter[0]
-                    ? dataForParameter[0][`${level}_value`]
+                  const value = dataForParameter
+                    ? dataForParameter[`${level}_value`]
                     : '';
                   const name = `${level}-${parameter}-${
-                    stages[selectedStageNumber - 1].name
+                    stages[selectedStageIndex - 1].name
                   }`;
                   const title = `${level} ${parameter} in ${
-                    stages[selectedStageNumber - 1].name
+                    stages[selectedStageIndex - 1].name
                   }`;
                   return (
                     <label
                       className="stage-details-value-item"
-                      key={`stage-${selectedStageNumber}-${level}-${parameter}`}
+                      key={`stage-${selectedStageIndex}-${level}-${parameter}`}
                     >
-                      {capitalizeString(level)}:
+                      {level}:
                       <input
                         className="stage-value-input"
                         type="text"
@@ -163,9 +165,9 @@ export default function StageDetails({
 }
 
 StageDetails.propTypes = {
-  cropID: PropTypes.number.isRequired,
-  parametersAndLabels: PropTypes.instanceOf(Object).isRequired,
+  cropId: PropTypes.number.isRequired,
   stages: PropTypes.instanceOf(Array).isRequired,
   levels: PropTypes.instanceOf(Array).isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
