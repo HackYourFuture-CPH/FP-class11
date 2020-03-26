@@ -16,7 +16,6 @@ export default function StatusCard({
       {isOnTime ? onTime : delayed}
       <ul>
         <li>
-          git
           <span>Days left to harvest:</span>
           <span>in {daysToHarvest}</span>
         </li>
