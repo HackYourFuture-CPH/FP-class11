@@ -74,7 +74,7 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 
 #### 🗄️ Database Model Diagram
 
-_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e79e58e4495b02c3b88b043
+_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e7c8a314495b02c3b88cd61
 
 <img width="40%" height="40%" src="/seasony_data_model.png" alt="DB Diagram"></a>
 
