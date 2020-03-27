@@ -25,6 +25,7 @@ exports.up = function(knex) {
       .inTable('units');
   });
 };
+
 exports.down = function(knex) {
   return knex.schema.dropTable('material');
 };
