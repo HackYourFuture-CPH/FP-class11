@@ -29,7 +29,7 @@ const ModalList = ({ isShowing, hide }) =>
               <h4 className="text-headline">DELETE CROP</h4>
               <p className="p1">Are you sure?</p>
               <p className="p2">Do you really want to delete the crop?</p>
-              <div className="modal-buttons">
+              <div className="buttons-wrapper">
                 <Button type="danger" size="large">
                   Delete
                 </Button>
