@@ -1,7 +1,7 @@
 .modal-overlay {
   position: absolute;
-  width: 1260px;
-  height: 590px;
+  width: 1200px;
+  height: 605px;
   left: 0px;
   top: 0px;
 
@@ -106,10 +106,10 @@
 
   color: #666666;
 }
-.modal-buttons {
+.buttons-wrapper {
   position: absolute;
   width: 286.79px;
-  height: 408.94px;
+  height: 200px;
   left: 150px;
   top: 300px;
 }
