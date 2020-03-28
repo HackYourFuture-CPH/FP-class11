@@ -1,16 +1,16 @@
-import React from "react";
-import "../input/input.style.css";
-import "./input-login.style.css";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import '../input/input.style.css';
+import './input-login.style.css';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function InputLogin({
   type,
   placeholder,
   onChange,
   icon,
-  error
+  error,
 }) {
   return (
     <div className="input-wrapper login">
@@ -34,7 +34,7 @@ InputLogin.defaultProps = {
 };
 
 InputLogin.propTypes = {
-  type: PropTypes.oneOf(["email", "password"]).isRequired,
+  type: PropTypes.oneOf(['email', 'password']).isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   icon: PropTypes.oneOfType([PropTypes.object]).isRequired,

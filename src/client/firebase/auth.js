@@ -14,8 +14,7 @@ function Firebase() {
       try {
         await firebase.auth().signInWithEmailAndPassword(email, pass);
       } catch (err) {
-        console.log(err);
-        return {err}
+        return { err };
       }
       return {};
     },
@@ -26,18 +25,17 @@ function Firebase() {
       try {
         await firebase.auth().sendPasswordResetEmail(email);
       } catch (err) {
-        console.log(err);
-        return {err}
+        return { err };
       }
-      return {}
-    }
+      return {};
+    },
 
-// Password Change
-// export const doPasswordUpdate = async (password) => {
-//   if (auth.currentUser) {
-//     await auth.currentUser.updatePassword(password);
-//   }
-// };
+    // Password Change
+    // export const doPasswordUpdate = async (password) => {
+    //   if (auth.currentUser) {
+    //     await auth.currentUser.updatePassword(password);
+    //   }
+    // };
   };
 }
 

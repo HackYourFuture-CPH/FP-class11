@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import "./forgot-password.css";
+import React, { useState } from 'react';
+import './forgot-password.css';
 
-import Logo from "./../../components/logo/logo.component";
-import InputLogin from "./../../components/input-login/input-login.component";
-import Button from "./../../components/button/button.component";
-import Notification from "./../../components/notification/notification.component";
+import Logo from '../../components/logo/logo.component';
+import InputLogin from '../../components/input-login/input-login.component';
+import Button from '../../components/button/button.component';
+import Notification from '../../components/notification/notification.component';
 
-import { faUser, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
-import imageFile from "./../../assets/images/logo.png";
+import imageFile from '../../assets/images/logo.png';
 
-import firebase from "./../../firebase/auth";
+import firebase from '../../firebase/auth';
 
 function ForgotPassword() {
-  const [email, setEmail] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [errorNotifications, setErrorNotifications] = useState(null);
 
   return (
@@ -29,15 +29,14 @@ function ForgotPassword() {
           <InputLogin
             type="email"
             placeholder="Email"
-            onChange={event => setEmail(event.target.value)}
-            icon={faUser}
+            onChange={(event) => setEmail(event.target.value)}
             icon={errorNotifications ? faExclamationCircle : faUser}
             error={errorNotifications}
           />
           <Button
             type="primary"
             size="large"
-            onClick={async event => {
+            onClick={async (event) => {
               event.preventDefault();
               if (email) {
                 const { err } = await firebase.doPasswordReset(email);

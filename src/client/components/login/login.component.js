@@ -34,14 +34,22 @@ export default function Login({
           type="email"
           placeholder="Email"
           onChange={handleChange}
-          icon={errorNotifications === 'auth/invalid-email' ? faExclamationCircle : faUser}
+          icon={
+            errorNotifications === 'auth/invalid-email'
+              ? faExclamationCircle
+              : faUser
+          }
           error={errorNotifications === 'auth/invalid-email'}
         />
         <InputLogin
           type="password"
           placeholder="Password"
           onChange={handleChange}
-          icon={errorNotifications === 'auth/wrong-password' ? faExclamationCircle : faKey}
+          icon={
+            errorNotifications === 'auth/wrong-password'
+              ? faExclamationCircle
+              : faKey
+          }
           error={errorNotifications === 'auth/wrong-password'}
         />
         <div className="right-link">
