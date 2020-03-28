@@ -29,9 +29,10 @@ export const Email = () => {
   const type = select('Input Type', types, 'email');
   const onChange = action('value changed');
   const error = boolean('isError', false);
-
+  const name = type;
   return (
     <InputLogin
+      name={name}
       type={type}
       placeholder={
         (type === types.Email && 'Email') ||
