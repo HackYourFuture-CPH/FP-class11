@@ -20,7 +20,7 @@
     "code:check": "npm run code:lint && npm run code:format -- --check",
     "code:clean": "npm run code:lint -- --fix && npm run code:format -- --write",
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
-    "code:format": "prettier ./src/**/**.{js,jsx,ts,tsx}",
+    "code:format": "prettier \"./src/**/**.{js,jsx,ts,tsx}\"",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "author": "Shanawaz Islam",
