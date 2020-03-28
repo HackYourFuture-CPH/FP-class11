@@ -1,10 +1,11 @@
 import React from 'react';
 import FormTitle from '../form-title/form-title';
-import FormField from '../form-field/form-field';
 import { Accordion, AccordionItem } from 'react-light-accordion';
+import FormField from '../form-field/form-field';
+
 import './add-crop.css';
 
-function AddCrop() {
+export default function AddCrop() {
   return (
     <>
       <FormTitle title="Add Crop" />
@@ -33,4 +34,3 @@ function AddCrop() {
     </>
   );
 }
-export default AddCrop;

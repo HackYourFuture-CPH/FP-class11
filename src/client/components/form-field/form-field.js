@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-import './form-field.css';
-import InputText from '../input/input-text';
-import InputDate from '../input/input-date';
-import Button from '../form-button/form-button';
+import InputText from '../input-field/input-text';
+import InputDate from '../input-field/input-date';
+import Button from '../button/button.component';
 
-function FormField() {
+import './form-field.css';
+
+export default function FormField() {
   const [plantVariety, setPlantVariety] = useState(null);
   const [seedPot, setSeedPot] = useState(null);
   const [startSeedDate, setStartSeedDate] = useState(null);
@@ -54,10 +55,9 @@ function FormField() {
             placeholder="Customer Name"
             handleChange={(e) => setCustomerName(e.target.value)}
           />
-          <Button placeholder="Save Crop Details" />
+          <Button type="primary">Save Crop Details</Button>
         </form>
       </div>
     </div>
   );
 }
-export default FormField;
