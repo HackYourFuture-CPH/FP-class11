@@ -5,11 +5,11 @@ import ModalList from './ModalList.component';
 import Modal from './Modal';
 
 const ButtonComponent = () => {
-  const { isShowing, toggle, children } = Modal();
+  const { isShowing, toggle } = Modal();
   return (
     <div>
       <Button className="base-btn" type="danger" onClick={toggle}>
-        {children}Delete crop
+        Delete crop
       </Button>
       <ModalList isShowing={isShowing} hide={toggle} onClose={toggle} />
     </div>

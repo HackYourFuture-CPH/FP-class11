@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from '../button/button.component';
 
-const ModalList = ({ isShowing, hide, children, onClick }) =>
+const ModalList = ({ isShowing, hide }) =>
   isShowing
     ? ReactDOM.createPortal(
         <div>
@@ -30,11 +30,11 @@ const ModalList = ({ isShowing, hide, children, onClick }) =>
               <p className="p1">Are you sure?</p>
               <p className="p2">Do you really want to delete the crop?</p>
               <div className="buttons-wrapper">
-                <Button type="danger" size="large" onClick={onClick}>
-                  {children}Delete
+                <Button type="danger" size="large">
+                  Delete
                 </Button>
-                <Button type="secondary" size="large" onClick={onClick}>
-                  {children}Cancel
+                <Button type="secondary" size="large">
+                  Cancel
                 </Button>
               </div>
             </div>
