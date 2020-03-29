@@ -22,15 +22,15 @@ function stageDays(stages) {
 
 function Tooltip({ day }) {
   return (
-    <span className="toolTipText" style={{ visibility: 'visible' }}>
-      Day: {day}
+    <span className="tooltip-text" style={{ visibility: 'visible' }}>
+      Day {day}
     </span>
   );
 }
 
 function TooltipStage({ stageName }) {
   return (
-    <span className="tooltiptext-stage" style={{ visibility: 'visible' }}>
+    <span className="tooltip-text-stage" style={{ visibility: 'visible' }}>
       {stageName}
     </span>
   );
@@ -64,11 +64,13 @@ function ProgressBar({ startDate, currentDate, stages }) {
     const isPassed = day <= daysPassed;
     const restOfDays = day >= daysPassed;
     const classStyle = isPassed
-      ? 'dayComponents tooltip tooltip-stage passedDays'
-      : 'dayComponents tooltip-stage';
+      ? 'day-components tooltip tooltip-stage passed-days'
+      : 'day-components tooltip-stage';
     const stageBorder = stageDaysArr.includes(day) ? '.3em' : '';
     const stageBorderColor =
-      stageDaysArr.includes(day) && restOfDays ? 'skyblue' : '#004280';
+      stageDaysArr.includes(day) && restOfDays
+        ? 'dark-blue'
+        : 'rgba(59,67,73, 0.75)';
 
     return (
       <DayComponent
@@ -80,11 +82,11 @@ function ProgressBar({ startDate, currentDate, stages }) {
           borderColor: stageBorderColor,
         }}
       >
-        {day === daysPassed && <Tooltip day={day} className="toolTipText" />}
+        {day === daysPassed && <Tooltip day={day} className="tooltip-text" />}
         {stageDiv.includes(day) && (
           <TooltipStage
             stageName={capitalizeFirstLetter(stages[stageNameIndex++].name)}
-            className="tooltiptext-stage"
+            className="tooltip-text-stage"
           />
         )}
       </DayComponent>
@@ -92,9 +94,8 @@ function ProgressBar({ startDate, currentDate, stages }) {
   });
 
   return (
-    <div className="container">
-      <h1>PROGRESS BAR</h1>
-      <div className="progressBar">{dayBlock}</div>
+    <div className="progress-bar-container">
+      <div className="progress-bar">{dayBlock}</div>
     </div>
   );
 }
