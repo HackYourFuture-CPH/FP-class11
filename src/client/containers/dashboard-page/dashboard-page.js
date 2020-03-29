@@ -1,22 +1,22 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import firebase from '../../firebase/auth';
+// import { useHistory } from 'react-router-dom';
+// import firebase from '../../firebase/auth';
 
 import './dashboard-page.css';
 
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import ProgressBar from '../../components/progress-bar/progress-bar.component';
 import Card from '../../components/card/card.component';
-import Label from '../../components/label/label.component';
+// import Label from '../../components/label/label.component';
 // import CropSummary from '../../components/crop-summary/crop-summary.component';
 import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
 
-const DashboardPage = ({ title }) => {
-  const history = useHistory();
+const DashboardPage = () => {
+  // const history = useHistory();
   return (
-    <div class="dashboard">
-      <SidebarMenu text="Dashboard" isactive={false} isuser={true}  />
+    <div className="dashboard">
+      <SidebarMenu text="Dashboard" isactive={false} isuser={true} />
       {/* <button
         type="submit"
         onClick={() => {
@@ -46,7 +46,7 @@ const DashboardPage = ({ title }) => {
             ]}
           />
           <div className="cards">
-           {/* <Card title="Status">
+            {/* <Card title="Status">
           <Label title="Check PH" className="label-danger" />
               <CropSummary
               daysLeftToHarvest={41}
@@ -56,46 +56,48 @@ const DashboardPage = ({ title }) => {
               productionStartDate={'2020-01-25 00:00:00'}
               productionEndDate={'2020-01-25 00:00:00'}
             />   
-          </Card>*/}
-          <Card title="Temperature">
-            <LineChartForDashboard
-              tempData={[{
-                name: 'shiso',
-                timestamp: 1577836860000,
-                temp: 20,
-              },
-              {
-                name: 'shiso',
-                timestamp: 1577836860000,
-                temp: 17,
-              },
-              {
-                name: 'shiso',
-                timestamp: 1577836860000,
-                temp: 15,
-              },
-              {
-                name: 'shiso',
-                timestamp: 1577836860000,
-                temp: 21,
-              },
-              {
-                name: 'shiso',
-                timestamp: 1577836860000,
-                temp: 13,
-              }]}
-              strokeGrid="#fff"
-              strokeAxis="#808080"
-              minColor="#FF0000"
-              maxColor="#FF0000"
-              optimalValue="#008000"
-              strokeWidthRef={2}
-              strokeLine="#000"
-              strokeWidthLine={2}
-              ReferanceAreaColor="#808080"
-            />
-          </Card>
-           {/*
+          </Card> */}
+            <Card title="Temperature">
+              <LineChartForDashboard
+                tempData={[
+                  {
+                    name: 'shiso',
+                    timestamp: 1577836860000,
+                    temp: 20,
+                  },
+                  {
+                    name: 'shiso',
+                    timestamp: 1577836860000,
+                    temp: 17,
+                  },
+                  {
+                    name: 'shiso',
+                    timestamp: 1577836860000,
+                    temp: 15,
+                  },
+                  {
+                    name: 'shiso',
+                    timestamp: 1577836860000,
+                    temp: 21,
+                  },
+                  {
+                    name: 'shiso',
+                    timestamp: 1577836860000,
+                    temp: 13,
+                  },
+                ]}
+                strokeGrid="#fff"
+                strokeAxis="#808080"
+                minColor="#FF0000"
+                maxColor="#FF0000"
+                optimalValue="#008000"
+                strokeWidthRef={2}
+                strokeLine="#000"
+                strokeWidthLine={2}
+                ReferanceAreaColor="#808080"
+              />
+            </Card>
+            {/*
           <Card title="Humidity">
             <LineChartForDashboard
               tempData={{

@@ -9,13 +9,13 @@
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCIfqVGp_0p3J3NqwF2vcZ0jzwwzhX4xMQ",
-  authDomain: "seasony-login.firebaseapp.com",
-  databaseURL: "https://seasony-login.firebaseio.com",
-  projectId: "seasony-login",
-  storageBucket: "seasony-login.appspot.com",
-  messagingSenderId: "342070231409",
-  appId: "1:342070231409:web:8a37dd9ef4671db380b6d0"
+  apiKey: 'AIzaSyCIfqVGp_0p3J3NqwF2vcZ0jzwwzhX4xMQ',
+  authDomain: 'seasony-login.firebaseapp.com',
+  databaseURL: 'https://seasony-login.firebaseio.com',
+  projectId: 'seasony-login',
+  storageBucket: 'seasony-login.appspot.com',
+  messagingSenderId: '342070231409',
+  appId: '1:342070231409:web:8a37dd9ef4671db380b6d0',
 };
 
 export default firebaseConfig;
