@@ -1,80 +1,89 @@
-.body {
-  margin: 0;
-  padding: 0;
-}
-.progress-bar {
+.progress-bar-container {
   text-align: center;
   width: 100%;
 }
-.progressBar {
-  margin-top: 5em;
-  width: 98%;
-  margin-left: 1%;
-}
-.dayComponents {
-  background-color: rgb(228, 220, 220);
+.progress-bar {
+  background-color: var(--light-grey);
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--debossed-shadow-high);
   height: 2.5em;
+  margin: 2em auto 0 auto;
+  width: 98%;
+}
+
+.day-components {
+  background: transparent;
   border-right: 0 solid transparent;
   box-sizing: border-box;
-  box-shadow: inset 0.5px -30px 20px -30px;
+  height: 100%;
 }
-.passedDays {
-  background-color: skyblue;
+
+.passed-days {
+  background-color: var(--interaction-color);
+  box-shadow: inset 0.2px -30px 10px -30px var(--light-grey);
 }
-.dayComponents:first-child {
-  border-top-left-radius: 1.5em;
-  border-bottom-left-radius: 1.5em;
+
+.day-components:first-child {
+  border-radius: var(--border-radius-low) 0 0 var(--border-radius-low);
 }
-.dayComponents:last-child {
-  border-top-right-radius: 1.5em;
-  border-bottom-right-radius: 1.5em;
+
+.day-components:last-child {
+  border-radius: 0 var(--border-radius-low) var(--border-radius-low) 0;
 }
+
 .tooltip {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
-.tooltip .toolTipText {
-  visibility: hidden;
-  width: 60px;
-  background-color: skyblue;
-  color: white;
-  font-weight: bold;
-  font-size: 12px;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
+
+.tooltip .tooltip-text {
+  background-color: var(--interaction-color);
   bottom: 125%;
-  left: 70%;
-  margin-left: -27px;
-}
-.tooltip .toolTipText::after {
-  content: '';
+  border-radius: 0.5em;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 0.8em;
+  left: 60%;
+  margin-left: -1.8em;
+  padding: 0.3em 0.4em;
   position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
+  visibility: hidden;
+  text-align: center;
+  width: 4em;
+}
+
+.tooltip .tooltip-text::after {
   border-width: 6px;
   border-style: solid;
-  border-color: skyblue transparent transparent transparent;
+  border-color: var(--interaction-color) transparent transparent transparent;
+  content: '';
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: 100%;
 }
-.tooltip .toolTipText {
+
+.tooltip .tooltip-text {
   visibility: visible;
 }
+
 .tooltip-stage {
-  position: relative;
+  border-color: var(--interaction-color);
   display: inline-block;
+  position: relative;
 }
-.tooltip-stage .tooltiptext-stage {
+
+.tooltip-stage .tooltip-text-stage {
+  font-size: 0.7em;
+  left: 100%;
+  position: absolute;
+  text-align: left;
+  top: 110%;
   visibility: hidden;
   width: auto;
-  color: #352626;
-  font-size: 12px;
-  text-align: left;
-  position: absolute;
-  top: 110%;
-  left: 140%;
 }
-.tooltip-stage .tooltiptext-stage {
+
+.tooltip-stage .tooltip-text-stage {
   visibility: hidden;
 }

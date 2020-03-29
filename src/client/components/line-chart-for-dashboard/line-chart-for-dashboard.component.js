@@ -25,8 +25,8 @@ const LineChartForDashboard = ({
 }) => {
   return (
     <LineChart
-      width={500}
-      height={300}
+      width={300}
+      height={200}
       data={tempData}
       margin={{
         top: 5,

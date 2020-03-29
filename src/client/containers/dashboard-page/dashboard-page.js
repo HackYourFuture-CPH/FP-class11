@@ -8,26 +8,16 @@ import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import ProgressBar from '../../components/progress-bar/progress-bar.component';
 import Card from '../../components/card/card.component';
 import Label from '../../components/label/label.component';
-//import CropSummary from '../../components/crop-summary/crop-summary.component';
+// import CropSummary from '../../components/crop-summary/crop-summary.component';
 import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
 
 const DashboardPage = ({ title }) => {
   const history = useHistory();
-
-  const daysLeftToHarvest = 41;
-  const daysLeftToEnd = 48;
-  const currentStage = 'Seeding';
-  const currentStageDay = 2;
-  const productionStartDate = '2020-01-25 00:00:00';
-  const productionEndDate = '2020-03-11 00:00:00';
-
-  const placeholder = 'placeholder';
-
   return (
-      <main class="dashboard">
-        <SidebarMenu text="Dashboard" isactive={false} isuser={true} />
-        {/* <button
+    <div class="dashboard">
+      <SidebarMenu text="Dashboard" isactive={false} isuser={true}  />
+      {/* <button
         type="submit"
         onClick={() => {
           firebase.signOut();
@@ -35,53 +25,77 @@ const DashboardPage = ({ title }) => {
         }}
       >
         Sign out
-      </button> */}
+      </button>  */}
       <div className="content">
-        <h1>Crop Overview</h1>
-        <ProgressBar
-          startDate="2020-03-03"
-          currentDate="2020-03-21"
-          stages={[
-            { name: 'seeding', duration: 3 },
-            {
-              name: 'propagation',
-              duration: 14,
-            },
-            { name: 'maturity', duration: 28 },
-            { name: 'harvest', duration: 4 },
-            { name: 'delivery', duration: 3 },
-          ]}
-        />
-        <div>
-          <Card title="Status">
-            <Label title="Check PH" className="label-danger" />
-            {/* <CropSummary
-              daysLeftToHarvest={daysLeftToHarvest}
-              daysLeftToEnd={daysLeftToEnd}
-              currentStage={currentStage}
-              currentStageDay={currentStageDay}
-              productionStartDate={productionStartDate}
-              productionEndDate={productionEndDate}
-            /> */}
-          </Card>
-          {/* <Card title="Temperature">
+        <header>
+          <h1>Crop Overview</h1>
+        </header>
+        <main>
+          <ProgressBar
+            startDate="2020-03-03"
+            currentDate="2020-03-21"
+            stages={[
+              { name: 'seeding', duration: 3 },
+              {
+                name: 'propagation',
+                duration: 14,
+              },
+              { name: 'maturity', duration: 28 },
+              { name: 'harvest', duration: 4 },
+              { name: 'delivery', duration: 3 },
+            ]}
+          />
+          <div className="cards">
+           {/* <Card title="Status">
+          <Label title="Check PH" className="label-danger" />
+              <CropSummary
+              daysLeftToHarvest={41}
+              daysLeftToEnd={48}
+              currentStage='Seeding'
+              currentStageDay={2}
+              productionStartDate={'2020-01-25 00:00:00'}
+              productionEndDate={'2020-01-25 00:00:00'}
+            />   
+          </Card>*/}
+          <Card title="Temperature">
             <LineChartForDashboard
-              tempData={{
+              tempData={[{
                 name: 'shiso',
                 timestamp: 1577836860000,
-                temp: 22.95,
-              }}
-              strokeGrid="10"
-              strokeAxis="5"
-              minColor="1"
-              maxColor="3"
-              optimalValue="15"
+                temp: 20,
+              },
+              {
+                name: 'shiso',
+                timestamp: 1577836860000,
+                temp: 17,
+              },
+              {
+                name: 'shiso',
+                timestamp: 1577836860000,
+                temp: 15,
+              },
+              {
+                name: 'shiso',
+                timestamp: 1577836860000,
+                temp: 21,
+              },
+              {
+                name: 'shiso',
+                timestamp: 1577836860000,
+                temp: 13,
+              }]}
+              strokeGrid="#fff"
+              strokeAxis="#808080"
+              minColor="#FF0000"
+              maxColor="#FF0000"
+              optimalValue="#008000"
               strokeWidthRef={2}
-              strokeLine="3"
+              strokeLine="#000"
               strokeWidthLine={2}
-              ReferanceAreaColor="5"
+              ReferanceAreaColor="#808080"
             />
           </Card>
+           {/*
           <Card title="Humidity">
             <LineChartForDashboard
               tempData={{
@@ -154,10 +168,11 @@ const DashboardPage = ({ title }) => {
               ReferanceAreaColor="5"
             />
           </Card> */}
-        </div>
+          </div>
+        </main>
         <Footer />
       </div>
-      </main>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import LineChartForDashboard from './LineChartForDashboard.component';
+import LineChartForDashboard from './line-chart-for-dashboard.component';
 import { withKnobs, number, color } from '@storybook/addon-knobs';
 
 export default {

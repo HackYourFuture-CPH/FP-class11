@@ -1,8 +1,10 @@
-main.dashboard {
+.dashboard {
+    display: flex;
     justify-content: flex-start;
 }
 
 .content {
+    background: var(--light-grey);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -10,7 +12,24 @@ main.dashboard {
     width: 100%;
 }
 
-.dashboard h1 {
+header {
+    padding: 1em 1em 0;
+}
+
+header h1 {
     font-size: 1.5em;
     text-transform: uppercase;
+}
+
+.dashboard main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.dashboard .cards {
+    display: flex;
+    margin: 2em 1em;
 }
