@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './crop-summary.style.css';
+import './crop-summary-card.style.css';
 
 export const Summary = ({
   harvestDayLeft,
@@ -12,7 +12,7 @@ export const Summary = ({
 }) => {
   return (
     <ul className="card-contents">
-      <li>
+      <li className="">
         <p> Days left to harvest:</p>
         <p>
           in <span className="harvest-days">{harvestDayLeft}</span> days
@@ -49,8 +49,8 @@ export const Stage = ({ stageName, dayCount }) => {
 Summary.propTypes = {
   harvestDayLeft: PropTypes.number.isRequired,
   projDayLeft: PropTypes.number.isRequired,
-  prodStartDate: PropTypes.instanceOf(Date).isRequired,
-  prodEndDate: PropTypes.instanceOf(Date).isRequired,
+  prodStartDate: PropTypes.string.isRequired,
+  prodEndDate: PropTypes.string.isRequired,
   stageName: PropTypes.string.isRequired,
   dayCount: PropTypes.number.isRequired,
 };

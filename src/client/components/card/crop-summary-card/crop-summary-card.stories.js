@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardTitle } from '../card-title.component';
-import { Status } from '../status/status.component';
-import { Summary } from './summary.component';
+import { Status } from '../status-card02/status-card02.component';
+import { Summary } from './summary-card.component';
 import { withKnobs, number, date, select } from '@storybook/addon-knobs';
 
 export default { title: 'Cards/Status', decorators: [withKnobs] };
@@ -38,7 +38,7 @@ export const WithKnobs = () => {
   };
 
   return (
-    <div>
+    <div className="card">
       <div className="card-header">
         <CardTitle title="STATUS" />
         <Status stat={knobs.status} />
