@@ -3,19 +3,13 @@ import PropTypes from 'prop-types';
 import Card from '../card/card.component';
 import Label from '../label/label.component';
 
-import theme from '../../theme';
-
 export default function StatusCard({
   isOnTime,
   daysToHarvest,
   daysToProjectEnd,
 }) {
-  const onTime = (
-    <Label title="On time" backgroundColor={theme.colors.primary} />
-  );
-  const delayed = (
-    <Label title="Check PH" backgroundColor={theme.colors.danger} />
-  );
+  const onTime = <Label title="On time" className="label-primary" />;
+  const delayed = <Label title="Check PH" className="label-danger" />;
 
   return (
     <Card>

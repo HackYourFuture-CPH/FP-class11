@@ -1,11 +1,21 @@
 .label {
-  background-color: blue;
-  color: white;
+  background-color: var(--interaction-color);
+  color: var(--white);
   display: inline-block;
   padding: 10px;
 }
 
-.label.active {
-  background-color: yellow;
-  color: black;
+.label-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.label-interaction {
+  background-color: var(--interaction-color);
+  color: var(--white);
+}
+
+.label-danger {
+  background-color: var(--danger-color);
+  color: var(--white);
 }
