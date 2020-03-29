@@ -92,8 +92,7 @@ function ProgressBar({ startDate, currentDate, stages }) {
   });
 
   return (
-    <div className="container">
-      <h1>PROGRESS BAR</h1>
+    <div className="progress-bar">
       <div className="progressBar">{dayBlock}</div>
     </div>
   );

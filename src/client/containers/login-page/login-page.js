@@ -15,7 +15,7 @@ function LoginPage() {
   const [errorNotifications, setErrorNotifications] = useState(null);
 
   const history = useHistory();
-
+  console.log(process.env.REACT_APP_API_KEY, process.env);
   return (
     <main>
       <Login

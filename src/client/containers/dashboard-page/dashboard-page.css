@@ -1,0 +1,16 @@
+main.dashboard {
+    justify-content: flex-start;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.dashboard h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
