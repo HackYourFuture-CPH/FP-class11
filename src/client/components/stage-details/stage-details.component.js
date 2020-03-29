@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './stage-details.style.css';
+
 import SectionHeader from '../section-header/section-header.component';
-import Button from '../button/button.component';
+import LabelsColumn from './stage-details-subcomponents/labels-column.component';
+import StageButtons from './stage-details-subcomponents/stage-buttons.component';
+import DefaultValuesColumns from './stage-details-subcomponents/default-values-columns.component';
+import SaveButton from './stage-details-subcomponents/save-button.component';
 
 export default function StageDetails({
   cropId,
@@ -44,7 +48,7 @@ export default function StageDetails({
     setDataForStage(selectedStages);
   }, [selectedStageIndex, cropData]);
 
-  function handleInputChange(e, level, parameter) {
+  function handleValueInput(e, level, parameter) {
     const valueEntered = e.target.value;
     e.preventDefault();
     setCropData((prev) => {
@@ -75,90 +79,31 @@ export default function StageDetails({
 
   return (
     <div className="stage-details-container">
-      {/* Section header */}
       <SectionHeader onClick={() => null} tabIndex={0}>
         Stage Details
       </SectionHeader>
 
       <form className="stage-values-form" onSubmit={saveUpdatedCropData}>
-        {/* Toggle buttons to select stage */}
-        <div className="stage-buttons-container">
-          {stages.map((stage) => {
-            return (
-              <Button
-                key={stage.id}
-                type="toggle"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setSelectedStageIndex(stage.id);
-                }}
-                toggled={selectedStageIndex === stage.id}
-              >
-                {stage.name}
-              </Button>
-            );
-          })}
-        </div>
+        <StageButtons
+          stages={stages}
+          selectedStageIndex={selectedStageIndex}
+          setSelectedStageIndex={setSelectedStageIndex}
+        />
 
-        {/* Column containing parameter labels */}
         <div className="stage-values-container">
-          <div className="title-column">
-            {Object.keys(PARAMETERS).map((param) => (
-              <p className="stage-details-title-item" key={param}>
-                {PARAMETERS[param]}
-              </p>
-            ))}
-          </div>
+          <LabelsColumn PARAMETERS={PARAMETERS} />
 
-          {/* Columns containing values per parameter and level */}
-          {levels.map((level) => {
-            return (
-              <div
-                className={`${level}-column`}
-                key={`stage-${selectedStageIndex}-${level}-column`}
-              >
-                {Object.keys(PARAMETERS).map((parameter) => {
-                  const dataForParameter = dataForStage.find((dataPoint) => {
-                    return dataPoint.parameter === parameter;
-                  });
-                  const value = dataForParameter
-                    ? dataForParameter[`${level}_value`]
-                    : '';
-                  const name = `${level}-${parameter}-${
-                    stages[selectedStageIndex - 1].name
-                  }`;
-                  const title = `${level} ${parameter} in ${
-                    stages[selectedStageIndex - 1].name
-                  }`;
-                  return (
-                    <label
-                      className="stage-details-value-item"
-                      key={`stage-${selectedStageIndex}-${level}-${parameter}`}
-                    >
-                      {level}:
-                      <input
-                        className="stage-value-input"
-                        type="text"
-                        pattern="^[0-9]+([,.][0-9]+)?$"
-                        name={name}
-                        title={title}
-                        value={value}
-                        onChange={(e) => handleInputChange(e, level, parameter)}
-                      />
-                    </label>
-                  );
-                })}
-              </div>
-            );
-          })}
+          <DefaultValuesColumns
+            selectedStageIndex={selectedStageIndex}
+            PARAMETERS={PARAMETERS}
+            dataForStage={dataForStage}
+            stages={stages}
+            handleValueInput={handleValueInput}
+            levels={levels}
+          />
         </div>
 
-        {/* Save button */}
-        <div className="save-btn-container">
-          <Button type="primary" onClick={() => null}>
-            Save Crop Details
-          </Button>
-        </div>
+        <SaveButton />
       </form>
     </div>
   );
