@@ -30,41 +30,40 @@ export default function StageDetails({ data, onChange }) {
   const [selectedStageIndex, setSelectedStageIndex] = useState(firstStage);
 
   // Get data for the currently selected stage
-  const [sensorsLevelsForStage, setSensorsLevelsForStage] = useState(
+  const [dataForStage, setDataForStage] = useState(
     cropData.filter(
       (item) => Number(item.fk_crop_stage_id) === selectedStageIndex,
     ),
   );
 
   useEffect(() => {
-    const sensorsLevelsForSelectedStage = cropData.filter(
+    const dataForSelectedStage = cropData.filter(
       (item) => Number(item.fk_crop_stage_id) === selectedStageIndex,
     );
-    setSensorsLevelsForStage(sensorsLevelsForSelectedStage);
+    setDataForStage(dataForSelectedStage);
   }, [selectedStageIndex, cropData]);
 
   function onInputChange(e, level, sensorName) {
-    const valueEntered = e.target.value;
     e.preventDefault();
-    setCropData((prev) => {
-      return updateCropDataOnInput(prev, valueEntered, level, sensorName);
-    });
+    const newValue = e.target.value;
+    updateCropDataOnChange(newValue, level, sensorName);
   }
 
-  function updateCropDataOnInput(prevData, valueEntered, level, sensorName) {
-    return prevData.map((dataPoint) => {
+  function updateCropDataOnChange(newValue, level, sensorName) {
+    const newData = cropData.map((item) => {
       if (
-        Number(dataPoint.fk_crop_stage_id) === selectedStageIndex &&
-        dataPoint.parameter === sensorName
+        Number(item.fk_crop_stage_id) === selectedStageIndex &&
+        item.parameter === sensorName
       ) {
-        const updatedDataPoint = {
-          ...dataPoint,
-          [`${level}_value`]: valueEntered,
+        const updatedItem = {
+          ...item,
+          [`${level}_value`]: newValue,
         };
-        return updatedDataPoint;
+        return updatedItem;
       }
-      return dataPoint;
+      return item;
     });
+    setCropData(newData);
   }
 
   function saveUpdatedCropData(e) {
@@ -86,9 +85,9 @@ export default function StageDetails({ data, onChange }) {
         />
 
         <StageSensorDefaultLevels
-          ENVIRONMENT_SENSORS={ENVIRONMENT_SENSORS}
-          STAGES={STAGES}
-          sensorsLevelsForStage={sensorsLevelsForStage}
+          sensors={ENVIRONMENT_SENSORS}
+          stages={STAGES}
+          sensorsLevelsForStage={dataForStage}
           selectedStageIndex={selectedStageIndex}
           onChange={onInputChange}
         />

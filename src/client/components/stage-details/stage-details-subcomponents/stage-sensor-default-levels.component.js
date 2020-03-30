@@ -1,44 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SensorValueInput from './sensor-value-input.component';
+import SensorLevels from './sensor-levels.component';
 
 export default function StageSensorDefaultLevels({
-  ENVIRONMENT_SENSORS,
+  sensors,
   sensorsLevelsForStage,
   onChange,
-  STAGES,
+  stages,
   selectedStageIndex,
 }) {
   return (
     <div className="stage-values-container">
-      {ENVIRONMENT_SENSORS.map((sensor) => {
+      {sensors.map((sensor) => {
         return (
-          <div className="sensor-values-container" key={sensor.name}>
-            <p>{sensor.label}</p>
-            <div className="levels-container">
-              {['optimum', 'min', 'max'].map((level) => {
-                let sensorValue = sensorsLevelsForStage.find(
-                  (item) => item.parameter === sensor.name,
-                );
-                sensorValue = sensorValue ? sensorValue[`${level}_value`] : '';
-                const name = `${level}-${sensor.name}-in-${STAGES.find(
-                  (stage) => Number(stage.id) === selectedStageIndex,
-                ).name.toLowerCase()}`;
-
-                return (
-                  <SensorValueInput
-                    key={`${level}_${sensor.name}`}
-                    sensorName={sensor.name}
-                    sensorLevel={level}
-                    sensorValue={sensorValue}
-                    onChange={onChange}
-                    name={name}
-                  />
-                );
-              })}
-            </div>
-          </div>
+          <SensorLevels
+            key={sensor.name}
+            stages={stages}
+            sensor={sensor}
+            sensorsLevelsForStage={sensorsLevelsForStage}
+            selectedStageIndex={selectedStageIndex}
+            onChange={onChange}
+          />
         );
       })}
     </div>
@@ -46,9 +29,9 @@ export default function StageSensorDefaultLevels({
 }
 
 StageSensorDefaultLevels.propTypes = {
-  ENVIRONMENT_SENSORS: PropTypes.instanceOf(Array).isRequired,
+  sensors: PropTypes.instanceOf(Array).isRequired,
   sensorsLevelsForStage: PropTypes.instanceOf(Array).isRequired,
   onChange: PropTypes.func.isRequired,
-  STAGES: PropTypes.instanceOf(Array).isRequired,
+  stages: PropTypes.instanceOf(Array).isRequired,
   selectedStageIndex: PropTypes.number.isRequired,
 };

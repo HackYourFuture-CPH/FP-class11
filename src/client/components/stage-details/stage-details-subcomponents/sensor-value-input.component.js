@@ -9,10 +9,7 @@ export default function SensorValueInput({
   name,
 }) {
   return (
-    <label
-      className="stage-details-value-item"
-      key={`${sensorName}-${sensorLevel}`}
-    >
+    <label className="stage-details-value-item">
       {sensorLevel}:
       <input
         className="stage-value-input"
