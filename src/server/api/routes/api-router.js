@@ -5,6 +5,7 @@ const router = express.Router();
 // Router imports
 const modulesRouter = require('./modules.router');
 const cropStageDefaultValuesRouter = require('./crop-stage-default-values.router');
+const cropsRouter = require("./crops.router");
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
