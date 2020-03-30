@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarMenu from '../components/sidebar/sidebar.component';
+import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import AddCrop from '../../components/add-crop/add-crop.component';
 import AddCropImage from '../../components/add-crop-image/add-crop-image.component';
 import Footer from '../../components/footer/footer.component';

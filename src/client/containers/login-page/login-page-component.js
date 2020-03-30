@@ -3,7 +3,7 @@ import Login from '../../components/login/login.component';
 
 const LoginPage = () => {
   const placeholderFunction = () => {
-    console.log("don't forget to actually write me");
+    return "don't forget to actually write me";
   };
 
   return (

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SidebarMenu from '../components/sidebar/sidebar.component';
-import ProgressBar from '../components/progress-bar/progress-bar.component';
-import Card from '../components/card/card.component';
-import Label from '../components/label/label.component';
-import CropSummary from '../components/crop-summary/crop-summary.component';
-import LineChartForDashboard from '../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
-import Footer from '../components/footer/footer.component';
+import SidebarMenu from '../../components/side-navigation/sidebar.component';
+import ProgressBar from '../../components/progress-bar/progress-bar.component';
+import Card from '../../components/card/card.component';
+import Label from '../../components/label/label.component';
+import CropSummary from '../../components/crop-summary/crop-summary.component';
+import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
+import Footer from '../../components/footer/footer.component';
 
 const DashboardPage = ({ title }) => {
   const daysLeftToHarvest = 41;

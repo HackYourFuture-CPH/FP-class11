@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarMenu from '../components/sidebar/sidebar.component';
+import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import Page404 from '../../components/page404/page404.component';
 import Footer from '../../components/footer/footer.component';
 
