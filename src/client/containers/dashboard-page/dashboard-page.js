@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import firebase from '../../firebase/auth';
 
@@ -14,6 +14,19 @@ import Footer from '../../components/footer/footer.component';
 
 const DashboardPage = () => {
   const history = useHistory();
+  // const [userState, setUserState] = useState(null);
+  useEffect(() => {
+    firebase.getAuth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user);
+        // setUserState(user);
+      } else {
+        history.push('/');
+        // setUserState(null);
+      }
+    });
+  }, [history]);
+
   return (
     <div className="dashboard">
       <SidebarMenu text="Dashboard" isactive={false} isuser={true} />

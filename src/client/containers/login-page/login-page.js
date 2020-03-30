@@ -15,18 +15,18 @@ function LoginPage() {
   const [errorNotifications, setErrorNotifications] = useState(null);
 
   const history = useHistory();
-  const [userState, setUserState] = useState(null);
+  // const [userState, setUserState] = useState(null);
   useEffect(() => {
     firebase.getAuth().onAuthStateChanged(function(user) {
       if (user) {
         console.log(user);
-        setUserState(user);
+        // setUserState(user);
         history.push('/dashboard');
       } else {
-        setUserState(null);
+        // setUserState(null);
       }
     });
-  }, []);
+  }, [history]);
   return (
     <main>
       <Login
