@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import './login-page.css';
@@ -15,6 +15,18 @@ function LoginPage() {
   const [errorNotifications, setErrorNotifications] = useState(null);
 
   const history = useHistory();
+  const [userState, setUserState] = useState(null);
+  useEffect(() => {
+    firebase.getAuth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user);
+        setUserState(user);
+        history.push('/dashboard');
+      } else {
+        setUserState(null);
+      }
+    });
+  }, []);
   return (
     <main>
       <Login

@@ -1,6 +1,6 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
-// import firebase from '../../firebase/auth';
+import { useHistory } from 'react-router-dom';
+import firebase from '../../firebase/auth';
 
 import './dashboard-page.css';
 
@@ -13,19 +13,10 @@ import LineChartForDashboard from '../../components/line-chart-for-dashboard/lin
 import Footer from '../../components/footer/footer.component';
 
 const DashboardPage = () => {
-  // const history = useHistory();
+  const history = useHistory();
   return (
     <div className="dashboard">
       <SidebarMenu text="Dashboard" isactive={false} isuser={true} />
-      {/* <button
-        type="submit"
-        onClick={() => {
-          firebase.signOut();
-          history.push('/');
-        }}
-      >
-        Sign out
-      </button>  */}
       <div className="content">
         <header>
           <h1>Crop Overview</h1>
@@ -46,6 +37,15 @@ const DashboardPage = () => {
             ]}
           />
           <div className="cards">
+            <button
+              type="submit"
+              onClick={() => {
+                firebase.signOut();
+                history.push('/');
+              }}
+            >
+              Sign out
+            </button>
             {/* <Card title="Status">
           <Label title="Check PH" className="label-danger" />
               <CropSummary

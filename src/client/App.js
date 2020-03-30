@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import LoginPage from './containers/login-page/login-page';
@@ -8,21 +8,21 @@ import Firebase, { FirebaseContext } from './firebase/index';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/forgot-password">
-          <ForgotPassword />
-        </Route>
-        <Route exact path="/dashboard">
-          <Dashboard />
-        </Route>
-        <Route exact path="/">
-          <FirebaseContext.Provider value={Firebase.init()}>
+    <FirebaseContext.Provider value={Firebase.init()}>
+      <Router>
+        <Switch>
+          <Route exact path="/forgot-password">
+            <ForgotPassword />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/">
             <LoginPage />
-          </FirebaseContext.Provider>
-        </Route>
-      </Switch>
-    </Router>
+          </Route>
+        </Switch>
+      </Router>
+    </FirebaseContext.Provider>
   );
 }
 
