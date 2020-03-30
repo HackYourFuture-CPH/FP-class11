@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import Button from '../../button/button.component';
 
 export default function StageButtons({
-  stages,
+  STAGES,
   selectedStageIndex,
   setSelectedStageIndex,
 }) {
   return (
     <div className="stage-buttons-container">
-      {stages.map((stage) => {
+      {STAGES.map((stage) => {
         return (
           <Button
             key={stage.id}
@@ -29,7 +29,7 @@ export default function StageButtons({
 }
 
 StageButtons.propTypes = {
-  stages: PropTypes.instanceOf(Array).isRequired,
+  STAGES: PropTypes.instanceOf(Array).isRequired,
   selectedStageIndex: PropTypes.number.isRequired,
   setSelectedStageIndex: PropTypes.func.isRequired,
 };
