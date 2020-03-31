@@ -16,9 +16,7 @@ exports.up = function(knex) {
       .defaultTo(knex.fn.now())
       .notNullable();
     table
-      .timestamp('deleted_at')
-      .defaultTo(knex.fn.now())
-      .notNullable();
+      .timestamp('deleted_at');
   });
 };
 exports.down = function(knex) {

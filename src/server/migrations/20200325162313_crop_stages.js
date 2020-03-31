@@ -4,7 +4,9 @@ exports.up = function(knex) {
       .increments('id')
       .primary()
       .unsigned();
-    table.enu('name', []).notNullable();
+    table.enu('name', ['seeding','propagation','meturity','harvesting','delivery']).notNullable();
+    table.integer('duration').notNullable();
+    table.integer('fk_crops_id').unsigned().notNullable();
     table
       .timestamp('created_at')
       .defaultTo(knex.fn.now())
@@ -13,6 +15,7 @@ exports.up = function(knex) {
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
+    table.foreign('fk_crops_id').references('id').inTable('crops');
   });
 };
 exports.down = function(knex) {
