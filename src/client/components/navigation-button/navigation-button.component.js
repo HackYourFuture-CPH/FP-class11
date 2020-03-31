@@ -26,7 +26,7 @@ const NavigationButton = ({ icon, text, isactive, isuser, handleClick }) => {
 
 NavigationButton.defaultProps = {
   isactive: false,
-  isuser: true,
+  isuser: false,
   handleClick: null,
 };
 

@@ -10,12 +10,13 @@ import { faUser, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 import imageFile from '../../assets/images/logo.png';
 
-import firebase from '../../firebase/auth';
+import Firebase from '../../firebase/index';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [errorNotifications, setErrorNotifications] = useState(null);
+  const [message, setMessage] = useState(null);
 
   return (
     <main>
@@ -25,6 +26,7 @@ function ForgotPassword() {
         <form>
           <div className="error-notification">
             {errorNotifications && <Notification text={errorMessage} />}
+            {message && <Notification text={message} />}
           </div>
           <InputLogin
             type="email"
@@ -39,10 +41,16 @@ function ForgotPassword() {
             onClick={async (event) => {
               event.preventDefault();
               if (email) {
-                const { err } = await firebase.doPasswordReset(email);
+                const { err } = await Firebase.doPasswordReset(email);
                 if (err) {
                   setErrorMessage(err.message);
                   setErrorNotifications(err.code);
+                  setMessage(null);
+                } else {
+                  setMessage(
+                    'Check your inbox and follow the instructions in the email to reset your password.',
+                  );
+                  setErrorNotifications(null);
                 }
               }
             }}

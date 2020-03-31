@@ -29,13 +29,6 @@ function Firebase() {
       }
       return {};
     },
-
-    // Password Change
-    // export const doPasswordUpdate = async (password) => {
-    //   if (auth.currentUser) {
-    //     await auth.currentUser.updatePassword(password);
-    //   }
-    // };
   };
 }
 
