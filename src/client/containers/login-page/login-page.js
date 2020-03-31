@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import Firebase from '../../firebase/index';
 
 import './login-page.css';
 import '../../components/login/login.style.css';
 
 import Login from '../../components/login/login.component';
-
-import firebase from '../../firebase/auth';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -14,19 +12,6 @@ function LoginPage() {
   const [errorMessage, setErrorMessage] = useState('');
   const [errorNotifications, setErrorNotifications] = useState(null);
 
-  const history = useHistory();
-  // const [userState, setUserState] = useState(null);
-  useEffect(() => {
-    firebase.getAuth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log(user);
-        // setUserState(user);
-        history.push('/dashboard');
-      } else {
-        // setUserState(null);
-      }
-    });
-  }, [history]);
   return (
     <main>
       <Login
@@ -40,14 +25,14 @@ function LoginPage() {
         loginFunc={async (event) => {
           event.preventDefault();
           if (email && password) {
-            const { err } = await firebase.signInEmailAndPassword(
+            const { err } = await Firebase.signInEmailAndPassword(
               email,
               password,
             );
             if (err) {
               setErrorMessage(err.message);
               setErrorNotifications(err.code);
-            } else history.push('/dashboard');
+            }
           }
         }}
       />

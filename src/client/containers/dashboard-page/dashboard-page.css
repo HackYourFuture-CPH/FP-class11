@@ -1,6 +1,7 @@
 .dashboard {
     display: flex;
     justify-content: flex-start;
+    min-height: 100vh;
 }
 
 .content {
@@ -9,6 +10,7 @@
     flex-direction: column;
     height: 100vh;
     justify-content: flex-start;
+    margin-left: 130px;
     width: 100%;
 }
 
@@ -31,5 +33,11 @@ header h1 {
 
 .dashboard .cards {
     display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
     margin: 2em 1em;
+}
+
+.cards .card {
+    margin: 1em 2em;
 }

@@ -25,13 +25,13 @@ const LineChartForDashboard = ({
 }) => {
   return (
     <LineChart
-      width={300}
-      height={200}
+      width={280}
+      height={180}
       data={tempData}
       margin={{
-        top: 5,
-        right: 30,
-        left: 20,
+        top: 10,
+        right: 20,
+        left: -20,
         bottom: 5,
       }}
     >
@@ -80,7 +80,7 @@ const LineChartForDashboard = ({
 };
 
 LineChartForDashboard.propTypes = {
-  tempData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  tempData: PropTypes.oneOfType([PropTypes.array]).isRequired,
   strokeGrid: PropTypes.string.isRequired,
   strokeAxis: PropTypes.string.isRequired,
   minColor: PropTypes.string.isRequired,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import NavigationButton from './navigation-button.component';
 import {
   faUserCircle,
@@ -12,8 +13,10 @@ export default {
   title: 'NavigationButton',
 };
 
+const handleClick = action('button clicked');
+
 export const Dashbord = () => (
-  <NavigationButton icon={faThLarge} text="DashBord" />
+  <NavigationButton icon={faThLarge} text="DashBord" isuser={false} />
 );
 export const CropDetails = () => (
   <NavigationButton icon={faSeedling} text="Crop Details" />
@@ -22,5 +25,10 @@ export const AddCrop = () => (
   <NavigationButton icon={faPlusCircle} text="Add Crop" />
 );
 export const LogOut = () => (
-  <NavigationButton icon={faUserCircle} text="LogOut" />
+  <NavigationButton
+    icon={faUserCircle}
+    text="LogOut"
+    isuser={true}
+    handleClick={handleClick}
+  />
 );

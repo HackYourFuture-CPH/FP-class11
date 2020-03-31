@@ -13,6 +13,6 @@ const DashboardItems = ({ items }) => {
 };
 
 DashboardItems.propTypes = {
-  items: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  items: PropTypes.oneOfType([PropTypes.array]).isRequired,
 };
 export default DashboardItems;

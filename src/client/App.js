@@ -1,25 +1,53 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import LoginPage from './containers/login-page/login-page';
 import ForgotPassword from './containers/forgot-password/forgot-password';
 import Dashboard from './containers/dashboard-page/dashboard-page';
 import Firebase, { FirebaseContext } from './firebase/index';
 
+import PrivateRoute from './helpers/PrivateRoute';
+import PublicRoute from './helpers/PublicRoute';
+
 function App() {
+  const [userState, setUserState] = useState(null);
+  const [auth, setAuth] = useState(false);
+
+  useEffect(() => {
+    Firebase.init();
+    Firebase.getAuth().onAuthStateChanged(function(user) {
+      if (user) {
+        setUserState(user);
+        setAuth(true);
+      } else {
+        setUserState(null);
+        setAuth(false);
+      }
+    });
+  }, []);
+
   return (
-    <FirebaseContext.Provider value={Firebase.init()}>
+    <FirebaseContext.Provider value={userState}>
       <Router>
         <Switch>
-          <Route exact path="/forgot-password">
-            <ForgotPassword />
-          </Route>
-          <Route exact path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route exact path="/">
-            <LoginPage />
-          </Route>
+          <PublicRoute
+            exact
+            path="/forgot-password"
+            component={ForgotPassword}
+            authenticated={auth}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard"
+            component={Dashboard}
+            authenticated={auth}
+          />
+          <PublicRoute
+            exact
+            path="/"
+            component={LoginPage}
+            authenticated={auth}
+          />
         </Switch>
       </Router>
     </FirebaseContext.Provider>
