@@ -35,7 +35,13 @@ const LineChartForDashboard = ({
         bottom: 5,
       }}
     >
-      <CartesianGrid strokeDasharray="3,3" stroke={strokeGrid} />
+      <CartesianGrid
+        strokeDasharray="3,3"
+        stroke={strokeGrid}
+        vertical={false}
+        horizontal={false}
+        fill="#fff"
+      />
       <XAxis
         stroke={strokeAxis}
         dateKey="timestamp"
