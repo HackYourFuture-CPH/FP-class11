@@ -1,0 +1,14 @@
+.date-component-wrapper {
+  border: var(--border-inputs);
+  box-shadow: var(--embossed-shadow-medium);
+  color: var(--dark-blue);
+  padding: 0.5em 0;
+}
+
+.input-date {
+  background: transparent;
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-high);
+  box-shadow: var(--debossed-shadow-high);
+  padding: 0.3em 0.5em 0.9em;
+}

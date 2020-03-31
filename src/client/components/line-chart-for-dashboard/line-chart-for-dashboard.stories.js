@@ -1,6 +1,6 @@
 import React from 'react';
-import LineChartForDashboard from './LineChartForDashboard.component';
-import { withKnobs, number, color } from '@storybook/addon-knobs';
+import LineChartForDashboard from './line-chart-for-dashboard.component';
+import { withKnobs, number, color, object } from '@storybook/addon-knobs';
 
 export default {
   title: 'LineChart',
@@ -45,11 +45,12 @@ const strokeWidthRefNumber = number('RefLine stroke width', 1);
 const strokeWidthLineNumber = number('line stroke width', 2);
 const strokeLineNumber = color('stroke line color', '#000');
 const referanceAreaColor = color('axisColor and Ref area', '#808080');
+const tempChartData = object('chartData', tempData);
 
 export const stylesForLineChart = () => {
   return (
     <LineChartForDashboard
-      tempData={tempData}
+      tempData={tempChartData}
       strokeGrid={storkeGridColor}
       strokeAxis={strokeAxisColor}
       minColor={minValueColor}

@@ -25,17 +25,18 @@ const LineChartForDashboard = ({
 }) => {
   return (
     <LineChart
-      width={500}
-      height={300}
+      width={300}
+      height={200}
       data={tempData}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
+      margin={{ top: 5, right: 0, bottom: 5, left: 0 }}
     >
-      <CartesianGrid strokeDasharray="3,3" stroke={strokeGrid} />
+      <CartesianGrid
+        strokeDasharray="3,3"
+        stroke={strokeGrid}
+        horizontal={false}
+        vertical={false}
+        fill="#fff"
+      />
       <XAxis
         stroke={strokeAxis}
         dateKey="timestamp"
@@ -68,6 +69,8 @@ const LineChartForDashboard = ({
         dataKey="temp"
         stroke={strokeLine}
         strokeWidth={strokeWidthLine}
+        name="Temperature"
+        unit="°C"
       />
       <ReferenceArea
         y1={7}
@@ -80,7 +83,7 @@ const LineChartForDashboard = ({
 };
 
 LineChartForDashboard.propTypes = {
-  tempData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  tempData: PropTypes.oneOfType([PropTypes.array]).isRequired,
   strokeGrid: PropTypes.string.isRequired,
   strokeAxis: PropTypes.string.isRequired,
   minColor: PropTypes.string.isRequired,

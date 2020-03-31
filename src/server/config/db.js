@@ -1,7 +1,7 @@
-const winston = require('./../api/lib/utils/winston').logger;
+const winston = require('../api/lib/utils/winston').logger;
 
 // db setup
-const dbOptions = require('./../knexfile').development;
+const dbOptions = require('../knexfile').development;
 
 // create connection
 const knex = require('knex')(dbOptions);
