@@ -1,6 +1,7 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
 import './logout.style.css';
+import PropTypes from 'prop-types';
 
 const userName = 'Servet';
 
@@ -73,6 +74,18 @@ const LogoutActions = ({ closeAction }) => (
     </button>
   </div>
 );
+
+LogoutActions.propTypes = {
+  closeAction: PropTypes.string.isRequired,
+};
+LogoutContent.propTypes = {
+  children: PropTypes.string.isRequired,
+};
+PopupModal.propTypes = {
+  closeAction: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 // export default function Logout() {
 //   return (
