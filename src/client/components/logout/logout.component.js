@@ -15,7 +15,7 @@ export default function Logout() {
   );
 
   return (
-    <Popup trigger={PopupTrigger} modal="true">
+    <Popup trigger={PopupTrigger} modal>
       {popupView}
     </Popup>
   );
@@ -55,21 +55,11 @@ const LogoutContent = ({ children }) => {
 
 const LogoutActions = ({ closeAction }) => (
   <div className="actions">
-    <button
-      className="confirm-logout"
-      type="submit"
-      onClick="location.href='/login?dis=yes'"
-    >
+    <button className="confirm-logout" type="submit" onClick="{() => {}}">
       Logout
     </button>
     <br />
-    <button
-      type="submit"
-      className="confirm-cancel"
-      onClick={() => {
-        closeAction();
-      }}
-    >
+    <button type="submit" className="confirm-cancel" onClick={closeAction}>
       Cancel
     </button>
   </div>
@@ -86,51 +76,3 @@ PopupModal.propTypes = {
   children: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
-
-// export default function Logout() {
-//   return (
-//     <Popup
-//       trigger={
-//         <button type="submit" className="logout-button">
-//           {' '}
-//           LOG OUT{' '}
-//         </button>
-//       }
-//       modal
-//     >
-//       {(close) => (
-//         <div className="modal">
-//           <button type="submit" className="close" onClick={close}>
-//             &times;
-//           </button>
-//           <div className="header"> LOG OUT </div>
-//           <div className="content">
-//             <p>
-//               Hi {userName} <br />
-//               Do you really want to Logout ?{' '}
-//             </p>
-//           </div>
-//           <div className="actions">
-//             <button
-//               className="confirm-logout"
-//               type="submit"
-//               onClick="location.href='/login?dis=yes'"
-//             >
-//               Logout
-//             </button>
-//             <br />
-//             <button
-//               type="submit"
-//               className="confirm-cancel"
-//               onClick={() => {
-//                 close();
-//               }}
-//             >
-//               Cancel
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </Popup>
-//   );
-// }

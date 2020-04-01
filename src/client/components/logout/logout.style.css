@@ -2,9 +2,8 @@
 .logout-button {
   position: absolute;
   transition: 0.5s ease;
-  background-color: white;
   color: black;
-  border: 2px solid rgb(255, 105, 180);
+  border: 2px solid var(--pink);
   width: 100px;
   height: 50px;
   border-radius: 50px;
@@ -13,7 +12,7 @@
 }
 
 .logout-button:hover {
-  background-color: rgb(255, 105, 180);
+  background-color: var(--pink);
   color: white;
 }
 
@@ -22,16 +21,14 @@
   width: 400px !important;
   height: 350px !important;
   background-color: #d5d8dc !important;
-  -webkit-box-shadow: 5px 5px 6px -1px rgba(213, 216, 220, 0.68);
-  box-shadow: 7px 7px 6px -1px rgba(213, 216, 220, 0.68);
   border-radius: 5%;
 }
 
 .modal {
   font-size: 20px;
-  height: 325px;
-  width: 400px;
-  background-color: #d5d8dc;
+  height: 315px;
+  width: 390px;
+  background-color: #d5d8dc !important;
   border-radius: 5%;
 }
 /*styling modal header*/
@@ -47,19 +44,23 @@
   font-size: 30px;
   color: black;
   text-transform: uppercase;
+  background-color: #d5d8dc !important;
 }
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
   font-size: 700;
   text-align: center;
+  background-color: #d5d8dc !important;
 }
 .modal > .actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
   text-align: center;
+  background-color: #d5d8dc !important;
 }
+
 /*close button on top right corner of pop up window styling*/
 .modal > .close {
   cursor: pointer;
@@ -70,7 +71,6 @@
   right: -10px;
   top: -10px;
   font-size: 24px;
-  background: #ffffff;
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
@@ -78,8 +78,7 @@
 /* Confoirm Logout button on pop up window styling */
 .confirm-logout {
   transition: 0.5s ease;
-  background-color: white;
-  background: rgb(255, 105, 180);
+  background: var(--pink);
   color: white;
   width: 200px;
   height: 50px;
@@ -96,7 +95,6 @@
 /* Confoirm Cancellation button on pop up window styling*/
 .confirm-cancel {
   transition: 0.5s ease;
-  background-color: white;
   background: #aeb6bf;
   color: black;
   width: 200px;
@@ -111,4 +109,8 @@
 .confirm-cancel:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+p {
+  background-color: #d5d8dc !important;
 }
