@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from './containers/home/home.component';
+import DashboardPage from './containers/dashboard-page/dashboard-page.component';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <Home />
+        <Route exact path="/dashboard">
+          <DashboardPage title="Crop overview"/>
         </Route>
       </Switch>
     </Router>

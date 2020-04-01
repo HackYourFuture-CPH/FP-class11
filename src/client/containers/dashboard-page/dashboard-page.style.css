@@ -1,0 +1,43 @@
+.dashboard {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.content {
+    background: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    margin-left: 130px;
+    width: 100%;
+}
+
+header {
+    padding: 1em 1em 0;
+}
+
+header h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.dashboard main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.dashboard .cards {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    margin: 2em 1em;
+}
+
+.cards .card {
+    margin: 1em 2em;
+}

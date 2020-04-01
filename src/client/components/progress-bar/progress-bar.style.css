@@ -2,13 +2,14 @@
   text-align: center;
   width: 100%;
 }
+
 .progress-bar {
   background-color: var(--light-grey);
   border: var(--border-inputs);
   border-radius: var(--border-radius-low);
   box-shadow: var(--debossed-shadow-high);
   height: 2.5em;
-  margin: 3em auto 0 auto;
+  margin: 2em auto 0 auto;
   width: 98%;
 }
 
