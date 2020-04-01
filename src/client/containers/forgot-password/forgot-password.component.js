@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './forgot-password.css';
+import './forgot-password.style.css';
 
 import Logo from '../../components/logo/logo.component';
 import InputLogin from '../../components/input-login/input-login.component';

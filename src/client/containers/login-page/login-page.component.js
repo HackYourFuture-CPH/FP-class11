@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Firebase from '../../firebase/index';
 
-import './login-page.css';
-import '../../components/login/login.style.css';
+import './login-page.style.css';
 
 import Login from '../../components/login/login.component';
 
