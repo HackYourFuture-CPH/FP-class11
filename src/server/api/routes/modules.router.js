@@ -23,4 +23,39 @@ router.get('/:id', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/modules/ :POST
+router.post('/', (req, res) => {
+  modulesController
+    .createModule(req.body)
+    .then((result) => res.json(result))
+    .catch((error) => {
+      console.log(error);
+
+      res.status(400).send('Bad request').end();
+    });
+});
+
+// ENDPOINT: /api/modules/ :PATCH
+router.patch('/:id', (req, res, next) => {
+  modulesController
+    .editModule(req.params.id, req.body)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+// ENDPOINT: /api/example/ :DELETE
+router.delete('/:id', (req, res) => {
+  modulesController
+    .deleteModule(req.params.id, req)
+    .then((result) => {
+      // If result is equal to 0, then that means the module id does not exist
+      if (result === 0) {
+        res.status(404).send('The module ID you provided does not exist.');
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
+});
+
 module.exports = router;
