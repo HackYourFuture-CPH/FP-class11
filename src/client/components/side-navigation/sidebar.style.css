@@ -2,7 +2,7 @@
   background: var(--light-grey);
   display: flex;
   flex-direction: column;
-  position: relative;
+  position:fixed;
   text-align: center;
   width: 130px;
   min-height: 100vh;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import DashbordItems from '../dashbord-items/dashboard-items.component';
-import '../dashbord-items/dashboard-items.style.css';
+import DashboardItems from '../dashboard-items/dashboard-items.component';
+import '../dashboard-items/dashboard-items.style.css';
 
-const NavigationButton = ({ icon, text, isactive, isuser }) => {
+const NavigationButton = ({ icon, text, isactive, isuser, handleClick }) => {
   const className = `${isactive ? 'itemActive' : 'item'} ${
     isuser ? 'user' : ''
   }`;
@@ -16,22 +16,23 @@ const NavigationButton = ({ icon, text, isactive, isuser }) => {
     { id: 5, value: 'Water' },
   ];
   return (
-    <button
-      type="button"
-      isactive={isactive}
-      isuser={isuser}
-      className={className}
-    >
+    <button type="button" className={className} onClick={handleClick}>
       <FontAwesomeIcon icon={icon} className="icon" />
-      <p>{text}</p>
-      {isactive ? <DashbordItems items={items} /> : ''}
+      <p className="navtext">{text}</p>
+      {isactive ? <DashboardItems items={items} /> : ''}
     </button>
   );
 };
+NavigationButton.defaultProps = {
+  isactive: false,
+  isuser: false,
+  handleClick: null,
+};
 NavigationButton.propTypes = {
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.oneOfType([PropTypes.object]).isRequired,
   text: PropTypes.string.isRequired,
-  isactive: PropTypes.bool.isRequired,
-  isuser: PropTypes.bool.isRequired,
+  isactive: PropTypes.bool,
+  isuser: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 export default NavigationButton;

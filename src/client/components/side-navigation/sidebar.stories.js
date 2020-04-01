@@ -1,5 +1,6 @@
 import React from 'react';
 import SidebarMenu from './sidebar.component';
+import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import '@storybook/addon-knobs/register';
 
@@ -13,14 +14,12 @@ const options = {
   active: true,
   inactive: false,
 };
-const userOptions = {
-  isuser: true,
-  notuser: false,
-};
 
 export const SidebarActive = () => {
   const text = ('value', 'dashbord');
   const isactive = boolean('active', false, options);
-  const isuser = boolean('isuser', true, userOptions);
-  return <SidebarMenu text={text} isactive={isactive} isuser={isuser} />;
+  const handleClick = action('clicked');
+  return (
+    <SidebarMenu text={text} isactive={isactive} handleClick={handleClick} />
+  );
 };

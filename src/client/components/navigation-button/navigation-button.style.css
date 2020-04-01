@@ -3,7 +3,7 @@
   font-size: 2.1875rem;
   margin-top: 0.2em;
 }
-p {
+.navtext {
   color: var(--dark-blue);
   font-size: 0.9em;
   font-weight: 300;
@@ -36,7 +36,7 @@ p {
   box-shadow: var(--debossed-shadow-medium);
 }
 .item:hover path,
-.item:hover p {
+.item:hover .navtext {
   color: var(--light-blue);
 }
 .item-active {
