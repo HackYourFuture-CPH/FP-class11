@@ -6,18 +6,25 @@ import Button from '../button/button.component';
 const UpdateDateRange = ({ date, text }) => {
   return (
     <div className="date-component-wrapper">
-      <label htmlFor="fromDate">From:</label>
-      <input className="input-date" type={date} name="fromDate" id="fromDate" />
-      <label htmlFor="untilDate">Until: </label>
-      <input
-        className="input-date"
-        type={date}
-        name="untilDate"
-        id="untilDate"
-      />
-      <Button type="toggle" size="large">
-        {text}
-      </Button>
+      <label htmlFor="fromDate" className="update-label">
+        From:
+        <input
+          className="input-date"
+          type={date}
+          name="fromDate"
+          id="fromDate"
+        />
+      </label>
+      <label htmlFor="untilDate">
+        Until:
+        <input
+          className="input-date"
+          type={date}
+          name="untilDate"
+          id="untilDate"
+        />
+      </label>
+      <Button type="toggle">{text}</Button>
     </div>
   );
 };

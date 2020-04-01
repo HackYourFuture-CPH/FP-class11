@@ -25,10 +25,10 @@ const LineChartForDashboard = ({
 }) => {
   return (
     <LineChart
-      width={300}
-      height={200}
+      width={280}
+      height={180}
       data={tempData}
-      margin={{ top: 5, right: 0, bottom: 5, left: 0 }}
+      margin={{ top: 10, right: 20, bottom: 5, left: -20 }}
     >
       <CartesianGrid
         strokeDasharray="3,3"

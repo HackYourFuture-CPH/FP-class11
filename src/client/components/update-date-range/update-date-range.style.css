@@ -2,13 +2,28 @@
   border: var(--border-inputs);
   box-shadow: var(--embossed-shadow-medium);
   color: var(--dark-blue);
-  padding: 0.5em 0;
+  display: flex;
+  padding: 0.9em 0;
+  background: var(--light-grey);
 }
 
 .input-date {
-  background: transparent;
-  border: var(--border-inputs);
+  width: 11.7em;
+  height: 3em;
+  background: #ebecf0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  padding: 0 1em;
+  font-size: 14px;
+  margin: 0 0.5em;
   border-radius: var(--border-radius-high);
   box-shadow: var(--debossed-shadow-high);
-  padding: 0.3em 0.5em 0.9em;
+}
+
+.btn-wrapper {
+  margin: 0;
+}
+
+.update-label {
+  margin-left: 2em;
 }
