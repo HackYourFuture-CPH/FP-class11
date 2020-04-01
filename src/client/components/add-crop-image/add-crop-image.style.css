@@ -1,11 +1,8 @@
-* {
-  background-color: #ebecf0;
-  color: #3b4349;
-  font-family: Proxima Nova, sans-serif;
-}
-
-/* TODO: global shadow to be added later */
 .add-image {
+  background: var(--light-grey);
+  box-shadow: var(--embossed-shadow-high);
+  color: var(--font-color);
+  border: var(--border-inputs);
   width: 250px;
   height: 250px;
   border-radius: 50%;
