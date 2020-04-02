@@ -9,13 +9,13 @@ export default {
 };
 
 const label = 'value';
-const defaultValue = {
-  buttonDays: 'Last 5 Days',
-  buttonWeek: 'Last Week',
-  buttonWeeks: 'Last Two Weeks',
-  buttonMonth: 'Last Month',
-  buttonCustom: 'Custom',
-};
+const defaultValue = [
+  { buttonId: 1, buttonLabel: 'Last 5 Days' },
+  { buttonId: 2, buttonLabel: 'Last Week' },
+  { buttonId: 3, buttonLabel: 'Last Two Weeks' },
+  { buttonId: 4, buttonLabel: 'Last Month' },
+  { buttonId: 5, buttonLabel: 'Custom' },
+];
 
 export const Chartdatabuttons = () => {
   const value = object(label, defaultValue);
