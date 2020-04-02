@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import DashboardItems from '../dashboard-items/dashboard-items.component';
 import '../dashboard-items/dashboard-items.style.css';
 
-const NavigationButton = ({ icon, text, isactive, isuser, handleClick }) => {
-  const className = `${isactive ? 'itemActive' : 'item'} ${
-    isuser ? 'user' : ''
+const NavigationButton = ({ icon, text, isActive, isUser, handleClick }) => {
+  const className = `${isActive ? 'itemActive' : 'item'} ${
+    isUser ? 'user' : ''
   }`;
   const items = [
     { id: 1, value: 'Temperature' },
@@ -19,20 +19,20 @@ const NavigationButton = ({ icon, text, isactive, isuser, handleClick }) => {
     <button type="button" className={className} onClick={handleClick}>
       <FontAwesomeIcon icon={icon} className="icon" />
       <p className="navtext">{text}</p>
-      {isactive ? <DashboardItems items={items} /> : ''}
+      {isActive ? <DashboardItems items={items} /> : ''}
     </button>
   );
 };
 NavigationButton.defaultProps = {
-  isactive: false,
-  isuser: false,
+  isActive: false,
+  isUser: false,
   handleClick: null,
 };
 NavigationButton.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.object]).isRequired,
   text: PropTypes.string.isRequired,
-  isactive: PropTypes.bool,
-  isuser: PropTypes.bool,
+  isActive: PropTypes.bool,
+  isUser: PropTypes.bool,
   handleClick: PropTypes.func,
 };
 export default NavigationButton;

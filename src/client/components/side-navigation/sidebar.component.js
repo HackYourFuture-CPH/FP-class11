@@ -12,14 +12,14 @@ import {
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SidebarMenu = ({ isactive, handleClick }) => {
+const SidebarMenu = ({ isActive, handleClick }) => {
   return (
     <div className="sidebar-wrapper">
       <Logo srcPath={imageFile} altText="Seasony" />
       <NavigationButton
         icon={faThLarge}
         text="Dashboard"
-        isactive={isactive}
+        isActive={isActive}
         handleClick={handleClick}
       />
       <NavigationButton
@@ -42,7 +42,7 @@ const SidebarMenu = ({ isactive, handleClick }) => {
 };
 
 SidebarMenu.propTypes = {
-  isactive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
 

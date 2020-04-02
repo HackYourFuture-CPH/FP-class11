@@ -16,7 +16,7 @@ export default {
 const handleClick = action('button clicked');
 
 export const Dashboard = () => (
-  <NavigationButton icon={faThLarge} text="DashBoard" isuser={false} />
+  <NavigationButton icon={faThLarge} text="DashBoard" isUser={false} />
 );
 export const BatchDetails = () => (
   <NavigationButton
@@ -36,7 +36,7 @@ export const LogOut = () => (
   <NavigationButton
     icon={faUserCircle}
     text="LogOut"
-    isuser={true}
+    isUser={true}
     handleClick={handleClick}
   />
 );

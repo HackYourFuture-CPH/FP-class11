@@ -17,9 +17,9 @@ const options = {
 
 export const SidebarActive = () => {
   const text = ('value', 'dashboard');
-  const isactive = boolean('active', false, options);
+  const isActive = boolean('active', false, options);
   const handleClick = action('clicked');
   return (
-    <SidebarMenu text={text} isactive={isactive} handleClick={handleClick} />
+    <SidebarMenu text={text} isActive={isActive} handleClick={handleClick} />
   );
 };
