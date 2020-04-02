@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import '/../theme.css';
+
+.detail-chart-container {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem 0;
+}
