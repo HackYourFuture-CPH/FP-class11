@@ -15,17 +15,17 @@ export default {
 
 const handleClick = action('button clicked');
 
-export const Dashbord = () => (
-  <NavigationButton icon={faThLarge} text="DashBord" isuser={false} />
+export const Dashboard = () => (
+  <NavigationButton icon={faThLarge} text="DashBoard" isuser={false} />
 );
-export const CropDetails = () => (
+export const BatchDetails = () => (
   <NavigationButton
     icon={faSeedling}
     text="Batch Details"
     handleClick={handleClick}
   />
 );
-export const AddCrop = () => (
+export const AddBatch = () => (
   <NavigationButton
     icon={faPlusCircle}
     text="Add Batch"
