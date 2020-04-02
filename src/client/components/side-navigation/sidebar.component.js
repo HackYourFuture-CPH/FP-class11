@@ -35,6 +35,7 @@ const SidebarMenu = ({ isActive, handleClick }) => {
       <NavigationButton
         icon={faUserCircle}
         text="LogOut"
+        isUser={true}
         handleClick={handleClick}
       />
     </div>

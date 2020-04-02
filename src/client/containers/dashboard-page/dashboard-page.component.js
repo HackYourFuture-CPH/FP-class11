@@ -1,29 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './dashboard-page.style.css';
 // import Firebase from '../../firebase/index';
-// import SidebarMenu from '../../components/side-navigation/sidebar.component';
+import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import ProgressBar from '../../components/progress-bar/progress-bar.component';
+import StatusCard from '../../components/status-card/status-card.component';
 import Card from '../../components/card/card.component';
-import Label from '../../components/label/label.component';
 // import CropSummary from '../../components/crop-summary/crop-summary.component';
-// import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
+import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
 
-const DashboardPage = ({ title }) => {
+const DashboardPage = () => {
   return (
     <div className="dashboard">
-      {/*<SidebarMenu
+      <SidebarMenu
         text="Dashboard"
-        isactive={false}
-        logoutFunc={() => {
-          Firebase.signOut();
+        isActive={false}
+        handleClick={() => {
+          // Firebase.signOut();
         }}
-      /> */}
+      />
       <div className="content">
         <header>
-          <h1>{title}</h1>
+          <h1>Crop overview</h1>
         </header>
         <main>
           <ProgressBar
@@ -41,9 +40,15 @@ const DashboardPage = ({ title }) => {
             ]}
           />
           <div className="cards">
-            <Card title="Status">
-              <Label isOnTime={true} />
-              {/* <CropSummary
+            <Card>
+              <h3>Status</h3>
+              <StatusCard
+                isOnTime={true}
+                daysToHarvest={42}
+                daysToProjectEnd={53}
+              />
+            </Card>
+            {/* <CropSummary
               daysLeftToHarvest={daysLeftToHarvest}
               daysLeftToEnd={daysLeftToEnd}
               currentStage={currentStage}
@@ -51,9 +56,8 @@ const DashboardPage = ({ title }) => {
               productionStartDate={productionStartDate}
               productionEndDate={productionEndDate}
             /> */}
-            </Card>
             <Card title="Temperature">
-              {/* <h3>Temperature</h3>
+              <h3>Temperature</h3>
               <LineChartForDashboard
                 tempData={[
                   {
@@ -91,10 +95,10 @@ const DashboardPage = ({ title }) => {
                 strokeLine="#000"
                 strokeWidthLine={2}
                 ReferanceAreaColor="#808080"
-              /> */}
+              />
             </Card>
             <Card title="Humidity">
-              {/* <h3>Temperature</h3>
+              <h3>Humidity</h3>
               <LineChartForDashboard
                 tempData={[
                   {
@@ -132,10 +136,10 @@ const DashboardPage = ({ title }) => {
                 strokeLine="#000"
                 strokeWidthLine={2}
                 ReferanceAreaColor="#808080"
-              /> */}
+              />
             </Card>
             <Card title="Water PH">
-              {/* <h3>Temperature</h3>
+              <h3>Water PH</h3>
               <LineChartForDashboard
                 tempData={[
                   {
@@ -173,10 +177,10 @@ const DashboardPage = ({ title }) => {
                 strokeLine="#000"
                 strokeWidthLine={2}
                 ReferanceAreaColor="#808080"
-              /> */}
+              />
             </Card>
             <Card title="Water EC">
-              {/* <h3>Temperature</h3>
+              <h3>Water EC</h3>
               <LineChartForDashboard
                 tempData={[
                   {
@@ -214,10 +218,10 @@ const DashboardPage = ({ title }) => {
                 strokeLine="#000"
                 strokeWidthLine={2}
                 ReferanceAreaColor="#808080"
-              /> */}
+              />
             </Card>
             <Card title="Water Level">
-              {/* <h3>Temperature</h3>
+              <h3>Water level</h3>
               <LineChartForDashboard
                 tempData={[
                   {
@@ -255,7 +259,7 @@ const DashboardPage = ({ title }) => {
                 strokeLine="#000"
                 strokeWidthLine={2}
                 ReferanceAreaColor="#808080"
-              /> */}
+              />
             </Card>
           </div>
         </main>
@@ -266,7 +270,3 @@ const DashboardPage = ({ title }) => {
 };
 
 export default DashboardPage;
-
-DashboardPage.propTypes = {
-  title: PropTypes.string.isRequired,
-};

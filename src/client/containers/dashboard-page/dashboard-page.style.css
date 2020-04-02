@@ -24,6 +24,7 @@ header h1 {
 }
 
 .dashboard main {
+    background: var(--light-grey);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

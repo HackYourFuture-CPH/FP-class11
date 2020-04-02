@@ -20,7 +20,7 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  margin: 1em auto;
+  margin: 0 auto 1em;
   padding:0.5em 0;
   transition: none;
   width: 75%;

@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/dashboard">
-          <DashboardPage title="Crop overview"/>
+          <DashboardPage />
         </Route>
       </Switch>
     </Router>
