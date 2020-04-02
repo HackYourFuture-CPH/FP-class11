@@ -24,12 +24,12 @@ const SidebarMenu = ({ isactive, handleClick }) => {
       />
       <NavigationButton
         icon={faSeedling}
-        text="Crop Details"
+        text="Batch Details"
         handleClick={handleClick}
       />
       <NavigationButton
         icon={faPlusCircle}
-        text="Add Crop"
+        text="Add Batch"
         handleClick={handleClick}
       />
       <NavigationButton

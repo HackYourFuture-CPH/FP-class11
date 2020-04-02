@@ -21,14 +21,14 @@ export const Dashbord = () => (
 export const CropDetails = () => (
   <NavigationButton
     icon={faSeedling}
-    text="Crop Details"
+    text="Batch Details"
     handleClick={handleClick}
   />
 );
 export const AddCrop = () => (
   <NavigationButton
     icon={faPlusCircle}
-    text="Add Crop"
+    text="Add Batch"
     handleClick={handleClick}
   />
 );
