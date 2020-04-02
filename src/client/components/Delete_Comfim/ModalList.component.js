@@ -26,7 +26,7 @@ const ModalList = ({ isShowing, hide, onClick }) => {
             </span>
           </div>
           <div className="modal">
-            <h4 className="text-headline">DELETE CROP</h4>
+            <h4 className="text-headline">DELETE BATCH</h4>
             <p className="p1">Are you sure?</p>
             <p className="p2">Do you really want to delete the crop?</p>
             <div className="buttons-wrapper">

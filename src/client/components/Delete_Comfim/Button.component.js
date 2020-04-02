@@ -9,7 +9,7 @@ const ButtonComponent = () => {
   return (
     <div>
       <Button className="base-btn" type="danger" onClick={toggle}>
-        Delete crop
+        Delete BATCH
       </Button>
       <ModalList isShowing={isShowing} hide={toggle} onClose={toggle} />
     </div>
