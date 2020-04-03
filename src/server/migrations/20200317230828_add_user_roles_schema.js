@@ -1,5 +1,5 @@
-exports.up = function (knex) {
-  return knex.schema.createTable('user_roles', function (table) {
+exports.up = function(knex) {
+  return knex.schema.createTable('user_roles', function(table) {
     table
       .increments('id')
       .notNullable()
@@ -20,9 +20,10 @@ exports.up = function (knex) {
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
-    table.timestamp('deleted_at')
+    table
+      .timestamp('deleted_at')
       .defaultTo(null)
-      .nullable();;
+      .nullable();
     table
       .foreign('fk_role_id', 'fk_role_id')
       .references('id')
@@ -34,6 +35,6 @@ exports.up = function (knex) {
   });
 };
 
-exports.down = function (knex) {
+exports.down = function(knex) {
   return knex.schema.dropTable('user_roles');
 };

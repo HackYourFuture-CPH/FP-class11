@@ -1,5 +1,5 @@
-exports.up = function (knex) {
-  return knex.schema.createTable('users', function (table) {
+exports.up = function(knex) {
+  return knex.schema.createTable('users', function(table) {
     table
       .increments('id')
       .notNullable()
@@ -25,6 +25,6 @@ exports.up = function (knex) {
   });
 };
 
-exports.down = function (knex) {
+exports.down = function(knex) {
   return knex.schema.dropTable('users');
 };
