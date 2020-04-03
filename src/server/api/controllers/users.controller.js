@@ -1,17 +1,9 @@
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 
-// get all users
-const getUsers = async () => {
-  try {
-    return await knex('users').select();
-  } catch (error) {
-    return error.message;
-  }
-};
-
 // get the role for specific uid
-const getRole = async (uid) => {
+const getRole = async (req) => {
+  const uid = req.authId;
   try {
     const role = await knex('roles')
       .join('user_roles', 'user_roles.fk_role_id', '=', 'roles.id')
@@ -28,6 +20,5 @@ const getRole = async (uid) => {
 };
 
 module.exports = {
-  getUsers,
   getRole,
 };

@@ -6,18 +6,15 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const usersController = require('../controllers/users.controller');
 
-// ENDPOINT: /api/users/ :GET to get all users
-router.get('/', (req, res, next) => {
-  usersController
-    .getUsers()
-    .then((result) => res.json(result))
-    .catch(next);
-});
+// TODO waiting Sowmya to finish backend
+const {
+  checkIfAuthenticated,
+} = require('../lib/middleware/authorization.middleware');
 
-// ENDPOINT: /api/users/:uid :GET to get one user for specific uid
-router.get('/:uid', (req, res, next) => {
+// ENDPOINT: /api/users/role :GET to get user's role for specific uid/user
+router.get('/role', checkIfAuthenticated, (req, res, next) => {
   usersController
-    .getRole(req.params.uid)
+    .getRole(req)
     .then((result) => res.json(result))
     .catch(next);
 });
