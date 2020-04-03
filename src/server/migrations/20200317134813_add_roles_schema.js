@@ -4,13 +4,13 @@ exports.up = function(knex) {
       .increments('id')
       .notNullable()
       .primary();
-    table.string('name').notNullable();
+    table.string('name', 255).notNullable();
     table
-      .timestamp('updated_at')
+      .timestamp('created_at')
       .defaultTo(knex.fn.now())
       .notNullable();
     table
-      .timestamp('created_at')
+      .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
   });

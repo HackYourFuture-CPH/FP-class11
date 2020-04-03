@@ -13,14 +13,17 @@ exports.up = function(knex) {
       .unsigned()
       .notNullable();
     table
+      .timestamp('created_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
+    table
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
     table
-      .timestamp('created_at')
-      .defaultTo(knex.fn.now())
-      .notNullable();
-    table.timestamp('deleted_at');
+      .timestamp('deleted_at')
+      .defaultTo(null)
+      .nullable();
     table
       .foreign('fk_role_id', 'fk_role_id')
       .references('id')
