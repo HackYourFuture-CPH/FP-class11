@@ -1,11 +1,47 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0",
-    "title": "Final project",
     "description": "API documentation for the final project",
+    "version": "Seasony v1.0",
+    "title": "Final project",
     "contact": {}
   },
-  "host": "",
-  "basePath": "/api"
+  "basePath": "/api",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/crops": {
+      "get": {
+        "tags": [
+          "crops"
+        ],
+        "summary": "/api/crops",
+        "description": "Get all crops",
+        "operationId": "getAllCrops",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Authorization": {
+      "description": "",
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {}
 }
