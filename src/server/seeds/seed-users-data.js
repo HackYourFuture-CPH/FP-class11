@@ -9,7 +9,7 @@ exports.seed = function(knex) {
           email: 'ningry0@csmonitor.com',
           created_at: '2020-03-16 21:03:55',
           updated_at: '2020-03-16 21:03:55',
-          deleted_at: null,
+          deleted_at: '2020-03-16 21:03:56',
           uid: 'UrxxndVzhbekxxeIqA55eutt6yY2',
         },
         {
@@ -18,7 +18,7 @@ exports.seed = function(knex) {
           email: 'vsoutheran1@amazon.co.uk',
           created_at: '2020-03-16 21:03:55',
           updated_at: '2020-03-16 21:03:55',
-          deleted_at: null,
+          deleted_at: '2020-03-16 21:03:56',
           uid: 'O3NdmXN2KgcGl6IjYqef2usfkNb2',
         },
         {
@@ -27,7 +27,7 @@ exports.seed = function(knex) {
           email: 'ohallatt2@aboutads.info',
           created_at: '2020-03-16 21:03:55',
           updated_at: '2020-03-16 21:03:55',
-          deleted_at: null,
+          deleted_at: '2020-03-16 21:03:56',
           uid: '1chmrflMmOVYF1yjzYfm5EyglJG3',
         },
         {
@@ -36,7 +36,7 @@ exports.seed = function(knex) {
           email: 'dwoloschin3@taobao.com',
           created_at: '2020-03-16 21:03:55',
           updated_at: '2020-03-16 21:03:55',
-          deleted_at: null,
+          deleted_at: '2020-03-16 21:03:56',
           uid: 'pOIBIJjFBhYrsvwxFYrVAPRBB3i1',
         },
         {
@@ -45,7 +45,7 @@ exports.seed = function(knex) {
           email: 'vtrenouth4@vimeo.com',
           created_at: '2020-03-16 21:03:55',
           updated_at: '2020-03-16 21:03:55',
-          deleted_at: null,
+          deleted_at: '2020-03-16 21:03:56',
           uid: 'zvB4oIn8r0PXHwQpqc2D5BodDuv1',
         },
       ]);
