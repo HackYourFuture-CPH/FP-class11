@@ -1,33 +1,42 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import SidebarMenu from '../../components/side-navigation/sidebar.component';
-import ProgressBar from '../../components/progress-bar/progress-bar.component';
-import Card from '../../components/card/card.component';
-import Label from '../../components/label/label.component';
-import CropSummary from '../../components/crop-summary/crop-summary.component';
-import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
+import Firebase from '../../firebase/index';
+
+// import SidebarMenu from '../../components/side-navigation/sidebar.component';
+// import ProgressBar from '../../components/progress-bar/progress-bar.component';
+// import Card from '../../components/card/card.component';
+// import Label from '../../components/label/label.component';
+// import CropSummary from '../../components/crop-summary/crop-summary.component';
+// import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
 
-const DashboardPage = ({ title }) => {
-  const daysLeftToHarvest = 41;
-  const daysLeftToEnd = 48;
-  const currentStage = 'Seeding';
-  const currentStageDay = 2;
-  const productionStartDate = '2020-01-25 00:00:00';
-  const productionEndDate = '2020-03-11 00:00:00';
+const DashboardPage = () => {
+  // const daysLeftToHarvest = 41;
+  // const daysLeftToEnd = 48;
+  // const currentStage = 'Seeding';
+  // const currentStageDay = 2;
+  // const productionStartDate = '2020-01-25 00:00:00';
+  // const productionEndDate = '2020-03-11 00:00:00';
 
-  const placeholder = 'placeholder';
+  // const placeholder = 'placeholder';
 
   return (
     <div>
       <div>
-        <SidebarMenu isactive={true} isuser={true} />
+        <button
+          type="button"
+          onClick={() => {
+            Firebase.signOut();
+          }}
+        >
+          Logout
+        </button>
+        {/* <SidebarMenu isactive={true} isuser={true} /> */}
       </div>
       <div>
-        <h1>{title}</h1>
-        <ProgressBar />
+        <h1>Crop overview</h1>
+        {/* <ProgressBar /> */}
         <div>
-          <Card title="Status">
+          {/* <Card title="Status">
             <Label isOnTime={true} />
             <CropSummary
               daysLeftToHarvest={daysLeftToHarvest}
@@ -107,7 +116,7 @@ const DashboardPage = ({ title }) => {
               strokeWidthLine={placeholder}
               ReferanceAreaColor={placeholder}
             />
-          </Card>
+          </Card> */}
         </div>
         <Footer />
       </div>
@@ -116,7 +125,3 @@ const DashboardPage = ({ title }) => {
 };
 
 export default DashboardPage;
-
-DashboardPage.propTypes = {
-  title: PropTypes.string.isRequired,
-};
