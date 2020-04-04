@@ -1,0 +1,7 @@
+.form-container {
+  margin-top: 0px;
+  border-radius: var(--border-radius-high);
+  font-size: 1em;
+  align-items: left;
+  width: 39em;
+}
