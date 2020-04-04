@@ -3,22 +3,22 @@ import './chart-data-button.style.css';
 import PropTypes from 'prop-types';
 import Button from '../../button/button.component';
 
-const ChartbarMenu = ({ buttonLabel }) => {
-  const [selectedButton, setSelectedButton] = useState(buttonLabel.buttonWeek);
+const ChartbarMenu = ({ buttons, defaultSelection }) => {
+  const [selectedButton, setSelectedButton] = useState(defaultSelection.id);
   return (
     <div className="chartbar-button-wrapper">
-      {buttonLabel.map((obj) => {
+      {buttons.map((button) => {
         return (
           <Button
+            key={button.id}
             type="toggle"
             size="large"
-            onClick={(e) => {
-              e.preventDefault();
-              setSelectedButton(obj.buttonId);
+            onClick={() => {
+              setSelectedButton(button.id);
             }}
-            toggled={selectedButton === obj.buttonId}
+            toggled={selectedButton === button.id}
           >
-            {obj.buttonLabel}
+            {button.label}
           </Button>
         );
       })}
@@ -26,8 +26,19 @@ const ChartbarMenu = ({ buttonLabel }) => {
   );
 };
 
+ChartbarMenu.defaultProps = {
+  defaultSelection: '',
+  buttons: '',
+};
+
 ChartbarMenu.propTypes = {
-  buttonLabel: PropTypes.instanceOf(Array).isRequired,
+  defaultSelection: PropTypes.oneOfType([PropTypes.object]),
+  buttons: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      label: PropTypes.string,
+    }),
+  ),
 };
 
 export default ChartbarMenu;
