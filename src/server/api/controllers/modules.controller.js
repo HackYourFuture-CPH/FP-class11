@@ -24,20 +24,16 @@ const getModuleById = async (id) => {
 };
 
 const editModule = async (moduleId, updatedModule) => {
-  return knex('modules')
-    .where({ id: moduleId })
-    .update({
-      title: updatedModule.title,
-      startdate: updatedModule.start_date,
-      enddate: updatedModule.end_date,
-      classid: updatedModule.class_id,
-    });
+  return knex('modules').where({ id: moduleId }).update({
+    title: updatedModule.title,
+    startdate: updatedModule.start_date,
+    enddate: updatedModule.end_date,
+    classid: updatedModule.class_id,
+  });
 };
 
 const deleteModule = async (modulesId) => {
-  return knex('modules')
-    .where({ id: modulesId })
-    .del();
+  return knex('modules').where({ id: modulesId }).del();
 };
 
 const createModule = async (body) => {
