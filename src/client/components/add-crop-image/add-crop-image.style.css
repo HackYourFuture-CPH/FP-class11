@@ -1,0 +1,17 @@
+.add-image {
+  background: var(--light-grey);
+  box-shadow: var(--embossed-shadow-high);
+  color: var(--font-color);
+  border: var(--border-inputs);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 2rem;
+  font-size: 1rem;
+}
+
+.add-image svg {
+  display: block;
+  margin: auto;
+  margin-bottom: 1em;
+}

@@ -7,5 +7,57 @@
     "contact": {}
   },
   "host": "",
-  "basePath": "/api"
+  "basePath": "/api",
+  "paths": {
+    "/users/role": {
+      "get": {
+        "tags": ["user role"],
+        "summary": "Get a role for specific user by uid",
+        "description": "",
+        "operationId": "getRole",
+        "produces": [
+          {
+            "application/json": {
+              "name": "admin"
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "body",
+            "description": "uid from Firebase token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Role returned."
+          },
+          "404": {
+            "description": "A user with the specified uid was not found."
+          },
+          "default": {
+            "description": "Unexpected error."
+          }
+        },
+        "security": [
+          {
+            "fireabse_auth": ["read"]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "firebase_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "seasony-login.firebaseapp.com",
+      "flow": "accessCode",
+      "scopes": {
+        "read": "read data based on user uid"
+      }
+    }
+  }
 }

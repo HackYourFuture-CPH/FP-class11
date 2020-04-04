@@ -74,8 +74,7 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 
 #### 🗄️ Database Model Diagram
 
-_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e79e58e4495b02c3b88b043
-
+_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e7cdad34495b02c3b88d1db
 <img width="40%" height="40%" src="/seasony_data_model.png" alt="DB Diagram"></a>
 
 - [How to make changes on the diagram](/diagram.md)
@@ -211,6 +210,12 @@ Please refer to [this article](https://reactjs.org/docs/thinking-in-react.html) 
    - `/motorcycle-card/motorcycle-card.test.js`
 6. File names should be lowercase and composite words `kebab-case` to avoid problems across filesystems.
 7. Component names (i.e. the name of the function in JS) should be `PascalCased` by general React conventions. Don't include `.component` or `.container` in the JS name.
+
+#### Using Recharts charting library
+
+Recharts documentation: http://recharts.org/en-US
+Git repository: https://github.com/recharts/recharts (you can look for help in the issues tab)
+How to work with the package: https://www.youtube.com/watch?v=KF1XM5CvB3U
 
 ### 🎨 Theming and global styling
 
