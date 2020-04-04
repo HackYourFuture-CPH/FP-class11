@@ -84,7 +84,7 @@ _Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e7cdad34495b02c3b88d1
 Spreadsheet file:
 https://docs.google.com/spreadsheets/d/1FlBJNVvcPEJJpu-RyPz6J-m5Gto7LZ_O90LaXDkJuCs/edit#gid=0
 
-<img width="90%" src="./db-roles.png" alt="DB Diagram"></a>
+<img width="90%" src="/db-roles.png" alt="DB Diagram"></a>
 
 ## 📈 Process 📉📈
 
