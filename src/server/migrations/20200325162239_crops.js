@@ -17,8 +17,12 @@ exports.up = function(knex) {
       .notNullable();
     table
       .timestamp('deleted_at')
-      .defaultTo(knex.fn.now())
-      .notNullable();
+      .nullable()
+      .defaultTo(null);
+    table
+      .foreign('fk_user_id')
+      .references('id')
+      .inTable('users');
   });
 };
 exports.down = function(knex) {
