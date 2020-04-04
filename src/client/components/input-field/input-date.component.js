@@ -19,7 +19,6 @@ export default function InputDate({ text, placeholder, handleChange }) {
     </div>
   );
 }
-
 InputDate.propTypes = {
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,

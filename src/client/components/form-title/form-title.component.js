@@ -7,4 +7,5 @@ export default function FormTitle({ title }) {
 }
 FormTitle.propTypes = {
   title: PropTypes.string.isRequired,
-};
+}
+
