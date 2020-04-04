@@ -1,8 +1,8 @@
 exports.seed = function (knex) {
-  return knex('table_name')
+  return knex('units')
     .del()
     .then(function () {
-      return knex('table_name').insert([
+      return knex('units').insert([
         {
           id: '1',
           name: 'milligram',

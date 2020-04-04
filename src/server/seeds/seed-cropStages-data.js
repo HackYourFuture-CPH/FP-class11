@@ -1,8 +1,8 @@
 exports.seed = function (knex) {
-  return knex('table_name')
+  return knex('crop_stages')
     .del()
     .then(function () {
-      return knex('table_name').insert([
+      return knex('crop_stages').insert([
         {
           id: '1',
           fk_crop_id: '1',
