@@ -34,18 +34,26 @@ export default function Login({
           type="email"
           placeholder="Email"
           onChange={handleChange}
-          icon={errorNotifications === 'email' ? faExclamationCircle : faUser}
-          error={errorNotifications === 'email'}
+          icon={
+            errorNotifications === 'auth/invalid-email'
+              ? faExclamationCircle
+              : faUser
+          }
+          error={errorNotifications === 'auth/invalid-email'}
         />
         <InputLogin
           type="password"
           placeholder="Password"
           onChange={handleChange}
-          icon={errorNotifications === 'password' ? faExclamationCircle : faKey}
-          error={errorNotifications === 'password'}
+          icon={
+            errorNotifications === 'auth/wrong-password'
+              ? faExclamationCircle
+              : faKey
+          }
+          error={errorNotifications === 'auth/wrong-password'}
         />
         <div className="right-link">
-          <Link href="/forgotpassword" text="Forgot password" />
+          <Link href="/forgot-password" text="Forgot password" />
         </div>
         <Button type="primary" size="large" onClick={loginFunc}>
           Login
@@ -62,7 +70,7 @@ Login.defaultProps = {
 
 Login.propTypes = {
   title: PropTypes.string.isRequired,
-  errorNotifications: PropTypes.oneOf(['email', 'password', 'general', null]),
+  errorNotifications: PropTypes.string,
   errorMessages: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   loginFunc: PropTypes.func.isRequired,

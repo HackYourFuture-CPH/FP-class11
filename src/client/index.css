@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  color: #3b4349;
+  color: var(--dark-blue);
   font-family: Proxima Nova, 'Lato', 'Montserrat', sans-serif;
   font-size: 16px;
   margin: 0;
@@ -16,4 +16,8 @@ h1 {
 
 h2 {
   font-size: 1.4em;
+}
+
+button {
+  cursor: pointer;
 }
