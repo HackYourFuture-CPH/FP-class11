@@ -4,7 +4,6 @@ exports.seed = function (knex) {
     .then(function () {
       return knex('crops').insert([
         {
-          id: '1',
           name: 'Lettuce ',
           plant_variety: 'Asteraceae',
           fk_user_id: '2',
@@ -13,7 +12,6 @@ exports.seed = function (knex) {
           deleted_at: null,
         },
         {
-          id: '2',
           name: 'Shiso ',
           plant_variety: 'Lamiaceae',
           fk_user_id: '2',
