@@ -1,7 +1,7 @@
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   return knex('roles')
     .del()
-    .then(function() {
+    .then(function () {
       return knex('roles').insert([
         { id: 1, name: 'super_admin' },
         { id: 2, name: 'admin' },

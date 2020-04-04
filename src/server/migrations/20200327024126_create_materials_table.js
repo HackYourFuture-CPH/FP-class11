@@ -1,15 +1,15 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('users', function (table) {
-    table.increments('id').notNullable().primary();
-    table.string('uid').notNullable();
+  return knex.schema.createTable('materials', (table) => {
+    table.increments('id').primary().notNullable();
     table.string('name', 255).notNullable();
-    table.string('email', 255).unique().notNullable();
+    table.integer('fk_unit_id').notNullable().unsigned();
     table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
     table.timestamp('updated_at').defaultTo(knex.fn.now()).notNullable();
     table.timestamp('deleted_at').defaultTo(null).nullable();
+    table.foreign('fk_unit_id').references('id').inTable('units');
   });
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('users');
+  return knex.schema.dropTable('materials');
 };
