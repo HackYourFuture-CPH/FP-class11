@@ -3,7 +3,7 @@ import './editCrop.style.css';
 import PropTypes from 'prop-types';
 import penImage from '../../assets/images/edit-icon.png';
 
-export default function Image({ srcPath, altText }) {
+export default function EditCropImage({ srcPath, altText }) {
   return (
     <div>
       <img className="edit-image" src={srcPath} alt={altText} />
@@ -14,7 +14,7 @@ export default function Image({ srcPath, altText }) {
   );
 }
 
-Image.propTypes = {
+EditCropImage.propTypes = {
   srcPath: PropTypes.string.isRequired,
   altText: PropTypes.string.isRequired,
 };

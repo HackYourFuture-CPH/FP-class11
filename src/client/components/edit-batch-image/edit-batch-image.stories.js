@@ -8,7 +8,7 @@ export default {
   component: BatchImage,
 };
 
-export const EditImage = () => (
+export const EditImageStory = () => (
   <BatchImage
     srcPath={image}
     srcPenPath={penImage}

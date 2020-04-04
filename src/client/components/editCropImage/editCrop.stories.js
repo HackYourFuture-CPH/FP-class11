@@ -7,11 +7,10 @@ export default {
   component: Image,
 };
 
-export const EditImage = () => {
+export const EditCropImageStory = () => {
   return (
     <>
       <Image srcPath={image} altText="A crop" />
-      {/* <Image className="edit-icon" srcPath={penImage} altText="Edit icon" /> */}
     </>
   );
 };
