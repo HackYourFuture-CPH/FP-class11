@@ -9,7 +9,10 @@
  *  order: Sort either ascending "asc" or descending "desc"
  */
 const paginate = (knex, { limit = 50, offset = 0, orderBy, order = 'asc' }) => {
-  return knex.limit(limit).offset(offset).orderBy(orderBy, order);
+  return knex
+    .limit(limit)
+    .offset(offset)
+    .orderBy(orderBy, order);
 };
 
 /**
