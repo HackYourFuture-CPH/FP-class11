@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     Firebase.init();
-    Firebase.getAuth().onAuthStateChanged(function(user) {
+    Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
         setAuth(true);
