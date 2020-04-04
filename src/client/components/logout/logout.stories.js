@@ -1,5 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Logout from './logout.component';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
-storiesOf('Logouts', module).add('Logout Popup', () => <Logout />);
+export default {
+  title: 'Logout',
+  component: LogoutStory,
+  decorators: [withKnobs],
+};
+
+export const LogoutStory = () => {
+  const userName = text('userName', 'Bob');
+  return <Logout userName={userName} />;
+};

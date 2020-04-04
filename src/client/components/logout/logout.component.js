@@ -3,12 +3,10 @@ import Popup from 'reactjs-popup';
 import './logout.style.css';
 import PropTypes from 'prop-types';
 
-const userName = 'Servet';
-
-export default function Logout() {
+export default function Logout({ userName }) {
   const popupView = (closeAction) => (
     <PopupModal title="LOG OUT" closeAction={closeAction}>
-      <LogoutContent>
+      <LogoutContent userName={userName}>
         <LogoutActions closeAction={closeAction} />
       </LogoutContent>
     </PopupModal>
@@ -39,7 +37,7 @@ const PopupModal = ({ closeAction, children, title }) => {
   );
 };
 
-const LogoutContent = ({ children }) => {
+const LogoutContent = ({ userName, children }) => {
   return (
     <>
       <div className="content">
@@ -65,10 +63,14 @@ const LogoutActions = ({ closeAction }) => (
   </div>
 );
 
+Logout.propTypes = {
+  userName: PropTypes.string.isRequired,
+};
 LogoutActions.propTypes = {
   closeAction: PropTypes.string.isRequired,
 };
 LogoutContent.propTypes = {
+  userName: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
 PopupModal.propTypes = {
