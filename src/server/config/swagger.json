@@ -11,22 +11,20 @@
   "paths": {
     "/users/role": {
       "get": {
-        "tags": [
-          "user role"
-        ],
+        "tags": ["user role"],
         "summary": "Get a role for specific user by uid",
         "description": "",
         "operationId": "getRole",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [{
+        "produces": ["application/json"],
+        "parameters": [
+          {
             "name": "uid",
             "in": "body",
             "description": "uid from Firebase token",
             "required": true,
             "type": "string"
-        }],
+          }
+        ],
         "responses": {
           "200": {
             "description": "successful"
@@ -36,10 +34,8 @@
           }
         },
         "security": [
-            {
-              "fireabse_auth": [
-                "read"
-              ]
+          {
+            "fireabse_auth": ["read"]
           }
         ]
       }
