@@ -1,3 +1,9 @@
 .card {
-  border: 1px solid black;
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-high);
+}
+
+.card h3 {
+  padding: 1em;
+  text-transform: uppercase;
 }

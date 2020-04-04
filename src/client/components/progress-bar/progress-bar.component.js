@@ -107,13 +107,13 @@ TooltipStage.propTypes = {
 };
 
 Tooltip.propTypes = {
-  day: PropTypes.string.isRequired,
+  day: PropTypes.number.isRequired,
 };
 
 DayComponent.propTypes = {
   classStyle: PropTypes.string.isRequired,
-  styling: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  styling: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.array]).isRequired,
 };
 
 ProgressBar.propTypes = {
