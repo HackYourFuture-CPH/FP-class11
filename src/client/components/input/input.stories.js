@@ -22,6 +22,7 @@ export const Default = () => {
   const disabled = boolean('Disabled', false);
   return (
     <Input
+      name={type}
       type={type}
       placeholder={
         (type === types.Text && 'Name') ||
