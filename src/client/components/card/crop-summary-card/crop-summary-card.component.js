@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../card.component';
 import { CardTitle } from '../card-title.component';
-import { Status } from '../status-card02/status-card02.component';
+import { Status } from '../status-card/status-card.component';
 import { Content } from '../card-content.component';
 import { Summary } from './summary-card.component';
 import './crop-summary-card.style.css';
