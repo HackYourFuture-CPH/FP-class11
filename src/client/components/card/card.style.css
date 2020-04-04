@@ -1,3 +1,19 @@
 .card {
-  border: 1px solid black;
+  line-height: 1rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 1.6rem;
+  background-color: var(--light-grey);
+}
+
+.card-title {
+  padding-top: 1rem;
+  font-size: 1.6rem;
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-high);
+}
+
+.card h3 {
+  padding: 1em;
+  text-transform: uppercase;
 }
