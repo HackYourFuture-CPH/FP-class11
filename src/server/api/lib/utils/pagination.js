@@ -9,10 +9,7 @@
  *  order: Sort either ascending "asc" or descending "desc"
  */
 const paginate = (knex, { limit = 50, offset = 0, orderBy, order = 'asc' }) => {
-  return knex
-    .limit(limit)
-    .offset(offset)
-    .orderBy(orderBy, order);
+  return knex.limit(limit).offset(offset).orderBy(orderBy, order);
 };
 
 /**
@@ -27,16 +24,17 @@ const getOptions = (query) => {
   if (query.limit) {
     paginatedQuery.limit = parseInt(query.limit, 10);
   }
+
   if (query.offset) {
     paginatedQuery.offset = parseInt(query.offset, 10);
   }
+
   if (query.order) {
     paginatedQuery.order = parseInt(query.order, 10);
   }
 
   return paginatedQuery;
 };
-
 module.exports = {
   paginate,
   getOptions,
