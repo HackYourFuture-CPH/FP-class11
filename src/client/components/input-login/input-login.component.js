@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function InputLogin({
-  name,
   type,
   placeholder,
   onChange,
@@ -15,9 +14,9 @@ export default function InputLogin({
 }) {
   return (
     <div className="input-wrapper login">
-      <label htmlFor={name}>{placeholder}</label>
+      <label htmlFor={type}>{placeholder}</label>
       <input
-        name={name}
+        name={type}
         type={type}
         placeholder={placeholder}
         onChange={onChange}
@@ -35,7 +34,6 @@ InputLogin.defaultProps = {
 };
 
 InputLogin.propTypes = {
-  name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['email', 'password']).isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
