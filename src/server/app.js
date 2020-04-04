@@ -46,7 +46,7 @@ app.use((err, req, res) => {
     }
     return res.send({ error: err.message });
   }
-  res.send(500);
+  res.sendStatus(500);
 });
 
 app.use('/api/', function (req, res) {

@@ -1,9 +1,8 @@
-const { Config } = require('poetic');
+const { prettierConfig } = require('poetic');
 
 module.exports = {
-  ...Config,
+  ...prettierConfig,
   printWidth: 80,
   singleQuote: true,
   arrowParens: 'always',
-  trailingComma: 'all',
 };

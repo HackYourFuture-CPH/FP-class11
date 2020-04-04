@@ -24,12 +24,15 @@ const getOptions = (query) => {
   if (query.limit) {
     paginatedQuery.limit = parseInt(query.limit, 10);
   }
+
   if (query.offset) {
     paginatedQuery.offset = parseInt(query.offset, 10);
   }
+
   if (query.order) {
     paginatedQuery.order = parseInt(query.order, 10);
   }
+
   return paginatedQuery;
 };
 module.exports = {

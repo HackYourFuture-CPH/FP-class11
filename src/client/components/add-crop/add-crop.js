@@ -13,8 +13,6 @@ export default function AddCrop() {
       <div className="addcrop-container">
         <Accordion>
           <AccordionItem title="CROP">
-            <br />
-            <br />
             <FormField />
           </AccordionItem>
 
