@@ -2,7 +2,8 @@ module.exports = {
   extends: ['./node_modules/poetic/config/eslint/eslint-config.js'],
   // Add custom rules here
   rules: {
-    '@typescript-eslint/camelcase': 'warn',
+    '@typescript-eslint/camelcase': ['warn', { properties: 'never' }],
+    camelcase: 'warn',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'arrow-parens': 'off',
