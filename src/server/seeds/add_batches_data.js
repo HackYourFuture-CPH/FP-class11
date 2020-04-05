@@ -1,8 +1,8 @@
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex('batches')
     .del()
-    .then(function() {
+    .then(function () {
       // Inserts seed entries
       return knex('batches').insert([
         {
