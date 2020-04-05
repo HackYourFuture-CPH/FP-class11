@@ -1,7 +1,7 @@
-exports.seed = function (knex) {
+exports.seed = function(knex) {
   return knex('crops')
     .del()
-    .then(function () {
+    .then(function() {
       return knex('crops').insert([
         {
           name: 'Lettuce ',
