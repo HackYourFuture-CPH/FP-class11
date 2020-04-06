@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 // ENDPOINT: /api/modules/:id :GET to get one module
 router.get('/:id', (req, res, next) => {
   modulesController
-    .getModuleById(req.params.id)
+    .getModules(req.params.id)
     .then((result) => res.json(result))
     .catch(next);
 });
