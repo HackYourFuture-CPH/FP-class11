@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardTitle } from '../card-title.component';
-import { Status } from '../status-card02/status-card02.component';
+import { Status } from '../status-card/status-card.component';
 import { Summary } from './summary-card.component';
 import { withKnobs, number, date, select } from '@storybook/addon-knobs';
 

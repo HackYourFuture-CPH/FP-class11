@@ -1,9 +1,9 @@
-exports.seed = function (knex) {
+exports.seed = function(knex) {
   // TODO: There are some inconsistencies between this file
   // and the migration for crop stages, specifically in the enum for name.
   return knex('crop_stages')
     .del()
-    .then(function () {
+    .then(function() {
       return knex('crop_stages').insert([
         {
           fk_crops_id: '1',

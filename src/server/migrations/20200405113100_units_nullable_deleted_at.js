@@ -1,10 +1,13 @@
-exports.up = function (knex) {
+exports.up = function(knex) {
   return knex.schema.alterTable('units', (table) => {
-    table.timestamp('deleted_at').nullable().alter();
+    table
+      .timestamp('deleted_at')
+      .nullable()
+      .alter();
   });
 };
 
-exports.down = function (knex) {
+exports.down = function(knex) {
   return knex.schema.alterTable('units', (table) => {
     // TODO: This migration does not work properly
     table
