@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './status-card02.style.css';
+import './status-card.style.css';
 
 export const Status = ({ stat }) => {
   let classname;
