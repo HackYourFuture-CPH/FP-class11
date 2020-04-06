@@ -54,4 +54,4 @@ jobs:
           DB_USER: 'root'
           DB_PASSWORD: 'password'
       - name: Run Storybook
-        run: npm run storybook -- --ci --smoke-test
+        run: npm run storybook -- --ci --smoke-test --quiet
