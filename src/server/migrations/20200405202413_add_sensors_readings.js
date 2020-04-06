@@ -1,23 +1,18 @@
 exports.up = function(knex) {
-  return knex.schema.createTable('batches', function(table) {
+  return knex.schema.createTable('sensors_readings', function(table) {
     table
       .increments('id')
       .primary()
       .notNullable();
     table
-      .integer('fk_crop_id')
+      .integer('fk_batch_id')
       .notNullable()
       .unsigned();
     table
-      .integer('fk_user_id')
+      .integer('fk_material_id')
       .notNullable()
       .unsigned();
-    table.string('customer_name').notNullable();
-    table.integer('number_of_seeded_pots').notNullable();
-    table
-      .timestamp('seeding_date')
-      .defaultTo(knex.fn.now())
-      .notNullable();
+    table.float('reading_value').notNullable();
     table
       .timestamp('created_at')
       .defaultTo(knex.fn.now())
@@ -30,18 +25,17 @@ exports.up = function(knex) {
       .timestamp('deleted_at')
       .nullable()
       .defaultTo(null);
-
     table
-      .foreign('fk_crop_id')
+      .foreign('fk_batch_id')
       .references('id')
-      .inTable('crops');
+      .inTable('batches');
     table
-      .foreign('fk_user_id')
+      .foreign('fk_material_id')
       .references('id')
-      .inTable('users');
+      .inTable('materials');
   });
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('batches');
+  return knex.schema.dropTable('sensors_readings');
 };

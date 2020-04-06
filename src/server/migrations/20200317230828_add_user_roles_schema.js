@@ -23,6 +23,7 @@ exports.up = function(knex) {
     table
       .timestamp('deleted_at')
       .defaultTo(null)
+
       .nullable();
     table
       .foreign('fk_role_id', 'fk_role_id')
