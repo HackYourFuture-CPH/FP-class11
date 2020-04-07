@@ -22,7 +22,10 @@ exports.up = function(knex) {
       .timestamp('updated_at')
       .defaultTo(knex.fn.now())
       .notNullable();
-    table.timestamp('deleted_at');
+    table
+      .timestamp('deleted_at')
+      .defaultTo(null)
+      .nullable();
     table
       .foreign('fk_crop_id')
       .references('id')
