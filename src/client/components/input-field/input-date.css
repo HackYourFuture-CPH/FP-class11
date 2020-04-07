@@ -1,4 +1,4 @@
-.input-date {
+.date {
   display: flex;
   background: var(--light-grey);
   border: var(--border-inputs);
@@ -10,7 +10,7 @@
   padding: 0.5em 1.2em 0.9em;
   width: 39em;
 }
-.input-date:hover {
+.date:hover {
   background-color: lightgreen;
   cursor: pointer;
 }
