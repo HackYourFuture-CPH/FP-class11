@@ -1,4 +1,4 @@
-const admin = require('./admin/admin');
+const firebaseAdmin = require('./firebase-admin/firebase.admin');
 const { getAuthToken } = require('./getToken.backend');
 const knex = require('../../../config/db');
 const Error = require('../utils/http-error');
@@ -8,7 +8,7 @@ const checkIfAuthorized = (...permittedRoles) => {
     getAuthToken(req, res, async () => {
       try {
         const { token } = req;
-        const userInfo = await admin.auth().verifyIdToken(token);
+        const userInfo = await firebaseAdmin.auth().verifyIdToken(token);
         const usersData = await knex('users')
           .join('user_roles', 'user_roles.fk_user_id', '=', 'users.id')
           .join('roles', 'roles.id', '=', 'user_roles.fk_role_id')
