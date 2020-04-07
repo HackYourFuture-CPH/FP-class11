@@ -18,7 +18,10 @@ exports.up = function(knex) {
     table.double('optimum_value').notNullable();
     table.double('max_value').notNullable();
     table.timestamp('created_at').notNullable();
-    table.timestamp('updated_at').notNullable();
+    table
+      .timestamp('updated_at')
+      .defaultTo(knex.fn.now())
+      .notNullable();
     table.timestamp('deleted_at');
     table
       .foreign('fk_crop_id')
