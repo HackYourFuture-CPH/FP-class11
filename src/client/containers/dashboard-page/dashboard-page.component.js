@@ -1,28 +1,21 @@
 import React from 'react';
 
 import './dashboard-page.style.css';
-// import Firebase from '../../firebase/index';
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import ProgressBar from '../../components/progress-bar/progress-bar.component';
-import StatusCard from '../../components/status-card/status-card.component';
 import Card from '../../components/card/card.component';
-// import CropSummary from '../../components/crop-summary/crop-summary.component';
+import { CardTitle } from '../../components/card/card-title.component';
+import { CropSummary } from '../../components/card/crop-summary-card/crop-summary-card.component';
 import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
 
 const DashboardPage = () => {
   return (
     <div className="dashboard">
-      <SidebarMenu
-        text="Dashboard"
-        isActive={false}
-        handleClick={() => {
-          // Firebase.signOut();
-        }}
-      />
+      <SidebarMenu text="Dashboard" isActive={false} />
       <div className="content">
         <header>
-          <h1>Crop overview</h1>
+          <h1>Batch overview</h1>
         </header>
         <main>
           <ProgressBar
@@ -40,24 +33,9 @@ const DashboardPage = () => {
             ]}
           />
           <div className="cards">
+            <CropSummary />
             <Card>
-              <h3>Status</h3>
-              <StatusCard
-                isOnTime={true}
-                daysToHarvest={42}
-                daysToProjectEnd={53}
-              />
-            </Card>
-            {/* <CropSummary
-              daysLeftToHarvest={daysLeftToHarvest}
-              daysLeftToEnd={daysLeftToEnd}
-              currentStage={currentStage}
-              currentStageDay={currentStageDay}
-              productionStartDate={productionStartDate}
-              productionEndDate={productionEndDate}
-            /> */}
-            <Card title="Temperature">
-              <h3>Temperature</h3>
+              <CardTitle title="Temperature" />
               <LineChartForDashboard
                 tempData={[
                   {
@@ -97,8 +75,8 @@ const DashboardPage = () => {
                 ReferanceAreaColor="#808080"
               />
             </Card>
-            <Card title="Humidity">
-              <h3>Humidity</h3>
+            <Card>
+              <CardTitle title="Humidity" />
               <LineChartForDashboard
                 tempData={[
                   {
@@ -138,8 +116,8 @@ const DashboardPage = () => {
                 ReferanceAreaColor="#808080"
               />
             </Card>
-            <Card title="Water PH">
-              <h3>Water PH</h3>
+            <Card>
+              <CardTitle title="Water PH" />
               <LineChartForDashboard
                 tempData={[
                   {
@@ -179,8 +157,8 @@ const DashboardPage = () => {
                 ReferanceAreaColor="#808080"
               />
             </Card>
-            <Card title="Water EC">
-              <h3>Water EC</h3>
+            <Card>
+              <CardTitle title="Water EC" />
               <LineChartForDashboard
                 tempData={[
                   {
@@ -220,8 +198,8 @@ const DashboardPage = () => {
                 ReferanceAreaColor="#808080"
               />
             </Card>
-            <Card title="Water Level">
-              <h3>Water level</h3>
+            <Card>
+              <CardTitle title="Water Level" />
               <LineChartForDashboard
                 tempData={[
                   {

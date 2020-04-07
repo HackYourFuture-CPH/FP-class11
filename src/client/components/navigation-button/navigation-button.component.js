@@ -1,11 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import DashboardItems from '../dashboard-items/dashboard-items.component';
-import '../dashboard-items/dashboard-items.style.css';
+import DashboardItems from '../dashbord-items/dashboard-items.component';
+import '../dashbord-items/dashboard-items.style.css';
 
 const NavigationButton = ({ icon, text, isActive, isUser, handleClick }) => {
-  const className = `${isActive ? 'itemActive' : 'item'} ${
+  const className = `${isActive ? 'item-active' : 'item'} ${
     isUser ? 'user' : ''
   }`;
   const items = [

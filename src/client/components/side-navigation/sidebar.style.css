@@ -4,11 +4,16 @@
   flex-direction: column;
   position:fixed;
   text-align: center;
-  width: 130px;
+  width: 135px;
   min-height: 100vh;
   border: none;
+  box-shadow: var(--debossed-shadow-mini-right);
 }
 
 .sidebar-wrapper .logo {
-  margin: 1em 0;
+  margin: 1em 0 0.5em;
+}
+
+.sidebar-wrapper .logo img {
+  max-width: 3.8em;
 }

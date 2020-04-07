@@ -28,7 +28,7 @@ const LineChartForDashboard = ({
       width={280}
       height={180}
       data={tempData}
-      margin={{ top: 10, right: 20, bottom: 5, left: -20 }}
+      margin={{ top: 10, right: 20, bottom: 5, left: -35 }}
     >
       <CartesianGrid
         strokeDasharray="3,3"

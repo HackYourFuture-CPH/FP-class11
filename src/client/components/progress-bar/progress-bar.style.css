@@ -1,4 +1,5 @@
 .progress-bar-container {
+  padding: 0 1em;
   text-align: center;
   width: 100%;
 }
@@ -8,9 +9,9 @@
   border: var(--border-inputs);
   border-radius: var(--border-radius-low);
   box-shadow: var(--debossed-shadow-high);
-  height: 2.5em;
+  height: 2.3em;
   margin: 2em auto 0 auto;
-  width: 98%;
+  width: 100%;
 }
 
 .day-components {
@@ -22,7 +23,6 @@
 
 .passed-days {
   background-color: var(--interaction-color);
-  box-shadow: inset 0.2px -30px 10px -30px var(--light-grey);
 }
 
 .day-components:first-child {

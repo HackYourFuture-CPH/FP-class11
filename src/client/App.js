@@ -4,24 +4,22 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
+import CropDetailPage from './containers/crop-detail-page/crop-detail-page.component';
+import AddCropPage from './containers/add-crop-page/add-crop-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 
 function App() {
-  const [userState, setUserState] = useState(null);
-  const [auth, setAuth] = useState(false);
+  const [userState, setUserState] = useState();
 
   useEffect(() => {
-    Firebase.init();
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
-        setAuth(true);
       } else {
         setUserState(null);
-        setAuth(false);
       }
     });
   }, []);
@@ -34,20 +32,15 @@ function App() {
             exact
             path="/forgot-password"
             component={ForgotPassword}
-            authenticated={auth}
           />
+          <PublicRoute exact path="/" component={LoginPage} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute
             exact
-            path="/dashboard"
-            component={Dashboard}
-            authenticated={auth}
+            path="/batch-details"
+            component={CropDetailPage}
           />
-          <PublicRoute
-            exact
-            path="/"
-            component={LoginPage}
-            authenticated={auth}
-          />
+          <PrivateRoute exact path="/add-batch" component={AddCropPage} />
         </Switch>
       </Router>
     </FirebaseContext.Provider>

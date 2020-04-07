@@ -6,13 +6,17 @@ const DashbordItems = ({ items }) => {
   return (
     <ul className="list">
       {items.map((item) => (
-        <li key={item.id}>{item.value}</li>
+        <li key={item.id}>
+          <a href={`/chart-detail-page/${item.value.toLowerCase()}`}>
+            {item.value}
+          </a>
+        </li>
       ))}
     </ul>
   );
 };
 
 DashbordItems.propTypes = {
-  items: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  items: PropTypes.oneOfType([PropTypes.array]).isRequired,
 };
 export default DashbordItems;

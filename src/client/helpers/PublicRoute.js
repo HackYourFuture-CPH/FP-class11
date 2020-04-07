@@ -1,19 +1,31 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function PublicRoute({ component: Component, authenticated }) {
+import { FirebaseConsumer } from '../firebase/index';
+
+function PublicRoute({ component: Component }) {
+  const location = useLocation();
   return (
-    <Route
-      render={() =>
-        !authenticated ? <Component /> : <Redirect to="/dashboard" />
-      }
-    />
+    <FirebaseConsumer>
+      {(value) => (
+        <Route
+          render={() =>
+            !value ? (
+              <Component />
+            ) : (
+              <Redirect
+                to={{ pathname: '/dashboard', state: { from: location } }}
+              />
+            )
+          }
+        />
+      )}
+    </FirebaseConsumer>
   );
 }
 PublicRoute.propTypes = {
   component: PropTypes.func.isRequired,
-  authenticated: PropTypes.bool.isRequired,
 };
 
 export default PublicRoute;
