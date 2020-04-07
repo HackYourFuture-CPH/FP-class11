@@ -17,7 +17,7 @@ const defaultValue = [
   { id: 5, label: 'Custom' },
 ];
 
-export const Chartdatabuttons = () => {
+export const ChartdataButtons = () => {
   const value = object(label, defaultValue);
   return <ChartbarMenu buttons={value} defaultSelection={{ id: 2 }} />;
 };
