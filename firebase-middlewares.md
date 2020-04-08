@@ -2,8 +2,7 @@
 
 In the Front-End, Where ever you are making a Http requests/fetch request like get,post and so on..., the headers need to be attached to these request and its done as below
 
-...
-import {getTokenWithHeaders} from '../../firebase/getTokenWithHeaders'
+```import {getTokenWithHeaders} from '../../firebase/getTokenWithHeaders'
 
 const header = await getTokenWithHeaders()
 
@@ -13,30 +12,30 @@ headers: header
 })
 .then(res => res.json())
 .then(data => console.log(data))
-.catch(err => console.log(err))
-...
+.catch(err => console.log(err));
+```
 
 If all these is in place, the token would go to backend
 
 In the Backend, there are middlewares for firebase(authentication.middleware & authorization.middleware) which would be used while creating Endpoints and In your routes folder/ route file it should be done as below
 
-...
-const exampleController = require('../controllers/example.controller');
+```const exampleController = require('../controllers/example.controller');
 const {
 checkIfAuthorized,
 } = require('../lib/middleware/authorization.middleware');
 
 const ROLES = require('../../constants/roles');
-...
+```
+
 And then,
 
-router.get('/',checkIfAuthorized(ROLES.SUPER_ADMIN),(req, res, next) => {
+```router.get('/',checkIfAuthorized(ROLES.SUPER_ADMIN),(req, res, next) => {
 exampleController
 .getExample()
 .then((result) => res.json(result))
 .catch(next);
 });
-...
+```
 
 Here there needs to be a check done,while adding middlewares to endpoints, using the below spreadsheet:
 

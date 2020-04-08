@@ -8,8 +8,9 @@ const selectUserAndRole = async (userId) => {
     .join('user_roles', 'user_roles.fk_user_id', '=', 'users.id')
     .join('roles', 'roles.id', '=', 'user_roles.fk_role_id')
     .select('users.uid', 'roles.name')
-    .where('users.uid', userId);
-  return result[0];
+    .where('users.uid', userId)
+    .first();
+  return result;
 };
 
 const checkIfAuthorized = (...permittedRoles) => {
@@ -17,6 +18,7 @@ const checkIfAuthorized = (...permittedRoles) => {
     getAuthToken(req, res, async () => {
       try {
         const { token } = req;
+        console.log(token);
         const userInfo = await firebaseAdmin.auth().verifyIdToken(token);
         const user = await selectUserAndRole(userInfo.uid);
 
