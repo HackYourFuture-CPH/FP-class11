@@ -30,7 +30,10 @@ router.post('/', (req, res) => {
     .catch((error) => {
       console.log(error);
 
-      res.status(400).send('Bad request').end();
+      res
+        .status(400)
+        .send('Bad request')
+        .end();
     });
 });
 
