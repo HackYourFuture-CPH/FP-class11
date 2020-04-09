@@ -36,11 +36,13 @@
     }
   },
   "securityDefinitions": {
-    "Authorization": {
-      "description": "",
-      "type": "apiKey",
-      "name": "Authorization",
-      "in": "header"
+    "firebase_auth": {
+      "authorizationUrl": "seasony-login.firebaseapp.com",
+      "type": "oauth2",
+      "flow": "accessCode",
+      "scopes": {
+        "read": "read data based on user uid"
+      }
     }
   },
   "definitions": {}
