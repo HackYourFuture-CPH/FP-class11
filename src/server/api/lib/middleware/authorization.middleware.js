@@ -18,7 +18,6 @@ const checkIfAuthorized = (...permittedRoles) => {
     getAuthToken(req, res, async () => {
       try {
         const { token } = req;
-        console.log(token);
         const userInfo = await firebaseAdmin.auth().verifyIdToken(token);
         const user = await selectUserAndRole(userInfo.uid);
 
