@@ -19,7 +19,7 @@
         "tags": [
           "crops"
         ],
-        "summary": "/api/crops",
+        "summary": "Get all crops",
         "description": "Get all crops",
         "operationId": "getAllCrops",
         "produces": [
