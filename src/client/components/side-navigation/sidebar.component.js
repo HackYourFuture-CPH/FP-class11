@@ -1,9 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import './sidebar.style.css';
 import NavigationButton from '../navigation-button/navigation-button.component';
 import PropTypes from 'prop-types';
-import Firebase from '../../firebase/index';
 import '../navigation-button/navigation-button.style.css';
 import Logo from '../logo/logo.component';
 import imageFile from '../../assets/images/logo.png';
@@ -14,8 +12,13 @@ import {
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SidebarMenu = ({ isActive }) => {
-  const history = useHistory();
+const SidebarMenu = ({
+  isActive,
+  showDashboard,
+  showBatchDetails,
+  showAddBatch,
+  logout,
+}) => {
   return (
     <div className="sidebar-wrapper">
       <Logo srcPath={imageFile} altText="Seasony" />
@@ -23,26 +26,23 @@ const SidebarMenu = ({ isActive }) => {
         icon={faThLarge}
         text="Dashboard"
         isActive={isActive}
-        handleClick={() => {
-          // change isactive
-          history.replace('/dashboard');
-        }}
+        handleClick={showDashboard}
       />
       <NavigationButton
         icon={faSeedling}
         text="Batch Details"
-        handleClick={() => history.replace('/batch-details')}
+        handleClick={showBatchDetails}
       />
       <NavigationButton
         icon={faPlusCircle}
         text="Add Batch"
-        handleClick={() => history.replace('/add-batch')}
+        handleClick={showAddBatch}
       />
       <NavigationButton
         icon={faUserCircle}
         text="LogOut"
         isUser={true}
-        handleClick={() => Firebase.signOut()}
+        handleClick={logout}
       />
     </div>
   );
@@ -50,7 +50,10 @@ const SidebarMenu = ({ isActive }) => {
 
 SidebarMenu.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  // handleClick: PropTypes.func.isRequired,
+  showDashboard: PropTypes.func.isRequired,
+  showBatchDetails: PropTypes.func.isRequired,
+  showAddBatch: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 export default SidebarMenu;

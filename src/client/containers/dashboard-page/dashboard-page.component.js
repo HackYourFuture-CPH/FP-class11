@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import Firebase from '../../firebase/index';
 
 import './dashboard-page.style.css';
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
@@ -10,9 +12,16 @@ import LineChartForDashboard from '../../components/line-chart-for-dashboard/lin
 import Footer from '../../components/footer/footer.component';
 
 const DashboardPage = () => {
+  const history = useHistory();
   return (
     <div className="dashboard">
-      <SidebarMenu text="Dashboard" isActive={false} />
+      <SidebarMenu
+        isActive={false}
+        showDashboard={() => history.replace('/dashboard')}
+        showBatchDetails={() => history.replace('/batch-details')}
+        showAddBatch={() => history.replace('/add-batch')}
+        logout={() => Firebase.signOut()}
+      />
       <div className="content">
         <header>
           <h1>Batch overview</h1>

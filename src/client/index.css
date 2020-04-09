@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+body > div {
+  background-color: var(--light-grey);
+}
+
 h1 {
   font-size: 2.2em;
 }

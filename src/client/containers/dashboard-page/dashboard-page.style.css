@@ -1,12 +1,10 @@
 .dashboard {
-    background: var(--light-grey);
     display: flex;
     justify-content: flex-start;
     min-height: 100vh;
 }
 
 .content {
-    background: var(--light-grey);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -28,7 +26,6 @@ header h1 {
 
 .dashboard main {
     align-items: flex-start;
-    background: var(--light-grey);
     display: flex;
     flex-direction: column;
     height: auto;
