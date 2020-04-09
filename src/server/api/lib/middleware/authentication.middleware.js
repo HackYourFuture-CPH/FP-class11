@@ -5,10 +5,7 @@ const checkIfAuthenticated = (req, res, next) => {
   getAuthToken(req, res, async () => {
     try {
       const { token } = req;
-      // fix until Sowmya make a PR for token authentication
-      const userInfo = await firebaseAdmin
-        .auth()
-        .verifyIdToken(token.split(' ')[1]);
+      const userInfo = await firebaseAdmin.auth().verifyIdToken(token);
       req.authId = userInfo.uid;
       return next();
     } catch (e) {
