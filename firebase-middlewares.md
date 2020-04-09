@@ -54,4 +54,4 @@ example: for Batch Details , we have SuperAdmin & Admin & User as "YES"
 
 then the middleware should look like:
 
-`checkIfAuthorized(ROLES.SUPER_ADMIN,ROLE.ADMIN,ROLE.USER)`
+`checkIfAuthenticated`
