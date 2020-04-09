@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
+import Page404 from './containers/404-page/404-page-component';
 import Firebase, { FirebaseContext } from './firebase/index';
 
 import PrivateRoute from './helpers/PrivateRoute';
@@ -48,6 +49,7 @@ function App() {
             component={LoginPage}
             authenticated={auth}
           />
+          <PublicRoute component={Page404} />
         </Switch>
       </Router>
     </FirebaseContext.Provider>
