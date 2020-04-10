@@ -11,7 +11,7 @@ const getRole = async (req) => {
       .select('roles.name')
       .where('users.uid', uid);
     if (role.length === 0) {
-      throw new Error(`incorrect entry with the uid of ${uid}`, 404);
+      throw new Error(`incorrect entry with this uid`, 404);
     }
     return role;
   } catch (error) {
