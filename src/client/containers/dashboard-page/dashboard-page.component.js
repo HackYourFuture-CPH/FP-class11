@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Firebase from '../../firebase/index';
 
 import './dashboard-page.style.css';
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
@@ -10,9 +9,11 @@ import { CardTitle } from '../../components/card/card-title.component';
 import { CropSummary } from '../../components/card/crop-summary-card/crop-summary-card.component';
 import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
+import Logout from '../../components/logout/logout.component';
 
 const DashboardPage = () => {
   const history = useHistory();
+  const [logoutModal, setLogoutModal] = useState(false);
   return (
     <div className="dashboard">
       <SidebarMenu
@@ -20,8 +21,9 @@ const DashboardPage = () => {
         showDashboard={() => history.replace('/dashboard')}
         showBatchDetails={() => history.replace('/batch-details')}
         showAddBatch={() => history.replace('/add-batch')}
-        logout={() => Firebase.signOut()}
+        logout={() => setLogoutModal({ open: true })}
       />
+      <Logout userName="Oralia Hallat" openState={logoutModal} />
       <div className="content">
         <header>
           <h1>Batch overview</h1>

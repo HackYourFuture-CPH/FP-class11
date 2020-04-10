@@ -4,7 +4,7 @@ import './logout.style.css';
 import PropTypes from 'prop-types';
 import Firebase from '../../firebase/index';
 
-export default function Logout({ userName }) {
+export default function Logout({ userName, openState }) {
   const popupView = (closeAction) => (
     <PopupModal title="LOG OUT" closeAction={closeAction}>
       <LogoutContent userName={userName}>
@@ -15,21 +15,15 @@ export default function Logout({ userName }) {
 
   return (
     <Popup
-      trigger={PopupTrigger}
+      open={openState}
       modal
       overlayStyle={{ background: 'rgba(255,255,255,0.7' }}
-      contentStyle={{ background: 'none', border: 'none' }}
+      contentStyle={{ background: 'none', border: 'none', width: 'auto' }}
     >
       {popupView}
     </Popup>
   );
 }
-
-const PopupTrigger = () => (
-  <button type="submit" className="logout-button">
-    LOG OUT
-  </button>
-);
 
 const PopupModal = ({ closeAction, children, title }) => {
   return (
@@ -73,6 +67,7 @@ const LogoutActions = ({ closeAction }) => (
 
 Logout.propTypes = {
   userName: PropTypes.string.isRequired,
+  openState: PropTypes.bool.isRequired,
 };
 LogoutActions.propTypes = {
   closeAction: PropTypes.func.isRequired,

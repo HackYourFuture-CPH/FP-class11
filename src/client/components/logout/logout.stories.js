@@ -10,5 +10,5 @@ export default {
 
 export const LogoutStory = () => {
   const userName = text('userName', 'Bob');
-  return <Logout userName={userName} />;
+  return <Logout userName={userName} openState={true} />;
 };

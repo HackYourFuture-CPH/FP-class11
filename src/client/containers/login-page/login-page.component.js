@@ -34,8 +34,7 @@ function LoginPage() {
             if (err) {
               setErrorMessage(err.message);
               setErrorNotifications(err.code);
-            }
-            history.replace('/dashboard');
+            } else history.replace('/dashboard');
           }
         }}
       />
