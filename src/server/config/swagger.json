@@ -24,16 +24,20 @@
         ],
         "parameters": [
           {
-            "name": "uid",
-            "in": "body",
-            "description": "uid from Firebase token",
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
           }
         ],
         "responses": {
           "200": {
             "description": "Role returned."
+          },
+          "401": {
+            "description": "You are not authorized to view this content."
           },
           "404": {
             "description": "A user with the specified uid was not found."
