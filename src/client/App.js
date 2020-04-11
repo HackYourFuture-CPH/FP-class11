@@ -6,6 +6,7 @@ import ForgotPassword from './containers/forgot-password/forgot-password.compone
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
 import CropDetailPage from './containers/crop-detail-page/crop-detail-page.component';
 import AddCropPage from './containers/add-crop-page/add-crop-page.component';
+import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 
 import PrivateRoute from './helpers/PrivateRoute';
@@ -41,6 +42,7 @@ function App() {
             component={CropDetailPage}
           />
           <PrivateRoute exact path="/add-batch" component={AddCropPage} />
+          <PublicRoute component={Page404} />
         </Switch>
       </Router>
     </FirebaseContext.Provider>
