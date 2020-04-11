@@ -49,6 +49,21 @@
         ]
       }
     },
+    "paths": {
+      "/batches": {
+        "get": {
+          "description": "Get all batches.",
+          "summary": "/api/batches",
+          "tags": ["batches"],
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Successfull"
+            }
+          }
+        }
+      }
+    },
     "/crop-stage-parameter-values/{cropId}": {
       "get": {
         "tags": ["crop-default-values"],
