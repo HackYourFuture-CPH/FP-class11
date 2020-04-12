@@ -88,7 +88,7 @@ https://docs.google.com/spreadsheets/d/1FlBJNVvcPEJJpu-RyPz6J-m5Gto7LZ_O90LaXDkJ
 
 #### firebase middlewares
 
-- [How to use firebase middlewares and checks needed on frontend and backend](/middlewares.md)
+- [How to use firebase middlewares and checks needed on frontend and backend](/firebase-middlewares.md)
 
 ## 📈 Process 📉📈
 
