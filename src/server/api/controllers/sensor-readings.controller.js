@@ -3,7 +3,7 @@ const Error = require('../lib/utils/http-error');
 
 const getSensorReadingByMaterialId = async (materialId) => {
   try {
-    const sensorReading = await knex('sensor_readings')
+    const sensorReading = await knex('sensors_readings')
       .select('*')
       .where('fk_material_id', materialId);
     if (sensorReading.length === 0) {
