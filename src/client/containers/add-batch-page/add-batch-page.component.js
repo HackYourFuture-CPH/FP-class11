@@ -1,20 +1,22 @@
 import React from 'react';
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
-import Page404 from '../../components/page404/page404.component';
+import AddBatch from '../../components/add-batch/add-batch.component';
+import AddBatchImage from '../../components/add-batch-image/add-batch-image.component';
 import Footer from '../../components/footer/footer.component';
 
-const Page404Container = () => {
+const AddBatchPage = () => {
   return (
     <>
       <div>
         <SidebarMenu isActive={true} isUser={true} />
       </div>
       <div>
-        <Page404 />
+        <AddBatch />
+        <AddBatchImage />
         <Footer />
       </div>
     </>
   );
 };
 
-export default Page404Container;
+export default AddBatchPage;
