@@ -25,7 +25,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=100000',
       },
     ],
@@ -37,9 +37,9 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
     port: parseInt(process.env.CLIENT_PORT, 10),
-    open: process.env.OPEN_BROWSER === 'true',
+    open: process.env.OPEN_BROWSER === 'true' ? true : false,
     proxy: {
-      '/api': `http://localhost:${process.env.API_PORT || process.env.PORT}`,
+      '/api': `http://localhost:${process.env.API_PORT}`,
     },
   },
   node: {
