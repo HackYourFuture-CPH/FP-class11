@@ -9,6 +9,28 @@
   "host": "",
   "basePath": "/api",
   "paths": {
+    "/sensor-reading/{materialId}": {
+      "get": {
+        "description": "Get sensor reading.",
+        "summary": "/api/sensor-reading",
+        "tags": ["sensor-reading"],
+        "operationId": "materialId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "materialId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful"
+          }
+        }
+      }
+    },
     "/users/role": {
       "get": {
         "tags": ["user role"],

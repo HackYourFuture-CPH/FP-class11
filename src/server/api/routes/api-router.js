@@ -4,6 +4,7 @@ const router = express.Router();
 
 // Router imports
 const modulesRouter = require('./modules.router');
+const sensorReadingRouter = require('./sensor-reading.router');
 const cropStageDefaultValuesRouter = require('./crop-stage-default-values.router');
 const usersRouter = require('./users.router.js');
 const createBatchRouter = require('./create-batch.router');
@@ -17,6 +18,7 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Application routes
 router.use('/modules', modulesRouter);
+router.use('/sensor-reading', sensorReadingRouter);
 router.use('/crop-stage-parameter-values', cropStageDefaultValuesRouter);
 router.use('/users', usersRouter);
 router.use('/create-batch', createBatchRouter);
