@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import './dashboard-page.style.css';
@@ -10,18 +10,23 @@ import { CropSummary } from '../../components/card/crop-summary-card/crop-summar
 import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
 import Footer from '../../components/footer/footer.component';
 import Logout from '../../components/logout/logout.component';
+import UserRoleContext from '../../helpers/UserRoleContext';
 
 const DashboardPage = () => {
   const history = useHistory();
   const [logoutModal, setLogoutModal] = useState(false);
+  const userRole = useContext(UserRoleContext);
   return (
     <div className="dashboard">
       <SidebarMenu
         isActive={false}
-        showDashboard={() => history.replace('/dashboard')}
-        showBatchDetails={() => history.replace('/batch-details')}
-        showAddBatch={() => history.replace('/add-batch')}
-        logout={() => setLogoutModal({ open: true })}
+        isVisible={
+          (userRole && userRole === 'admin') || userRole === 'super_admin'
+        }
+        showDashboard={() => history.push('/dashboard')}
+        showBatchDetails={() => history.push('/batch-details')}
+        showAddBatch={() => history.push('/add-batch')}
+        logout={() => setLogoutModal(true)}
       />
       <Logout userName="Oralia Hallat" openState={logoutModal} />
       <div className="content">

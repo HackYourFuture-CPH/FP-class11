@@ -14,6 +14,7 @@ import {
 
 const SidebarMenu = ({
   isActive,
+  isVisible,
   showDashboard,
   showBatchDetails,
   showAddBatch,
@@ -37,6 +38,7 @@ const SidebarMenu = ({
         icon={faPlusCircle}
         text="Add Batch"
         handleClick={showAddBatch}
+        isVisible={isVisible}
       />
       <NavigationButton
         icon={faUserCircle}
@@ -50,6 +52,7 @@ const SidebarMenu = ({
 
 SidebarMenu.propTypes = {
   isActive: PropTypes.bool.isRequired,
+  isVisible: PropTypes.bool.isRequired,
   showDashboard: PropTypes.func.isRequired,
   showBatchDetails: PropTypes.func.isRequired,
   showAddBatch: PropTypes.func.isRequired,

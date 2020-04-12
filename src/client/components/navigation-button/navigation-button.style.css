@@ -56,3 +56,11 @@
 .user {
   margin-top: auto;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}

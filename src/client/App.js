@@ -8,17 +8,30 @@ import CropDetailPage from './containers/crop-detail-page/crop-detail-page.compo
 import AddCropPage from './containers/add-crop-page/add-crop-page.component';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
+import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
+import UserRoleContext from './helpers/UserRoleContext';
 
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 
 function App() {
   const [userState, setUserState] = useState();
+  const [userRole, setUserRole] = useState('');
+
+  const fetchRole = async () => {
+    const headers = await getTokenWithHeaders();
+    const role = await fetch('/api/users/role', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setUserRole(role[0].name);
+  };
 
   useEffect(() => {
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
+        fetchRole();
       } else {
         setUserState(null);
       }
@@ -27,24 +40,26 @@ function App() {
 
   return (
     <FirebaseContext.Provider value={userState}>
-      <Router>
-        <Switch>
-          <PublicRoute
-            exact
-            path="/forgot-password"
-            component={ForgotPassword}
-          />
-          <PublicRoute exact path="/" component={LoginPage} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute
-            exact
-            path="/batch-details"
-            component={CropDetailPage}
-          />
-          <PrivateRoute exact path="/add-batch" component={AddCropPage} />
-          <PublicRoute component={Page404} />
-        </Switch>
-      </Router>
+      <UserRoleContext.Provider value={userRole}>
+        <Router>
+          <Switch>
+            <PublicRoute
+              exact
+              path="/forgot-password"
+              component={ForgotPassword}
+            />
+            <PublicRoute exact path="/" component={LoginPage} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute
+              exact
+              path="/batch-details"
+              component={CropDetailPage}
+            />
+            <PrivateRoute exact path="/add-batch" component={AddCropPage} />
+            <PublicRoute component={Page404} />
+          </Switch>
+        </Router>
+      </UserRoleContext.Provider>
     </FirebaseContext.Provider>
   );
 }
