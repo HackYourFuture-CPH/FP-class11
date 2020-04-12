@@ -9,6 +9,28 @@
   "host": "",
   "basePath": "/api",
   "paths": {
+    "/sensor-reading/{materialId}": {
+      "get": {
+        "description": "Get sensor reading.",
+        "summary": "/api/sensor-reading",
+        "tags": ["sensor-reading"],
+        "operationId": "materialId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "materialId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful"
+          }
+        }
+      }
+    },
     "/users/role": {
       "get": {
         "tags": ["user role"],
@@ -24,16 +46,20 @@
         ],
         "parameters": [
           {
-            "name": "uid",
-            "in": "body",
-            "description": "uid from Firebase token",
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
           }
         ],
         "responses": {
           "200": {
             "description": "Role returned."
+          },
+          "401": {
+            "description": "You are not authorized to view this content."
           },
           "404": {
             "description": "A user with the specified uid was not found."
