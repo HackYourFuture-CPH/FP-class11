@@ -6,6 +6,7 @@ const router = express.Router();
 const modulesRouter = require('./modules.router');
 const cropStageDefaultValuesRouter = require('./crop-stage-default-values.router');
 const usersRouter = require('./users.router.js');
+const createBatchRouter = require('./create-batch.router');
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
@@ -18,5 +19,6 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 router.use('/modules', modulesRouter);
 router.use('/crop-stage-parameter-values', cropStageDefaultValuesRouter);
 router.use('/users', usersRouter);
+router.use('/create-batch', createBatchRouter);
 
 module.exports = router;
