@@ -108,6 +108,40 @@
           "fireabse_auth": ["read"]
         }
       }
+    },
+    "/batch/{batchId}": {
+      "get": {
+        "tags": ["batch"],
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Get default parameter values for a specific batch",
+        "description": "Get default parameter values for a specific batch by batchId",
+        "operationId": "getBatchById",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful GET request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "fireabse_auth": ["read"]
+        }
+      }
     }
   },
   "securityDefinitions": {
