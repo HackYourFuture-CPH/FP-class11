@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0",
-    "title": "Final project",
     "description": "API documentation for the final project",
+    "version": "Seasony v1.0",
+    "title": "Final project",
     "contact": {}
   },
   "host": "",
@@ -42,8 +42,6 @@
         },
         "security": {
           "fireabse_auth": ["read"]
-        }
-      }
     },
     "securityDefinitions": {
       "firebase_auth": {
