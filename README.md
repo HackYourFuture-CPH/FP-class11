@@ -86,6 +86,10 @@ https://docs.google.com/spreadsheets/d/1FlBJNVvcPEJJpu-RyPz6J-m5Gto7LZ_O90LaXDkJ
 
 <img width="90%" src="/db-roles.png" alt="DB Diagram"></a>
 
+#### firebase middlewares
+
+- [How to use firebase middlewares and checks needed on frontend and backend](/firebase-middlewares.md)
+
 ## 📈 Process 📉📈
 
 ### 💻 Working with code

@@ -12,7 +12,7 @@ export default function BatchImage({
     <div>
       <img className="edit-image" src={srcPath} alt={altText} />
       <button type="submit" className="edit-btn">
-        <img src={srcPenPath} alt={altIconText} className="edit-icon" />
+        <img src={srcPenPath} alt={altIconText} />
       </button>
     </div>
   );

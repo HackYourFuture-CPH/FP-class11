@@ -14,7 +14,6 @@
 }
 .edit-btn {
   background: var(--light-blue);
-  color: var(--light-blue);
   border-radius: 50%;
   position: absolute;
   width: 40px;
@@ -22,8 +21,4 @@
   left: 190px;
   top: 16px;
   border: none;
-}
-.edit-icon {
-  color: #fff;
-  background: none;
 }
