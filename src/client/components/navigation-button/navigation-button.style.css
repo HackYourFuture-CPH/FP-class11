@@ -31,7 +31,7 @@
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-medium);
 }
-.item:hover {
+.item:active {
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-medium);
 }

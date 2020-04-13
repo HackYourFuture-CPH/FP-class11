@@ -2,13 +2,17 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import './logout.style.css';
 import PropTypes from 'prop-types';
-import Firebase from '../../firebase/index';
 
-export default function Logout({ userName, openState }) {
-  const popupView = (closeAction) => (
+export default function Logout({
+  userName,
+  openState,
+  closeAction,
+  logoutFunc,
+}) {
+  const popupView = () => (
     <PopupModal title="LOG OUT" closeAction={closeAction}>
       <LogoutContent userName={userName}>
-        <LogoutActions closeAction={closeAction} />
+        <LogoutActions closeAction={closeAction} logoutFunc={logoutFunc} />
       </LogoutContent>
     </PopupModal>
   );
@@ -49,13 +53,9 @@ const LogoutContent = ({ userName, children }) => {
   );
 };
 
-const LogoutActions = ({ closeAction }) => (
+const LogoutActions = ({ closeAction, logoutFunc }) => (
   <div className="actions">
-    <button
-      className="confirm-logout"
-      type="submit"
-      onClick={() => Firebase.signOut()}
-    >
+    <button className="confirm-logout" type="submit" onClick={logoutFunc}>
       Logout
     </button>
     <br />
@@ -68,9 +68,12 @@ const LogoutActions = ({ closeAction }) => (
 Logout.propTypes = {
   userName: PropTypes.string.isRequired,
   openState: PropTypes.bool.isRequired,
+  closeAction: PropTypes.func.isRequired,
+  logoutFunc: PropTypes.func.isRequired,
 };
 LogoutActions.propTypes = {
   closeAction: PropTypes.func.isRequired,
+  logoutFunc: PropTypes.func.isRequired,
 };
 LogoutContent.propTypes = {
   userName: PropTypes.string.isRequired,

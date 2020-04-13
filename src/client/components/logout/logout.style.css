@@ -21,8 +21,8 @@
   box-shadow: var(--embossed-shadow-high);
   font-size: 1.5em;
   padding: 1em 0;
-  height: 15em;
-  width: 18em;
+  height: 15em !important;
+  width: 18em !important;
 }
 
 /*styling modal header*/

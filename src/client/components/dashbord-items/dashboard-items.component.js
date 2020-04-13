@@ -6,11 +6,7 @@ const DashbordItems = ({ items }) => {
   return (
     <ul className="list">
       {items.map((item) => (
-        <li key={item.id}>
-          <a href={`/chart-detail-page/${item.value.toLowerCase()}`}>
-            {item.value}
-          </a>
-        </li>
+        <li key={item.id}>{item.value}</li>
       ))}
     </ul>
   );

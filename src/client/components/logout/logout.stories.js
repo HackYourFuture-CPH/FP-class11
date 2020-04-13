@@ -1,5 +1,6 @@
 import React from 'react';
 import Logout from './logout.component';
+import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
@@ -10,5 +11,15 @@ export default {
 
 export const LogoutStory = () => {
   const userName = text('userName', 'Bob');
-  return <Logout userName={userName} openState={true} />;
+  const closeAction = action('close popup');
+  const logout = action('logout function');
+
+  return (
+    <Logout
+      userName={userName}
+      openState={true}
+      logoutFunc={logout}
+      closeAction={closeAction}
+    />
+  );
 };

@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 
-.content {
+.dashboard .content {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -13,15 +13,14 @@
   width: 100%;
 }
 
-header {
+.dashboard header {
   padding: 1em 1em 0;
 }
 
-header h1 {
+.dashboard header h1 {
   font-size: 1.3em;
   margin: 1em 0 0;
   padding: 0 1em;
-  text-transform: uppercase;
 }
 
 .dashboard main {
@@ -60,3 +59,4 @@ header h1 {
   height: auto;
   margin-left: 0;
 }
+

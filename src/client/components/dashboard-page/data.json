@@ -1,0 +1,51 @@
+{
+  "progressBar": {
+    "startDate": "2020-03-03",
+    "currentDate": "2020-03-21",
+    "stages": [
+      { "name": "seeding", "duration": 3 },
+      { "name": "propagation", "duration": 14 },
+      { "name": "maturity", "duration": 28 },
+      { "name": "harvest", "duration": 4 },
+      { "name": "delivery", "duration": 3 }
+    ]
+  },
+  "lineChart": {
+    "tempData": [
+      {
+        "name": "shiso",
+        "timestamp": 1577836860000,
+        "temp": 20
+      },
+      {
+        "name": "shiso",
+        "timestamp": 1577836860000,
+        "temp": 20
+      },
+      {
+        "name": "shiso",
+        "timestamp": 1577836860000,
+        "temp": 20
+      },
+      {
+        "name": "shiso",
+        "timestamp": 1577836860000,
+        "temp": 20
+      },
+      {
+        "name": "shiso",
+        "timestamp": 1577836860000,
+        "temp": 20
+      }
+    ],
+    "strokeGrid": "#fff",
+    "strokeAxis": "#808080",
+    "minColor": "#FF0000",
+    "maxColor": "#FF0000",
+    "optimalValue": "#008000",
+    "strokeWidthRef": 2,
+    "strokeLine": "#000",
+    "strokeWidthLine": 2,
+    "referanceAreaColor": "#808080"
+  }
+}
