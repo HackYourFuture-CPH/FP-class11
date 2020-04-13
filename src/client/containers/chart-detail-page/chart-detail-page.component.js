@@ -12,7 +12,7 @@ const ChartDetailPage = ({ title }) => {
   return (
     <>
       <div>
-        <SidebarMenu isactive={true} isuser={true} />
+        <SidebarMenu isActive={true} isUser={true} />
       </div>
       <div>
         <h1>{title}</h1>

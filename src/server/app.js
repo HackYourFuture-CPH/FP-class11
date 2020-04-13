@@ -38,7 +38,8 @@ app.use(cors());
 
 app.use(process.env.API_PATH, apiRouter);
 
-app.use((err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
   if (err instanceof HttpError) {
     res.status(err.httpStatus);
     if (err.body) {
