@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import Firebase from '../../firebase/index';
 
 import './login-page.style.css';
-
 import Login from '../../components/login/login.component';
+import Firebase, { FirebaseContext } from '../../firebase/index';
 
 function LoginPage() {
   const history = useHistory();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [errorNotifications, setErrorNotifications] = useState(null);
+  const user = useContext(FirebaseContext);
+
+  useEffect(() => {
+    if (user) history.replace('/dashboard');
+  });
 
   return (
     <main>
