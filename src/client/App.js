@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
+import LoaderAnimation from './components/loader-animation/loader-animation.component';
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
@@ -11,45 +12,33 @@ import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 
 function App() {
-  const [userState, setUserState] = useState(null);
-  const [auth, setAuth] = useState(false);
+  const [userState, setUserState] = useState();
 
   useEffect(() => {
-    Firebase.init();
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
-        setAuth(true);
       } else {
         setUserState(null);
-        setAuth(false);
       }
     });
   }, []);
+
+  if (userState === undefined) return <LoaderAnimation />;
 
   return (
     <FirebaseContext.Provider value={userState}>
       <Router>
         <Switch>
+          <PublicRoute exact path="/" component={LoginPage} />
           <PublicRoute
             exact
             path="/forgot-password"
             component={ForgotPassword}
-            authenticated={auth}
           />
-          <PrivateRoute
-            exact
-            path="/dashboard"
-            component={Dashboard}
-            authenticated={auth}
-          />
-          <PublicRoute
-            exact
-            path="/"
-            component={LoginPage}
-            authenticated={auth}
-          />
-          <PublicRoute component={Page404} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          {userState === null && <Redirect to="/" />}
+          {userState && <PrivateRoute component={Page404} />}
         </Switch>
       </Router>
     </FirebaseContext.Provider>
