@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import LoaderAnimation from './components/loader-animation/loader-animation.component';
 import LoginPage from './containers/login-page/login-page.component';
@@ -39,8 +39,7 @@ function App() {
             component={ForgotPassword}
           />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          {userState === null && <Redirect to="/" />}
-          {userState && <PrivateRoute component={Page404} />}
+          <PublicRoute component={Page404} />
         </Switch>
       </Router>
     </FirebaseContext.Provider>
