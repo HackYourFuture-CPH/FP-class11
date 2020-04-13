@@ -1,14 +1,36 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "API documentation for the final project",
-    "version": "Seasony v1.0",
+    "version": "1.0",
     "title": "Final project",
+    "description": "API documentation for the final project",
     "contact": {}
   },
   "host": "",
   "basePath": "/api",
   "paths": {
+    "/crop-stages/{batchId}": {
+      "get": {
+        "description": "Get crop stages.",
+        "summary": "/api/crop-stages",
+        "tags": ["crop-stages"],
+        "operationId": "batchId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sussessfull"
+          }
+        }
+      }
+    },
     "/sensor-reading/{materialId}": {
       "get": {
         "description": "Get sensor reading.",
