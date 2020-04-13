@@ -12,7 +12,8 @@ import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 
 function App() {
-  const [userState, setUserState] = useState();
+  const [userState, setUserState] = useState(null);
+  const [userFetched, setUserFetched] = useState(false);
 
   useEffect(() => {
     Firebase.getAuth().onAuthStateChanged((user) => {
@@ -21,10 +22,11 @@ function App() {
       } else {
         setUserState(null);
       }
+      setUserFetched(true);
     });
   }, []);
 
-  if (userState === undefined) return <LoaderAnimation />;
+  if (!userFetched) return <LoaderAnimation />;
 
   return (
     <FirebaseContext.Provider value={userState}>
