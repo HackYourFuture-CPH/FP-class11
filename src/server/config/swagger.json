@@ -1,14 +1,36 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "API documentation for the final project",
-    "version": "Seasony v1.0",
+    "version": "1.0",
     "title": "Final project",
+    "description": "API documentation for the final project",
     "contact": {}
   },
   "host": "",
   "basePath": "/api",
   "paths": {
+    "/crop-stages/{batchId}": {
+      "get": {
+        "description": "Get crop stages.",
+        "summary": "/api/crop-stages",
+        "tags": ["crop-stages"],
+        "operationId": "batchId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sussessfull"
+          }
+        }
+      }
+    },
     "/sensor-reading/{materialId}": {
       "get": {
         "description": "Get sensor reading.",
@@ -63,6 +85,44 @@
           },
           "404": {
             "description": "A user with the specified uid was not found."
+          },
+          "default": {
+            "description": "Unexpected error."
+          }
+        },
+        "security": [
+          {
+            "fireabse_auth": ["read"]
+          }
+        ]
+      }
+    },
+    "/users/name": {
+      "get": {
+        "tags": ["user name"],
+        "summary": "Get a name for specific user by uid",
+        "description": "",
+        "operationId": "getName",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Name returned."
+          },
+          "401": {
+            "description": "You are not authorized to view this content."
+          },
+          "404": {
+            "description": "Name not found."
           },
           "default": {
             "description": "Unexpected error."
