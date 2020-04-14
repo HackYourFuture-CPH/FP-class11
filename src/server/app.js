@@ -38,7 +38,8 @@ app.use(cors());
 
 app.use(process.env.API_PATH, apiRouter);
 
-app.use((err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
   if (err instanceof HttpError) {
     res.status(err.httpStatus);
     if (err.body) {
@@ -49,12 +50,12 @@ app.use((err, req, res) => {
   res.sendStatus(500);
 });
 
-app.use('/api/', function (req, res) {
+app.use('/api/', function(req, res) {
   res.status(404).send("Sorry can't find that!");
 });
 
 // If "/api" is called, redirect to the API documentation.
-app.use('/api', function (req, res) {
+app.use('/api', function(req, res) {
   res.redirect(`${process.env.API_PATH}/documentation`);
 });
 

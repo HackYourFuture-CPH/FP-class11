@@ -74,11 +74,21 @@ UI Design can be found [HERE](https://www.figma.com/file/BGeghDJzrIq4rq8QsbGa5p/
 
 #### 🗄️ Database Model Diagram
 
-_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e79e58e4495b02c3b88b043
-
+_Check the DB Model Diagram_ - Use https://dbdiagram.io/d/5e7cdad34495b02c3b88d1db
 <img width="40%" height="40%" src="/seasony_data_model.png" alt="DB Diagram"></a>
 
 - [How to make changes on the diagram](/diagram.md)
+
+#### 🗄️ Database Roles and user permissions
+
+Spreadsheet file:
+https://docs.google.com/spreadsheets/d/1FlBJNVvcPEJJpu-RyPz6J-m5Gto7LZ_O90LaXDkJuCs/edit#gid=0
+
+<img width="90%" src="/db-roles.png" alt="DB Diagram"></a>
+
+#### firebase middlewares
+
+- [How to use firebase middlewares and checks needed on frontend and backend](/firebase-middlewares.md)
 
 ## 📈 Process 📉📈
 

@@ -7,6 +7,9 @@ div.error {
 }
 
 .error span {
-  font-size: 0.9em;
+  display: inline-block;
   color: var(--white);
+  font-size: 0.9em;
+  line-height: 1.15em;
+  padding: 0.2em;
 }

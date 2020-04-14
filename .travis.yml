@@ -13,3 +13,5 @@ script:
 env:
   - DB_HOST="127.0.0.1" DB_PORT="3306" DB_NAME="final_project_db"
     DB_USER="root" DB_PASSWORD=""
+git:
+  autocrlf: input
