@@ -276,7 +276,8 @@
       "authorizationUrl": "seasony-login.firebaseapp.com",
       "flow": "accessCode",
       "scopes": {
-        "read": "read data based on user uid"
+        "read": "read data based on user uid",
+        "write": "write data based on user uid"
       }
     }
   }
