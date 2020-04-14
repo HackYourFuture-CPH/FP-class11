@@ -1,30 +1,20 @@
 const knex = require('../../config/db');
-const Error = require('../lib/utils/http-error');
 
-const createBatch = async (
-  cropId,
-  userId,
-  customerName,
-  seedPot,
-  startSeedDate,
-) => {
+const createBatch = async (body) => {
   try {
-    const batch = await knex('batches').insert({
-      fk_crop_id: cropId,
-      fk_user_id: userId,
-      customer_name: customerName,
-      number_of_seeded_pots: seedPot,
-      seeding_date: startSeedDate,
+    await knex('batches').insert({
+      fk_crop_id: body.fk_crop_id,
+      fk_user_id: body.fk_user_id,
+      customer_name: body.customer_name,
+      number_of_seeded_pots: body.number_of_seeded_pots,
+      seeding_date: body.seeding_date,
       created_at: knex.fn.now(),
       updated_at: knex.fn.now(),
-      deleted_at: '',
+      deleted_at: null,
     });
-    if (cropId <= 0) {
-      throw new Error(`incorrect entry with the id of ${cropId}`, 404);
-    } else if (userId <= 0) {
-      throw new Error(`incorrect entry with the id of ${userId}`, 404);
-    }
-    return batch;
+    return {
+      successful: true,
+    };
   } catch (error) {
     return error.message;
   }

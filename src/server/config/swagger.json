@@ -223,7 +223,7 @@
           },
           {
             "name": "userId",
-            "in": "header",
+            "in": "body",
             "type": "integer",
             "required": true
           },
