@@ -92,7 +92,7 @@
         },
         "security": [
           {
-            "fireabse_auth": ["read"]
+            "firebase_auth": ["read"]
           }
         ]
       }
@@ -130,7 +130,7 @@
         },
         "security": [
           {
-            "fireabse_auth": ["read"]
+            "firebase_auth": ["read"]
           }
         ]
       }
@@ -165,7 +165,7 @@
           }
         },
         "security": {
-          "fireabse_auth": ["read"]
+          "firebase_auth": ["read"]
         }
       }
     },
@@ -199,7 +199,7 @@
           }
         },
         "security": {
-          "fireabse_auth": ["read"]
+          "firebase_auth": ["read"]
         }
       }
     },
@@ -207,6 +207,14 @@
       "post": {
         "tags": ["create-batch"],
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
           {
             "name": "cropId",
             "in": "body",
@@ -257,7 +265,7 @@
           }
         },
         "security": {
-          "firebase_auth": ["read"]
+          "firebase_auth": ["write"]
         }
       }
     }
