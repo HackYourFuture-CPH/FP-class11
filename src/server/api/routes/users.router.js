@@ -18,4 +18,12 @@ router.get('/role', checkIfAuthenticated, (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/users/name/:uid :GET to get name of the user by UID
+router.get('/name', checkIfAuthenticated, (req, res, next) => {
+  usersController
+    .getName(req)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;

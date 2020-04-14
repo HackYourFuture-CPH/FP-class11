@@ -19,6 +19,23 @@ const getRole = async (req) => {
   }
 };
 
+// get user's name for a specific uid
+const getName = async (req) => {
+  const uid = req.authId;
+  try {
+    const name = await knex('users')
+      .select('users.name')
+      .where('users.uid', uid);
+    if (name.length === 0) {
+      throw new Error(`Name not found`, 404);
+    }
+    return name;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   getRole,
+  getName,
 };

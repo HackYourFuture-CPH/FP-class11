@@ -7,7 +7,7 @@ const Page404Container = () => {
   return (
     <>
       <div>
-        <SidebarMenu isActive={true} isUser={true} />
+        <SidebarMenu isActive={false} isUser={true} />
       </div>
       <div>
         <Page404 />
