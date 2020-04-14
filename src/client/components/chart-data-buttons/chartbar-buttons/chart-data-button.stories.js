@@ -3,7 +3,7 @@ import ChartbarMenu from './chart-data-button.component';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
 export default {
-  title: 'ChartDataButtons',
+  title: 'ChartData-Buttons',
   component: ChartbarMenu,
   decorators: [withKnobs],
 };
