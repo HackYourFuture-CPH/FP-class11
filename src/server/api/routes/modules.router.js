@@ -23,7 +23,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 // ENDPOINT: /api/modules/ :POST
-router.post('/create-batch', (req, res) => {
+router.post('/', (req, res) => {
   modulesController
     .createModule(req.body)
     .then((result) => res.json(result))
