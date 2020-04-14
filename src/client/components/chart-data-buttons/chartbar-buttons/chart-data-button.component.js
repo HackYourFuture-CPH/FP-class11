@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../../button/button.component';
 
 const ChartbarMenu = ({ buttons, defaultSelection }) => {
-  const [selectedButton, setSelectedButton] = useState(defaultSelection.id);
+  const [selectedButtonId, setSelectedButtonId] = useState(defaultSelection.id);
   return (
     <div className="chartbar-button-wrapper">
       {buttons.map((button) => {
@@ -14,9 +14,9 @@ const ChartbarMenu = ({ buttons, defaultSelection }) => {
             type="toggle"
             size="large"
             onClick={() => {
-              setSelectedButton(button.id);
+              setSelectedButtonId(button.id);
             }}
-            toggled={selectedButton === button.id}
+            toggled={selectedButtonId === button.id}
           >
             {button.label}
           </Button>
@@ -27,8 +27,8 @@ const ChartbarMenu = ({ buttons, defaultSelection }) => {
 };
 
 ChartbarMenu.defaultProps = {
-  defaultSelection: '',
-  buttons: '',
+  defaultSelection: {},
+  buttons: [],
 };
 
 ChartbarMenu.propTypes = {
