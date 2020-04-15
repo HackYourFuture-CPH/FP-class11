@@ -1,6 +1,8 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import LineChartForDashboard from './line-chart-for-dashboard.component';
-import { withKnobs, number, color, object } from '@storybook/addon-knobs';
+import data from './sensors-readings.json';
 
 export default {
   title: 'LineChart',
@@ -8,58 +10,72 @@ export default {
   decorators: [withKnobs],
 };
 
-const tempData = [
-  {
-    name: 'shiso',
-    timestamp: 1577836860000,
-    temp: 22.95,
-  },
-  {
-    name: 'shiso',
-    timestamp: 1577923260000,
-    temp: 17.5,
-  },
-  {
-    name: 'shiso',
-    timestamp: 1578009660000,
-    temp: 20.5,
-  },
-  {
-    name: 'shiso',
-    timestamp: 1578096060000,
-    temp: 16,
-  },
-  {
-    name: 'shiso',
-    timestamp: 1578182460000,
-    temp: 23.5,
-  },
-];
+const materials = {
+  temperature: '1',
+  humidity: '2',
+  PH: '3',
+  EC: '4',
+  water: '5',
+};
 
-const storkeGridColor = color('grid color', '#fff');
-const strokeAxisColor = color('axisColor and Ref area', '#808080');
-const minValueColor = color('Min stroke color', '#FF0000');
-const maxValueColor = color('Max stroke color', '#FF0000');
-const optimalValueColor = color('optimalvalue stroke color', '#008000');
-const strokeWidthRefNumber = number('RefLine stroke width', 1);
-const strokeWidthLineNumber = number('line stroke width', 2);
-const strokeLineNumber = color('stroke line color', '#000');
-const referanceAreaColor = color('axisColor and Ref area', '#808080');
-const tempChartData = object('chartData', tempData);
+const boundaries = {
+  1: {
+    optimum: 23,
+    minimum: 16,
+    maximum: 28,
+  },
+  2: {
+    optimum: 80,
+    minimum: 70,
+    maximum: 90,
+  },
+  3: {
+    optimum: 5,
+    minimum: 4,
+    maximum: 6,
+  },
+  4: {
+    optimum: 900,
+    minimum: 700,
+    maximum: 1120,
+  },
+  5: {
+    optimum: 500,
+    minimum: 150,
+    maximum: 900,
+  },
+};
+
+const descriptions = {
+  1: 'Temperature',
+  2: 'Humidity',
+  3: 'PH',
+  4: 'EC',
+  5: 'Water level',
+};
+
+const units = {
+  1: '°C',
+  2: '%',
+  3: 'pH',
+  4: 'ppm',
+  5: '㎥',
+};
 
 export const stylesForLineChart = () => {
+  const materialId = select('Material id', materials, materials.temperature);
+  const boundary = boundaries[materialId];
+  const description = descriptions[materialId];
+  const unit = units[materialId];
+  const showDetailChartFunc = action('open detail chart page');
   return (
     <LineChartForDashboard
-      tempData={tempChartData}
-      strokeGrid={storkeGridColor}
-      strokeAxis={strokeAxisColor}
-      minColor={minValueColor}
-      maxColor={maxValueColor}
-      optimalValue={optimalValueColor}
-      strokeWidthRef={strokeWidthRefNumber}
-      strokeWidthLine={strokeWidthLineNumber}
-      strokeLine={strokeLineNumber}
-      ReferanceAreaColor={referanceAreaColor}
+      data={data}
+      materialId={materialId}
+      boundary={boundary}
+      description={description}
+      unit={unit}
+      showDetailChartFunc={showDetailChartFunc}
     />
   );
 };

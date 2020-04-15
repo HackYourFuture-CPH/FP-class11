@@ -23,6 +23,11 @@ export default function DashboardPage({
   logoutFunc,
   progressBarData,
   lineChartData,
+  showTemperatureDetails,
+  showHumidityDetails,
+  showPhDetails,
+  showEcDetails,
+  showWaterDetails,
 }) {
   return (
     <div className="dashboard">
@@ -55,76 +60,76 @@ export default function DashboardPage({
             <Card>
               <CardTitle title="Temperature" />
               <LineChartForDashboard
-                tempData={lineChartData.tempData}
-                strokeGrid={lineChartData.strokeGrid}
-                strokeAxis={lineChartData.strokeAxis}
-                minColor={lineChartData.minColor}
-                maxColor={lineChartData.maxColor}
-                optimalValue={lineChartData.optimalValue}
-                strokeWidthRef={lineChartData.strokeWidthRef}
-                strokeLine={lineChartData.strokeLine}
-                strokeWidthLine={lineChartData.strokeWidthLine}
-                ReferanceAreaColor={lineChartData.referanceAreaColor}
+                data={lineChartData}
+                materialId="1"
+                boundary={{
+                  optimum: 23,
+                  minimum: 16,
+                  maximum: 28,
+                }}
+                description="Temperature"
+                unit="°C"
+                showDetailChartFunc={showTemperatureDetails}
               />
             </Card>
             <Card>
               <CardTitle title="Humidity" />
               <LineChartForDashboard
-                tempData={lineChartData.tempData}
-                strokeGrid={lineChartData.strokeGrid}
-                strokeAxis={lineChartData.strokeAxis}
-                minColor={lineChartData.minColor}
-                maxColor={lineChartData.maxColor}
-                optimalValue={lineChartData.optimalValue}
-                strokeWidthRef={lineChartData.strokeWidthRef}
-                strokeLine={lineChartData.strokeLine}
-                strokeWidthLine={lineChartData.strokeWidthLine}
-                ReferanceAreaColor={lineChartData.referanceAreaColor}
+                data={lineChartData}
+                materialId="2"
+                boundary={{
+                  optimum: 80,
+                  minimum: 70,
+                  maximum: 90,
+                }}
+                description="Humidity"
+                unit="%"
+                showDetailChartFunc={showHumidityDetails}
               />
             </Card>
             <Card>
               <CardTitle title="Water PH" />
               <LineChartForDashboard
-                tempData={lineChartData.tempData}
-                strokeGrid={lineChartData.strokeGrid}
-                strokeAxis={lineChartData.strokeAxis}
-                minColor={lineChartData.minColor}
-                maxColor={lineChartData.maxColor}
-                optimalValue={lineChartData.optimalValue}
-                strokeWidthRef={lineChartData.strokeWidthRef}
-                strokeLine={lineChartData.strokeLine}
-                strokeWidthLine={lineChartData.strokeWidthLine}
-                ReferanceAreaColor={lineChartData.referanceAreaColor}
+                data={lineChartData}
+                materialId="3"
+                boundary={{
+                  optimum: 5,
+                  minimum: 4,
+                  maximum: 6,
+                }}
+                description="PH"
+                unit="pH"
+                showDetailChartFunc={showPhDetails}
               />
             </Card>
             <Card>
               <CardTitle title="Water EC" />
               <LineChartForDashboard
-                tempData={lineChartData.tempData}
-                strokeGrid={lineChartData.strokeGrid}
-                strokeAxis={lineChartData.strokeAxis}
-                minColor={lineChartData.minColor}
-                maxColor={lineChartData.maxColor}
-                optimalValue={lineChartData.optimalValue}
-                strokeWidthRef={lineChartData.strokeWidthRef}
-                strokeLine={lineChartData.strokeLine}
-                strokeWidthLine={lineChartData.strokeWidthLine}
-                ReferanceAreaColor={lineChartData.referanceAreaColor}
+                data={lineChartData}
+                materialId="4"
+                boundary={{
+                  optimum: 900,
+                  minimum: 700,
+                  maximum: 1120,
+                }}
+                description="EC"
+                unit="ppm"
+                showDetailChartFunc={showEcDetails}
               />
             </Card>
             <Card>
               <CardTitle title="Water Level" />
               <LineChartForDashboard
-                tempData={lineChartData.tempData}
-                strokeGrid={lineChartData.strokeGrid}
-                strokeAxis={lineChartData.strokeAxis}
-                minColor={lineChartData.minColor}
-                maxColor={lineChartData.maxColor}
-                optimalValue={lineChartData.optimalValue}
-                strokeWidthRef={lineChartData.strokeWidthRef}
-                strokeLine={lineChartData.strokeLine}
-                strokeWidthLine={lineChartData.strokeWidthLine}
-                ReferanceAreaColor={lineChartData.referanceAreaColor}
+                data={lineChartData}
+                materialId="5"
+                boundary={{
+                  optimum: 500,
+                  minimum: 150,
+                  maximum: 900,
+                }}
+                description="Water level"
+                unit="㎥"
+                showDetailChartFunc={showWaterDetails}
               />
             </Card>
           </div>
@@ -147,4 +152,9 @@ DashboardPage.propTypes = {
   logoutFunc: PropTypes.func.isRequired,
   progressBarData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   lineChartData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  showTemperatureDetails: PropTypes.func.isRequired,
+  showHumidityDetails: PropTypes.func.isRequired,
+  showPhDetails: PropTypes.func.isRequired,
+  showEcDetails: PropTypes.func.isRequired,
+  showWaterDetails: PropTypes.func.isRequired,
 };

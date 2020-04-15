@@ -10,7 +10,7 @@ const getCropStages = async (batchId) => {
     }
     const stages = await knex('crop_stages')
       .select('name', 'duration')
-      .where('fk_crop_id', batch[0].fk_crop_id);
+      .where('fk_crops_id', batch[0].fk_crop_id);
     if (stages.length === 0) {
       throw new Error(`No crop stages found `, 404);
     }

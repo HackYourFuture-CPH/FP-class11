@@ -20,6 +20,11 @@ export const Dashboard = () => {
   const logoutModal = boolean('isVisibleLogoutPopup', false);
   const close = action('close popup');
   const logout = action('logout');
+  const showTemperatureDetails = action('open temperature details page');
+  const showHumidityDetails = action('open humidity details page');
+  const showPhDetails = action('open ph details page');
+  const showEcDetails = action('open ec details page');
+  const showWaterDetails = action('open water level details page');
 
   return (
     <DashboardPage
@@ -34,6 +39,11 @@ export const Dashboard = () => {
       logoutFunc={logout}
       progressBarData={data.progressBar}
       lineChartData={data.lineChart}
+      showTemperatureDetails={showTemperatureDetails}
+      showHumidityDetails={showHumidityDetails}
+      showPhDetails={showPhDetails}
+      showEcDetails={showEcDetails}
+      showWaterDetails={showWaterDetails}
     />
   );
 };

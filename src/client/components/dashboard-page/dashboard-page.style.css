@@ -60,3 +60,6 @@
   margin-left: 0;
 }
 
+.dashboard .recharts-text tspan {
+  font-size: 0.8rem !important;
+}

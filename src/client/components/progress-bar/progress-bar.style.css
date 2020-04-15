@@ -31,6 +31,7 @@
 
 .day-components:last-child {
   border-radius: 0 var(--border-radius-low) var(--border-radius-low) 0;
+  border-width: 0 !important;
 }
 
 .tooltip {
@@ -45,8 +46,7 @@
   color: var(--white);
   font-weight: bold;
   font-size: 0.8em;
-  left: 60%;
-  margin-left: -1.6em;
+  left: -2em;
   padding: 0.3em 0.4em;
   position: absolute;
   visibility: hidden;
@@ -77,7 +77,7 @@
 
 .tooltip-stage .tooltip-text-stage {
   font-size: 0.7em;
-  left: 100%;
+  left: 0.5em;
   position: absolute;
   text-align: left;
   top: 110%;

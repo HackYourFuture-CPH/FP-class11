@@ -17,6 +17,7 @@ function App() {
   const [userState, setUserState] = useState(null);
   const [userFetched, setUserFetched] = useState(false);
   const [userRole, setUserRole] = useState('');
+  const [userName, setUserName] = useState('');
 
   const fetchRole = async () => {
     const headers = await getTokenWithHeaders();
@@ -27,11 +28,21 @@ function App() {
     setUserRole(role[0].name);
   };
 
+  const fetchName = async () => {
+    const headers = await getTokenWithHeaders();
+    const name = await fetch('/api/users/name', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setUserName(name[0].name);
+  };
+
   useEffect(() => {
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
         fetchRole();
+        fetchName();
       } else {
         setUserState(null);
       }
@@ -43,7 +54,7 @@ function App() {
 
   return (
     <FirebaseContext.Provider value={userState}>
-      <UserRoleContext.Provider value={userRole}>
+      <UserRoleContext.Provider value={{ userRole, userName }}>
         <Router>
           <Switch>
             <PublicRoute
