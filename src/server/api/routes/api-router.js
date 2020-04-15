@@ -10,6 +10,7 @@ const cropStagesEndpoint = require('./crop-stages.router');
 const usersRouter = require('./users.router.js');
 const createBatchRouter = require('./create-batch.router');
 const getBatchRouter = require('./batches.router');
+const batchDefaultValuesRouter = require('./batch-default-values.router');
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
@@ -26,5 +27,6 @@ router.use('/crop-stage-parameter-values', cropStageDefaultValuesRouter);
 router.use('/users', usersRouter);
 router.use('/create-batch', createBatchRouter);
 router.use('/batch', getBatchRouter);
+router.use('/batch-default-values', batchDefaultValuesRouter);
 
 module.exports = router;
