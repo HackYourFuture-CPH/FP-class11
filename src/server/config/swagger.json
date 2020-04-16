@@ -8,12 +8,18 @@
   },
   "host": "",
   "basePath": "/api",
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/delete-specific-data/{batchId}": {
       "delete": {
-        "tags": ["batch-table"],
+        "tags": [
+          "batch-table"
+        ],
         "parameters": [
           {
             "name": "batchId",
@@ -25,7 +31,9 @@
         "summary": "delete a specific batch data",
         "description": "delete a specific batch by batchId",
         "operationId": "deleteSpecificBatchById",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successful delete request"
@@ -41,15 +49,19 @@
           }
         },
         "security": {
-          "fireabse_auth": ["read"]
-    },
-    "securityDefinitions": {
-      "firebase_auth": {
-        "type": "oauth2",
-        "authorizationUrl": "seasony-login.firebaseapp.com",
-        "flow": "accessCode",
-        "scopes": {
-          "read": "read data based on user uid"
+          "fireabse_auth": [
+            "read"
+          ]
+        },
+        "securityDefinitions": {
+          "firebase_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "seasony-login.firebaseapp.com",
+            "flow": "accessCode",
+            "scopes": {
+              "read": "read data based on user uid"
+            }
+          }
         }
       }
     }
