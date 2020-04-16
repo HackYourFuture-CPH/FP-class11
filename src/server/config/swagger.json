@@ -29,21 +29,34 @@
         "responses": {
           "200": {
             "description": "successful operation"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
           }
         },
-        "security": []
+        "security": {
+          "firebase_auth": [
+            "read"
+          ]
+        }
       }
-    }
-  },
-  "securityDefinitions": {
-    "firebase_auth": {
-      "authorizationUrl": "seasony-login.firebaseapp.com",
-      "type": "oauth2",
-      "flow": "accessCode",
-      "scopes": {
-        "read": "read data based on user uid"
+    },
+    "securityDefinitions": {
+      "firebase_auth": {
+        "authorizationUrl": "seasony-login.firebaseapp.com",
+        "type": "oauth2",
+        "flow": "accessCode",
+        "scopes": {
+          "read": "read data based on user uid"
+        }
       }
-    }
-  },
-  "definitions": {}
+    },
+    "definitions": {}
+  }
 }
