@@ -18,6 +18,14 @@
         "produces": ["application/json"],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "batchId",
             "in": "path",
             "type": "string",
@@ -39,6 +47,14 @@
         "operationId": "materialId",
         "produces": ["application/json"],
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
           {
             "name": "materialId",
             "in": "path",
@@ -140,6 +156,14 @@
         "tags": ["crop-default-values"],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "cropId",
             "in": "path",
             "type": "integer",
@@ -173,6 +197,14 @@
       "get": {
         "tags": ["batch"],
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
           {
             "name": "batchId",
             "in": "path",
