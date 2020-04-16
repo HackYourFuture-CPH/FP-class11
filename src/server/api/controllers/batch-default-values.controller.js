@@ -62,6 +62,7 @@ const getDefaultValues = async (batchId, requestedStage) => {
         'crop_stages.name',
         'crop_stage_default_values.parameter',
         'crop_stage_default_values.min_value',
+        'crop_stage_default_values.optimum_value',
         'crop_stage_default_values.max_value',
       )
       .where('batches.id', batchId);
