@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import Firebase from '../../firebase/index';
+import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import './login-page.style.css';
-
 import Login from '../../components/login/login.component';
+import Firebase, { FirebaseContext } from '../../firebase/index';
 
 function LoginPage() {
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [errorNotifications, setErrorNotifications] = useState(null);
+  const user = useContext(FirebaseContext);
+
+  useEffect(() => {
+    if (user) history.replace('/dashboard');
+  });
 
   return (
     <main>
@@ -31,7 +37,7 @@ function LoginPage() {
             if (err) {
               setErrorMessage(err.message);
               setErrorNotifications(err.code);
-            }
+            } else history.replace('/dashboard');
           }
         }}
       />
