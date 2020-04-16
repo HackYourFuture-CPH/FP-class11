@@ -97,6 +97,178 @@
         ]
       }
     },
+    "/users/name": {
+      "get": {
+        "tags": ["user name"],
+        "summary": "Get a name for specific user by uid",
+        "description": "",
+        "operationId": "getName",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Name returned."
+          },
+          "401": {
+            "description": "You are not authorized to view this content."
+          },
+          "404": {
+            "description": "Name not found."
+          },
+          "default": {
+            "description": "Unexpected error."
+          }
+        },
+        "security": [
+          {
+            "firebase_auth": ["read"]
+          }
+        ]
+      }
+    },
+    "/crop-stage-parameter-values/{cropId}": {
+      "get": {
+        "tags": ["crop-default-values"],
+        "parameters": [
+          {
+            "name": "cropId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Get default parameter values for a specific crop",
+        "description": "Get default parameter values for a specific crop by cropId",
+        "operationId": "getCropStageDefaultValuesByCropId",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful GET request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "firebase_auth": ["read"]
+        }
+      }
+    },
+    "/batch/{batchId}": {
+      "get": {
+        "tags": ["batch"],
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Get default parameter values for a specific batch",
+        "description": "Get default parameter values for a specific batch by batchId",
+        "operationId": "getBatchById",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful GET request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "firebase_auth": ["read"]
+        }
+      }
+    },
+    "/create-batch": {
+      "post": {
+        "tags": ["create-batch"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "cropId",
+            "in": "body",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "userId",
+            "in": "body",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "customerName",
+            "in": "body",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "seedPot",
+            "in": "body",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "startSeedDate",
+            "in": "body",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Post values received from add batch form fields",
+        "description": "Post following values received from add batch form fields: crop id, customer name, number of seeded pots, start seed date with the userId received from header), ",
+        "operationId": "createBatch",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful POST request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "firebase_auth": ["write"]
+        }
+      }
+    },
     "/batches": {
       "get": {
         "description": "Get all batches.",
@@ -108,12 +280,12 @@
             "description": "Successfull"
           }
         },
-        "/users/name": {
+        "/batch-default-values/{batchId}": {
           "get": {
-            "tags": ["user name"],
-            "summary": "Get a name for specific user by uid",
+            "tags": ["default values"],
+            "summary": "Get default values for specific batch by batchId",
             "description": "",
-            "operationId": "getName",
+            "operationId": "getDefaultValues",
             "produces": ["application/json"],
             "parameters": [
               {
@@ -123,17 +295,29 @@
                 "required": true,
                 "type": "string",
                 "default": "Bearer ENTER_FIREBASE_TOKEN"
+              },
+              {
+                "name": "batchId",
+                "in": "path",
+                "type": "integer",
+                "required": true
+              },
+              {
+                "name": "stage",
+                "in": "query",
+                "type": "string",
+                "required": false
               }
             ],
             "responses": {
               "200": {
-                "description": "Name returned."
+                "description": "Default values returned."
               },
               "401": {
                 "description": "You are not authorized to view this content."
               },
               "404": {
-                "description": "Name not found."
+                "description": "A batch with the specified id was not found."
               },
               "default": {
                 "description": "Unexpected error."
@@ -141,207 +325,21 @@
             },
             "security": [
               {
-                "firebase_auth": ["read"]
+                "fireabse_auth": ["read"]
               }
             ]
           }
-        },
-        "/crop-stage-parameter-values/{cropId}": {
-          "get": {
-            "tags": ["crop-default-values"],
-            "parameters": [
-              {
-                "name": "cropId",
-                "in": "path",
-                "type": "integer",
-                "required": true
-              }
-            ],
-            "summary": "Get default parameter values for a specific crop",
-            "description": "Get default parameter values for a specific crop by cropId",
-            "operationId": "getCropStageDefaultValuesByCropId",
-            "produces": ["application/json"],
-            "responses": {
-              "200": {
-                "description": "Successful GET request"
-              },
-              "401": {
-                "description": "Unauthorized request"
-              },
-              "404": {
-                "description": "Not found"
-              },
-              "500": {
-                "description": "Server error"
-              }
-            },
-            "security": {
-              "fireabse_auth": ["read"]
-            }
-          }
-        },
-        "/batch/{batchId}": {
-          "get": {
-            "tags": ["batch"],
-            "parameters": [
-              {
-                "name": "batchId",
-                "in": "path",
-                "type": "integer",
-                "required": true
-              }
-            ],
-            "summary": "Get default parameter values for a specific batch",
-            "description": "Get default parameter values for a specific batch by batchId",
-            "operationId": "getBatchById",
-            "produces": ["application/json"],
-            "responses": {
-              "200": {
-                "description": "Successful GET request"
-              },
-              "401": {
-                "description": "Unauthorized request"
-              },
-              "404": {
-                "description": "Not found"
-              },
-              "500": {
-                "description": "Server error"
-              }
-            },
-            "security": {
-              "fireabse_auth": ["read"]
-            }
-          }
-        },
-        "securityDefinitions": {
-          "firebase_auth": {
-            "type": "oauth2",
-            "authorizationUrl": "seasony-login.firebaseapp.com",
-            "flow": "accessCode",
-            "scopes": {
-              "read": "read data based on user uid"
-            }
-          },
-          "security": {
-            "firebase_auth": ["read"]
-          }
         }
       },
-      "/create-batch": {
-        "post": {
-          "tags": ["create-batch"],
-          "parameters": [
-            {
-              "name": "authorization",
-              "in": "header",
-              "description": "Firebase token",
-              "required": true,
-              "type": "string",
-              "default": "Bearer ENTER_FIREBASE_TOKEN"
-            },
-            {
-              "name": "cropId",
-              "in": "body",
-              "type": "integer",
-              "required": true
-            },
-            {
-              "name": "userId",
-              "in": "body",
-              "type": "integer",
-              "required": true
-            },
-            {
-              "name": "customerName",
-              "in": "body",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "seedPot",
-              "in": "body",
-              "type": "integer",
-              "required": true
-            },
-            {
-              "name": "startSeedDate",
-              "in": "body",
-              "type": "integer",
-              "required": true
-            }
-          ],
-          "summary": "Post values received from add batch form fields",
-          "description": "Post following values received from add batch form fields: crop id, customer name, number of seeded pots, start seed date with the userId received from header), ",
-          "operationId": "createBatch",
-          "produces": ["application/json"],
-          "responses": {
-            "200": {
-              "description": "Successful POST request"
-            },
-            "401": {
-              "description": "Unauthorized request"
-            },
-            "404": {
-              "description": "Not found"
-            },
-            "500": {
-              "description": "Server error"
-            }
-          },
-          "security": {
-            "firebase_auth": ["write"]
+      "securityDefinitions": {
+        "firebase_auth": {
+          "type": "oauth2",
+          "authorizationUrl": "seasony-login.firebaseapp.com",
+          "flow": "accessCode",
+          "scopes": {
+            "read": "read data based on user uid",
+            "write": "write data based on user uid"
           }
-        }
-      },
-      "/batch-default-values/{batchId}": {
-        "get": {
-          "tags": ["default values"],
-          "summary": "Get default values for specific batch by batchId",
-          "description": "",
-          "operationId": "getDefaultValues",
-          "produces": ["application/json"],
-          "parameters": [
-            {
-              "name": "authorization",
-              "in": "header",
-              "description": "Firebase token",
-              "required": true,
-              "type": "string",
-              "default": "Bearer ENTER_FIREBASE_TOKEN"
-            },
-            {
-              "name": "batchId",
-              "in": "path",
-              "type": "integer",
-              "required": true
-            },
-            {
-              "name": "stage",
-              "in": "query",
-              "type": "string",
-              "required": false
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "Default values returned."
-            },
-            "401": {
-              "description": "You are not authorized to view this content."
-            },
-            "404": {
-              "description": "A batch with the specified id was not found."
-            },
-            "default": {
-              "description": "Unexpected error."
-            }
-          },
-          "security": [
-            {
-              "fireabse_auth": ["read"]
-            }
-          ]
         }
       }
     }
