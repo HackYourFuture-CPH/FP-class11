@@ -22,6 +22,14 @@
         ],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "batchId",
             "in": "path",
             "type": "integer",
