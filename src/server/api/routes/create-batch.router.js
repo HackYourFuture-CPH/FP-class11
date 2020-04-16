@@ -3,15 +3,26 @@ const express = require('express');
 
 const router = express.Router({ mergeParams: true });
 
+const {
+  checkIfAuthorized,
+} = require('../lib/middleware/authorization.middleware');
+
+const ROLES = require('../../constants/roles');
+
 // controllers
 const createBatchController = require('../controllers/create-batch.controller');
 
-// ENDPOINT: /api/modules/:cropId :GET to get one crop's default values
-router.get('/:cropId', (req, res, next) => {
-  createBatchController
-    .createBatch(req.params.cropId, req.params.userId)
-    .then((result) => res.json(result))
-    .catch(next);
-});
+// ENDPOINT: /api/create-batch :POST to create a batch
+router.post(
+  '/',
+  checkIfAuthorized(ROLES.SUPER_ADMIN, ROLES.ADMIN),
+  (req, res, next) => {
+    console.log(req.body);
+    createBatchController
+      .createBatch(req.body)
+      .then((result) => res.json(result))
+      .catch(next);
+  },
+);
 
 module.exports = router;
