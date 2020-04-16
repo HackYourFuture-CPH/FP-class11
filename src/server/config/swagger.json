@@ -202,6 +202,48 @@
           "fireabse_auth": ["read"]
         }
       }
+    },
+    "/status-box/current-stage/{batchId}": {
+      "get": {
+        "tags": ["current stage for status box"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Get current stage message for a specific batch for status box",
+        "description": "",
+        "operationId": "getCurrentStage",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful GET request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "fireabse_auth": ["read"]
+        }
+      }
     }
   },
   "securityDefinitions": {
