@@ -12,6 +12,7 @@ const createBatchRouter = require('./create-batch.router');
 const getBatchRouter = require('./batches.router');
 const batchDefaultValuesRouter = require('./batch-default-values.router');
 const daysToEndBatchRouter = require('./days-to-end-batch.router');
+const statusBoXRouter = require('./status-box.router');
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
@@ -30,5 +31,6 @@ router.use('/create-batch', createBatchRouter);
 router.use('/batch', getBatchRouter);
 router.use('/batch-default-values', batchDefaultValuesRouter);
 router.use('/days-to-end-batch', daysToEndBatchRouter);
+router.use('/status-box/', statusBoXRouter);
 
 module.exports = router;
