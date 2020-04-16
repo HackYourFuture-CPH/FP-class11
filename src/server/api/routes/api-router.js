@@ -9,8 +9,7 @@ const cropStageDefaultValuesRouter = require('./crop-stage-default-values.router
 const cropStagesEndpoint = require('./crop-stages.router');
 const usersRouter = require('./users.router.js');
 const createBatchRouter = require('./create-batch.router');
-const getBatchRouter = require('./batches.router');
-const statusBoxRouter = require('./status-box.router');
+const statusBoXRouter = require('./status-box.router');
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
@@ -26,7 +25,6 @@ router.use('/sensor-reading', sensorReadingRouter);
 router.use('/crop-stage-parameter-values', cropStageDefaultValuesRouter);
 router.use('/users', usersRouter);
 router.use('/create-batch', createBatchRouter);
-router.use('/batch', getBatchRouter);
-router.use('/status-box', statusBoxRouter);
+router.use('/status-box/', statusBoXRouter);
 
 module.exports = router;

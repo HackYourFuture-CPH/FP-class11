@@ -41,6 +41,55 @@ const getCurrentStage = async (batchId) => {
   }
 };
 
+const getDaysTilHarvest = async (batchId) => {
+  try {
+    const batchesStages = await knex('batches')
+      .join('crop_stages', 'crop_stages.fk_crops_id', '=', 'batches.fk_crop_id')
+      .select(
+        'crop_stages.id',
+        'crop_stages.name',
+        'crop_stages.duration',
+        'batches.seeding_date',
+      )
+      .where('batches.id', batchId);
+    if (batchesStages.length === 0) {
+      throw new Error(`incorrect entry with the id of ${batchId}`, 404);
+    }
+
+    const cropStagedId = [1, 2, 3];
+    const durationDayBeforeHarvest = batchesStages
+      .filter((cropStages) => cropStagedId.includes(cropStages.id))
+      .reduce((durationSum, cropStage) => {
+        return durationSum + cropStage.duration;
+      }, 0);
+    const todayDate = moment();
+    const seedingDate = moment(batchesStages[0].seeding_date);
+    const harvestStartDate = seedingDate.add(durationDayBeforeHarvest, 'days');
+    const daysTilHarvestFromToday =
+      moment(harvestStartDate).diff(todayDate, 'days') + 1;
+
+    return `In ${daysTilHarvestFromToday} days`;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+const getProductionStartDate = async (batchId) => {
+  try {
+    const productionStartDate = await knex('batches')
+      .select('batches.seeding_date')
+      .where('batches.id', batchId);
+    if (productionStartDate.length === 0) {
+      throw new Error(`incorrect entry with the id of ${batchId}`, 404);
+    }
+    return productionStartDate;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   getCurrentStage,
+  getDaysTilHarvest,
+  getProductionStartDate,
 };

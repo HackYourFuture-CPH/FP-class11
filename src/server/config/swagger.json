@@ -97,42 +97,72 @@
         ]
       }
     },
-    "/users/name": {
+    "/status-box/days-to-harvest/{batchId}": {
       "get": {
-        "tags": ["user name"],
-        "summary": "Get a name for specific user by uid",
-        "description": "",
-        "operationId": "getName",
-        "produces": ["application/json"],
+        "tags": ["status box"],
         "parameters": [
           {
-            "name": "authorization",
-            "in": "header",
-            "description": "Firebase token",
-            "required": true,
-            "type": "string",
-            "default": "Bearer ENTER_FIREBASE_TOKEN"
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
           }
         ],
+        "summary": "Get number of days till harvest",
+        "description": "Get number of days till harvest ",
+        "operationId": "batchId",
+        "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "Name returned."
+            "description": "Successful GET request"
           },
           "401": {
-            "description": "You are not authorized to view this content."
+            "description": "Unauthorized request"
           },
           "404": {
-            "description": "Name not found."
+            "description": "Not found"
           },
-          "default": {
-            "description": "Unexpected error."
+          "500": {
+            "description": "Server error"
           }
         },
-        "security": [
+        "security": {
+          "fireabse_auth": ["read"]
+        }
+      }
+    },
+    "/status-box/production-date/{batchId}": {
+      "get": {
+        "tags": ["status box"],
+        "parameters": [
           {
-            "fireabse_auth": ["read"]
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
           }
-        ]
+        ],
+        "summary": "Get production date ",
+        "description": "Get production date ",
+        "operationId": "getProductionStartDate",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful GET request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "fireabse_auth": ["read"]
+        }
       }
     },
     "/crop-stage-parameter-values/{cropId}": {
@@ -205,7 +235,7 @@
     },
     "/status-box/current-stage/{batchId}": {
       "get": {
-        "tags": ["current stage for status box"],
+        "tags": ["status box"],
         "parameters": [
           {
             "name": "authorization",
@@ -246,6 +276,7 @@
       }
     }
   },
+
   "securityDefinitions": {
     "firebase_auth": {
       "type": "oauth2",

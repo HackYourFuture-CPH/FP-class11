@@ -22,4 +22,20 @@ router.get(
   },
 );
 
+// ENDPOINT: /api/status-box/daysTilHarvest/:batchId :GET to get days till harvest date of a batch with batchId
+router.get('/days-to-harvest/:batchId', (req, res, next) => {
+  statusBoxController
+    .getDaysTilHarvest(req.params.batchId)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+// ENDPOINT: /api/status-box/productionDate/:batchId :GET to get production date
+router.get('/production-date/:batchId', (req, res, next) => {
+  statusBoxController
+    .getProductionStartDate(req.params.batchId)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;
