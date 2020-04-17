@@ -341,65 +341,78 @@
         }
       }
     },
-    "/batch-default-values/{batchId}": {
+    "/batches": {
       "get": {
-        "tags": ["default values"],
-        "summary": "Get default values for specific batch by batchId",
-        "description": "",
-        "operationId": "getDefaultValues",
+        "description": "Get all batches.",
+        "summary": "/api/batches",
+        "tags": ["batches"],
         "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "description": "Firebase token",
-            "required": true,
-            "type": "string",
-            "default": "Bearer ENTER_FIREBASE_TOKEN"
-          },
-          {
-            "name": "batchId",
-            "in": "path",
-            "type": "integer",
-            "required": true
-          },
-          {
-            "name": "stage",
-            "in": "query",
-            "type": "string",
-            "required": false
-          }
-        ],
         "responses": {
           "200": {
-            "description": "Default values returned."
-          },
-          "401": {
-            "description": "You are not authorized to view this content."
-          },
-          "404": {
-            "description": "A batch with the specified id was not found."
-          },
-          "default": {
-            "description": "Unexpected error."
+            "description": "Successfull"
           }
         },
-        "security": [
-          {
-            "fireabse_auth": ["read"]
+        "/batch-default-values/{batchId}": {
+          "get": {
+            "tags": ["default values"],
+            "summary": "Get default values for specific batch by batchId",
+            "description": "",
+            "operationId": "getDefaultValues",
+            "produces": ["application/json"],
+            "parameters": [
+              {
+                "name": "authorization",
+                "in": "header",
+                "description": "Firebase token",
+                "required": true,
+                "type": "string",
+                "default": "Bearer ENTER_FIREBASE_TOKEN"
+              },
+              {
+                "name": "batchId",
+                "in": "path",
+                "type": "integer",
+                "required": true
+              },
+              {
+                "name": "stage",
+                "in": "query",
+                "type": "string",
+                "required": false
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Default values returned."
+              },
+              "401": {
+                "description": "You are not authorized to view this content."
+              },
+              "404": {
+                "description": "A batch with the specified id was not found."
+              },
+              "default": {
+                "description": "Unexpected error."
+              }
+            },
+            "security": [
+              {
+                "fireabse_auth": ["read"]
+              }
+            ]
           }
-        ]
-      }
-    }
-  },
-  "securityDefinitions": {
-    "firebase_auth": {
-      "type": "oauth2",
-      "authorizationUrl": "seasony-login.firebaseapp.com",
-      "flow": "accessCode",
-      "scopes": {
-        "read": "read data based on user uid",
-        "write": "write data based on user uid"
+        }
+      },
+      "securityDefinitions": {
+        "firebase_auth": {
+          "type": "oauth2",
+          "authorizationUrl": "seasony-login.firebaseapp.com",
+          "flow": "accessCode",
+          "scopes": {
+            "read": "read data based on user uid",
+            "write": "write data based on user uid"
+          }
+        }
       }
     }
   }
