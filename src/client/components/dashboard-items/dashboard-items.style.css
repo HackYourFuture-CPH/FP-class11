@@ -2,16 +2,26 @@
   padding: 0;
 }
 .list li {
-  border-radius:var(--border-radius-low);
-  font-size: 0.9em;
-  padding: 0.6em;
+  font-size: 0.85em;
+  padding: 0.4em 0.6em;
   width: 98%;
   list-style: none;
-  margin: 0 0 0 0.1em;
+  margin: 0;
   text-align: center;
+  
 }
-.list li:hover {
+.list li:hover{
+  border-radius: 0.4em;
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-low);
   color:var(--light-blue);
 }
+
+.list li .a {
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.list li:hover .a {
+  color:var(--light-blue);
+} 

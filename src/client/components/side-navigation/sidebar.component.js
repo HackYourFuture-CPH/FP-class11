@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './sidebar.style.css';
 import NavigationButton from '../navigation-button/navigation-button.component';
-import PropTypes from 'prop-types';
 import '../navigation-button/navigation-button.style.css';
 import Logo from '../logo/logo.component';
 import imageFile from '../../assets/images/logo.png';
@@ -11,39 +10,38 @@ import {
   faPlusCircle,
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
+import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-context';
 
-const SidebarMenu = ({ isActive, handleClick }) => {
+const SidebarMenu = () => {
+  const dashboardButton = useContext(ChartDataContext);
+  const { buttonClick, active } = dashboardButton;
+
   return (
     <div className="sidebar-wrapper">
       <Logo srcPath={imageFile} altText="Seasony" />
       <NavigationButton
         icon={faThLarge}
         text="Dashboard"
-        isActive={isActive}
-        handleClick={handleClick}
+        isActive={active}
+        handleClick={buttonClick}
       />
       <NavigationButton
         icon={faSeedling}
         text="Batch Details"
-        handleClick={handleClick}
+        handleClick={() => null}
       />
       <NavigationButton
         icon={faPlusCircle}
         text="Add Batch"
-        handleClick={handleClick}
+        handleClick={() => null}
       />
       <NavigationButton
         icon={faUserCircle}
         text="LogOut"
-        handleClick={handleClick}
+        handleClick={() => null}
       />
     </div>
   );
-};
-
-SidebarMenu.propTypes = {
-  isActive: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
 
 export default SidebarMenu;

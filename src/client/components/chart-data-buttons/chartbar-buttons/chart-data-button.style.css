@@ -1,16 +1,12 @@
 .chartbar-button-wrapper {
-  background: var(--light-grey);
+  /* background: var(--light-grey); */
   border: var(--border-inputs);
-  box-shadow: var(--embossed-shadow-medium);
+  /* box-shadow: var(--embossed-shadow-medium); */
   color: var(--dark-blue);
   display: flex;
   flex-direction:row;
-  text-align: center;
-  justify-content:space-around;
-  padding:0.5em 0;
-  transition: none;
-  width: 100%;
-  outline: none;
-  position: relative;
+  text-align: right;
+  justify-content:flex-end; 
+  
   }
   

@@ -26,6 +26,7 @@
   width: 75%;
   outline: none;
   position: relative;
+  
 }
 .item:focus-visible {
   background: var(--light-grey);
