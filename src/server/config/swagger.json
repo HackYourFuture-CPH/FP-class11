@@ -44,6 +44,14 @@
             "in": "path",
             "type": "string",
             "required": true
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
           }
         ],
         "responses": {
@@ -144,6 +152,14 @@
             "in": "path",
             "type": "integer",
             "required": true
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
           }
         ],
         "summary": "Get default parameter values for a specific crop",
@@ -178,6 +194,14 @@
             "in": "path",
             "type": "integer",
             "required": true
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
           }
         ],
         "summary": "Get default parameter values for a specific batch",
