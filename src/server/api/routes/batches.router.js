@@ -4,7 +4,16 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 
 // controllers
+const batchesController = require('../controllers/batches.controller');
 const batchController = require('../controllers/batches.controller');
+
+// ENDPOINT: /api/batches/ :GET to get all batches
+router.get('/', (req, res, next) => {
+  batchesController
+    .getBatches()
+    .then((result) => res.json(result))
+    .catch(next);
+});
 
 // ENDPOINT: /api/batch/:id :GET to get one module
 router.get('/:batchId', (req, res, next) => {

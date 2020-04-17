@@ -1,6 +1,13 @@
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 
+const getBatches = async () => {
+  try {
+    return await knex('batches').select('id', 'customer_name');
+  } catch (error) {
+    return error.message;
+  }
+};
 const getBatchById = async (batchId) => {
   try {
     const batch = await knex('batches')
@@ -14,5 +21,7 @@ const getBatchById = async (batchId) => {
     return error.message;
   }
 };
-
-module.exports = { getBatchById };
+module.exports = {
+  getBatches,
+  getBatchById,
+};
