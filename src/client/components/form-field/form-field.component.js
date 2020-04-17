@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import DropDown from '../drop-down/drop-down.component';
 import InputText from '../input-field/input-text.component';
@@ -8,21 +7,13 @@ import Button from '../button/button.component';
 import './form-field.css';
 
 export default function FormField() {
-  const [cropName, setCropName] = useState(null);
-  const [startSeedDate, setStartSeedDate] = useState(null);
-  const [seedPot, setSeedPot] = useState(null);
-  const [customerName, setCustomerName] = useState(null);
+  const [cropName, setCropName] = useState('');
+  const [setStartSeedDate] = useState('');
+  const [setSeedPot] = useState('');
+  const [setCustomerName] = useState('');
 
   const handleSubmit = (e) => {
-    try {
-      e.preventDefault();
-      console.log(cropName);
-      console.log(startSeedDate);
-      console.log(seedPot);
-      console.log(customerName);
-    } catch (err) {
-      console.log(err);
-    }
+    e.preventDefault();
   };
 
   const handleDropdown = (e) => {
