@@ -38,4 +38,20 @@ router.get('/production-date/:batchId', (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/status-box/days-left-to-end-batch/:batchId :GET to get Days left to end the batch
+router.get('/days-left-to-end-batch/:batchId', (req, res, next) => {
+  statusBoxController
+    .getDayLeftToEndBatch(req.params.batchId)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+// ENDPOINT: /api/status-box/production-end-date/:batchId :GET to get Production End Date
+router.get('/production-end-date/:batchId', (req, res, next) => {
+  statusBoxController
+    .getProductionEndDate(req.params.batchId)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;
