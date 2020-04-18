@@ -1,0 +1,29 @@
+main {
+  align-items: center;
+  background: var(--light-grey);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+.batch-detail{
+  width: 70%;
+  /* float: left; */
+}
+.right-panel{
+  /* float:right; */
+  width: 30%;
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:50px;
+  line-height: 2em;
+}
+.batchDetail-wrapper{
+  display: flex;
+}
+/* .centered{
+  margin: 0 auto;
+  float:right;
+} */
