@@ -20,7 +20,7 @@ const createBatchController = require('../controllers/create-batch.controller');
  *       'Post following values received from add batch form fields: crop id,
  *       customer name, number of seeded pots, start seed date with the userId received from header.'
  *     tags:
- *       - Create batch
+ *       - CreateBatch
  *     operationId: createBatch
  *     produces: application/json
  *     parameters:

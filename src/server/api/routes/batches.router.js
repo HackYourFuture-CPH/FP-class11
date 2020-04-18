@@ -43,7 +43,7 @@ router.get('/', (req, res, next) => {
  *     description:
  *       Get default parameter values for a specific batch by batchId
  *     tags:
- *       - Batch by id
+ *       - BatchById
  *     operationId: getBatchById
  *     produces: application/json
  *     responses:

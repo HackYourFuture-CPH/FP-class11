@@ -14,7 +14,7 @@ const sensorReadingController = require('../controllers/sensor-readings.controll
  *     description:
  *       "Get sensor readings."
  *     tags:
- *       - Sensor reading
+ *       - SensorReading
  *     operationId: materialId
  *     produces: application/json
  *     parameters:

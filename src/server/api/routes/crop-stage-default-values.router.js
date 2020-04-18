@@ -13,7 +13,7 @@ const cropStageDefaultValuesController = require('../controllers/crop-stage-defa
  *     description:
  *       Get default parameter values for a specific crop by cropId
  *     tags:
- *       - Crop default values
+ *       - CropDefaultValues
  *     operationId: getCropStageDefaultValuesByCropId
  *     produces: application/json
  *     parameters:

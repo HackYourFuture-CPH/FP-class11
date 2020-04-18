@@ -1,10 +1,10 @@
-/* eslint-disable no-console */
 const express = require('express');
 
 const router = express.Router({ mergeParams: true });
 
 // controllers
 const modulesController = require('../controllers/modules.controller');
+
 
 router.get('/', (req, res, next) => {
   modulesController
@@ -28,7 +28,6 @@ router.post('/', (req, res) => {
     .then((result) => res.json(result))
     .catch((error) => {
       console.log(error);
-
       res
         .status(400)
         .send('Bad request')

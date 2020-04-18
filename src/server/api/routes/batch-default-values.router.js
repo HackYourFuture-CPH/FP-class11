@@ -18,7 +18,7 @@ const {
  *     description:
  *       Get default values for specific batch by batchId
  *     tags:
- *       - Batch default values
+ *       - BatchDefaultValues
  *     operationId: getDefaultValues
  *     produces: application/json
  *     parameters:

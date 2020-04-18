@@ -14,7 +14,7 @@ const cropStageModuleController = require('../controllers/modules.controller.cro
  *     description:
  *       Get crop stages.
  *     tags:
- *       - Crop stages
+ *       - CropStages
  *     operationId: batchId
  *     produces: application/json
  *     parameters:

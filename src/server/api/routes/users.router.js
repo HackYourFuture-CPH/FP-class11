@@ -17,7 +17,7 @@ const {
  *     summary: Get a role for specific user by uid
  *     description: Get a role for specific user by uid
  *     tags:
- *       - User role
+ *       - UserRole
  *     operationId: getRole
  *     produces:
  *       - application/json
@@ -57,7 +57,7 @@ router.get('/role', checkIfAuthenticated, (req, res, next) => {
  *     summary: Get a name for specific user by uid
  *     description: Get a name for specific user by uid
  *     tags:
- *       - User name
+ *       - UserName
  *     operationId: getName
  *     produces:
  *       application/json
