@@ -11,38 +11,38 @@ export default {
 };
 
 const materials = {
-  temperature: '1',
-  humidity: '2',
-  PH: '3',
-  EC: '4',
-  water: '5',
+  temperature: 1,
+  humidity: 2,
+  PH: 3,
+  EC: 4,
+  water: 5,
 };
 
 const boundaries = {
   1: {
-    optimum: 23,
-    minimum: 16,
-    maximum: 28,
+    optimum_value: 23,
+    min_value: 16,
+    max_value: 28,
   },
   2: {
-    optimum: 80,
-    minimum: 70,
-    maximum: 90,
+    optimum_value: 80,
+    min_value: 70,
+    max_value: 90,
   },
   3: {
-    optimum: 5,
-    minimum: 4,
-    maximum: 6,
+    optimum_value: 5,
+    min_value: 4,
+    max_value: 6,
   },
   4: {
-    optimum: 900,
-    minimum: 700,
-    maximum: 1120,
+    optimum_value: 900,
+    min_value: 700,
+    max_value: 1120,
   },
   5: {
-    optimum: 500,
-    minimum: 150,
-    maximum: 900,
+    optimum_value: 500,
+    min_value: 150,
+    max_value: 900,
   },
 };
 

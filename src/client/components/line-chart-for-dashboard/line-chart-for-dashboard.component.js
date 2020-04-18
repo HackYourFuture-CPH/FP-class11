@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import {
   ResponsiveContainer,
   LineChart,
@@ -27,7 +28,9 @@ export default function LineChartForDashboard({
   );
 
   const formatXAxis = () =>
-    filterByMaterialId.map((sensor) => sensor.created_at.slice(0, 13));
+    filterByMaterialId.map((sensor) =>
+      moment(sensor.created_at).format('DD/MM'),
+    );
 
   return (
     <ResponsiveContainer width="100%" height={180}>
@@ -48,18 +51,39 @@ export default function LineChartForDashboard({
           dataKey={formatXAxis}
           domain={['dataMin', 'dataMax']}
           tick={{ fill: '#666' }}
+          tickSize={2}
         />
         <YAxis
           stroke="#666"
           type="number"
-          domain={[boundary.minimum - 3, boundary.maximum + 3]}
+          domain={[
+            boundary.min_value - (20 / 100) * boundary.min_value,
+            boundary.max_value + (10 / 100) * boundary.max_value,
+          ]}
           tick={{ fill: '#666' }}
           fill="none"
+          ticks={[
+            boundary.min_value,
+            boundary.optimum_value,
+            boundary.max_value,
+          ]}
         />
         <Tooltip />
-        <ReferenceLine y={boundary.optimum} stroke="#709d68" strokeWidth={2} />
-        <ReferenceLine y={boundary.maximum} stroke="#f27eb1" strokeWidth={2} />
-        <ReferenceLine y={boundary.minimum} stroke="#f27eb1" strokeWidth={2} />
+        <ReferenceLine
+          y={boundary.optimum_value}
+          stroke="#709d68"
+          strokeWidth={2}
+        />
+        <ReferenceLine
+          y={boundary.max_value}
+          stroke="#f27eb1"
+          strokeWidth={2}
+        />
+        <ReferenceLine
+          y={boundary.min_value}
+          stroke="#f27eb1"
+          strokeWidth={2}
+        />
         <Line
           type="monotone"
           name={description}
@@ -69,8 +93,8 @@ export default function LineChartForDashboard({
           strokeWidth={2}
         />
         <ReferenceArea
-          y1={boundary.minimum}
-          y2={boundary.maximum}
+          y1={boundary.min_value}
+          y2={boundary.max_value}
           fill="#c4c4c4"
           fillOpacity={0.3}
         />
@@ -80,12 +104,12 @@ export default function LineChartForDashboard({
 }
 
 LineChartForDashboard.defaultProps = {
-  materialId: '1',
+  materialId: 1,
 };
 
 LineChartForDashboard.propTypes = {
   data: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  materialId: PropTypes.string,
+  materialId: PropTypes.number,
   boundary: PropTypes.oneOfType([PropTypes.object]).isRequired,
   description: PropTypes.string.isRequired,
   unit: PropTypes.string.isRequired,

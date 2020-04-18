@@ -23,6 +23,7 @@ export default function DashboardPage({
   logoutFunc,
   progressBarData,
   lineChartData,
+  boundary,
   showTemperatureDetails,
   showHumidityDetails,
   showPhDetails,
@@ -61,12 +62,8 @@ export default function DashboardPage({
               <CardTitle title="Temperature" />
               <LineChartForDashboard
                 data={lineChartData}
-                materialId="1"
-                boundary={{
-                  optimum: 23,
-                  minimum: 16,
-                  maximum: 28,
-                }}
+                materialId={1}
+                boundary={boundary[0]}
                 description="Temperature"
                 unit="°C"
                 showDetailChartFunc={showTemperatureDetails}
@@ -76,12 +73,8 @@ export default function DashboardPage({
               <CardTitle title="Humidity" />
               <LineChartForDashboard
                 data={lineChartData}
-                materialId="2"
-                boundary={{
-                  optimum: 80,
-                  minimum: 70,
-                  maximum: 90,
-                }}
+                materialId={2}
+                boundary={boundary[1]}
                 description="Humidity"
                 unit="%"
                 showDetailChartFunc={showHumidityDetails}
@@ -91,12 +84,8 @@ export default function DashboardPage({
               <CardTitle title="Water PH" />
               <LineChartForDashboard
                 data={lineChartData}
-                materialId="3"
-                boundary={{
-                  optimum: 5,
-                  minimum: 4,
-                  maximum: 6,
-                }}
+                materialId={3}
+                boundary={boundary[2]}
                 description="PH"
                 unit="pH"
                 showDetailChartFunc={showPhDetails}
@@ -106,12 +95,8 @@ export default function DashboardPage({
               <CardTitle title="Water EC" />
               <LineChartForDashboard
                 data={lineChartData}
-                materialId="4"
-                boundary={{
-                  optimum: 900,
-                  minimum: 700,
-                  maximum: 1120,
-                }}
+                materialId={4}
+                boundary={boundary[3]}
                 description="EC"
                 unit="ppm"
                 showDetailChartFunc={showEcDetails}
@@ -121,12 +106,8 @@ export default function DashboardPage({
               <CardTitle title="Water Level" />
               <LineChartForDashboard
                 data={lineChartData}
-                materialId="5"
-                boundary={{
-                  optimum: 500,
-                  minimum: 150,
-                  maximum: 900,
-                }}
+                materialId={5}
+                boundary={boundary[4]}
                 description="Water level"
                 unit="㎥"
                 showDetailChartFunc={showWaterDetails}
@@ -152,6 +133,7 @@ DashboardPage.propTypes = {
   logoutFunc: PropTypes.func.isRequired,
   progressBarData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   lineChartData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  boundary: PropTypes.oneOfType([PropTypes.array]).isRequired,
   showTemperatureDetails: PropTypes.func.isRequired,
   showHumidityDetails: PropTypes.func.isRequired,
   showPhDetails: PropTypes.func.isRequired,

@@ -9,7 +9,6 @@ import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
 import UserRoleContext from './helpers/UserRoleContext';
-
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 
@@ -19,17 +18,15 @@ function App() {
   const [userRole, setUserRole] = useState('');
   const [userName, setUserName] = useState('');
 
-  const fetchRole = async () => {
+  const fetchNameRole = async () => {
     const headers = await getTokenWithHeaders();
+
     const role = await fetch('/api/users/role', {
       method: 'GET',
       headers,
     }).then((data) => data.json());
     setUserRole(role[0].name);
-  };
 
-  const fetchName = async () => {
-    const headers = await getTokenWithHeaders();
     const name = await fetch('/api/users/name', {
       method: 'GET',
       headers,
@@ -41,8 +38,7 @@ function App() {
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
-        fetchRole();
-        fetchName();
+        fetchNameRole();
       } else {
         setUserState(null);
       }
@@ -64,6 +60,7 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
             <PublicRoute component={Page404} />
           </Switch>
         </Router>

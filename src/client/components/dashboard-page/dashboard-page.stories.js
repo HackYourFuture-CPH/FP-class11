@@ -25,7 +25,6 @@ export const Dashboard = () => {
   const showPhDetails = action('open ph details page');
   const showEcDetails = action('open ec details page');
   const showWaterDetails = action('open water level details page');
-
   return (
     <DashboardPage
       isVisible={true}
@@ -39,6 +38,7 @@ export const Dashboard = () => {
       logoutFunc={logout}
       progressBarData={data.progressBar}
       lineChartData={data.lineChart}
+      boundary={data.lineChart.defaultValues}
       showTemperatureDetails={showTemperatureDetails}
       showHumidityDetails={showHumidityDetails}
       showPhDetails={showPhDetails}
