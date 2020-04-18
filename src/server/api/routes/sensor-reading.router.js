@@ -22,16 +22,21 @@ const {
  *     operationId: materialId
  *     produces: application/json
  *     parameters:
- *       - name: materialId
- *         in: path
- *         type: string
- *         required: true
+ *      - name: authorization
+ *        in: header
+ *        description: Firebase token
+ *        required: true
+ *        default: Bearer ENTER_FIREBASE_TOKEN
+ *        type: string
+ *      - name: materialId
+ *        in: path
+ *        type: string
+ *        required: true
  *     responses:
  *       200:
  *         description: Successful request
  *       5XX:
  *         description: Unexpected error.
-
  */
 // ENDPOINT: /api/sensor-reading/:materialId :GET to get sensor reading
 router.get('/:materialId', checkIfAuthenticated, (req, res, next) => {

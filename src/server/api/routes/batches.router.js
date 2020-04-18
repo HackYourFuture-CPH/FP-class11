@@ -21,6 +21,13 @@ const {
  *       - Batches
  *     operationId: getBatches
  *     produces: application/json
+ *     parameters:
+ *      - name: authorization
+ *        in: header
+ *        description: Firebase token
+ *        required: true
+ *        default: Bearer ENTER_FIREBASE_TOKEN
+ *        type: string
  *     responses:
  *       200:
  *         description: Successful request
@@ -50,6 +57,17 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
  *       - BatchById
  *     operationId: getBatchById
  *     produces: application/json
+ *     parameters:
+ *      - name: authorization
+ *        in: header
+ *        description: Firebase token
+ *        required: true
+ *        default: Bearer ENTER_FIREBASE_TOKEN
+ *        type: string
+ *      - name: batchId
+ *        in: path
+ *        required: true
+ *        type: string
  *     responses:
  *       200:
  *         description: Successful request

@@ -22,16 +22,21 @@ const {
  *     operationId: batchId
  *     produces: application/json
  *     parameters:
- *       - name: batchId
- *         in: path
- *         required: true
- *         type: string
+ *      - name: authorization
+ *        in: header
+ *        description: Firebase token
+ *        required: true
+ *        default: Bearer ENTER_FIREBASE_TOKEN
+ *        type: string
+ *      - name: batchId
+ *        in: path
+ *        required: true
+ *        type: string
  *     responses:
  *       200:
  *         description: Successful request
  *       5XX:
  *         description: Unexpected error.
-
  */
 // ENDPOINT: /api/crop-stages/:batchId :GET to get one Batch
 router.get('/:batchId', checkIfAuthenticated, (req, res, next) => {

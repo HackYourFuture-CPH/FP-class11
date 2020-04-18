@@ -22,6 +22,12 @@ const {
  *     operationId: getCropStageDefaultValuesByCropId
  *     produces: application/json
  *     parameters:
+ *      - name: authorization
+ *        in: header
+ *        description: Firebase token
+ *        required: true
+ *        default: Bearer ENTER_FIREBASE_TOKEN
+ *        type: string
  *      - name: cropId
  *        in: path
  *        type: integer
@@ -38,7 +44,6 @@ const {
  *     security:
  *         firebase_auth:
  *         - read
-
  */
 // ENDPOINT: /api/modules/:cropId :GET to get one crop's default values
 router.get('/:cropId', checkIfAuthenticated, (req, res, next) => {
