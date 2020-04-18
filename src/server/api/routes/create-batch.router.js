@@ -25,7 +25,7 @@ const createBatchController = require('../controllers/create-batch.controller');
  *     produces: application/json
  *     parameters:
  *      - name: authorization
- *        id: header
+ *        in: header
  *        description: Firebase token
  *        required: true
  *        default: Bearer ENTER_FIREBASE_TOKEN

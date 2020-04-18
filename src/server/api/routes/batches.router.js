@@ -6,6 +6,10 @@ const router = express.Router({ mergeParams: true });
 const batchesController = require('../controllers/batches.controller');
 const batchController = require('../controllers/batches.controller');
 
+const {
+  checkIfAuthenticated,
+} = require('../lib/middleware/authentication.middleware');
+
 /**
  * @swagger
  * /batches/:
@@ -28,7 +32,7 @@ const batchController = require('../controllers/batches.controller');
  *         description: Unexpected error.
  */
 // ENDPOINT: /api/batches/ :GET to get all batches
-router.get('/', (req, res, next) => {
+router.get('/', checkIfAuthenticated, (req, res, next) => {
   batchesController
     .getBatches()
     .then((result) => res.json(result))
@@ -57,7 +61,7 @@ router.get('/', (req, res, next) => {
  *         description: Unexpected error.
  */
 // ENDPOINT: /api/batch/:id :GET to get one module
-router.get('/:batchId', (req, res, next) => {
+router.get('/:batchId', checkIfAuthenticated, (req, res, next) => {
   batchController
     .getBatchById(req.params.batchId)
     .then((result) => res.json(result))
