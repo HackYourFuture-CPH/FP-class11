@@ -6,6 +6,29 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const sensorReadingController = require('../controllers/sensor-readings.controller');
 
+/**
+ * @swagger
+ * /sensor-reading/{materialId}:
+ *   get:
+ *     summary: Get sensor readings.
+ *     description:
+ *       "Get sensor readings."
+ *     tags:
+ *       - Sensor reading
+ *     operationId: materialId
+ *     produces: application/json
+ *     parameters:
+ *       - name: materialId
+ *         in: path
+ *         type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Successful request
+ *       5XX:
+ *         description: Unexpected error.
+
+ */
 // ENDPOINT: /api/sensor-reading/:materialId :GET to get sensor reading
 router.get('/:materialId', (req, res, next) => {
   sensorReadingController

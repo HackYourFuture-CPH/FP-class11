@@ -6,6 +6,29 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const cropStageModuleController = require('../controllers/modules.controller.crop-stages-endpoint');
 
+/**
+ * @swagger
+ * /crop-stages/{batchId}:
+ *   get:
+ *     summary: Get crop stages
+ *     description:
+ *       Get crop stages.
+ *     tags:
+ *       - Crop stages
+ *     operationId: batchId
+ *     produces: application/json
+ *     parameters:
+ *       - name: batchId
+ *         in: path
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: Successful request
+ *       5XX:
+ *         description: Unexpected error.
+
+ */
 // ENDPOINT: /api/crop-stages/:batchId :GET to get one Batch
 router.get('/:batchId', (req, res, next) => {
   cropStageModuleController

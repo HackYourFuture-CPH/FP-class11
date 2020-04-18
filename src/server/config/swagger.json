@@ -13,9 +13,13 @@
       "get": {
         "description": "Get crop stages.",
         "summary": "/api/crop-stages",
-        "tags": ["crop-stages"],
+        "tags": [
+          "crop-stages"
+        ],
         "operationId": "batchId",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "batchId",
@@ -35,9 +39,13 @@
       "get": {
         "description": "Get sensor reading.",
         "summary": "/api/sensor-reading",
-        "tags": ["sensor-reading"],
+        "tags": [
+          "sensor-reading"
+        ],
         "operationId": "materialId",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "materialId",
@@ -55,7 +63,9 @@
     },
     "/users/role": {
       "get": {
-        "tags": ["user role"],
+        "tags": [
+          "user role"
+        ],
         "summary": "Get a role for specific user by uid",
         "description": "",
         "operationId": "getRole",
@@ -92,18 +102,24 @@
         },
         "security": [
           {
-            "firebase_auth": ["read"]
+            "firebase_auth": [
+              "read"
+            ]
           }
         ]
       }
     },
     "/users/name": {
       "get": {
-        "tags": ["user name"],
+        "tags": [
+          "user name"
+        ],
         "summary": "Get a name for specific user by uid",
         "description": "",
         "operationId": "getName",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -130,14 +146,18 @@
         },
         "security": [
           {
-            "firebase_auth": ["read"]
+            "firebase_auth": [
+              "read"
+            ]
           }
         ]
       }
     },
     "/crop-stage-parameter-values/{cropId}": {
       "get": {
-        "tags": ["crop-default-values"],
+        "tags": [
+          "crop-default-values"
+        ],
         "parameters": [
           {
             "name": "cropId",
@@ -149,7 +169,9 @@
         "summary": "Get default parameter values for a specific crop",
         "description": "Get default parameter values for a specific crop by cropId",
         "operationId": "getCropStageDefaultValuesByCropId",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successful GET request"
@@ -165,13 +187,17 @@
           }
         },
         "security": {
-          "firebase_auth": ["read"]
+          "firebase_auth": [
+            "read"
+          ]
         }
       }
     },
     "/batch/{batchId}": {
       "get": {
-        "tags": ["batch"],
+        "tags": [
+          "batch"
+        ],
         "parameters": [
           {
             "name": "batchId",
@@ -183,7 +209,9 @@
         "summary": "Get default parameter values for a specific batch",
         "description": "Get default parameter values for a specific batch by batchId",
         "operationId": "getBatchById",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successful GET request"
@@ -199,13 +227,17 @@
           }
         },
         "security": {
-          "firebase_auth": ["read"]
+          "firebase_auth": [
+            "read"
+          ]
         }
       }
     },
     "/create-batch": {
       "post": {
-        "tags": ["create-batch"],
+        "tags": [
+          "create-batch"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -249,7 +281,9 @@
         "summary": "Post values received from add batch form fields",
         "description": "Post following values received from add batch form fields: crop id, customer name, number of seeded pots, start seed date with the userId received from header), ",
         "operationId": "createBatch",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successful POST request"
@@ -265,7 +299,9 @@
           }
         },
         "security": {
-          "firebase_auth": ["write"]
+          "firebase_auth": [
+            "write"
+          ]
         }
       }
     },
@@ -273,8 +309,12 @@
       "get": {
         "description": "Get all batches.",
         "summary": "/api/batches",
-        "tags": ["batches"],
-        "produces": ["application/json"],
+        "tags": [
+          "batches"
+        ],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successfull"
@@ -282,11 +322,15 @@
         },
         "/batch-default-values/{batchId}": {
           "get": {
-            "tags": ["default values"],
+            "tags": [
+              "default values"
+            ],
             "summary": "Get default values for specific batch by batchId",
             "description": "",
             "operationId": "getDefaultValues",
-            "produces": ["application/json"],
+            "produces": [
+              "application/json"
+            ],
             "parameters": [
               {
                 "name": "authorization",
@@ -325,7 +369,9 @@
             },
             "security": [
               {
-                "fireabse_auth": ["read"]
+                "fireabse_auth": [
+                  "read"
+                ]
               }
             ]
           }

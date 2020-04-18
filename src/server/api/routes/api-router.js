@@ -13,14 +13,8 @@ const createBatchRouter = require('./create-batch.router');
 const getBatchRouter = require('./batches.router');
 const batchDefaultValuesRouter = require('./batch-default-values.router');
 
-// swagger-ui-express
-const swaggerDocument = require('../../config/swagger.json');
-const swaggerUi = require('swagger-ui-express');
-
-// Route for Swagger API Documentation
-router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 // Application routes
+
 router.use('/modules', modulesRouter);
 router.use('/batches', batchesRouter);
 router.use('/crop-stages', cropStagesEndpoint);
@@ -30,5 +24,42 @@ router.use('/users', usersRouter);
 router.use('/create-batch', createBatchRouter);
 router.use('/batch', getBatchRouter);
 router.use('/batch-default-values', batchDefaultValuesRouter);
+
+// swagger-ui-express
+// const swaggerDocument = require('../../config/swagger.json');
+// const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      version: '1.0',
+      title: 'Final project',
+      description: 'API documentation for the final project',
+      contact: {},
+    },
+    host: '',
+    basePath: '/api',
+  },
+  securityDefinitions: {
+    firebase_auth: {
+      type: 'oauth2',
+      authorizationUrl: 'seasony-login.firebaseapp.com',
+      description: 'This API uses OAuth 2.',
+      flows: 'authorizationCode',
+      scopes: {
+        read: 'read data based on user uid',
+        write: 'write data based on user uid',
+      },
+    },
+  },
+  apis: ['./src/server/api/routes/*.js'],
+};
+
+// Route for Swagger API Documentation
+const swaggerDocument = swaggerJsDoc(swaggerOptions);
+router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 module.exports = router;
