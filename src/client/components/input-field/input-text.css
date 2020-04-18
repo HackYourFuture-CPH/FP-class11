@@ -11,7 +11,9 @@
   width: 39em;
 }
 .input-text:hover {
-  background-color: lightgreen;
+  background-color: #f2f2f5;
   cursor: pointer;
 }
-
+.input-text:active {
+  background-color: #f2f2f5;
+}

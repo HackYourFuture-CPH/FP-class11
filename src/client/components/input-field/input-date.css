@@ -11,6 +11,9 @@
   width: 39em;
 }
 .date:hover {
-  background-color: lightgreen;
+  background-color: #f2f2f5;
   cursor: pointer;
+}
+.date:active {
+  background-color: #f2f2f5;
 }

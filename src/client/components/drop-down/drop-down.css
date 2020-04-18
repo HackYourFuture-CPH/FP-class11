@@ -13,7 +13,7 @@
   font-size: 1em;
   line-height: 1em;
   height: 2.7em;
-  outline: none;
+  §outline: none;
   width: 100%;
   padding-left: 1em;
   border-radius: 32px;
@@ -23,5 +23,5 @@
 }
 .select-wrapper select:hover {
   cursor: pointer;
-  background-color: lightgreen;
+  background-color: #f0f0f3;
 }
