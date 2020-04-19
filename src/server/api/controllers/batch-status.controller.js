@@ -4,7 +4,7 @@ const moment = require('moment');
 
 const currentStage = async (batchId) => {
   const batchesStages = await knex('batches')
-    .join('crop_stages', 'crop_stages.fk_crops_id', '=', 'batches.fk_crop_id')
+    .join('crop_stages', 'crop_stages.fk_crop_id', '=', 'batches.fk_crop_id')
     .select('crop_stages.name', 'crop_stages.duration', 'batches.seeding_date')
     .where('batches.id', batchId);
   if (batchesStages.length === 0) {
@@ -36,7 +36,7 @@ const currentStage = async (batchId) => {
 const getDaysTilHarvest = async (batchId) => {
   try {
     const batchesStages = await knex('batches')
-      .join('crop_stages', 'crop_stages.fk_crops_id', '=', 'batches.fk_crop_id')
+      .join('crop_stages', 'crop_stages.fk_crop_id', '=', 'batches.fk_crop_id')
       .select(
         'crop_stages.id',
         'crop_stages.name',
@@ -98,7 +98,7 @@ const getDayLeftToEndBatch = async (batchId) => {
 
     const [totalDays] = await knex('crop_stages')
       .sum('duration as duration')
-      .where('fk_crops_id', batch.fk_crop_id);
+      .where('fk_crop_id', batch.fk_crop_id);
     const start = moment(batch.seeding_date);
     const end = moment();
     const daysPassed = end.diff(start, 'days') + 1;
@@ -119,7 +119,7 @@ const getProductionEndDate = async (batchId) => {
     }
     const [totalDays] = await knex('crop_stages')
       .sum('duration as duration')
-      .where('fk_crops_id', batch.fk_crop_id);
+      .where('fk_crop_id', batch.fk_crop_id);
     const start = moment(batch.seeding_date);
     const productionEndDate = start.add(totalDays.duration, 'days') - 1;
     return moment(productionEndDate).format('DD-MM-YYYY');
