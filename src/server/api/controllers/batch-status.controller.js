@@ -2,7 +2,7 @@ const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 const moment = require('moment');
 
-const currentStageMessage = async (batchId) => {
+const currentStage = async (batchId) => {
   const batchesStages = await knex('batches')
     .join('crop_stages', 'crop_stages.fk_crops_id', '=', 'batches.fk_crop_id')
     .select('crop_stages.name', 'crop_stages.duration', 'batches.seeding_date')
@@ -26,19 +26,11 @@ const currentStageMessage = async (batchId) => {
     filterDurationLessThanToday.length > 0
       ? filterDurationLessThanToday[0].name
       : 'delivered';
-  if (currentStageMessage.length === 0) {
+  if (currentStage.length === 0) {
     throw new Error(`incorrect entry with the id of ${batchId}`, 404);
   }
-  if (currentStageName === 'delivered') return `${currentStageName}`;
-  return `${currentStageName} - Day ${currentDay}`;
-};
-
-const getCurrentStage = async (batchId) => {
-  try {
-    return await currentStageMessage(batchId);
-  } catch (error) {
-    return error.message;
-  }
+  if (currentStageName === 'delivered') return { status: currentStageName };
+  return { status: currentStageName, day: currentDay };
 };
 
 const getDaysTilHarvest = async (batchId) => {
@@ -56,19 +48,26 @@ const getDaysTilHarvest = async (batchId) => {
       throw new Error(`incorrect entry with the id of ${batchId}`, 404);
     }
 
-    const cropStagedId = [1, 2, 3];
-    const durationDayBeforeHarvest = batchesStages
-      .filter((cropStages) => cropStagedId.includes(cropStages.id))
+    const [harvestId] = await knex('crop_stages')
+      .select('id')
+      .where('name', 'harvest');
+    const durationDaysBeforeHarvest = batchesStages
+      .filter((stage) => stage.id < harvestId.id)
       .reduce((durationSum, cropStage) => {
         return durationSum + cropStage.duration;
       }, 0);
     const todayDate = moment();
     const seedingDate = moment(batchesStages[0].seeding_date);
-    const harvestStartDate = seedingDate.add(durationDayBeforeHarvest, 'days');
+    const harvestStartDate = seedingDate.add(durationDaysBeforeHarvest, 'days');
+    if (
+      moment(todayDate).format('DD-MM-YYYY') >=
+      moment(harvestStartDate).format('DD-MM-YYYY')
+    )
+      return `Harvest started`;
     const daysTilHarvestFromToday =
       moment(harvestStartDate).diff(todayDate, 'days') + 1;
 
-    return `In ${daysTilHarvestFromToday} days`;
+    return daysTilHarvestFromToday;
   } catch (error) {
     return error.message;
   }
@@ -76,13 +75,13 @@ const getDaysTilHarvest = async (batchId) => {
 
 const getProductionStartDate = async (batchId) => {
   try {
-    const productionStartDate = await knex('batches')
+    const [productionStartDate] = await knex('batches')
       .select('batches.seeding_date')
       .where('batches.id', batchId);
     if (productionStartDate.length === 0) {
       throw new Error(`incorrect entry with the id of ${batchId}`, 404);
     }
-    return productionStartDate;
+    return moment(productionStartDate.seeding_date).format('DD-MM-YYYY');
   } catch (error) {
     return error.message;
   }
@@ -90,53 +89,59 @@ const getProductionStartDate = async (batchId) => {
 
 const getDayLeftToEndBatch = async (batchId) => {
   try {
-    const batch = await knex('batches')
+    const [batch] = await knex('batches')
       .select('seeding_date', 'fk_crop_id')
       .where('id', batchId);
     if (batch.length === 0) {
       throw new Error(`incorrect entry with the id of ${batchId}`, 404);
     }
 
-    const totalDays = await knex('crop_stages')
+    const [totalDays] = await knex('crop_stages')
       .sum('duration as duration')
-      .where('fk_crop_id', batch[0].fk_crop_id);
-    const start = moment(batch[0].seeding_date);
+      .where('fk_crops_id', batch.fk_crop_id);
+    const start = moment(batch.seeding_date);
     const end = moment();
     const daysPassed = end.diff(start, 'days') + 1;
-    const daysLeft = totalDays[0].duration - daysPassed;
-    return `Days left to end the batch: ${daysLeft} days`;
+    const daysLeft = totalDays.duration - daysPassed;
+    return daysLeft;
   } catch (error) {
-    return Error.message;
+    return error.message;
   }
 };
 
 const getProductionEndDate = async (batchId) => {
   try {
-    const batch = await knex('batches')
+    const [batch] = await knex('batches')
       .select('seeding_date', 'fk_crop_id')
       .where('id', batchId);
     if (batch.length === 0) {
       throw new Error(`incorrect entry with the id of ${batchId}`, 404);
     }
-
-    const totalDays = await knex('crop_stages')
+    const [totalDays] = await knex('crop_stages')
       .sum('duration as duration')
-      .where('fk_crop_id', batch[0].fk_crop_id);
-    const start = moment(batch[0].seeding_date);
-    const end = moment();
-    const daysPassed = end.diff(start, 'days');
-    const daysLeft = totalDays[0].duration - daysPassed;
-    const productionEndDate = start.add(daysLeft, 'days');
-    return `Production End Date: ${productionEndDate}`;
+      .where('fk_crops_id', batch.fk_crop_id);
+    const start = moment(batch.seeding_date);
+    const productionEndDate = start.add(totalDays.duration, 'days') - 1;
+    return moment(productionEndDate).format('DD-MM-YYYY');
   } catch (error) {
-    return Error.message;
+    return error.message;
+  }
+};
+
+const getBatchStatus = async (batchId) => {
+  try {
+    return {
+      daysLeftToHarvest: await getDaysTilHarvest(batchId),
+      daysLeftToEndBatch: await getDayLeftToEndBatch(batchId),
+      currentStage: await currentStage(batchId),
+      productionStartDate: await getProductionStartDate(batchId),
+      productionEndDate: await getProductionEndDate(batchId),
+    };
+  } catch (error) {
+    return error.message;
   }
 };
 
 module.exports = {
-  getCurrentStage,
-  getDaysTilHarvest,
-  getProductionStartDate,
-  getDayLeftToEndBatch,
-  getProductionEndDate,
+  getBatchStatus,
 };
