@@ -1,5 +1,5 @@
 import React from 'react';
-import FormField from './form-field';
+import FormField from './form-field.component';
 
 export default { title: 'FormField' };
-export const AddCropForm = () => <FormField />;
+export const AddBatchForm = () => <FormField />;
