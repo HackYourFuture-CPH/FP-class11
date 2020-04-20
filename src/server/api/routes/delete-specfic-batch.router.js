@@ -12,7 +12,7 @@ const deleteSpecificDataController = require('../controllers/delete-specific-bat
 
 /**
  * @swagger
- * /delete-specific-data/{batchId}:
+ * /delete-specific-batch/{batchId}:
  *   delete:
  *     summary: Delete a batch by id number
  *     description:
@@ -37,7 +37,7 @@ const deleteSpecificDataController = require('../controllers/delete-specific-bat
  *        required: true
  *     security:
  *         firebase_auth:
- *         - read
+ *         - write
  *     responses:
  *       200:
  *         description: Successful request
