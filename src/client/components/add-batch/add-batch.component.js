@@ -3,16 +3,16 @@ import FormTitle from '../form-title/form-title.component';
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import FormField from '../form-field/form-field.component';
 
-import './add-crop.css';
+import './add-batch.css';
 
-export default function AddCrop() {
+export default function AddBatch() {
   return (
     <>
-      <FormTitle title="Add Crop" />
+      <FormTitle title="Add Batch" />
 
-      <div className="addcrop-container">
+      <div className="addbatch-container">
         <Accordion>
-          <AccordionItem title="CROP">
+          <AccordionItem title="BATCH DETAILS">
             <br />
             <br />
             <FormField />
