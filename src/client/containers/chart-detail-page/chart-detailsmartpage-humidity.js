@@ -7,15 +7,6 @@ import './chart-detail-smartpage.css';
 // import UpdateDateRange from '../../components/update-date-range/update-date-range.component';
 import ChartbarMenu from '../../components/chart-data-buttons/chartbar-buttons/chart-data-button.component';
 import { ChartDataContext } from './chart-detail-context';
-import Button from '../../components/button/button.component';
-
-const unit = {
-  temperature: '°C',
-  humidity: 'g/m3',
-  PH: '',
-  EC: 'ppm',
-  water: 'cm',
-};
 
 const value = [
   { id: 1, label: 'Last 5 Days' },
@@ -34,6 +25,7 @@ const ChartDetailSmartPageHumidity = () => {
     startDate,
     currentDate,
     stages,
+    units,
   } = chartvalues;
 
   const headingText = materialName.toUpperCase();
@@ -53,12 +45,9 @@ const ChartDetailSmartPageHumidity = () => {
           data={sensorData}
           boundary={boundary}
           description={materialName}
-          unit={unit}
+          unit={units}
         />
       </div>
-      <Button type="primary" className="exportButton">
-        Export data ▾
-      </Button>
     </>
   );
 };

@@ -12,6 +12,7 @@ const ChartDetailsWithCropData = () => {
   const [startDate, setStartDate] = useState('');
   const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
+  const [units, setUnits] = useState('');
 
   const buttonClick = (e) => {
     e.preventDefault();
@@ -53,10 +54,22 @@ const ChartDetailsWithCropData = () => {
           maximum: stageParameterValues[0].max_value,
         };
         setBoundary(boundaryValues);
+        if (materialName === 'Temperature') {
+          setUnits('°C');
+        } else if (materialName === 'Water') {
+          setUnits('cm');
+        } else if (materialName === 'Humidity') {
+          setUnits('g/m3');
+        } else if (materialName === 'PH') {
+          setUnits('pH');
+        } else if (materialName === 'EC') {
+          setUnits('ppm');
+        }
       } catch (error) {
         console.log(error);
       }
     }
+
     if (materialName !== '') {
       fetchBatchStagesDefaultData();
     }
@@ -110,6 +123,7 @@ const ChartDetailsWithCropData = () => {
         startDate,
         currentDate,
         stages,
+        units,
       }}
     >
       <ChartDetailSmartPageHumidity />
