@@ -14,7 +14,6 @@ export default function InputText({ text, placeholder, handleChange }) {
     </div>
   );
 }
-
 InputText.propTypes = {
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
