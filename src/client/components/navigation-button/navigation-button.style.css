@@ -21,7 +21,7 @@
   text-align: center;
   align-items: center;
   margin: 1em auto;
-  padding:0.5em 0;
+  padding: 0.5em 0;
   transition: none;
   width: 75%;
   outline: none;
@@ -33,6 +33,9 @@
   box-shadow: var(--debossed-shadow-medium);
 }
 .item:hover {
+  background: var(--light-grey);
+}
+.item:active {
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-medium);
 }
