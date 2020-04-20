@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0",
-    "title": "Final project",
     "description": "API documentation for the final project",
+    "version": "Seasony v1.0",
+    "title": "Final project",
     "contact": {}
   },
   "host": "",
@@ -15,6 +15,14 @@
       "delete": {
         "tags": ["batch-table"],
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
           {
             "name": "batchId",
             "in": "path",
