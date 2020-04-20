@@ -10,7 +10,7 @@ export default function InputDate({ text, placeholder, handleChange }) {
   return (
     <div>
       <input
-        className="input-date"
+        className="date"
         type={text}
         placeholder={placeholder}
         onFocus={onFocus}
@@ -19,7 +19,6 @@ export default function InputDate({ text, placeholder, handleChange }) {
     </div>
   );
 }
-
 InputDate.propTypes = {
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
