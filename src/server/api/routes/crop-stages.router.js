@@ -17,6 +17,9 @@ const {
  *     summary: Get crop stages
  *     description:
  *       Get crop stages.
+ *
+ *
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
  *     tags:
  *       - CropStages
  *     operationId: batchId

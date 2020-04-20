@@ -16,7 +16,10 @@ const {
  *   get:
  *     summary: Get sensor readings.
  *     description:
- *       "Get sensor readings."
+ *       Get sensor readings.
+ *
+ *
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
  *     tags:
  *       - SensorReading
  *     operationId: materialId

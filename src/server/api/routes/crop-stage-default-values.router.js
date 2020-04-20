@@ -14,11 +14,14 @@ const {
  * @swagger
  * /crop-stage-parameter-values/{cropId}:
  *   get:
- *     summary: Get default parameter values for a specific crop
+ *     summary: Get default values for a specific crop
  *     description:
  *       Get default parameter values for a specific crop by cropId
+ *
+ *
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
  *     tags:
- *       - CropDefaultValues
+ *       - Default Values
  *     operationId: getCropStageDefaultValuesByCropId
  *     produces: application/json
  *     parameters:

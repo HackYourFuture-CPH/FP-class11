@@ -17,8 +17,11 @@ const {
  *     summary: Get default values for specific batch
  *     description:
  *       Get default values for specific batch by batchId
+ *
+ *
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
  *     tags:
- *       - BatchDefaultValues
+ *       - Default Values
  *     operationId: getDefaultValues
  *     produces: application/json
  *     parameters:
