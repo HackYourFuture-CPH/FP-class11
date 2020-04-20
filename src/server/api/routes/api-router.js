@@ -13,6 +13,7 @@ const batchesRouter = require('./batches.router');
 const createBatchRouter = require('./create-batch.router');
 const getBatchRouter = require('./batches.router');
 const batchDefaultValuesRouter = require('./batch-default-values.router');
+const deleteSpecificBatchDataRouter = require('./delete-specfic-batch.router');
 
 // swagger-ui-express
 const swaggerDocument = require('../../config/swagger.json');
@@ -32,5 +33,6 @@ router.use('/users', usersRouter);
 router.use('/create-batch', createBatchRouter);
 router.use('/batch', getBatchRouter);
 router.use('/batch-default-values', batchDefaultValuesRouter);
+router.use('/delete-specific-batch', deleteSpecificBatchDataRouter);
 
 module.exports = router;
