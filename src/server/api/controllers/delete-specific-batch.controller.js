@@ -8,7 +8,7 @@ const deleteSpecificBatchById = async (batchId) => {
       .forUpdate()
       .insert([{ deleted_at: new Date().toLocaleString() }], ['batchId'])
       .into('batches');
-    return 'the batch is deleted';
+    return 'The batch is Deleted';
   } catch (error) {
     return error.message;
   }
