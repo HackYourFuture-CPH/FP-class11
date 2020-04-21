@@ -13,7 +13,7 @@ const batchesRouter = require('./batches.router');
 const createBatchRouter = require('./create-batch.router');
 const getBatchRouter = require('./batches.router');
 const batchDefaultValuesRouter = require('./batch-default-values.router');
-const deleteSpecificBatchDataRouter = require('./delete-specfic-batch.router');
+const deleteSpecificBatchDataRouter = require('./delete-specific-batch.router');
 
 // Application routes
 
