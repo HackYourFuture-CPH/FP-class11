@@ -92,6 +92,14 @@
         ],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "materialId",
             "in": "path",
             "type": "string",
@@ -213,6 +221,14 @@
         ],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "cropId",
             "in": "path",
             "type": "integer",
@@ -252,6 +268,14 @@
           "batch"
         ],
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
           {
             "name": "batchId",
             "in": "path",

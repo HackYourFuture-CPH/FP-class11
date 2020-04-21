@@ -3,6 +3,10 @@ const express = require('express');
 
 const router = express.Router({ mergeParams: true });
 
+const {
+  checkIfAuthenticated,
+} = require('../lib/middleware/authentication.middleware');
+
 // controllers
 const cropStageDefaultValuesController = require('../controllers/crop-stage-default-values.controller');
 
