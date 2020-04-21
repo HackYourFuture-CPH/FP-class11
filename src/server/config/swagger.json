@@ -322,6 +322,60 @@
         }
       }
     },
+    "/create-crop": {
+      "post": {
+        "tags": ["create-crop"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "plantVariety",
+            "in": "body",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "userId",
+            "in": "body",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Post values received from add crop form fields",
+        "description": "Post following values received from add crop form fields:name, plant variety with the userId received from header), ",
+        "operationId": "createCrop",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful POST request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "firebase_auth": ["write"]
+        }
+      }
+    },
     "/batches": {
       "get": {
         "description": "Get all batches.",
