@@ -6,14 +6,40 @@ import Button from '../button/button.component';
 
 import './form-field.css';
 
+const { getTokenWithHeaders } = require('../../firebase/getTokenWithHeaders');
+
 export default function FormField() {
   const [cropName, setCropName] = useState('');
-  const [setStartSeedDate] = useState('');
-  const [setSeedPot] = useState('');
-  const [setCustomerName] = useState('');
+  const [startSeedDate, setStartSeedDate] = useState('');
+  const [seedPot, setSeedPot] = useState('');
+  const [customerName, setCustomerName] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
+    const dateTime = new Date(startSeedDate)
+      .toISOString()
+      .slice(0, 19)
+      .replace('T', ' ');
+    setStartSeedDate(dateTime);
+    const headers = await getTokenWithHeaders();
+    let userId = await fetch('http://localhost:5000/api/users/id', {
+      method: 'GET',
+      headers,
+    }).then((id) => {
+      return id.json();
+    });
+    userId = userId[0].id;
+    await fetch('http://localhost:5000/api/create-batch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fk_crop_id: cropName,
+        fk_user_id: userId,
+        customer_name: customerName,
+        number_of_seeded_pots: seedPot,
+        seeding_date: startSeedDate,
+      }),
+    }).then((response) => response.json());
   };
 
   const handleDropdown = (e) => {
@@ -23,7 +49,7 @@ export default function FormField() {
   return (
     <div>
       <div className="form-container">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleOnSubmit}>
           <DropDown
             data={[
               { value: 1, label: 'Lettuce' },

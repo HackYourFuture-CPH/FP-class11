@@ -7,6 +7,7 @@ import ForgotPassword from './containers/forgot-password/forgot-password.compone
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
+import AddBatch from './containers/add-batch-page/add-batch-page.component';
 
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
@@ -39,6 +40,7 @@ function App() {
             component={ForgotPassword}
           />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/addbatch" component={AddBatch} />
           <PublicRoute component={Page404} />
         </Switch>
       </Router>

@@ -26,4 +26,12 @@ router.get('/name', checkIfAuthenticated, (req, res, next) => {
     .catch(next);
 });
 
+// ENDPOINT: /api/users/id/:uid :GET to get id of the user by UID
+router.get('/id', checkIfAuthenticated, (req, res, next) => {
+  usersController
+    .getUserId(req)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;
