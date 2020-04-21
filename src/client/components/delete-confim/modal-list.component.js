@@ -23,22 +23,23 @@ const ModalList = ({ setIsShowing, onDelete }) => {
         >
           &times;
         </span>
-
-        <h4 className="text-headline">DELETE BATCH</h4>
-        <p className="p1">Are you sure?</p>
-        <p className="p2">Do you really want to delete the batch?</p>
-        <div className="buttons-wrapper">
-          <Button type="danger" size="large" onClick={onDelete}>
-            Delete
-          </Button>
-          <br />
-          <Button
-            type="secondary"
-            size="large"
-            onClick={() => setIsShowing(false)}
-          >
-            Cancel
-          </Button>
+        <div className="items-wrapper">
+          <h4 className="text-headline">DELETE BATCH</h4>
+          <p>Are you sure?</p>
+          <p>Do you really want to delete the batch?</p>
+          <div className="buttons-wrapper">
+            <Button type="danger" size="large" onClick={onDelete}>
+              Delete
+            </Button>
+            <br />
+            <Button
+              type="secondary"
+              size="large"
+              onClick={() => setIsShowing(false)}
+            >
+              Cancel
+            </Button>
+          </div>
         </div>
       </div>
     </div>,
