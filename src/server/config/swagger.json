@@ -92,6 +92,14 @@
         ],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "materialId",
             "in": "path",
             "type": "string",
@@ -213,6 +221,14 @@
         ],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "cropId",
             "in": "path",
             "type": "integer",
@@ -252,6 +268,14 @@
           "batch"
         ],
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
           {
             "name": "batchId",
             "in": "path",
@@ -358,6 +382,48 @@
         }
       }
     },
+    "/delete-specific-data/{batchId}": {
+      "delete": {
+        "tags": ["specific-batch"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "delete a specific batch data",
+        "description": "delete a specific batch by batchId",
+        "operationId": "deleteSpecificBatchById",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful delete request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "firebase_auth": ["delete"]
+        }
+      }
+    },
     "/batches": {
       "get": {
         "description": "Get all batches.",
@@ -430,49 +496,6 @@
           }
         }
       },
-      "/delete-specific-data/{batchId}": {
-        "delete": {
-          "tags": ["batch-table"],
-          "parameters": [
-            {
-              "name": "authorization",
-              "in": "header",
-              "description": "Firebase token",
-              "required": true,
-              "type": "string",
-              "default": "Bearer ENTER_FIREBASE_TOKEN"
-            },
-            {
-              "name": "batchId",
-              "in": "path",
-              "type": "integer",
-              "required": true
-            }
-          ],
-          "summary": "delete a specific batch data",
-          "description": "delete a specific batch by batchId",
-          "operationId": "deleteSpecificBatchById",
-          "produces": ["application/json"],
-          "responses": {
-            "200": {
-              "description": "Successful delete request"
-            },
-            "401": {
-              "description": "Unauthorized request"
-            },
-            "404": {
-              "description": "Not found"
-            },
-            "500": {
-              "description": "Server error"
-            }
-          },
-          "security": {
-            "fireabse_auth": ["read"]
-          }
-        }
-      },
-
       "securityDefinitions": {
         "firebase_auth": {
           "type": "oauth2",
