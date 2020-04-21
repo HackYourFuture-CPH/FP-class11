@@ -16,7 +16,6 @@ const batchDefaultValuesRouter = require('./batch-default-values.router');
 const deleteSpecificBatchDataRouter = require('./delete-specific-batch.router');
 
 // Application routes
-
 router.use('/modules', modulesRouter);
 router.use('/batches', batchesRouter);
 router.use('/crop-stages', cropStagesEndpoint);
