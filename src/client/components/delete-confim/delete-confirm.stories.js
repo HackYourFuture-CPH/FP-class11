@@ -1,11 +1,11 @@
 import React from 'react';
-import DeleteBatchButton from './batch-delete-button.component';
+import BatchDeleteButton from './batch-delete-button.component';
 
 export default {
-  component: DeleteBatchButton,
+  component: BatchDeleteButton,
   title: 'Delete Batch',
 };
 
-export const DeleteBatchButtonComponent = () => {
-  return <DeleteBatchButton />;
+export const BatchDeleteButtonComponent = () => {
+  return <BatchDeleteButton />;
 };

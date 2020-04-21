@@ -20,8 +20,8 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  margin: 0.5em auto 0.8em;
-  padding:0.7em 0;
+  margin: 1em auto;
+  padding: 0.5em 0;
   transition: none;
   width: 65%;
   outline: none;
@@ -30,6 +30,9 @@
 .item:focus-visible {
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-medium);
+}
+.item:active {
+  background: var(--light-grey);
 }
 .item:active {
   background: var(--light-grey);

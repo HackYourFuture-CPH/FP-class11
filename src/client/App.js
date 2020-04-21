@@ -11,6 +11,7 @@ import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
 import UserRoleContext from './helpers/UserRoleContext';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
+import signInAsDefaultUser from './helpers/signInAsDefaultUser';
 
 function App() {
   const [userState, setUserState] = useState(null);
@@ -35,6 +36,10 @@ function App() {
   };
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      signInAsDefaultUser();
+    }
+
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
