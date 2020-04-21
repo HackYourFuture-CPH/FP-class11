@@ -11,12 +11,17 @@ import AddBatch from './containers/add-batch-page/add-batch-page.component';
 
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
+import signInAsDefaultUser from './helpers/signInAsDefaultUser';
 
 function App() {
   const [userState, setUserState] = useState(null);
   const [userFetched, setUserFetched] = useState(false);
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      signInAsDefaultUser();
+    }
+
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
