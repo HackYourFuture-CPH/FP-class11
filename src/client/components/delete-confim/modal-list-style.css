@@ -76,35 +76,7 @@ p {
 
   color: #666666;
 }
-.p1 {
-  width: 200px;
-  height: 36px;
-  left: 170px;
-  top: 180px;
 
-  font-family: 'Proxima Nova', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-
-  color: #666666;
-}
-.p2 {
-  width: 400px;
-  height: 27px;
-  left: 120px;
-  top: 190px;
-
-  font-family: 'Proxima Nova', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 27px;
-
-  color: #666666;
-}
 .buttons-wrapper {
   margin-top: 56px;
   width: 286.79px;
