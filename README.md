@@ -283,7 +283,7 @@ which is based on Swagger. Just go to
 read the specifications for the API.
 
 You can use your api token to authorize in Swagger and you will be able to
-perform test calls against the API directly from Swagger.
+perform test calls against the API directly from Swagger. ([Instructions for obtaining the token](https://github.com/HackYourFuture-CPH/FP-class11/blob/develop/firebase-token.md))
 
 If you need to make changes to the specification, this can be done via the
 [Swagger.json](/src/server/config/swagger.json) file.
