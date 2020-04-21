@@ -9,6 +9,42 @@
   "host": "",
   "basePath": "/api",
   "paths": {
+    "/crops": {
+      "get": {
+        "tags": ["crops"],
+        "summary": "Get all crops",
+        "description": "Get all crops",
+        "operationId": "getAllCrops",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "firebase_auth": ["read"]
+        }
+      }
+    },
     "/batch-default-values/{batchId}": {
       "get": {
         "tags": ["default values"],
@@ -148,7 +184,16 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful"
+            "description": "successful operation"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
           }
         }
       }
