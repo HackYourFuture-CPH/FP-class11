@@ -21,7 +21,7 @@ const {
  *
  *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
  *     tags:
- *       - CropStages
+ *       - Crops
  *     operationId: batchId
  *     produces: application/json
  *     parameters:
