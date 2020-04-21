@@ -324,7 +324,7 @@
     },
     "/delete-specific-data/{batchId}": {
       "delete": {
-        "tags": ["batch-table"],
+        "tags": ["specific-batch"],
         "parameters": [
           {
             "name": "authorization",
