@@ -19,7 +19,6 @@
   background: #ebecf0;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
-  /* container-shadow */
 
   box-shadow: -7px -7px 20px rgba(255, 255, 255, 0.8), 5px 5px 20px #c9cbd8;
   border-radius: 20px;
@@ -42,16 +41,15 @@
 
   color: #666666;
 }
-.modal {
-  position: absolute;
-  width: 500px;
-  height: 450px;
-  left: 10px;
-  top: 3px;
+.items-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15% auto auto auto;
 }
 
 .text-headline {
-  position: absolute;
+  margin-bottom: 40px;
   width: 400px;
   height: 44px;
   left: 80px;
@@ -63,47 +61,24 @@
   font-size: 36px;
   line-height: 44px;
 
-  /* identical to box height */
-
   text-align: center;
 
   color: #3b4349;
 }
 
-.p1 {
-  position: relative;
-  width: 200px;
-  height: 36px;
-  left: 170px;
-  top: 180px;
-
+p {
   font-family: 'Proxima Nova', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 35px;
   text-align: center;
 
   color: #666666;
 }
-.p2 {
-  position: relative;
-  width: 400px;
-  height: 27px;
-  left: 120px;
-  top: 190px;
 
-  font-family: 'Proxima Nova', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 27px;
-  /* identical to box height */
-
-  color: #666666;
-}
 .buttons-wrapper {
-  position: absolute;
+  margin-top: 56px;
   width: 286.79px;
   height: 200px;
   left: 150px;
