@@ -1,5 +1,6 @@
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
+// const moment = require('moment');
 
 const getBatches = async () => {
   try {
@@ -8,6 +9,7 @@ const getBatches = async () => {
     return error.message;
   }
 };
+
 const getBatchById = async (batchId) => {
   try {
     const batch = await knex('batches')
@@ -21,7 +23,71 @@ const getBatchById = async (batchId) => {
     return error.message;
   }
 };
+
+// const currentStage = async (batchId) => {
+//   const batchesStages = await knex('batches')
+//     .join('crop_stages', 'crop_stages.fk_crop_id', '=', 'batches.fk_crop_id')
+//     .join('crops', 'crops.id', '=', 'crop_stages.fk_crop_id')
+//     .select('crop_stages.name', 'crop_stages.duration', 'batches.seeding_date')
+//     .where('batches.id', batchId);
+//   if (batchesStages.length === 0) {
+//     throw new Error(`incorrect entry with the id of ${batchId}`, 404);
+//   }
+//   /* eslint-disable no-param-reassign */
+//   batchesStages.reduce((sum, batch) => {
+//     batch.duration += sum;
+//     return batch.duration;
+//   }, 0);
+//   /* eslint-enable no-param-reassign */
+//   const today = moment();
+//   const seedingDate = moment(batchesStages[0].seeding_date);
+//   const currentDay = today.diff(seedingDate, 'days') + 1;
+//   const filterDurationLessThanToday = batchesStages.filter(
+//     (batch) => batch.duration >= currentDay,
+//   );
+//   const currentStageName =
+//     filterDurationLessThanToday.length > 0
+//       ? filterDurationLessThanToday[0].name
+//       : 'delivered';
+//   if (currentStage.length === 0) {
+//     throw new Error(`incorrect entry with the id of ${batchId}`, 404);
+//   }
+//   return currentStageName;
+// };
+
+const getAllBatches = async () => {
+  try {
+    const batches = await knex('batches')
+      .join('crops', 'crops.id', '=', 'fk_crop_id')
+      .select(
+        'batches.id',
+        'crops.name',
+        'crops.plant_variety',
+        'batches.customer_name',
+        'batches.number_of_seeded_pots',
+        'batches.seeding_date',
+      );
+    /* eslint-disable no-param-reassign */
+    const addedCurrentStage = await Promise.all(
+      batches.map(async (batch) => {
+        // const currentStage = await currentStage(batch.id);
+        batch.current_stage = 'stage'; // currentStage;
+        batch.status = 'status';
+        return batch;
+      }),
+    );
+    /* eslint-enable no-param-reassign */
+    if (addedCurrentStage.length === 0) {
+      throw new Error(`incorrect entry`, 404);
+    }
+    return addedCurrentStage;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   getBatches,
   getBatchById,
+  getAllBatches,
 };
