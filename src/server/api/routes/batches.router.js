@@ -2,10 +2,6 @@ const express = require('express');
 
 const router = express.Router({ mergeParams: true });
 
-const {
-  checkIfAuthenticated,
-} = require('../lib/middleware/authentication.middleware');
-
 // controllers
 const batchesController = require('../controllers/batches.controller');
 const batchController = require('../controllers/batches.controller');

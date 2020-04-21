@@ -21,11 +21,11 @@ const createBatchController = require('../controllers/create-batch.controller');
  *       customer name, number of seeded pots, start seed date with the userId received from header.
  *
  *
- *        Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
+ *        Authentication&#58; <code>super_admin</code> <code>admin</code>
  *
  *     tags:
  *       - Batches
- *     operationId: createBatch
+ *     operationId: createBatchController
  *     produces: application/json
  *     parameters:
  *      - name: authorization
@@ -56,6 +56,7 @@ const createBatchController = require('../controllers/create-batch.controller');
  *        required: true
  *     security:
  *         firebase_auth:
+ *         - write
  *         - read
  *     responses:
  *       200:
