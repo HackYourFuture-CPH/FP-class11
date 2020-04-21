@@ -65,7 +65,7 @@ export default function DetailChart({ data, boundary, description, unit }) {
         <Line
           type="monotone"
           name={description}
-          unit={unit.temperature}
+          unit={unit}
           dataKey="reading_value"
           stroke="#000000"
           fill="#000000"

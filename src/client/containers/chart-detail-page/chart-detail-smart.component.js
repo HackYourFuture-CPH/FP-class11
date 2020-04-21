@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import ChartDetailSmartPageHumidity from './chart-detailsmartpage-humidity';
+import ChartDetailPage from './chart-detail-page.component';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
-import { ChartDataContext } from './chart-detail-context';
+import { ChartDataContext } from './chart-detail-page.context';
 
-const ChartDetailsWithCropData = () => {
-  const [boundary, setBoundary] = useState({});
-  const [materialName, setMaterialName] = useState('');
-  const [materialId, setMaterialId] = useState('');
+const ChartDetailsSmartData = () => {
+  const [boundaryData, setBoundaryData] = useState({});
+  const [materialName, setMaterialName] = useState('Temperature');
+  const [materialId, setMaterialId] = useState(1);
   const [sensorData, setSensorData] = useState([]);
-  const [active, setActive] = useState(false);
+  const [units, setUnits] = useState('');
   const [startDate, setStartDate] = useState('');
   const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
-  const [units, setUnits] = useState('');
+  const [buttonActive, setButtonActive] = useState(false);
 
-  const buttonClick = (e) => {
+  const buttonClick = async (e) => {
     e.preventDefault();
-    setActive(!active);
+    setButtonActive(!buttonActive);
   };
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
+    e.stopPropagation();
     setMaterialId(e.target.id);
     setMaterialName(e.target.innerText);
   };
@@ -53,7 +54,7 @@ const ChartDetailsWithCropData = () => {
           minimum: stageParameterValues[0].min_value,
           maximum: stageParameterValues[0].max_value,
         };
-        setBoundary(boundaryValues);
+        setBoundaryData(boundaryValues);
         if (materialName === 'Temperature') {
           setUnits('°C');
         } else if (materialName === 'Water') {
@@ -114,21 +115,21 @@ const ChartDetailsWithCropData = () => {
   return (
     <ChartDataContext.Provider
       value={{
-        boundary,
+        boundaryData,
         handleClick,
         materialName,
         sensorData,
         buttonClick,
-        active,
+        buttonActive,
         startDate,
         currentDate,
         stages,
         units,
       }}
     >
-      <ChartDetailSmartPageHumidity />
+      <ChartDetailPage />
     </ChartDataContext.Provider>
   );
 };
 
-export default ChartDetailsWithCropData;
+export default ChartDetailsSmartData;

@@ -7,12 +7,13 @@ import ForgotPassword from './containers/forgot-password/forgot-password.compone
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
-import ChartDetailsWithCropData from './containers/chart-detail-page/chart-detail-useeffect';
-
+import ChartDetailsSmartData from './containers/chart-detail-page/chart-detail-smart.component';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 
 function App() {
+  /* const { materialName } = useContext(ChartDataContext);
+  console.log(materialName) */
   const [userState, setUserState] = useState(null);
   const [userFetched, setUserFetched] = useState(false);
 
@@ -44,7 +45,7 @@ function App() {
           <PrivateRoute
             exact
             path="/chartDetail-smartpage"
-            component={ChartDetailsWithCropData}
+            component={ChartDetailsSmartData}
           />
           <PublicRoute component={Page404} />
         </Switch>

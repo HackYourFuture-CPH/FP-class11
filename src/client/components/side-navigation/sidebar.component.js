@@ -10,11 +10,10 @@ import {
   faPlusCircle,
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
-import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-context';
+import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
 
 const SidebarMenu = () => {
-  const dashboardButton = useContext(ChartDataContext);
-  const { buttonClick, active } = dashboardButton;
+  const { buttonClick, buttonActive } = useContext(ChartDataContext);
 
   return (
     <div className="sidebar-wrapper">
@@ -22,7 +21,7 @@ const SidebarMenu = () => {
       <NavigationButton
         icon={faThLarge}
         text="Dashboard"
-        isActive={active}
+        isActive={buttonActive}
         handleClick={buttonClick}
       />
       <NavigationButton
