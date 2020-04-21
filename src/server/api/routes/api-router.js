@@ -29,8 +29,6 @@ router.use('/batch-default-values', batchDefaultValuesRouter);
 router.use('/delete-specific-batch', deleteSpecificBatchDataRouter);
 
 // swagger-ui-express
-// const swaggerDocument = require('../../config/swagger.json');
-// const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 

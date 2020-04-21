@@ -34,7 +34,7 @@ const {
  *      - name: batchId
  *        in: path
  *        required: true
- *        type: string
+ *        type: integer
  *     responses:
  *       200:
  *         description: Successful request

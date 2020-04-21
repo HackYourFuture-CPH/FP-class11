@@ -33,7 +33,7 @@ const {
  *        type: string
  *      - name: materialId
  *        in: path
- *        type: string
+ *        type: integer
  *        required: true
  *     responses:
  *       200:

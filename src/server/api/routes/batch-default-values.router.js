@@ -37,7 +37,7 @@ const {
  *        required: true
  *      - name: stage
  *        in: query
- *        type: integer
+ *        type: string
  *        required: true
  *     security:
  *        fireabse_auth:
