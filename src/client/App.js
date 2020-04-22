@@ -7,7 +7,7 @@ import ForgotPassword from './containers/forgot-password/forgot-password.compone
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
-import ChartDetailsSmartData from './containers/chart-detail-page/chart-detail-smart.component';
+import ChartDetailsSmartData from './containers/chart-detail-page/chart-detail-page.container';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 

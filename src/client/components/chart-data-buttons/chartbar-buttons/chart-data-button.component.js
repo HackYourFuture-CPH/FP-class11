@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './chart-data-button.style.css';
 import PropTypes from 'prop-types';
 import Button from '../../button/button.component';
 
-const ChartbarMenu = ({ buttons, defaultSelection }) => {
-  const [selectedButtonId, setSelectedButtonId] = useState(defaultSelection.id);
+const ChartbarMenu = ({
+  buttons,
+  selectedChartButtonId,
+  setSelectedChartButtonId,
+}) => {
   return (
     <div className="chartbar-button-wrapper">
       {buttons.map((button) => {
@@ -14,9 +17,9 @@ const ChartbarMenu = ({ buttons, defaultSelection }) => {
             type="toggle"
             size="large"
             onClick={() => {
-              setSelectedButtonId(button.id);
+              setSelectedChartButtonId(button.id);
             }}
-            toggled={selectedButtonId === button.id}
+            toggled={selectedChartButtonId === button.id}
           >
             {button.label}
           </Button>
@@ -27,12 +30,12 @@ const ChartbarMenu = ({ buttons, defaultSelection }) => {
 };
 
 ChartbarMenu.defaultProps = {
-  defaultSelection: {},
   buttons: [],
 };
 
 ChartbarMenu.propTypes = {
-  defaultSelection: PropTypes.oneOfType([PropTypes.object]),
+  selectedChartButtonId: PropTypes.number.isRequired,
+  setSelectedChartButtonId: PropTypes.func.isRequired,
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
