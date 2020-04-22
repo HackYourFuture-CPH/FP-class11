@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ChartDetailPage from './chart-detail-page.component';
+import ChartDetailPage from '../../components/chart-detail-page-layout/chart-detail-page.component';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 import { ChartDataContext } from './chart-detail-page.context';
 
@@ -13,7 +13,7 @@ const ChartDetailsSmartData = () => {
   const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
   const [buttonActive, setButtonActive] = useState(false);
-
+  const [selectedChartButtonId, setSelectedChartButtonId] = useState(null);
   const buttonClick = async (e) => {
     e.preventDefault();
     setButtonActive(!buttonActive);
@@ -23,7 +23,6 @@ const ChartDetailsSmartData = () => {
     setMaterialId(e.target.id);
     setMaterialName(e.target.innerText);
   };
-
   // useEffect for optimalvalues
   useEffect(() => {
     async function fetchBatchStagesDefaultData() {
@@ -84,16 +83,39 @@ const ChartDetailsSmartData = () => {
           `api/sensor-reading/${materialId}`,
         );
         const sensorReadingsJson = await getSensorReadings.json();
-        setSensorData(sensorReadingsJson);
+        const sensorBatchIdData = await sensorReadingsJson.filter(
+          (sensorBatchId) => sensorBatchId.fk_batch_id === 1,
+        );
+        const getCurrentdateValue = currentDate.split(',');
+        const getStartdateValue = startDate.split(',');
+        const currentValue = getCurrentdateValue[0].split('/');
+        const startValue = getStartdateValue[0].split('/');
+        const getNumberOfdays = Number(currentValue[0]) - Number(startValue[0]);
+        const getTheDataforCurrentDay = getNumberOfdays * 4;
+        const getAllDataOfTheBatchTillDate = sensorBatchIdData.slice(
+          0,
+          getTheDataforCurrentDay,
+        );
+        if (selectedChartButtonId === 1) {
+          const lastFiveDaysSensorData = getAllDataOfTheBatchTillDate.slice(
+            getAllDataOfTheBatchTillDate.length - 15,
+            getAllDataOfTheBatchTillDate.length,
+          );
+          setSensorData(lastFiveDaysSensorData);
+        } else {
+          setSensorData(getAllDataOfTheBatchTillDate);
+        }
       } catch (error) {
         console.log(error);
       }
     }
-    if (materialId !== '') {
+    if (
+      (materialId !== '' && currentDate !== '' && startDate !== '') ||
+      selectedChartButtonId !== null
+    ) {
       fetchSensorReadingByMaterialId();
     }
-  }, [materialId]);
-
+  }, [materialId, currentDate, startDate, selectedChartButtonId]);
   // useeffect for progressbar
   useEffect(() => {
     async function fetchProgressBarData() {
@@ -111,7 +133,6 @@ const ChartDetailsSmartData = () => {
       fetchProgressBarData();
     }
   }, [materialId]);
-
   return (
     <ChartDataContext.Provider
       value={{
@@ -125,6 +146,8 @@ const ChartDetailsSmartData = () => {
         currentDate,
         stages,
         units,
+        selectedChartButtonId,
+        setSelectedChartButtonId,
       }}
     >
       <ChartDetailPage />

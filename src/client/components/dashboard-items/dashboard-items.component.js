@@ -9,12 +9,13 @@ const DashboardItems = ({ items }) => {
   return (
     <ul className="list">
       {items.map((item) => (
-        <li key={item.id}>
+        <li key={item.id} id={item.id}>
           <Link
             to="/chartDetail-smartpage"
+            className="pageLink"
             id={item.id}
-            className="a"
-            onClick={handleClick}
+            onClick={(e) => handleClick(e)}
+            onKeyDown={handleClick}
           >
             {item.value}
           </Link>

@@ -1,0 +1,12 @@
+.chart-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 85vh;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.btn .btn-primary {
+  text-align: right;
+}

@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
-import '../../components/detail-chart/detail-chart.style.css';
-import DetailChart from '../../components/detail-chart/detail-chart.component';
-import SidebarMenu from '../../components/side-navigation/sidebar.component';
-import ProgressBar from '../../components/progress-bar/progress-bar.component';
+import DetailChart from '../detail-chart/detail-chart.component';
+import SidebarMenu from '../side-navigation/sidebar.component';
+import ProgressBar from '../progress-bar/progress-bar.component';
 import './chart-detail-page.css';
-// import UpdateDateRange from '../../components/update-date-range/update-date-range.component';
-import ChartbarMenu from '../../components/chart-data-buttons/chartbar-buttons/chart-data-button.component';
-import { ChartDataContext } from './chart-detail-page.context';
+import ChartbarMenu from '../chart-data-buttons/chartbar-buttons/chart-data-button.component';
+import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
 
-const value = [
+const dateButtons = [
   { id: 1, label: 'Last 5 Days' },
   { id: 2, label: 'Last Week' },
   { id: 3, label: 'Last Two Weeks' },
@@ -26,6 +24,8 @@ const ChartDetailPage = () => {
     currentDate,
     stages,
     units,
+    selectedButtonId,
+    setSelectedButtonId,
   } = chartvalues;
 
   const headingText = materialName.toUpperCase();
@@ -40,7 +40,11 @@ const ChartDetailPage = () => {
           currentDate={currentDate}
           stages={stages}
         />
-        <ChartbarMenu buttons={value} />
+        <ChartbarMenu
+          buttons={dateButtons}
+          selectedButtonId={selectedButtonId}
+          setSelectedButtonId={setSelectedButtonId}
+        />
         <DetailChart
           data={sensorData}
           boundary={boundaryData}
