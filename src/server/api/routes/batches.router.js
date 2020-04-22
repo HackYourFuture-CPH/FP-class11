@@ -3,12 +3,12 @@ const express = require('express');
 
 const router = express.Router({ mergeParams: true });
 
-// controllers
-const batchesController = require('../controllers/batches.controller');
-
 const {
   checkIfAuthenticated,
 } = require('../lib/middleware/authentication.middleware');
+
+// controllers
+const batchesController = require('../controllers/batches.controller');
 
 // ENDPOINT: /api/batches/ :GET to get all batches - id, customer_name
 router.get('/', checkIfAuthenticated, (req, res, next) => {
