@@ -1,4 +1,5 @@
 .progress-bar-container {
+  padding: 0 1em;
   text-align: center;
   width: 100%;
 }
@@ -8,9 +9,9 @@
   border: var(--border-inputs);
   border-radius: var(--border-radius-low);
   box-shadow: var(--debossed-shadow-high);
-  height: 2.5em;
+  height: 2.3em;
   margin: 2em auto 0 auto;
-  width: 98%;
+  width: 100%;
 }
 
 .day-components {
@@ -22,7 +23,6 @@
 
 .passed-days {
   background-color: var(--interaction-color);
-  box-shadow: inset 0.2px -30px 10px -30px var(--light-grey);
 }
 
 .day-components:first-child {
@@ -31,6 +31,7 @@
 
 .day-components:last-child {
   border-radius: 0 var(--border-radius-low) var(--border-radius-low) 0;
+  border-width: 0 !important;
 }
 
 .tooltip {
@@ -45,8 +46,7 @@
   color: var(--white);
   font-weight: bold;
   font-size: 0.8em;
-  left: 60%;
-  margin-left: -1.8em;
+  left: -2em;
   padding: 0.3em 0.4em;
   position: absolute;
   visibility: hidden;
@@ -77,7 +77,7 @@
 
 .tooltip-stage .tooltip-text-stage {
   font-size: 0.7em;
-  left: 100%;
+  left: 0.5em;
   position: absolute;
   text-align: left;
   top: 110%;

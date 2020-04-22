@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './card.style.css';
 
 export const CardTitle = ({ title }) => {
-  return <h1 className="card-title">{title}</h1>;
+  return <h3>{title}</h3>;
 };
 
 CardTitle.propTypes = {
