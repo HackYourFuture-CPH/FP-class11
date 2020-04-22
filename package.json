@@ -73,6 +73,7 @@
     "recharts": "^1.8.5",
     "sass-loader": "^8.0.2",
     "serve-favicon": "^2.5.0",
+    "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.1.4",
     "webpack": "4.42.1",
     "webpack-cli": "3.3.11",
