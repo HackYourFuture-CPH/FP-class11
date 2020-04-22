@@ -81,7 +81,11 @@ const ChartDetailsSmartData = () => {
   useEffect(() => {
     async function fetchProgressBarData() {
       try {
-        const getBatchProgressBarValues = await fetch('api/crop-stages/1');
+        const progressBarHeader = await getTokenWithHeaders();
+        const getBatchProgressBarValues = await fetch('api/crop-stages/1', {
+          method: 'GET',
+          headers: progressBarHeader,
+        });
         const BatchProgressBarValuesJson = await getBatchProgressBarValues.json();
         setStartDate(BatchProgressBarValuesJson.startDate);
         setCurrentDate(BatchProgressBarValuesJson.currentDate);
@@ -99,8 +103,13 @@ const ChartDetailsSmartData = () => {
   useEffect(() => {
     async function fetchSensorReadingByMaterialId() {
       try {
+        const sensorHeader = await getTokenWithHeaders();
         const getSensorReadings = await fetch(
           `api/sensor-reading/${materialId}`,
+          {
+            method: 'GET',
+            headers: sensorHeader,
+          },
         );
         const sensorReadingsJson = await getSensorReadings.json();
 
@@ -109,21 +118,23 @@ const ChartDetailsSmartData = () => {
           (sensorBatchId) => sensorBatchId.fk_batch_id === 1,
         );
         const getCurrentdateValue = currentDate.split(',');
+        console.log(getCurrentdateValue)
         const getStartdateValue = startDate.split(',');
+        console.log(getStartdateValue)
         const currentValue = getCurrentdateValue[0].split('/');
         const startValue = getStartdateValue[0].split('/');
 
         const getNumberOfdays = Number(currentValue[1]) - Number(startValue[1]);
 
         const getTheDataforCurrentDay = getNumberOfdays * 4;
-        const getAllDataOfTheBatchTillDate = sensorReadingsJson.slice(
+        const getAllDataOfTheBatchTillDate = sensorBatchIdData.slice(
           0,
           getTheDataforCurrentDay,
         );
         if (selectedChartButtonId === 1) {
-          const lastFiveDaysSensorData = sensorBatchIdData.slice(
-            sensorBatchIdData.length - 5,
-            sensorBatchIdData.length,
+          const lastFiveDaysSensorData = getAllDataOfTheBatchTillDate.slice(
+            getAllDataOfTheBatchTillDate.length - 15,
+            getAllDataOfTheBatchTillDate.length,
           );
           setSensorData(lastFiveDaysSensorData);
         } else {
@@ -133,11 +144,11 @@ const ChartDetailsSmartData = () => {
         console.log(error);
       }
     }
-    if (materialId !== '') {
+    if (materialId !== ''&& currentDate!==''&& startDate!==''|| selectedChartButtonId!==null) {
       fetchSensorReadingByMaterialId();
     }
   }, [materialId, currentDate, startDate, selectedChartButtonId]);
-
+console.log(sensorData)
   return (
     <ChartDataContext.Provider
       value={{
