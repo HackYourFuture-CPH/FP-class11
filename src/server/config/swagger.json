@@ -45,6 +45,98 @@
         }
       }
     },
+    "/batch-default-values/{batchId}": {
+      "get": {
+        "tags": ["default values"],
+        "summary": "Get default values for specific batch by batchId",
+        "description": "",
+        "operationId": "getDefaultValues",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default values returned."
+          },
+          "401": {
+            "description": "You are not authorized to view this content."
+          },
+          "404": {
+            "description": "A batch with the specified id was not found."
+          },
+          "default": {
+            "description": "Unexpected error."
+          }
+        },
+        "security": [
+          {
+            "fireabse_auth": ["read"]
+          }
+        ]
+      }
+    },
+    "/batch-status/{batchId}": {
+      "get": {
+        "tags": ["batch status"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "Get status messages for the batch",
+        "description": "",
+        "operationId": "getBatchStatus",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful GET request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "fireabse_auth": ["read"]
+        }
+      }
+    },
     "/crop-stages/{batchId}": {
       "get": {
         "description": "Get crop stages.",
