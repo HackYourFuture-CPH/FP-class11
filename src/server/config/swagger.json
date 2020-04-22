@@ -227,6 +227,14 @@
         "tags": ["batch"],
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
             "name": "batchId",
             "in": "path",
             "type": "integer",
@@ -327,115 +335,169 @@
         "description": "Get all batches.",
         "summary": "/api/batches",
         "tags": ["batches"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          }
+        ],
         "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "Successfull"
+            "description": "Successful POST request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/batch-default-values/{batchId}": {
+      "get": {
+        "tags": ["default values"],
+        "summary": "Get default values for specific batch by batchId",
+        "description": "",
+        "operationId": "getDefaultValues",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default values returned."
+          },
+          "401": {
+            "description": "You are not authorized to view this content."
+          },
+          "404": {
+            "description": "A batch with the specified id was not found."
+          },
+          "default": {
+            "description": "Unexpected error."
           }
         },
-        "/batch-default-values/{batchId}": {
-          "get": {
-            "tags": ["default values"],
-            "summary": "Get default values for specific batch by batchId",
-            "description": "",
-            "operationId": "getDefaultValues",
-            "produces": ["application/json"],
-            "parameters": [
-              {
-                "name": "authorization",
-                "in": "header",
-                "description": "Firebase token",
-                "required": true,
-                "type": "string",
-                "default": "Bearer ENTER_FIREBASE_TOKEN"
-              },
-              {
-                "name": "batchId",
-                "in": "path",
-                "type": "integer",
-                "required": true
-              },
-              {
-                "name": "stage",
-                "in": "query",
-                "type": "string",
-                "required": false
-              }
-            ],
-            "responses": {
-              "200": {
-                "description": "Default values returned."
-              },
-              "401": {
-                "description": "You are not authorized to view this content."
-              },
-              "404": {
-                "description": "A batch with the specified id was not found."
-              },
-              "default": {
-                "description": "Unexpected error."
-              }
-            },
-            "security": [
-              {
-                "fireabse_auth": ["read"]
-              }
-            ]
-          }
-        }
-      },
-      "/delete-specific-data/{batchId}": {
-        "delete": {
-          "tags": ["batch-table"],
-          "parameters": [
-            {
-              "name": "authorization",
-              "in": "header",
-              "description": "Firebase token",
-              "required": true,
-              "type": "string",
-              "default": "Bearer ENTER_FIREBASE_TOKEN"
-            },
-            {
-              "name": "batchId",
-              "in": "path",
-              "type": "integer",
-              "required": true
-            }
-          ],
-          "summary": "delete a specific batch data",
-          "description": "delete a specific batch by batchId",
-          "operationId": "deleteSpecificBatchById",
-          "produces": ["application/json"],
-          "responses": {
-            "200": {
-              "description": "Successful delete request"
-            },
-            "401": {
-              "description": "Unauthorized request"
-            },
-            "404": {
-              "description": "Not found"
-            },
-            "500": {
-              "description": "Server error"
-            }
-          },
-          "security": {
+        "security": [
+          {
             "fireabse_auth": ["read"]
           }
-        }
-      },
-
-      "securityDefinitions": {
-        "firebase_auth": {
-          "type": "oauth2",
-          "authorizationUrl": "seasony-login.firebaseapp.com",
-          "flow": "accessCode",
-          "scopes": {
-            "read": "read data based on user uid",
-            "write": "write data based on user uid"
+        ]
+      }
+    },
+    "/delete-specific-data/{batchId}": {
+      "delete": {
+        "tags": ["batch-table"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "type": "integer",
+            "required": true
           }
+        ],
+        "summary": "delete a specific batch data",
+        "description": "delete a specific batch by batchId",
+        "operationId": "deleteSpecificBatchById",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful delete request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "fireabse_auth": ["read"]
+        }
+      }
+    },
+    "/batches/all": {
+      "get": {
+        "tags": ["all batches"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "Firebase token",
+            "required": true,
+            "type": "string",
+            "default": "Bearer ENTER_FIREBASE_TOKEN"
+          }
+        ],
+        "summary": "get list of all batches together with current stage and status",
+        "description": "get list of all batches together with current stage and status",
+        "operationId": "getAllBatches",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        },
+        "security": {
+          "fireabse_auth": ["read"]
+        }
+      }
+    },
+    "securityDefinitions": {
+      "firebase_auth": {
+        "type": "oauth2",
+        "authorizationUrl": "seasony-login.firebaseapp.com",
+        "flow": "accessCode",
+        "scopes": {
+          "read": "read data based on user uid",
+          "write": "write data based on user uid"
         }
       }
     }
