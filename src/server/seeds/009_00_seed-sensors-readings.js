@@ -1161,7 +1161,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '128',
+          id: '129',
           fk_batch_id: '1',
           fk_material_id: '4',
           reading_value: '700',
@@ -1170,7 +1170,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '128',
+          id: '130',
           fk_batch_id: '1',
           fk_material_id: '5',
           reading_value: '500',
@@ -1179,16 +1179,16 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '129',
+          id: '131',
           fk_batch_id: '1',
           fk_material_id: '1',
-          reading_value: '20,1',
+          reading_value: '20.1',
           created_at: '2020-04-26 12:00:00',
           updated_at: '2020-04-26 12:00:00',
           deleted_at: null,
         },
         {
-          id: '130',
+          id: '132',
           fk_batch_id: '1',
           fk_material_id: '2',
           reading_value: '70',
@@ -1197,7 +1197,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '131',
+          id: '133',
           fk_batch_id: '1',
           fk_material_id: '3',
           reading_value: '7.3',
@@ -1206,7 +1206,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '132',
+          id: '134',
           fk_batch_id: '1',
           fk_material_id: '4',
           reading_value: '710',
@@ -1215,7 +1215,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '133',
+          id: '135',
           fk_batch_id: '1',
           fk_material_id: '5',
           reading_value: '500',
@@ -1224,7 +1224,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '134',
+          id: '136',
           fk_batch_id: '1',
           fk_material_id: '1',
           reading_value: '22.3',
@@ -1233,7 +1233,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '135',
+          id: '137',
           fk_batch_id: '1',
           fk_material_id: '2',
           reading_value: '71',
@@ -1242,7 +1242,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '136',
+          id: '138',
           fk_batch_id: '1',
           fk_material_id: '3',
           reading_value: '7.3',
@@ -1251,7 +1251,7 @@ exports.seed = function(knex) {
           deleted_at: null,
         },
         {
-          id: '138',
+          id: '139',
           fk_batch_id: '1',
           fk_material_id: '4',
           reading_value: '702',
