@@ -12,7 +12,14 @@ import {
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SidebarMenu = ({ isActive, handleClick }) => {
+const SidebarMenu = ({
+  isActive,
+  isVisible,
+  showDashboard,
+  showBatchDetails,
+  showAddBatch,
+  logout,
+}) => {
   return (
     <div className="sidebar-wrapper">
       <Logo srcPath={imageFile} altText="Seasony" />
@@ -20,22 +27,24 @@ const SidebarMenu = ({ isActive, handleClick }) => {
         icon={faThLarge}
         text="Dashboard"
         isActive={isActive}
-        handleClick={handleClick}
+        handleClick={showDashboard}
       />
       <NavigationButton
         icon={faSeedling}
         text="Batch Details"
-        handleClick={handleClick}
+        handleClick={showBatchDetails}
       />
       <NavigationButton
         icon={faPlusCircle}
         text="Add Batch"
-        handleClick={handleClick}
+        handleClick={showAddBatch}
+        isVisible={isVisible}
       />
       <NavigationButton
         icon={faUserCircle}
         text="LogOut"
-        handleClick={handleClick}
+        isUser={true}
+        handleClick={logout}
       />
     </div>
   );
@@ -43,7 +52,11 @@ const SidebarMenu = ({ isActive, handleClick }) => {
 
 SidebarMenu.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  isVisible: PropTypes.bool.isRequired,
+  showDashboard: PropTypes.func.isRequired,
+  showBatchDetails: PropTypes.func.isRequired,
+  showAddBatch: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 export default SidebarMenu;

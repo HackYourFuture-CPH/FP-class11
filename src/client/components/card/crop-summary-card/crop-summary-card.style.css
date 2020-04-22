@@ -1,27 +1,28 @@
 .card-header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
 .card-contents {
-  margin-top: 2.2rem;
+  margin-top: 2.2em;
   padding: 0;
-  background-color: var(--light-grey);
 }
 
 .card-contents > li {
   display: flex;
   justify-content: space-between;
-  line-height: 2.5rem;
+  line-height: 1.8em;
 }
 
 .harvest-days {
-  font-weight: 800;
-  font-size: 2rem;
-  margin-top: -30px;
   display: inline-block;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-top: -2em;
 }
 
 .card-contents > li > p {
+  font-size: 0.9em;
   margin: 0;
 }
