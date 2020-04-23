@@ -67,6 +67,7 @@ const ChartDetailsSmartData = () => {
           setUnit('ppm');
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -88,6 +89,7 @@ const ChartDetailsSmartData = () => {
         const sensorReadingsJson = await getSensorReadings.json();
         setSensorData(sensorReadingsJson);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -110,6 +112,7 @@ const ChartDetailsSmartData = () => {
         setCurrentDate(BatchProgressBarValuesJson.currentDate);
         setStages(BatchProgressBarValuesJson.stages);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }

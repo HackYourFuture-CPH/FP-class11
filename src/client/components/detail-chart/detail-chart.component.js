@@ -17,8 +17,6 @@ import {
 } from 'recharts';
 
 export default function DetailChart({ data, boundary, description, unit }) {
-  console.log(data);
-
   const formatXAxis = () =>
     data.map((sensor) => sensor.created_at.slice(0, 13));
 
