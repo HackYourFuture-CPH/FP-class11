@@ -1,0 +1,23 @@
+.batch-list {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.batch-list .content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  margin-left: 130px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+}

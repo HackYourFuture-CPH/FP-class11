@@ -12,6 +12,7 @@ import UserRoleContext from './helpers/UserRoleContext';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import signInAsDefaultUser from './helpers/signInAsDefaultUser';
+import ListBatches from './containers/list-batches-page/list-batches-page.component';
 
 function App() {
   const [userState, setUserState] = useState(null);
@@ -65,7 +66,7 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-
+            <PublicRoute exact path="/list-batches" component={ListBatches} />
             <PublicRoute component={Page404} />
           </Switch>
         </Router>
