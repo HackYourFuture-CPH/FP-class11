@@ -21,7 +21,7 @@ const {
  *
  *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
  *     tags:
- *       - SensorReading
+ *       - Sensor Reading
  *     operationId: materialId
  *     produces: application/json
  *     parameters:
