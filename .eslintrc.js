@@ -26,5 +26,6 @@ module.exports = {
     'react/prefer-stateless-function': 'warn',
     'react/prop-types': 'warn',
     'react/state-in-constructor': 'off',
+    'no-console': ['error', { allow: ['error'] }],
   },
 };

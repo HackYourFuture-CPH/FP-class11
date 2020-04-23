@@ -38,10 +38,10 @@ const unit = {
 
 export const withRangeBar = () => (
   <DetailChart
-    data={data}
-    materialId={materialId}
+    data={data.sensors_readings}
+    materialId={materialId.temperature}
     boundary={boundary}
-    description={description}
-    unit={unit}
+    description={description.temperature}
+    unit={unit.temperature}
   />
 );

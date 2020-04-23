@@ -8,8 +8,8 @@ export default function StatusCard({
   daysToHarvest,
   daysToProjectEnd,
 }) {
-  const onTime = <Label title="On time" className="label-primary" />;
-  const delayed = <Label title="Check PH" className="label-danger" />;
+  const onTime = <Label title="on time" className="label-primary" />;
+  const delayed = <Label title="check PH" className="label-danger" />;
 
   return (
     <Card>

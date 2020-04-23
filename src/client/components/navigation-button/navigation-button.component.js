@@ -4,10 +4,17 @@ import PropTypes from 'prop-types';
 import DashboardItems from '../dashboard-items/dashboard-items.component';
 import '../dashboard-items/dashboard-items.style.css';
 
-const NavigationButton = ({ icon, text, isActive, isUser, handleClick }) => {
-  const className = `${isActive ? 'itemActive' : 'item'} ${
+const NavigationButton = ({
+  icon,
+  text,
+  isActive,
+  isUser,
+  isVisible,
+  handleClick,
+}) => {
+  const className = `${isActive ? 'item-active' : 'item'} ${
     isUser ? 'user' : ''
-  }`;
+  } ${isVisible ? 'visible' : 'hidden'}`;
   const items = [
     { id: 1, value: 'Temperature' },
     { id: 2, value: 'Humidity' },
@@ -19,13 +26,18 @@ const NavigationButton = ({ icon, text, isActive, isUser, handleClick }) => {
     <button type="button" className={className} onClick={handleClick}>
       <FontAwesomeIcon icon={icon} className="icon" />
       <p className="navtext">{text}</p>
-      {isActive ? <DashboardItems items={items} /> : ''}
+      {isActive ? (
+        <DashboardItems items={items} handleClick={handleClick} />
+      ) : (
+        ''
+      )}
     </button>
   );
 };
 NavigationButton.defaultProps = {
   isActive: false,
   isUser: false,
+  isVisible: true,
   handleClick: null,
 };
 NavigationButton.propTypes = {
@@ -33,6 +45,7 @@ NavigationButton.propTypes = {
   text: PropTypes.string.isRequired,
   isActive: PropTypes.bool,
   isUser: PropTypes.bool,
+  isVisible: PropTypes.bool,
   handleClick: PropTypes.func,
 };
 export default NavigationButton;
