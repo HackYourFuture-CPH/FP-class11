@@ -64,5 +64,4 @@ const swaggerOptions = {
 const swaggerDocument = swaggerJsDoc(swaggerOptions);
 router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-
 module.exports = router;
