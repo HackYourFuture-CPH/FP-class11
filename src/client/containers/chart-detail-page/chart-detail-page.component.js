@@ -17,7 +17,6 @@ const value = [
 ];
 
 const ChartDetailPage = () => {
-  const chartvalues = useContext(ChartDataContext);
   const {
     boundaryData,
     materialName,
@@ -25,8 +24,8 @@ const ChartDetailPage = () => {
     startDate,
     currentDate,
     stages,
-    units,
-  } = chartvalues;
+    unit,
+  } = useContext(ChartDataContext);
 
   const headingText = materialName.toUpperCase();
 
@@ -45,7 +44,7 @@ const ChartDetailPage = () => {
           data={sensorData}
           boundary={boundaryData}
           description={materialName}
-          unit={units}
+          unit={unit}
         />
       </div>
     </>
