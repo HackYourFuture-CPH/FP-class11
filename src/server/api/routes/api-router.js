@@ -27,6 +27,7 @@ router.use('/users', usersRouter);
 router.use('/create-batch', createBatchRouter);
 router.use('/batch', getBatchRouter);
 router.use('/batch-default-values', batchDefaultValuesRouter);
+router.use('/batch-status/', batchStatusRouter);
 router.use('/delete-specific-batch', deleteSpecificBatchDataRouter);
 
 // swagger-ui-express
