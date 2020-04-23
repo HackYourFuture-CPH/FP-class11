@@ -5,6 +5,7 @@ import LoaderAnimation from './components/loader-animation/loader-animation.comp
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
+import AddBatchPage from './containers/add-batch-page/add-batch-page.component';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
@@ -65,6 +66,7 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/add-batch" component={AddBatchPage} />
 
             <PublicRoute component={Page404} />
           </Switch>
