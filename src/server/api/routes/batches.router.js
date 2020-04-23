@@ -11,17 +11,10 @@ const {
 const batchesController = require('../controllers/batches.controller');
 
 // ENDPOINT: /api/batches/ :GET to get all batches - id, customer_name
+// if /api/batches?detailed=true :GET to get all batches - id, name, plant_variety, customer_name, number_of_seeded_pots, seeding_date, current_stage, status
 router.get('/', checkIfAuthenticated, (req, res, next) => {
   batchesController
-    .getBatches()
-    .then((result) => res.json(result))
-    .catch(next);
-});
-
-// ENDPOINT: /api/batches/all :GET to get all batches
-router.get('/all', checkIfAuthenticated, (req, res, next) => {
-  batchesController
-    .getAllBatches()
+    .getBatches(req.query.detailed)
     .then((result) => res.json(result))
     .catch(next);
 });

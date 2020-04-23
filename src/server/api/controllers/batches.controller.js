@@ -2,8 +2,9 @@ const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 const moment = require('moment');
 
-const getBatches = async () => {
+const getBatches = async (detailed) => {
   try {
+    if (detailed === 'true') return await getAllBatches();
     return await knex('batches').select('id', 'customer_name');
   } catch (error) {
     return error.message;
