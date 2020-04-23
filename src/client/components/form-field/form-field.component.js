@@ -25,13 +25,18 @@ export default function FormField() {
     let userId = await fetch('http://localhost:5000/api/users/id', {
       method: 'GET',
       headers,
-    }).then((id) => {
-      return id.json();
-    });
+    })
+      .then((id) => {
+        return id.json();
+      })
+      .catch((error) => {
+        return error;
+      });
     userId = userId[0].id;
+
     await fetch('http://localhost:5000/api/create-batch', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify({
         fk_crop_id: cropName,
         fk_user_id: userId,
@@ -39,7 +44,13 @@ export default function FormField() {
         number_of_seeded_pots: seedPot,
         seeding_date: startSeedDate,
       }),
-    }).then((response) => response.json());
+    })
+      .then((response) => {
+        response.json();
+      })
+      .catch((error) => {
+        return error;
+      });
   };
 
   const handleDropdown = (e) => {

@@ -45,7 +45,7 @@ function App() {
             component={ForgotPassword}
           />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/addbatch" component={AddBatch} />
+          <PrivateRoute exact path="/add-batch" component={AddBatch} />
           <PublicRoute component={Page404} />
         </Switch>
       </Router>

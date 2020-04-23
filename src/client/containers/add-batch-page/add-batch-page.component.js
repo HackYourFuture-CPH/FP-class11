@@ -8,7 +8,7 @@ const AddBatchPage = () => {
   return (
     <>
       <div className="batch-page-nav">
-        <SidebarMenu isActive={true} isUser={true} />
+        <SidebarMenu isActive={false} isUser={true} />
       </div>
       <div>
         <div className="add-batch">

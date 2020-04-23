@@ -35,7 +35,7 @@ const getName = async (req) => {
   }
 };
 
-// get user's name for a specific uid
+// get user's id for a specific uid
 const getUserId = async (req) => {
   const uid = req.authId;
   try {
