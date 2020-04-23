@@ -85,9 +85,9 @@ const getDaysTilHarvest = async (batchesStages, seedingDate) => {
     durationDaysBeforeHarvest,
     'days',
   );
+
   if (
-    moment(todayDate).format('DD-MM-YYYY') >=
-    moment(harvestStartDate).format('DD-MM-YYYY')
+    moment(todayDate).startOf('day') >= moment(harvestStartDate).startOf('day')
   )
     return null;
   const daysTilHarvestFromToday =

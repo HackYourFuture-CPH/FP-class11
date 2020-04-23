@@ -12,18 +12,20 @@ export const Summary = ({
 }) => {
   return (
     <ul className="card-contents">
-      <li className="">
-        <p> Days left to harvest:</p>
-        <p>
-          in <span className="harvest-days">{harvestDayLeft}</span> days
-        </p>
-      </li>
+      {harvestDayLeft !== null && (
+        <li className="">
+          <p> Days left to harvest:</p>
+          <p>
+            in <span className="harvest-days">{harvestDayLeft}</span> days
+          </p>
+        </li>
+      )}
       <li>
         <p>Days left to end the batch:</p>
         <p>{projDayLeft} days </p>
       </li>
       <li>
-        <p>Current stage:</p>
+        <p className="current-stage">Current stage:</p>
         <Stage stageName={stageName} dayCount={dayCount} />
       </li>
       <li>
@@ -46,8 +48,12 @@ export const Stage = ({ stageName, dayCount }) => {
   );
 };
 
+Summary.defaultProps = {
+  harvestDayLeft: 0,
+};
+
 Summary.propTypes = {
-  harvestDayLeft: PropTypes.number.isRequired,
+  harvestDayLeft: PropTypes.number,
   projDayLeft: PropTypes.number.isRequired,
   prodStartDate: PropTypes.string.isRequired,
   prodEndDate: PropTypes.string.isRequired,

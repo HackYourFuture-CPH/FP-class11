@@ -5,12 +5,17 @@
 }
 
 .dashboard .content {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
-  justify-content: flex-start;
   margin-left: 130px;
   width: 100%;
+}
+
+.dashboard .content .wrapper {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1100px;
 }
 
 .dashboard header {
@@ -62,4 +67,14 @@
 
 .dashboard .recharts-text tspan {
   font-size: 0.7rem !important;
+}
+
+.dashboard .sidebar-wrapper button:first-of-type {
+  background: var(--light-grey);
+  box-shadow: var(--debossed-shadow-medium);
+}
+
+.dashboard .sidebar-wrapper button:first-of-type path,
+.dashboard .sidebar-wrapper button:first-of-type .navtext {
+  color: var(--light-blue);
 }
