@@ -30,6 +30,7 @@ export const AddBatch = () => (
     icon={faPlusCircle}
     text="Add Batch"
     handleClick={handleClick}
+    isVisible={true}
   />
 );
 export const LogOut = () => (

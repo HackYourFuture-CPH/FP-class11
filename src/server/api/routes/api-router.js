@@ -13,6 +13,7 @@ const batchesRouter = require('./batches.router');
 const createBatchRouter = require('./create-batch.router');
 const getBatchRouter = require('./batches.router');
 const batchDefaultValuesRouter = require('./batch-default-values.router');
+const batchStatusRouter = require('./batch-status.router');
 const deleteSpecificBatchDataRouter = require('./delete-specific-batch.router');
 
 // Application routes
@@ -61,5 +62,6 @@ const swaggerOptions = {
 // Route for Swagger API Documentation
 const swaggerDocument = swaggerJsDoc(swaggerOptions);
 router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 module.exports = router;

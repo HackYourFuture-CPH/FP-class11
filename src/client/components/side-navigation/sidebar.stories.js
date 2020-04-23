@@ -10,16 +10,24 @@ export default {
   decorators: [withKnobs],
 };
 
-const options = {
-  active: true,
-  inactive: false,
-};
-
 export const SidebarActive = () => {
   const text = ('value', 'dashboard');
-  const isActive = boolean('active', false, options);
-  const handleClick = action('clicked');
+  const isActive = boolean('isActive', true);
+  const isVisible = boolean('isVisible', true);
+  const showDashboard = action('show dashboard');
+  const showBatchDetails = action('show batch details');
+  const showAddBatch = action('show add batch');
+  const logout = action('logout');
+
   return (
-    <SidebarMenu text={text} isActive={isActive} handleClick={handleClick} />
+    <SidebarMenu
+      text={text}
+      isActive={isActive}
+      isVisible={isVisible}
+      showDashboard={showDashboard}
+      showBatchDetails={showBatchDetails}
+      showAddBatch={showAddBatch}
+      logout={logout}
+    />
   );
 };
