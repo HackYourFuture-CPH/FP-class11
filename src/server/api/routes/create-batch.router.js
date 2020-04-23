@@ -42,12 +42,15 @@ const createBatchController = require('../controllers/create-batch.controller');
  *          properties:
  *            fk_crop_id:
  *              type: integer
+ *              example: 1
  *            fk_user_id:
  *              type: integer
+ *              example: 1
  *            customer_name:
  *              type: string
  *            number_of_seeded_pots:
  *              type: integer
+ *              example: 10
  *            seeding_date:
  *              type: string
  *              format: date-time
