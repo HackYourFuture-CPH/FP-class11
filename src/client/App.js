@@ -9,6 +9,8 @@ import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 import AddBatch from './containers/add-batch-page/add-batch-page.component';
 
+import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
+import UserRoleContext from './helpers/UserRoleContext';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import signInAsDefaultUser from './helpers/signInAsDefaultUser';
@@ -16,6 +18,24 @@ import signInAsDefaultUser from './helpers/signInAsDefaultUser';
 function App() {
   const [userState, setUserState] = useState(null);
   const [userFetched, setUserFetched] = useState(false);
+  const [userRole, setUserRole] = useState('');
+  const [userName, setUserName] = useState('');
+
+  const fetchNameRole = async () => {
+    const headers = await getTokenWithHeaders();
+
+    const role = await fetch('/api/users/role', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setUserRole(role[0].name);
+
+    const name = await fetch('/api/users/name', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setUserName(name[0].name);
+  };
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
@@ -25,6 +45,7 @@ function App() {
     Firebase.getAuth().onAuthStateChanged((user) => {
       if (user) {
         setUserState(user);
+        fetchNameRole();
       } else {
         setUserState(null);
       }
@@ -36,19 +57,21 @@ function App() {
 
   return (
     <FirebaseContext.Provider value={userState}>
-      <Router>
-        <Switch>
-          <PublicRoute exact path="/" component={LoginPage} />
-          <PublicRoute
-            exact
-            path="/forgot-password"
-            component={ForgotPassword}
-          />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/add-batch" component={AddBatch} />
-          <PublicRoute component={Page404} />
-        </Switch>
-      </Router>
+      <UserRoleContext.Provider value={{ userRole, userName }}>
+        <Router>
+          <Switch>
+            <PublicRoute
+              exact
+              path="/forgot-password"
+              component={ForgotPassword}
+            />
+            <PublicRoute exact path="/" component={LoginPage} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/add-batch" component={AddBatch} />
+            <PublicRoute component={Page404} />
+          </Switch>
+        </Router>
+      </UserRoleContext.Provider>
     </FirebaseContext.Provider>
   );
 }
