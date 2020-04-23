@@ -83,7 +83,6 @@ router.post(
   '/',
   checkIfAuthorized(ROLES.SUPER_ADMIN, ROLES.ADMIN),
   (req, res, next) => {
-    console.log(req.body);
     createCropController
       .createCrop(req.body)
       .then((result) => res.json(result))
