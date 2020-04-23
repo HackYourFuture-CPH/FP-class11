@@ -6,8 +6,10 @@ footer {
 }
 
 .footer-hr {
-  border: 0;
-  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: var(--border-inputs);
 }
