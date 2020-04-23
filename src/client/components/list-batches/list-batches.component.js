@@ -16,19 +16,33 @@ export default function ListBatches({ batchData }) {
   const columns = headings.map((column) => {
     return <th>{column}</th>;
   });
-
-  const rows = batchData.map((row) => {
-    return <td>{row}</td>;
-  });
   return (
-    <table>
-      <thead>
-        <tr>{columns}</tr>
-      </thead>
-      <tbody>
-        <tr>{rows.id}</tr>
-      </tbody>
-    </table>
+    <>
+      <table>
+        <thead>
+          <tr>{columns}</tr>
+        </thead>
+        <tbody>
+          {batchData.length > 0 ? (
+            batchData.map((data) => (
+              <tr key={data.id}>
+                <td>Batch #{data.id}</td>
+                <td>{data.name}</td>
+                <td>{data.customer_name}</td>
+                <td>{data.status}</td>
+                <td>{data.current_stage.stage}</td>
+                <td>{data.number_of_seeded_pots}</td>
+                <td>{data.seeding_date.slice(0, 10)}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={7}>No data available</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </>
   );
 }
 

@@ -28,11 +28,9 @@ main {
   flex-direction: column;
 }
 
-.buttons {
+.filter-buttons {
   display: flex;
   flex-direction: row;
   margin: 1em 0 0;
   padding: 1em 1em 0;
 }
-
-

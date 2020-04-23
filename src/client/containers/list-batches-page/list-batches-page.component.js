@@ -25,15 +25,11 @@ export default function ListBatchesPage() {
   const fetchData = async () => {
     const headers = await getTokenWithHeaders();
 
-    const fetchBatchesData = async (endpoint, setBatchesData) => {
-      const batchesData = await fetch(endpoint, {
-        method: 'GET',
-        headers,
-      }).then((data) => data.json());
-      setBatchesData(batchesData);
-    };
-
-    fetchBatchesData('/api/batches?detailed=true', setListBatchData);
+    const batchesData = await fetch('/api/batches?detailed=true', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setListBatchData(batchesData);
   };
 
   useEffect(() => {
@@ -70,13 +66,15 @@ export default function ListBatchesPage() {
         <header>
           <h1>BATCH LIST</h1>
         </header>
-        <div className="buttons">
+        <div className="filter-buttons">
           <ShowButtons />
           <SortButtons />
         </div>
         <main>
           <ListBatches batchData={ListBatchData} />
-          <Button type="primary">Export data ▾</Button>
+          <div className="export-button">
+            <Button type="primary">Export data ▾</Button>
+          </div>
         </main>
         <Footer />
       </div>
