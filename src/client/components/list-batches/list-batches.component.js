@@ -1,5 +1,6 @@
 import React from 'react';
 import './list-batches.style.css';
+import PropTypes from 'prop-types';
 
 const headings = [
   'BATCH#',
@@ -11,12 +12,12 @@ const headings = [
   'SEEDING DATE',
 ];
 
-export default function ListBatches() {
+export default function ListBatches({ batchData }) {
   const columns = headings.map((column) => {
     return <th>{column}</th>;
   });
 
-  const rows = headings.map((row) => {
+  const rows = batchData.map((row) => {
     return <td>{row}</td>;
   });
   return (
@@ -25,8 +26,12 @@ export default function ListBatches() {
         <tr>{columns}</tr>
       </thead>
       <tbody>
-        <tr>{rows}</tr>
+        <tr>{rows.id}</tr>
       </tbody>
     </table>
   );
 }
+
+ListBatches.propTypes = {
+  batchData: PropTypes.oneOfType([PropTypes.array]).isRequired,
+};
