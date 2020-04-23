@@ -26,7 +26,6 @@
   width: 65%;
   outline: none;
   position: relative;
-  
 }
 .item:focus-visible {
   background: var(--light-grey);
@@ -67,4 +66,9 @@
 
 .visible {
   visibility: visible;
+}
+
+.navigation-btn {
+  background-color: none;
+  border: none;
 }

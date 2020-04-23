@@ -1,19 +1,20 @@
 import React from 'react';
 import './dashboard-items.style.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const DashboardItems = ({ items, handleClick }) => {
+const DashboardItems = ({ items }) => {
   return (
     <ul className="list">
       {items.map((item) => (
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-        <li
-          key={item.id}
-          id={item.id}
-          onClick={(e) => handleClick(e)}
-          onKeyDown={handleClick}
-        >
-          {item.value}
+        <li key={item.id} id={item.id}>
+          {item.to ? (
+            <Link to={item.to} onClick={(e) => e.stopPropagation()}>
+              {item.value}
+            </Link>
+          ) : (
+            <>{item.value}</>
+          )}
         </li>
       ))}
     </ul>
@@ -22,7 +23,6 @@ const DashboardItems = ({ items, handleClick }) => {
 
 DashboardItems.propTypes = {
   items: PropTypes.oneOfType([PropTypes.array]).isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
 
 export default DashboardItems;

@@ -2,11 +2,20 @@ import React, { useState, useEffect } from 'react';
 import ChartDetailPage from './chart-detail-page.component';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 import { ChartDataContext } from './chart-detail-page.context';
+import { useParams } from 'react-router-dom';
+import { dashboardItems } from '../../components/side-navigation/sidebar.component';
+
+function getMaterialFromSlug(slug) {
+  const slugs = dashboardItems.map((item) => item.slug);
+  return dashboardItems[slugs.indexOf(slug)];
+}
 
 const ChartDetailsSmartData = () => {
+  const { materialSlug } = useParams();
+  const material = getMaterialFromSlug(materialSlug);
   const [boundaryData, setBoundaryData] = useState({});
-  const [materialName, setMaterialName] = useState('temperature');
-  const [materialId, setMaterialId] = useState(1);
+  const [materialName, setMaterialName] = useState(material.value);
+  const [materialId, setMaterialId] = useState(material.id);
   const [sensorData, setSensorData] = useState([]);
   const [unit, setUnit] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -23,6 +32,12 @@ const ChartDetailsSmartData = () => {
     setMaterialId(e.target.id);
     setMaterialName(e.target.innerText);
   };
+
+  useEffect(() => {
+    const material2 = getMaterialFromSlug(materialSlug);
+    setMaterialId(material2.id);
+    setMaterialName(material2.value);
+  }, [materialSlug]);
 
   // useEffect for optimal values
   useEffect(() => {

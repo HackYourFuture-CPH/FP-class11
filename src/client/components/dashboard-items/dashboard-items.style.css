@@ -17,11 +17,11 @@
   color:var(--light-blue);
 }
 
-.list li .a {
+.list li a {
   font-size: 1em;
   text-decoration: none;
 }
 
-.list li:hover .a {
+.list li:hover a {
   color:var(--light-blue);
 } 

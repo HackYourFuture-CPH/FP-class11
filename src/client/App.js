@@ -69,8 +69,7 @@ function App() {
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute
-              exact
-              path="/chart-details"
+              path="/chart-details/:materialSlug?"
               component={ChartDetailsSmartData}
             />
             <PublicRoute component={Page404} />
