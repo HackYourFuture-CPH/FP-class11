@@ -1,11 +1,13 @@
 table {
   border-collapse: collapse;
+  border-style: hidden;
+  border-radius: var(--border-radius-low);
   width: 100%;
   background-color: var(--white);
   text-align: center;
 }
 
-table, th, td {
-  border: 1px solid black;
+th, td {
   height: 50px;
+  border: 1px solid var(--grey);
 }
