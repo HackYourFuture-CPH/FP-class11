@@ -1,23 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './dashboard-items.style.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
 
 const DashboardItems = ({ items }) => {
-  const { handleClick } = useContext(ChartDataContext);
   return (
     <ul className="list">
       {items.map((item) => (
-        <li key={item.id}>
-          <Link
-            to="/chartDetail-smartpage"
-            id={item.id}
-            className="a"
-            onClick={handleClick}
-          >
-            {item.value}
-          </Link>
+        <li key={item.id} id={item.id}>
+          {item.to ? (
+            <Link to={item.to} onClick={(e) => e.stopPropagation()}>
+              {item.value}
+            </Link>
+          ) : (
+            <>{item.value}</>
+          )}
         </li>
       ))}
     </ul>
@@ -27,4 +24,5 @@ const DashboardItems = ({ items }) => {
 DashboardItems.propTypes = {
   items: PropTypes.oneOfType([PropTypes.array]).isRequired,
 };
+
 export default DashboardItems;

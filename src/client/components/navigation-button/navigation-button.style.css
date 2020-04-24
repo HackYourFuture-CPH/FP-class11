@@ -1,11 +1,11 @@
 .icon {
   color: var(--dark-blue);
-  font-size: 2.1875rem;
+  font-size: 1.8rem;
   margin-top: 0.2em;
 }
 .navtext {
   color: var(--dark-blue);
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 300;
   line-height: 1em;
   margin: 0.5em 0;
@@ -23,16 +23,15 @@
   margin: 1em auto;
   padding: 0.5em 0;
   transition: none;
-  width: 75%;
+  width: 65%;
   outline: none;
   position: relative;
-  
 }
 .item:focus-visible {
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-medium);
 }
-.item:hover {
+.item:active {
   background: var(--light-grey);
 }
 .item:active {
@@ -50,27 +49,26 @@
   box-shadow: var(--debossed-shadow-medium);
   color: var(--dark-blue);
   flex-direction: column;
-  margin: 1em auto;
-  padding: 0.5em 0;
+  margin: 0.5em auto 0.8em;
+  padding: 0.7em 0;
   text-align: center;
   transition: none;
-  width: 75%;
-  align-items: center;
-}
-.itemActive {
-  background: var(--light-grey);
-  border: var(--border-inputs);
-  border-radius: var(--border-radius-low);
-  box-shadow: var(--debossed-shadow-medium);
-  color: var(--dark-blue);
-  flex-direction: column;
-  margin: 1em auto;
-  padding: 0.5em 0;
-  text-align: center;
-  transition: none;
-  width: 75%;
+  width: 65%;
   align-items: center;
 }
 .user {
   margin-top: auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.navigation-btn {
+  background-color: none;
+  border: none;
 }

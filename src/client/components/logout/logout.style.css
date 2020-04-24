@@ -15,24 +15,16 @@
   color: var(--white);
 }
 
-/* styling whole popup window */
-.popup-content {
-  width: 400px !important;
-  height: 350px !important;
-  background-color: rgba(255, 255, 255, 0.7) !important;
-  border-radius: 5%;
-}
-
 .modal {
   background-color: var(--light-grey);
   border-radius: var(--border-radius-low);
   box-shadow: var(--embossed-shadow-high);
   font-size: 1.5em;
   padding: 1em 0;
-  height: 15em;
-  width: 18em;
-
+  height: 15em !important;
+  width: 18em !important;
 }
+
 /*styling modal header*/
 .modal > .header {
   font-size: 1.2em;
@@ -44,7 +36,7 @@
 }
 .modal > .content {
   width: 100%;
-  padding:1.2em 0;
+  padding: 1.2em 0;
   text-align: center;
 }
 .modal > .actions {
@@ -64,8 +56,8 @@
   font-size: 1.8em;
   line-height: 1em;
   position: absolute;
-  right: 0.3em;
-  top: 0.2em;
+  right: 0.4em;
+  top: 0.3em;
 }
 
 /* Confoirm Logout button on pop up window styling */
@@ -100,9 +92,12 @@
   padding: 0.3em 3em;
   text-align: center;
   text-transform: uppercase;
-
 }
 
 .confirm-cancel:active {
   box-shadow: var(--debossed-shadow-medium);
+}
+
+.sb-show-main .popup-content {
+  position: absolute !important;
 }

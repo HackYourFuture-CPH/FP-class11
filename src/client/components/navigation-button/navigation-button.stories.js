@@ -13,16 +13,35 @@ export default {
   title: 'NavigationButton',
 };
 
+const dashboardItems = [
+  {
+    id: 1,
+    value: 'Temperature',
+    to: '/chart-details/temperature',
+    slug: 'temperature',
+  },
+  { id: 2, value: 'Humidity', to: '/chart-details/humidity', slug: 'humidity' },
+  { id: 3, value: 'PH', to: '/chart-details/ph', slug: 'ph' },
+  { id: 4, value: 'EC', to: '/chart-details/ec', slug: 'ec' },
+  { id: 5, value: 'Water', to: '/chart-details/water', slug: 'water' },
+];
+
 const handleClick = action('button clicked');
 
 export const Dashboard = () => (
-  <NavigationButton icon={faThLarge} text="DashBoard" isUser={false} />
+  <NavigationButton
+    icon={faThLarge}
+    text="DashBoard"
+    isUser={false}
+    items={dashboardItems}
+  />
 );
 export const BatchDetails = () => (
   <NavigationButton
     icon={faSeedling}
     text="Batch Details"
     handleClick={handleClick}
+    items={[]}
   />
 );
 export const AddBatch = () => (
@@ -30,6 +49,8 @@ export const AddBatch = () => (
     icon={faPlusCircle}
     text="Add Batch"
     handleClick={handleClick}
+    isVisible={true}
+    items={[]}
   />
 );
 export const LogOut = () => (
@@ -38,5 +59,6 @@ export const LogOut = () => (
     text="LogOut"
     isUser={true}
     handleClick={handleClick}
+    items={[]}
   />
 );
