@@ -38,6 +38,11 @@
   --debossed-shadow-medium: inset 2px 2px 8px #c9cbd8,
     inset -3px -3px 10px rgba(255, 255, 255, 0.9);
 
+  --debossed-shadow-tiny: inset 2px 2px 5px rgba(102, 102, 102, 0.2),
+    inset -3px -3px 5px rgba(255, 255, 255, 0.8);
+
+  --debossed-shadow-mini-right: 8px 0 6px -6px rgba(204, 204, 204, 0.3);
+  --debossed-shadow-mini-bottom: inset 0 8px 6px -6px rgba(204, 204, 204, 0.3);
   /*Default border*/
   --border-inputs: 1px solid rgba(255, 255, 255, 0.2);
 

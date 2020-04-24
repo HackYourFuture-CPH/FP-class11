@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import './forgot-password.style.css';
 
 import Logo from '../../components/logo/logo.component';
@@ -10,13 +11,19 @@ import { faUser, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 import imageFile from '../../assets/images/logo.png';
 
-import Firebase from '../../firebase/index';
+import Firebase, { FirebaseContext } from '../../firebase/index';
 
 function ForgotPassword() {
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [errorNotifications, setErrorNotifications] = useState(null);
   const [message, setMessage] = useState(null);
+  const user = useContext(FirebaseContext);
+
+  useEffect(() => {
+    if (user) history.replace('/dashboard');
+  });
 
   return (
     <main>

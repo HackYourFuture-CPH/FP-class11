@@ -1,7 +1,7 @@
 import React from 'react';
-import InputDate from './input-date';
+import InputDate from './input-date.component';
 
 export default {
   title: 'InputDate',
 };
-export const DateField = () => <InputDate placeholder="Date" />;
+export const DateField = () => <InputDate placeholder="date" />;
