@@ -1,15 +1,14 @@
 import React, { useState, useContext } from 'react';
-import '../../components/detail-chart/detail-chart.style.css';
-import DetailChart from '../../components/detail-chart/detail-chart.component';
-import SidebarMenu from '../../components/side-navigation/sidebar.component';
-import ProgressBar from '../../components/progress-bar/progress-bar.component';
+import DetailChart from '../detail-chart/detail-chart.component';
+import SidebarMenu from '../side-navigation/sidebar.component';
+import ProgressBar from '../progress-bar/progress-bar.component';
 import './chart-detail-page.css';
 // import UpdateDateRange from '../../components/update-date-range/update-date-range.component';
-import ChartbarMenu from '../../components/chart-data-buttons/chartbar-buttons/chart-data-button.component';
-import { ChartDataContext } from './chart-detail-page.context';
+import ChartbarMenu from '../chart-data-buttons/chartbar-buttons/chart-data-button.component';
+import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
 import UserRoleContext from '../../helpers/UserRoleContext';
 import { useHistory } from 'react-router-dom';
-import Logout from '../../components/logout/logout.component';
+import Logout from '../logout/logout.component';
 import Firebase from '../../firebase/index';
 
 const dateButtons = [
@@ -30,6 +29,8 @@ const ChartDetailPage = () => {
     currentDate,
     stages,
     unit,
+    setSelectedChartButtonId,
+    selectedChartButtonId,
   } = useContext(ChartDataContext);
   const { userRole, userName } = useContext(UserRoleContext);
   const headingText = materialName.toUpperCase();
@@ -61,8 +62,8 @@ const ChartDetailPage = () => {
         />
         <ChartbarMenu
           buttons={dateButtons}
-          selectedButtonId={selectedButtonId}
-          setSelectedButtonId={setSelectedButtonId}
+          selectedButtonId={selectedChartButtonId}
+          setSelectedChartButtonId={setSelectedChartButtonId}
         />
         <DetailChart
           data={sensorData}

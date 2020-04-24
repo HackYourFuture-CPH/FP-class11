@@ -12,16 +12,17 @@ export default {
 
 export const SidebarActive = () => {
   const text = ('value', 'dashboard');
-  const buttonActive = boolean('isActive', true);
+  const isActive = boolean('isActive', true);
   const isVisible = boolean('isVisible', true);
   const showDashboard = action('show dashboard');
   const showBatchDetails = action('show batch details');
   const showAddBatch = action('show add batch');
   const logout = action('logout');
+
   return (
     <SidebarMenu
       text={text}
-      isActive={buttonActive}
+      isActive={isActive}
       isVisible={isVisible}
       showDashboard={showDashboard}
       showBatchDetails={showBatchDetails}

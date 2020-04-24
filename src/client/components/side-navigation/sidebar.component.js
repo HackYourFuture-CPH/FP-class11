@@ -12,19 +12,6 @@ import {
   faSeedling,
 } from '@fortawesome/free-solid-svg-icons';
 
-export const dashboardItems = [
-  {
-    id: 1,
-    value: 'Temperature',
-    to: '/chart-details/temperature',
-    slug: 'temperature',
-  },
-  { id: 2, value: 'Humidity', to: '/chart-details/humidity', slug: 'humidity' },
-  { id: 3, value: 'PH', to: '/chart-details/ph', slug: 'ph' },
-  { id: 4, value: 'EC', to: '/chart-details/ec', slug: 'ec' },
-  { id: 5, value: 'Water', to: '/chart-details/water', slug: 'water' },
-];
-
 const SidebarMenu = ({
   isActive,
   isVisible,
@@ -41,27 +28,23 @@ const SidebarMenu = ({
         text="Dashboard"
         isActive={isActive}
         handleClick={showDashboard}
-        items={dashboardItems}
       />
       <NavigationButton
         icon={faSeedling}
         text="Batch Details"
         handleClick={showBatchDetails}
-        items={[]}
       />
       <NavigationButton
         icon={faPlusCircle}
         text="Add Batch"
         handleClick={showAddBatch}
         isVisible={isVisible}
-        items={[]}
       />
       <NavigationButton
         icon={faUserCircle}
         text="LogOut"
         isUser={true}
         handleClick={logout}
-        items={[]}
       />
     </div>
   );

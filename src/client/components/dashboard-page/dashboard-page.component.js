@@ -12,7 +12,6 @@ import Footer from '../footer/footer.component';
 import Logout from '../logout/logout.component';
 
 export default function DashboardPage({
-  isActive,
   isVisible,
   showDashboardFunc,
   showBatchDetailsFunc,
@@ -34,7 +33,7 @@ export default function DashboardPage({
   return (
     <div className="dashboard">
       <SidebarMenu
-        isActive={isActive}
+        isActive={false}
         isVisible={isVisible}
         showDashboard={showDashboardFunc}
         showBatchDetails={showBatchDetailsFunc}
@@ -123,7 +122,6 @@ export default function DashboardPage({
 }
 
 DashboardPage.propTypes = {
-  isActive: PropTypes.bool.isRequired,
   isVisible: PropTypes.bool.isRequired,
   showDashboardFunc: PropTypes.func.isRequired,
   showBatchDetailsFunc: PropTypes.func.isRequired,

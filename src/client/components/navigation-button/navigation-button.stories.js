@@ -50,7 +50,6 @@ export const AddBatch = () => (
     text="Add Batch"
     handleClick={handleClick}
     isVisible={true}
-    items={[]}
   />
 );
 export const LogOut = () => (

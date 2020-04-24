@@ -171,6 +171,8 @@ const ChartDetailsSmartData = () => {
         currentDate,
         stages,
         unit,
+        setSelectedChartButtonId,
+        selectedChartButtonId,
       }}
     >
       <ChartDetailPage />
