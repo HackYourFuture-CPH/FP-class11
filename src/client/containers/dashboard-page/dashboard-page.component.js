@@ -22,6 +22,7 @@ const DashboardPageContainer = () => {
   const [lineChartDataEc, setLineChartDataEc] = useState(null);
   const [lineChartDataWaterLevel, setLineChartDataWaterLevel] = useState(null);
   const [boundaryData, setBoundaryData] = useState(null);
+  const [showDropdownItems, setShowDropdownItems] = useState(false);
 
   const fetchData = async () => {
     const headers = await getTokenWithHeaders();
@@ -85,14 +86,20 @@ const DashboardPageContainer = () => {
     boundaryData,
   ]);
 
+  function showDashboard() {
+    setShowDropdownItems(!showDropdownItems);
+    history.push('/dashboard');
+  }
+
   return loading ? (
     <LoaderAnimation />
   ) : (
     <DashboardPage
+      isActive={showDropdownItems}
       isVisible={
         userRole && (userRole === 'admin' || userRole === 'super_admin')
       }
-      showDashboardFunc={() => history.push('/dashboard')}
+      showDashboardFunc={showDashboard}
       showBatchDetailsFunc={() => history.push('/batch-details')}
       showAddBatchFunc={() => history.push('/add-batch')}
       showLogoutModal={() => setLogoutModal(true)}
