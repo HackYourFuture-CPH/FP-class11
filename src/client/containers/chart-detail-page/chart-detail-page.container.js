@@ -92,7 +92,7 @@ const ChartDetailsSmartData = () => {
     }
   }, [materialName]);
 
-  // useeffect for SensorReadings
+  // useeffect for progressbar
   useEffect(() => {
     async function fetchSensorReadingByMaterialId() {
       try {
@@ -171,8 +171,8 @@ const ChartDetailsSmartData = () => {
         currentDate,
         stages,
         unit,
-        setSelectedChartButtonId,
         selectedChartButtonId,
+        setSelectedChartButtonId,
       }}
     >
       <ChartDetailPage />

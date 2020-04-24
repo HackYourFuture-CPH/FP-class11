@@ -6,6 +6,7 @@ import ForgotPassword from './containers/forgot-password/forgot-password.compone
 import Dashboard from './containers/dashboard-page/dashboard-page.component';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
+import ChartDetailsSmartData from './containers/chart-detail-page/chart-detail-smart.component';
 import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
 import UserRoleContext from './helpers/UserRoleContext';
 import PrivateRoute from './helpers/PrivateRoute';
@@ -64,6 +65,10 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute
+              path="/chart-details/:materialSlug?"
+              component={ChartDetailsSmartData}
+            />
             <PublicRoute component={Page404} />
           </Switch>
         </Router>

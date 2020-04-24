@@ -11,17 +11,11 @@ const NavigationButton = ({
   isUser,
   isVisible,
   handleClick,
+  items,
 }) => {
   const className = `${isActive ? 'item-active' : 'item'} ${
     isUser ? 'user' : ''
   } ${isVisible ? 'visible' : 'hidden'}`;
-  const items = [
-    { id: 1, value: 'Temperature' },
-    { id: 2, value: 'Humidity' },
-    { id: 3, value: 'PH' },
-    { id: 4, value: 'EC' },
-    { id: 5, value: 'Water' },
-  ];
   return (
     <section className={className}>
       <button type="button" onClick={handleClick} className="navigation-btn">

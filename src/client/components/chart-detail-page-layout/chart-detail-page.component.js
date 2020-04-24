@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react';
-import DetailChart from '../detail-chart/detail-chart.component';
-import SidebarMenu from '../side-navigation/sidebar.component';
-import ProgressBar from '../progress-bar/progress-bar.component';
+import DetailChart from '../detail-chart.component';
+import SidebarMenu from '../sidebar.component';
+import ProgressBar from '../progress-bar.component';
 import './chart-detail-page.css';
 // import UpdateDateRange from '../../components/update-date-range/update-date-range.component';
-import ChartbarMenu from '../chart-data-buttons/chartbar-buttons/chart-data-button.component';
-import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
+import ChartbarMenu from '../chart-data-button.component';
+import { ChartDataContext } from './chart-detail-page.context';
 import UserRoleContext from '../../helpers/UserRoleContext';
 import { useHistory } from 'react-router-dom';
-import Logout from '../logout/logout.component';
+import Logout from '../logout.component';
 import Firebase from '../../firebase/index';
 
 const dateButtons = [
@@ -29,8 +29,8 @@ const ChartDetailPage = () => {
     currentDate,
     stages,
     unit,
-    setSelectedChartButtonId,
     selectedChartButtonId,
+    setSelectedChartButtonId,
   } = useContext(ChartDataContext);
   const { userRole, userName } = useContext(UserRoleContext);
   const headingText = materialName.toUpperCase();
@@ -62,7 +62,7 @@ const ChartDetailPage = () => {
         />
         <ChartbarMenu
           buttons={dateButtons}
-          selectedButtonId={selectedChartButtonId}
+          selectedChartButtonId={selectedChartButtonId}
           setSelectedChartButtonId={setSelectedChartButtonId}
         />
         <DetailChart
