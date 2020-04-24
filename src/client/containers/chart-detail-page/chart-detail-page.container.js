@@ -21,17 +21,7 @@ const ChartDetailsSmartData = () => {
   const [startDate, setStartDate] = useState('');
   const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
-  const [buttonActive, setButtonActive] = useState(false);
   const [selectedChartButtonId, setSelectedChartButtonId] = useState(null);
-  const buttonClick = async (e) => {
-    e.preventDefault();
-    setButtonActive(!buttonActive);
-  };
-  const handleClick = async (e) => {
-    e.stopPropagation();
-    setMaterialId(e.target.id);
-    setMaterialName(e.target.innerText);
-  };
 
   useEffect(() => {
     const material2 = getMaterialFromSlug(materialSlug);
@@ -70,11 +60,11 @@ const ChartDetailsSmartData = () => {
           maximum: stageParameterValues[0].max_value,
         };
         setBoundaryData(boundaryValues);
-        if (materialName === 'temperature') {
+        if (materialName === 'Temperature') {
           setUnit('°C');
-        } else if (materialName === 'water_level') {
+        } else if (materialName === 'Water') {
           setUnit('cm');
-        } else if (materialName === 'humidity') {
+        } else if (materialName === 'Humidity') {
           setUnit('g/m3');
         } else if (materialName === 'PH') {
           setUnit('pH');
@@ -92,7 +82,7 @@ const ChartDetailsSmartData = () => {
     }
   }, [materialName]);
 
-  // useeffect for progressbar
+  // useeffect for sensorvalues
   useEffect(() => {
     async function fetchSensorReadingByMaterialId() {
       try {
@@ -109,19 +99,29 @@ const ChartDetailsSmartData = () => {
         const getStartdateValue = startDate.split(',');
         const currentValue = getCurrentdateValue[0].split('/');
         const startValue = getStartdateValue[0].split('/');
-        const getNumberOfdays = Number(currentValue[0]) - Number(startValue[0]);
+        const getNumberOfdays = Number(currentValue[1]) - Number(startValue[1]);
         const getTheDataforCurrentDay = getNumberOfdays * 4;
         const getAllDataOfTheBatchTillDate = sensorBatchIdData.slice(
           0,
           getTheDataforCurrentDay,
         );
+        // Last 5 days
         if (selectedChartButtonId === 1) {
           const lastFiveDaysSensorData = getAllDataOfTheBatchTillDate.slice(
-            getAllDataOfTheBatchTillDate.length - 15,
+            getAllDataOfTheBatchTillDate.length - 20,
             getAllDataOfTheBatchTillDate.length,
           );
           setSensorData(lastFiveDaysSensorData);
-        } else {
+        } // Last Week
+        else if (selectedChartButtonId === 2) {
+          const lastWeekSensorData = getAllDataOfTheBatchTillDate.slice(
+            getAllDataOfTheBatchTillDate.length - 28,
+            getAllDataOfTheBatchTillDate.length,
+          );
+          setSensorData(lastWeekSensorData);
+        }
+        // chartdata based on current day of the Batch
+        else {
           setSensorData(getAllDataOfTheBatchTillDate);
         }
       } catch (error) {
@@ -162,11 +162,8 @@ const ChartDetailsSmartData = () => {
     <ChartDataContext.Provider
       value={{
         boundaryData,
-        handleClick,
         materialName,
         sensorData,
-        buttonClick,
-        buttonActive,
         startDate,
         currentDate,
         stages,

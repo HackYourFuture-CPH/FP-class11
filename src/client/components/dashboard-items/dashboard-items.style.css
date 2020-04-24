@@ -13,15 +13,19 @@
 .list li:hover{
   border-radius: 0.4em;
   background: var(--light-grey);
-  box-shadow: var(--debossed-shadow-low);
+  box-shadow: var(--debossed-shadow-tiny);
   color:var(--light-blue);
 }
 
+
 .list li a {
-  font-size: 1em;
+  font-size: 0.9em;
   text-decoration: none;
 }
 
 .list li:hover a {
   color:var(--light-blue);
 } 
+
+
+

@@ -1,8 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import DashboardItems from '../dashbord-items/dashboard-items.component';
-import '../dashbord-items/dashboard-items.style.css';
+import DashboardItems from '../dashboard-items/dashboard-items.component';
+import './navigation-button.style.css';
 
 const NavigationButton = ({
   icon,
