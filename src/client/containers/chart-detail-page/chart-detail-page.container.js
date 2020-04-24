@@ -68,6 +68,7 @@ const ChartDetailsSmartData = () => {
           setUnits('ppm');
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -91,6 +92,7 @@ const ChartDetailsSmartData = () => {
         setCurrentDate(BatchProgressBarValuesJson.currentDate);
         setStages(BatchProgressBarValuesJson.stages);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -118,9 +120,9 @@ const ChartDetailsSmartData = () => {
           (sensorBatchId) => sensorBatchId.fk_batch_id === 1,
         );
         const getCurrentdateValue = currentDate.split(',');
-        console.log(getCurrentdateValue)
+
         const getStartdateValue = startDate.split(',');
-        console.log(getStartdateValue)
+
         const currentValue = getCurrentdateValue[0].split('/');
         const startValue = getStartdateValue[0].split('/');
 
@@ -141,14 +143,18 @@ const ChartDetailsSmartData = () => {
           setSensorData(getAllDataOfTheBatchTillDate);
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
-    if (materialId !== ''&& currentDate!==''&& startDate!==''|| selectedChartButtonId!==null) {
+    if (
+      (materialId !== '' && currentDate !== '' && startDate !== '') ||
+      selectedChartButtonId !== null
+    ) {
       fetchSensorReadingByMaterialId();
     }
   }, [materialId, currentDate, startDate, selectedChartButtonId]);
-console.log(sensorData)
+
   return (
     <ChartDataContext.Provider
       value={{
