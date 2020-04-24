@@ -1,6 +1,7 @@
 import React from 'react';
 import SidebarMenu from './sidebar.component';
-import { withKnobs, boolean, action } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import '@storybook/addon-knobs/register';
 
 export default {
