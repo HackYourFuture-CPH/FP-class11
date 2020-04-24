@@ -5,6 +5,7 @@ const moment = require('moment');
 const currentStage = async (batchId) => {
   const batchesStages = await knex('batches')
     .join('crop_stages', 'crop_stages.fk_crop_id', '=', 'batches.fk_crop_id')
+    .join('crops', 'crops.id', '=', 'crop_stages.fk_crop_id')
     .select('crop_stages.name', 'crop_stages.duration', 'batches.seeding_date')
     .where('batches.id', batchId);
   if (batchesStages.length === 0) {
