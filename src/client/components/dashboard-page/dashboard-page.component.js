@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import './dashboard-page.style.css';
 import SidebarMenu from '../side-navigation/sidebar.component';
 import ProgressBar from '../progress-bar/progress-bar.component';
