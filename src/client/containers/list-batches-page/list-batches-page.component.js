@@ -79,7 +79,7 @@ export default function ListBatchesPage() {
               />
             </div>
           </div>
-          <div className='filter-options'>
+          <div className="filter-options">
             <div className="filter-labels">Sort by:</div>
             <div className="filter-buttons">
               <SortButton
@@ -92,12 +92,12 @@ export default function ListBatchesPage() {
             </div>
           </div>
         </navigation>
-        <div className='batch-table'>
+        <div className="batch-table">
           <ListBatches batchData={ListBatchData} />
-          </div>
-          <div className="export-button">
-            <Button type="primary">Export data ▾</Button>
-          </div>
+        </div>
+        <div className="export-button">
+          <Button type="primary">Export data ▾</Button>
+        </div>
         <Footer />
       </div>
     </div>
