@@ -13,9 +13,9 @@ const headings = [
   'SEEDING DATE',
 ];
 
-export default function ListBatches({ batchData }) {
+export default function ListBatches({ batchData, openDashboardFunc }) {
   const columns = headings.map((column) => {
-    return <th>{column}</th>;
+    return <th key={column}>{column}</th>;
   });
 
   return (
@@ -27,16 +27,17 @@ export default function ListBatches({ batchData }) {
         <tbody>
           {batchData.length > 0 ? (
             batchData.map((batch) => (
-              <tr key={batch.id}>
+              <tr key={batch.id} onClick={() => openDashboardFunc(batch.id)}>
                 <td>Batch #{batch.id}</td>
                 <td>
                   {batch.plant_variety}- {batch.name}
                 </td>
                 <td>{batch.customer_name}</td>
-                <td>{batch.status}</td>
-                <td>
-                  {batch.current_stage.stage}- Day{' '}
-                  {batch.current_stage.day > 0 ? batch.current_stage.day : 0}
+                <td className="capitalize">{batch.status}</td>
+                <td className="capitalize">
+                  {batch.current_stage.stage}
+                  {batch.current_stage.day > 0 &&
+                    `- Day ${batch.current_stage.day}`}
                 </td>
                 <td>{batch.number_of_seeded_pots}</td>
                 <td>{moment(batch.seeding_date).format('DD MMMM YYYY')}</td>
@@ -55,4 +56,5 @@ export default function ListBatches({ batchData }) {
 
 ListBatches.propTypes = {
   batchData: PropTypes.oneOfType([PropTypes.array]).isRequired,
+  openDashboardFunc: PropTypes.func.isRequired,
 };

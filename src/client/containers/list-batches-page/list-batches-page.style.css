@@ -4,6 +4,16 @@
   min-height: 100vh;
 }
 
+.batch-list main {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  padding: 0 1em;
+  width: 100%;
+}
+
 .batch-list .content {
   display: flex;
   flex-direction: column;
@@ -11,6 +21,14 @@
   justify-content: flex-start;
   margin-left: 130px;
   width: 100%;
+}
+
+.batch-list .content .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1100px;
 }
 
 .batch-list header {
@@ -23,7 +41,7 @@
   padding: 0 1em;
 }
 
-navigation {
+nav {
   display: flex;
   flex-direction: row;
   padding: 1em 1em 0;
@@ -49,11 +67,38 @@ navigation {
 
 .batch-table {
   padding: 1em 1em 0;
-  margin: 0 4em;
+  margin: 2em 0 0;
   width: 100%;
 }
 
+.batch-table table {
+  text-align: left;
+  width: 100%;
+}
+
+.batch-table table tbody tr {
+  cursor: pointer;
+}
+
+.batch-table table th {
+  padding: 2em 0.5em 0.5em;
+}
+
+.batch-table table td {
+  padding: 0 0.6em;
+}
+
 .export-button {
-  margin-right: 4em;
-  margin-left: auto;
+  margin: 0 1em 2em auto;
+}
+
+.batch-list .modal > .content {
+  display: block;
+  height: auto;
+  margin-left: 0;
+}
+
+.batch-list .sidebar-wrapper button:first-of-type,
+.batch-list .sidebar-wrapper button:nth-of-type(2) {
+  display: none;
 }

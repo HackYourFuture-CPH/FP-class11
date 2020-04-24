@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Firebase from '../../firebase/index';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import UserRoleContext from '../../helpers/UserRoleContext';
 import DashboardPage from '../../components/dashboard-page/dashboard-page.component';
@@ -9,6 +9,8 @@ import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 
 const DashboardPageContainer = () => {
   const history = useHistory();
+  const location = useLocation();
+  const { batchId } = location.state;
   const { userRole, userName } = useContext(UserRoleContext);
 
   const [logoutModal, setLogoutModal] = useState(false);
@@ -23,7 +25,7 @@ const DashboardPageContainer = () => {
   const [lineChartDataWaterLevel, setLineChartDataWaterLevel] = useState(null);
   const [boundaryData, setBoundaryData] = useState(null);
 
-  const fetchData = async () => {
+  const fetchData = async (id) => {
     const headers = await getTokenWithHeaders();
 
     const fetchSensorsData = async (endpoint, setSensorsData) => {
@@ -34,7 +36,7 @@ const DashboardPageContainer = () => {
       setSensorsData(sensorsData.slice(-5));
     };
 
-    const stagesData = await fetch('/api/crop-stages/1', {
+    const stagesData = await fetch(`/api/crop-stages/${id}`, {
       method: 'GET',
       headers,
     }).then((data) => data.json());
@@ -47,7 +49,7 @@ const DashboardPageContainer = () => {
     fetchSensorsData('/api/sensor-reading/5', setLineChartDataWaterLevel);
 
     const defaultValues = await fetch(
-      '/api/batch-default-values/1?stage=current',
+      `/api/batch-default-values/${id}?stage=current`,
       {
         method: 'GET',
         headers,
@@ -57,8 +59,8 @@ const DashboardPageContainer = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(batchId);
+  }, [batchId]);
 
   useEffect(() => {
     if (
