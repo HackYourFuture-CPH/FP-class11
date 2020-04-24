@@ -8,12 +8,12 @@ const {
 } = require('../lib/middleware/authentication.middleware');
 
 // controllers
-const sensorReadingController = require('../controllers/sensor-readings.controller');
+const batchStatusController = require('../controllers/batch-status.controller');
 
-// ENDPOINT: /api/sensor-reading/:materialId :GET to get sensor reading
-router.get('/:materialId', checkIfAuthenticated, (req, res, next) => {
-  sensorReadingController
-    .getSensorReadingByMaterialId(req.params.materialId)
+// ENDPOINT: /api/batch-status/:batchId :GET to get status messages for a batch with batchId
+router.get('/:batchId', checkIfAuthenticated, (req, res, next) => {
+  batchStatusController
+    .getBatchStatus(req.params.batchId)
     .then((result) => res.json(result))
     .catch(next);
 });

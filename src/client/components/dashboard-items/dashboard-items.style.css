@@ -17,11 +17,11 @@
   color:var(--light-blue);
 }
 
-.list li .pageLink {
+.list li a {
   font-size: 1em;
   text-decoration: none;
 }
 
-.list li:hover .pageLink {
+.list li:hover a {
   color:var(--light-blue);
 } 

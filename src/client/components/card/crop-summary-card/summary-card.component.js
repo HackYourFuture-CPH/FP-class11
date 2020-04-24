@@ -19,7 +19,7 @@ export const Summary = ({
         </p>
       </li>
       <li>
-        <p>Days left to end the project:</p>
+        <p>Days left to end the batch:</p>
         <p>{projDayLeft} days </p>
       </li>
       <li>

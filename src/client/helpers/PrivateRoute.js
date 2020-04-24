@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 
 import { FirebaseConsumer } from '../firebase/index';
 
-function PrivateRoute({ component: Component }) {
+function PrivateRoute({ component: Component, ...rest }) {
   const location = useLocation();
   return (
     <FirebaseConsumer>
       {(value) => (
         <Route
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...rest}
           render={() =>
             value ? (
               <Component />

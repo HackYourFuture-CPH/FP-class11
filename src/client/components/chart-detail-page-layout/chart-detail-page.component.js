@@ -1,10 +1,16 @@
-import React, { useContext } from 'react';
-import DetailChart from '../detail-chart/detail-chart.component';
-import SidebarMenu from '../side-navigation/sidebar.component';
-import ProgressBar from '../progress-bar/progress-bar.component';
+import React, { useState, useContext } from 'react';
+import '../../components/detail-chart/detail-chart.style.css';
+import DetailChart from '../../components/detail-chart/detail-chart.component';
+import SidebarMenu from '../../components/side-navigation/sidebar.component';
+import ProgressBar from '../../components/progress-bar/progress-bar.component';
 import './chart-detail-page.css';
-import ChartbarMenu from '../chart-data-buttons/chartbar-buttons/chart-data-button.component';
-import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
+// import UpdateDateRange from '../../components/update-date-range/update-date-range.component';
+import ChartbarMenu from '../../components/chart-data-buttons/chartbar-buttons/chart-data-button.component';
+import { ChartDataContext } from './chart-detail-page.context';
+import UserRoleContext from '../../helpers/UserRoleContext';
+import { useHistory } from 'react-router-dom';
+import Logout from '../../components/logout/logout.component';
+import Firebase from '../../firebase/index';
 
 const dateButtons = [
   { id: 1, label: 'Last 5 Days' },
@@ -15,7 +21,7 @@ const dateButtons = [
 ];
 
 const ChartDetailPage = () => {
-  const chartvalues = useContext(ChartDataContext);
+  const history = useHistory();
   const {
     boundaryData,
     materialName,
@@ -23,16 +29,29 @@ const ChartDetailPage = () => {
     startDate,
     currentDate,
     stages,
-    units,
-    selectedButtonId,
-    setSelectedButtonId,
-  } = chartvalues;
-
+    unit,
+  } = useContext(ChartDataContext);
+  const { userRole, userName } = useContext(UserRoleContext);
   const headingText = materialName.toUpperCase();
-
+  const [logoutModal, setLogoutModal] = useState(false);
   return (
     <>
-      <SidebarMenu />
+      <SidebarMenu
+        isActive={true}
+        isVisible={
+          userRole && (userRole === 'admin' || userRole === 'super_admin')
+        }
+        showDashboard={() => history.push('/dashboard')}
+        showBatchDetails={() => history.push('/batch-details')}
+        showAddBatch={() => history.push('/add-batch')}
+        logout={() => setLogoutModal(true)}
+      />
+      <Logout
+        userName={userName}
+        openState={logoutModal}
+        closeAction={() => setLogoutModal(false)}
+        logoutFunc={() => Firebase.signOut()}
+      />
       <div className="chart-details">
         <h1>{headingText} GRAPH DETAILS</h1>
         <ProgressBar
@@ -49,7 +68,7 @@ const ChartDetailPage = () => {
           data={sensorData}
           boundary={boundaryData}
           description={materialName}
-          unit={units}
+          unit={unit}
         />
       </div>
     </>

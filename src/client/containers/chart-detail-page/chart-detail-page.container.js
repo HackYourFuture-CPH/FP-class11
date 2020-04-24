@@ -2,13 +2,22 @@ import React, { useState, useEffect } from 'react';
 import ChartDetailPage from '../../components/chart-detail-page-layout/chart-detail-page.component';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 import { ChartDataContext } from './chart-detail-page.context';
+import { useParams } from 'react-router-dom';
+import { dashboardItems } from '../../components/side-navigation/sidebar.component';
+
+function getMaterialFromSlug(slug) {
+  const slugs = dashboardItems.map((item) => item.slug);
+  return dashboardItems[slugs.indexOf(slug)];
+}
 
 const ChartDetailsSmartData = () => {
+  const { materialSlug } = useParams();
+  const material = getMaterialFromSlug(materialSlug);
   const [boundaryData, setBoundaryData] = useState({});
-  const [materialName, setMaterialName] = useState('Temperature');
-  const [materialId, setMaterialId] = useState(1);
+  const [materialName, setMaterialName] = useState(material.value);
+  const [materialId, setMaterialId] = useState(material.id);
   const [sensorData, setSensorData] = useState([]);
-  const [units, setUnits] = useState('');
+  const [unit, setUnit] = useState('');
   const [startDate, setStartDate] = useState('');
   const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
@@ -23,19 +32,26 @@ const ChartDetailsSmartData = () => {
     setMaterialId(e.target.id);
     setMaterialName(e.target.innerText);
   };
-  // useEffect for optimalvalues
+
+  useEffect(() => {
+    const material2 = getMaterialFromSlug(materialSlug);
+    setMaterialId(material2.id);
+    setMaterialName(material2.value);
+  }, [materialSlug]);
+
+  // useEffect for optimal values
   useEffect(() => {
     async function fetchBatchStagesDefaultData() {
       try {
-        const header = await getTokenWithHeaders();
+        const headers = await getTokenWithHeaders();
         const getCropStageValue = await fetch(
           'api/batch-default-values/1?stage=current',
           {
             method: 'GET',
-            headers: header,
+            headers,
           },
         );
-        const getBatchDefaultValues = await getCropStageValue.json();
+        const batchDefaultValues = await getCropStageValue.json();
 
         let materialNameToLower;
         if (materialName === 'Water') {
@@ -44,7 +60,7 @@ const ChartDetailsSmartData = () => {
           materialNameToLower = await materialName.toLowerCase();
         }
 
-        const stageParameterValues = await getBatchDefaultValues.filter(
+        const stageParameterValues = await batchDefaultValues.filter(
           (stageValue) => stageValue.parameter === materialNameToLower,
         );
 
@@ -54,23 +70,24 @@ const ChartDetailsSmartData = () => {
           maximum: stageParameterValues[0].max_value,
         };
         setBoundaryData(boundaryValues);
-        if (materialName === 'Temperature') {
-          setUnits('°C');
-        } else if (materialName === 'Water') {
-          setUnits('cm');
-        } else if (materialName === 'Humidity') {
-          setUnits('g/m3');
+        if (materialName === 'temperature') {
+          setUnit('°C');
+        } else if (materialName === 'water_level') {
+          setUnit('cm');
+        } else if (materialName === 'humidity') {
+          setUnit('g/m3');
         } else if (materialName === 'PH') {
-          setUnits('pH');
+          setUnit('pH');
         } else if (materialName === 'EC') {
-          setUnits('ppm');
+          setUnit('ppm');
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
 
-    if (materialName !== '') {
+    if (materialName) {
       fetchBatchStagesDefaultData();
     }
   }, [materialName]);
@@ -79,8 +96,10 @@ const ChartDetailsSmartData = () => {
   useEffect(() => {
     async function fetchSensorReadingByMaterialId() {
       try {
+        const headers = await getTokenWithHeaders();
         const getSensorReadings = await fetch(
           `api/sensor-reading/${materialId}`,
+          { method: 'GET', headers },
         );
         const sensorReadingsJson = await getSensorReadings.json();
         const sensorBatchIdData = await sensorReadingsJson.filter(
@@ -106,6 +125,7 @@ const ChartDetailsSmartData = () => {
           setSensorData(getAllDataOfTheBatchTillDate);
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -120,12 +140,17 @@ const ChartDetailsSmartData = () => {
   useEffect(() => {
     async function fetchProgressBarData() {
       try {
-        const getBatchProgressBarValues = await fetch('api/crop-stages/1');
+        const headers = await getTokenWithHeaders();
+        const getBatchProgressBarValues = await fetch('api/crop-stages/1', {
+          method: 'GET',
+          headers,
+        });
         const BatchProgressBarValuesJson = await getBatchProgressBarValues.json();
         setStartDate(BatchProgressBarValuesJson.startDate);
         setCurrentDate(BatchProgressBarValuesJson.currentDate);
         setStages(BatchProgressBarValuesJson.stages);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
       }
     }
@@ -145,9 +170,7 @@ const ChartDetailsSmartData = () => {
         startDate,
         currentDate,
         stages,
-        units,
-        selectedChartButtonId,
-        setSelectedChartButtonId,
+        unit,
       }}
     >
       <ChartDetailPage />

@@ -1,127 +1,130 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Firebase from '../../firebase/index';
+import { useHistory } from 'react-router-dom';
 
-// import SidebarMenu from '../../components/side-navigation/sidebar.component';
-// import ProgressBar from '../../components/progress-bar/progress-bar.component';
-// import Card from '../../components/card/card.component';
-// import Label from '../../components/label/label.component';
-// import CropSummary from '../../components/crop-summary/crop-summary.component';
-// import LineChartForDashboard from '../../components/line-chart-for-dashboard/line-chart-for-dashboard.component';
-import Footer from '../../components/footer/footer.component';
+import UserRoleContext from '../../helpers/UserRoleContext';
+import DashboardPage from '../../components/dashboard-page/dashboard-page.component';
+import LoaderAnimation from '../../components/loader-animation/loader-animation.component';
+import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 
-const DashboardPage = () => {
-  // const daysLeftToHarvest = 41;
-  // const daysLeftToEnd = 48;
-  // const currentStage = 'Seeding';
-  // const currentStageDay = 2;
-  // const productionStartDate = '2020-01-25 00:00:00';
-  // const productionEndDate = '2020-03-11 00:00:00';
+const DashboardPageContainer = () => {
+  const history = useHistory();
+  const { userRole, userName } = useContext(UserRoleContext);
 
-  // const placeholder = 'placeholder';
+  const [logoutModal, setLogoutModal] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [progressBarData, setProgressBarData] = useState(null);
+  const [lineChartDataTemperature, setLineChartDataTempareture] = useState(
+    null,
+  );
+  const [lineChartDataHumidity, setLineChartDataHumidity] = useState(null);
+  const [lineChartDataPh, setLineChartDataPh] = useState(null);
+  const [lineChartDataEc, setLineChartDataEc] = useState(null);
+  const [lineChartDataWaterLevel, setLineChartDataWaterLevel] = useState(null);
+  const [boundaryData, setBoundaryData] = useState(null);
+  const [showDropdownItems, setShowDropdownItems] = useState(false);
 
-  return (
-    <div>
-      <div>
-        <button
-          type="button"
-          onClick={() => {
-            Firebase.signOut();
-          }}
-        >
-          Logout
-        </button>
-        {/* <SidebarMenu isactive={true} isuser={true} /> */}
-      </div>
-      <div>
-        <h1>Crop overview</h1>
-        {/* <ProgressBar /> */}
-        <div>
-          {/* <Card title="Status">
-            <Label isOnTime={true} />
-            <CropSummary
-              daysLeftToHarvest={daysLeftToHarvest}
-              daysLeftToEnd={daysLeftToEnd}
-              currentStage={currentStage}
-              currentStageDay={currentStageDay}
-              productionStartDate={productionStartDate}
-              productionEndDate={productionEndDate}
-            />
-          </Card>
-          <Card title="Temperature">
-            <LineChartForDashboard
-              tempData={placeholder}
-              strokeGrid={placeholder}
-              strokeAxis={placeholder}
-              minColor={placeholder}
-              maxColor={placeholder}
-              optimalValue={placeholder}
-              strokeWidthRef={placeholder}
-              strokeLine={placeholder}
-              strokeWidthLine={placeholder}
-              ReferanceAreaColor={placeholder}
-            />
-          </Card>
-          <Card title="Humidity">
-            <LineChartForDashboard
-              tempData={placeholder}
-              strokeGrid={placeholder}
-              strokeAxis={placeholder}
-              minColor={placeholder}
-              maxColor={placeholder}
-              optimalValue={placeholder}
-              strokeWidthRef={placeholder}
-              strokeLine={placeholder}
-              strokeWidthLine={placeholder}
-              ReferanceAreaColor={placeholder}
-            />
-          </Card>
-          <Card title="Water PH">
-            <LineChartForDashboard
-              tempData={placeholder}
-              strokeGrid={placeholder}
-              strokeAxis={placeholder}
-              minColor={placeholder}
-              maxColor={placeholder}
-              optimalValue={placeholder}
-              strokeWidthRef={placeholder}
-              strokeLine={placeholder}
-              strokeWidthLine={placeholder}
-              ReferanceAreaColor={placeholder}
-            />
-          </Card>
-          <Card title="Water EC">
-            <LineChartForDashboard
-              tempData={placeholder}
-              strokeGrid={placeholder}
-              strokeAxis={placeholder}
-              minColor={placeholder}
-              maxColor={placeholder}
-              optimalValue={placeholder}
-              strokeWidthRef={placeholder}
-              strokeLine={placeholder}
-              strokeWidthLine={placeholder}
-              ReferanceAreaColor={placeholder}
-            />
-          </Card>
-          <Card title="Water Level">
-            <LineChartForDashboard
-              tempData={placeholder}
-              strokeGrid={placeholder}
-              strokeAxis={placeholder}
-              minColor={placeholder}
-              maxColor={placeholder}
-              optimalValue={placeholder}
-              strokeWidthRef={placeholder}
-              strokeLine={placeholder}
-              strokeWidthLine={placeholder}
-              ReferanceAreaColor={placeholder}
-            />
-          </Card> */}
-        </div>
-        <Footer />
-      </div>
-    </div>
+  const fetchData = async () => {
+    const headers = await getTokenWithHeaders();
+
+    const fetchSensorsData = async (endpoint, setSensorsData) => {
+      const sensorsData = await fetch(endpoint, {
+        method: 'GET',
+        headers,
+      }).then((data) => data.json());
+      setSensorsData(sensorsData.slice(-5));
+    };
+
+    const stagesData = await fetch('/api/crop-stages/1', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setProgressBarData(stagesData);
+
+    fetchSensorsData('/api/sensor-reading/1', setLineChartDataTempareture);
+    fetchSensorsData('/api/sensor-reading/2', setLineChartDataHumidity);
+    fetchSensorsData('/api/sensor-reading/3', setLineChartDataPh);
+    fetchSensorsData('/api/sensor-reading/4', setLineChartDataEc);
+    fetchSensorsData('/api/sensor-reading/5', setLineChartDataWaterLevel);
+
+    const defaultValues = await fetch(
+      '/api/batch-default-values/1?stage=current',
+      {
+        method: 'GET',
+        headers,
+      },
+    ).then((data) => data.json());
+    setBoundaryData(defaultValues);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (
+      userRole &&
+      userName &&
+      progressBarData &&
+      lineChartDataTemperature &&
+      lineChartDataHumidity &&
+      lineChartDataPh &&
+      lineChartDataEc &&
+      lineChartDataWaterLevel &&
+      boundaryData
+    )
+      setLoading(false);
+  }, [
+    userRole,
+    userName,
+    progressBarData,
+    lineChartDataTemperature,
+    lineChartDataHumidity,
+    lineChartDataPh,
+    lineChartDataEc,
+    lineChartDataWaterLevel,
+    boundaryData,
+  ]);
+
+  function showDashboard() {
+    setShowDropdownItems(!showDropdownItems);
+    history.push('/dashboard');
+  }
+
+  return loading ? (
+    <LoaderAnimation />
+  ) : (
+    <DashboardPage
+      isActive={showDropdownItems}
+      isVisible={
+        userRole && (userRole === 'admin' || userRole === 'super_admin')
+      }
+      showDashboardFunc={showDashboard}
+      showBatchDetailsFunc={() => history.push('/batch-details')}
+      showAddBatchFunc={() => history.push('/add-batch')}
+      showLogoutModal={() => setLogoutModal(true)}
+      userName={userName}
+      logoutModal={logoutModal}
+      closeAction={() => setLogoutModal(false)}
+      logoutFunc={() => Firebase.signOut()}
+      progressBarData={progressBarData}
+      lineChartData={{
+        sensorsReadings: [
+          ...lineChartDataTemperature,
+          ...lineChartDataHumidity,
+          ...lineChartDataPh,
+          ...lineChartDataEc,
+          ...lineChartDataWaterLevel,
+        ],
+      }}
+      boundary={boundaryData}
+      showTemperatureDetails={() => history.push('/chart-details/temperature')}
+      showHumidityDetails={() => history.push('/chart-details/humidity')}
+      showPhDetails={() => history.push('/chart-details/ph')}
+      showEcDetails={() => history.push('/chart-details/ec')}
+      showWaterDetails={() => history.push('/chart-details/water-level')}
+    />
   );
 };
 
-export default DashboardPage;
+export default DashboardPageContainer;
