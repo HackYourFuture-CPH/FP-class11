@@ -20,13 +20,19 @@ export const Summary = ({
           </p>
         </li>
       )}
-      <li>
-        <p>Days left to end the batch:</p>
-        <p>{projDayLeft} days </p>
-      </li>
+      {projDayLeft !== null && (
+        <li>
+          <p>Days left to end the batch:</p>
+          <p>{projDayLeft} days </p>
+        </li>
+      )}
       <li>
         <p className="current-stage">Current stage:</p>
-        <Stage stageName={stageName} dayCount={dayCount} />
+        {dayCount === null || dayCount === 0 ? (
+          <Stage stageName={stageName} />
+        ) : (
+          <Stage stageName={stageName} dayCount={dayCount} />
+        )}
       </li>
       <li>
         <p>Production Start Date:</p>
@@ -42,26 +48,38 @@ export const Summary = ({
 
 export const Stage = ({ stageName, dayCount }) => {
   return (
-    <p>
-      {stageName} - Day {dayCount}
-    </p>
+    <>
+      {dayCount === null || dayCount === 0 ? (
+        <p>{stageName}</p>
+      ) : (
+        <p>
+          {stageName} - Day {dayCount}
+        </p>
+      )}
+    </>
   );
 };
 
 Summary.defaultProps = {
   harvestDayLeft: 0,
+  projDayLeft: 0,
+  dayCount: 0,
 };
 
 Summary.propTypes = {
   harvestDayLeft: PropTypes.number,
-  projDayLeft: PropTypes.number.isRequired,
+  projDayLeft: PropTypes.number,
   prodStartDate: PropTypes.string.isRequired,
   prodEndDate: PropTypes.string.isRequired,
   stageName: PropTypes.string.isRequired,
-  dayCount: PropTypes.number.isRequired,
+  dayCount: PropTypes.number,
+};
+
+Stage.defaultProps = {
+  dayCount: 0,
 };
 
 Stage.propTypes = {
   stageName: PropTypes.string.isRequired,
-  dayCount: PropTypes.number.isRequired,
+  dayCount: PropTypes.number,
 };

@@ -136,6 +136,12 @@ export default function DashboardPage({
   );
 }
 
+DashboardPage.defaultProps = {
+  statusHarvestDayleft: 0,
+  statusProjDayLeft: 0,
+  statusDayCount: 0,
+};
+
 DashboardPage.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   showDashboardFunc: PropTypes.func.isRequired,
@@ -154,10 +160,10 @@ DashboardPage.propTypes = {
   showPhDetails: PropTypes.func.isRequired,
   showEcDetails: PropTypes.func.isRequired,
   showWaterDetails: PropTypes.func.isRequired,
-  statusHarvestDayleft: PropTypes.number.isRequired,
-  statusProjDayLeft: PropTypes.number.isRequired,
+  statusHarvestDayleft: PropTypes.number,
+  statusProjDayLeft: PropTypes.number,
   statusStartDate: PropTypes.string.isRequired,
   statusEndDate: PropTypes.string.isRequired,
   statusStage: PropTypes.string.isRequired,
-  statusDayCount: PropTypes.number.isRequired,
+  statusDayCount: PropTypes.number,
 };

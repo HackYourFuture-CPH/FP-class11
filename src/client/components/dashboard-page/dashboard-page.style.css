@@ -11,7 +11,7 @@
 }
 
 .dashboard .content .wrapper {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
@@ -69,6 +69,7 @@
   font-size: 0.7rem !important;
 }
 
+/* no need for this css if we have extended sidebar on every page
 .dashboard .sidebar-wrapper button:first-of-type {
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-medium);
@@ -77,4 +78,4 @@
 .dashboard .sidebar-wrapper button:first-of-type path,
 .dashboard .sidebar-wrapper button:first-of-type .navtext {
   color: var(--light-blue);
-}
+} */

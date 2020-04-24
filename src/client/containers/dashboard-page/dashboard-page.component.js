@@ -32,7 +32,10 @@ const DashboardPageContainer = () => {
         method: 'GET',
         headers,
       }).then((data) => data.json());
-      setSensorsData(sensorsData.slice(-5));
+      const lastFiveReadings = sensorsData.filter(
+        (sensor) => new Date(sensor.created_at) <= new Date(),
+      );
+      setSensorsData(lastFiveReadings.slice(-5));
     };
 
     const stagesData = await fetch('/api/crop-stages/1', {

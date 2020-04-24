@@ -125,6 +125,7 @@ const getDayLeftToEndBatch = async (seedingDate, totalDays) => {
   const end = moment();
   const daysPassed = end.diff(start, 'days') + 1;
   const daysLeft = totalDays.duration - daysPassed;
+  if (daysLeft < 0) return null;
   return daysLeft;
 };
 

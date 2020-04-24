@@ -37,13 +37,15 @@ export const CropSummary = ({
 
 CropSummary.defaultProps = {
   harvestDayLeft: 0,
+  projDayLeft: 0,
+  dayCount: 0,
 };
 
 CropSummary.propTypes = {
   harvestDayLeft: PropTypes.number,
-  projDayLeft: PropTypes.number.isRequired,
+  projDayLeft: PropTypes.number,
   prodStartDate: PropTypes.string.isRequired,
   prodEndDate: PropTypes.string.isRequired,
   stageName: PropTypes.string.isRequired,
-  dayCount: PropTypes.number.isRequired,
+  dayCount: PropTypes.number,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, date } from '@storybook/addon-knobs';
+import { number, date, text } from '@storybook/addon-knobs';
 import { CropSummary } from './crop-summary-card/crop-summary-card.component';
 
 const moment = require('moment');
@@ -11,7 +11,8 @@ export const defaultCard = () => {
     projDayLeft: number('Project Day Left', 10),
     prodStartDate: date('Project Start Date', new Date()),
     prodEndDate: date('Project End Date', new Date()),
-    dayCount: number('Day Count', 53),
+    stageName: text('Stage', 'Seeding'),
+    dayCount: number('Day Count', 13),
   };
 
   return (
@@ -20,6 +21,7 @@ export const defaultCard = () => {
       projDayLeft={knobs.projDayLeft}
       prodStartDate={String(moment(knobs.prodStartDate).format('DD-MM-YYYY'))}
       prodEndDate={String(moment(knobs.prodEndDate).format('DD-MM-YYYY'))}
+      stageName={knobs.stageName}
       dayCount={knobs.dayCount}
     />
   );
