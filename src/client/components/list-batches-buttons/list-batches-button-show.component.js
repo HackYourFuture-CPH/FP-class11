@@ -7,7 +7,6 @@ const BatchesMenu = ({ buttons, defaultSelection }) => {
   const [selectedButtonId, setSelectedButtonId] = useState(defaultSelection.id);
   return (
     <div className="batches-button-wrapper">
-      Show:
       {buttons.map((button) => {
         return (
           <Button

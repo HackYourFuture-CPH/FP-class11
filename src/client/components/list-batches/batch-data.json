@@ -1,0 +1,43 @@
+{
+  "batchData": [
+    {
+      "id": 1,
+      "name": "Lettuce ",
+      "plant_variety": "Asteraceae",
+      "customer_name": "Italian cucine",
+      "number_of_seeded_pots": 50,
+      "seeding_date": "2020-04-19T22:00:00.000Z",
+      "current_stage": {
+        "stage": "propagation",
+        "day": 4
+      },
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Shiso ",
+      "plant_variety": "Lamiaceae",
+      "customer_name": "Mexican tacos",
+      "number_of_seeded_pots": 50,
+      "seeding_date": "2020-04-30T22:00:00.000Z",
+      "current_stage": {
+        "stage": "queued",
+        "day": null
+      },
+      "status": "queued"
+    },
+    {
+      "id": 3,
+      "name": "Lettuce ",
+      "plant_variety": "Asteraceae",
+      "customer_name": "Turkish Kebab",
+      "number_of_seeded_pots": 50,
+      "seeding_date": "2020-05-31T22:00:00.000Z",
+      "current_stage": {
+        "stage": "queued",
+        "day": null
+      },
+      "status": "queued"
+    }
+  ]
+}

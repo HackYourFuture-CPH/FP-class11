@@ -23,14 +23,37 @@
   padding: 0 1em;
 }
 
-main {
+navigation {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 1em 1em 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em 2em 0 1em;
 }
 
 .filter-buttons {
   display: flex;
   flex-direction: row;
-  margin: 1em 0 0;
+  align-items: center;
+  margin: 0 1em;
+}
+
+.filter-labels {
+  font-weight: bold;
+}
+
+.batch-table {
   padding: 1em 1em 0;
+  margin: 0 4em;
+  width: 100%;
+}
+
+.export-button {
+  margin-right: 4em;
+  margin-left: auto;
 }

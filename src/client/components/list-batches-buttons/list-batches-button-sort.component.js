@@ -8,7 +8,6 @@ const BatchesMenu = ({ buttons, defaultSelection }) => {
 
   return (
     <div className="batches-button-wrapper">
-      Sort by:
       {buttons.map((button) => {
         return (
           <Button
