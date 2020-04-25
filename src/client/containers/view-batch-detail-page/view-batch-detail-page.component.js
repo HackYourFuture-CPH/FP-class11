@@ -1,86 +1,81 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-// import SidebarMenu from '../../components/side-navigation/sidebar.component';
-
-// import SectionHeader from '../../components/section-header/section-header.component';
-
-import FormTitle from '../../components/form-title/form-title.component';
-// import AddBatch from '../../components/add-batch/add-batch.component';
+import ViewBatchDetails from '../../components/view-batch-detail/view-batch-details.component';
+import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import EditBatchImage from '../../components/edit-batch-image/edit-batch-image.component';
 import DeleteBatch from '../../components/delete-confim/batch-delete-button.component';
-// import Footer from '../../components/footer/footer.component';
-
-import { Accordion, AccordionItem } from 'react-light-accordion';
-
+import Footer from '../../components/footer/footer.component';
 import image from '../../assets/images/crop-image.png';
 import penImage from '../../assets/images/edit-icon.png';
-
-// import FormField from '../../components/form-field/form-field.component';
-// import Input from '../../components/input/input.component';
-
 import './view-batch-detail-page.style.css';
-import InputText from '../../components/input-field/input-text.component';
-import Button from '../../components/button/button.component';
-// import InputDate from '../../components/input-field/input-date.component';
+// import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 
-const BatchDetailPage = ({ batchId }) => {
-  const handler = () => {
-    // console.log('bismillah');
+const BatchDetailPage = () => {
+  // const [crop, setCrop] = useState([]);
+  // const [batch, setBatch] = useState([]);
+
+  // const batchId = 1;
+
+  // // Use this function to fetch APIs
+  // const getData = async () => {
+  //   // fetch batch api
+  //   const headers = await getTokenWithHeaders();
+  //   const rbatch = await fetch(`/api/batches/${batchId}`, {
+  //     method: 'GET',
+  //     headers,
+  //   }).then((data) => data.json());
+  //   console.log(rbatch);
+  //   setBatch(rbatch);
+
+  //   // fetch crop api
+  //   const rcrop = await fetch(
+  //     `/api/crops/${batch[0].fk_crop_id}`,
+  //     {
+  //       method: 'GET',
+  //       headers,
+  //     },
+  //   ).then((data) => data.json());
+  //   console.log(rcrop);
+  //   setCrop(rcrop);
+  // };
+
+  // getData();
+
+   const batch= {
+    id:2,
+    seeding_date: '2020-06-01',
+    number_of_seeded_pots: '1500',
+    customer_name: 'KFC',
   };
+  const crop= {
+    name: 'Lattuce',
+  };
+
   return (
     <>
-      {/* <div>
-        <SidebarMenu  />
-      </div>   */}
-      <div className="batchDetail-wrapper">
-        <div className="batch-detail">
-          <FormTitle title={`BATCH# ${batchId}`} />
+      <page>
+        <side>
+          <SidebarMenu isActive={false} isVisible={true} />
+        </side>
+        <detail className="batchDetail-wrapper">
+          <data className="batchDetail">
+            <ViewBatchDetails batch={batch} crop={crop} />
+          </data>
+          <righpannerl className="right-panel">
+            <EditBatchImage
+              srcPath={image}
+              srcPenPath={penImage}
+              altText="A crop"
+              altIconText="A icon"
+            />
+            <h3>{crop.name}</h3>
+            <DeleteBatch />
+          </righpannerl>
+        </detail>
+      </page>
 
-          <Accordion>
-            <AccordionItem title="BATCH DETAILS">
-              {/* <Input placeholder='Crop Name'type='select'/> */}
-
-              <InputText placeholder="Crop Name" />
-              <InputText placeholder="Seeding Date" />
-              <InputText placeholder="Number of pots seeded" />
-              <InputText placeholder="Customer Name" />
-              <Button type="primary" onClick={handler}>
-                SAVE BATCH DETAILS
-              </Button>
-            </AccordionItem>
-
-            <AccordionItem title="STAGE DETAILS">
-              <FormTitle title="Section under development" />
-            </AccordionItem>
-
-            <AccordionItem title="TRAYS AND TANKS">
-              <FormTitle title="Section under development" />
-            </AccordionItem>
-
-            <AccordionItem title="COSTS">
-              <FormTitle title="Section under development" />
-            </AccordionItem>
-          </Accordion>
-        </div>
-
-        <div className="right-panel">
-          <EditBatchImage
-            srcPath={image}
-            srcPenPath={penImage}
-            altText="A crop"
-            altIconText="A icon"
-          />
-          <h3>Happy birth day </h3>
-          <h3>To you</h3>
-          <DeleteBatch />
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };
 
 export default BatchDetailPage;
-
-BatchDetailPage.propTypes = {
-  batchId: PropTypes.string.isRequired,
-};

@@ -12,6 +12,7 @@ import UserRoleContext from './helpers/UserRoleContext';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import signInAsDefaultUser from './helpers/signInAsDefaultUser';
+import BatchDetailPage from './containers/view-batch-detail-page/view-batch-detail-page.component';
 
 function App() {
   const [userState, setUserState] = useState(null);
@@ -66,10 +67,24 @@ function App() {
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-            <PublicRoute component={Page404} />
           </Switch>
         </Router>
       </UserRoleContext.Provider>
+      <Router>
+        <Switch>
+          <PublicRoute exact path="/" component={LoginPage} />
+          <PublicRoute
+            exact
+            path="/forgot-password"
+            component={ForgotPassword}
+          />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
+          <PrivateRoute exact path="/batch-details" component={BatchDetailPage} />
+
+          <PublicRoute component={Page404} />
+        </Switch>
+      </Router>
     </FirebaseContext.Provider>
   );
 }

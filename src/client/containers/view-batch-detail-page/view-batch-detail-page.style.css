@@ -7,12 +7,12 @@ main {
   width: 100vw;
 }
 .batch-detail{
-  width: 70%;
+  width: 50%;
   /* float: left; */
 }
 .right-panel{
-  /* float:right; */
-  width: 30%;
+  float:right; 
+  width: 50%;
   /* display: block; */
   display: flex;
   flex-direction: column;
@@ -22,6 +22,7 @@ main {
 }
 .batchDetail-wrapper{
   display: flex;
+  margin-left: 140px;
 }
 /* .centered{
   margin: 0 auto;
