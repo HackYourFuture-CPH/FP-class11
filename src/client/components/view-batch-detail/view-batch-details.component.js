@@ -7,7 +7,6 @@ import PropType from 'prop-types';
 import './view-batch-details.style.css';
 
 export default function ViewBatchDetails({ batch, crop }) {
-
   return (
     <>
       <FormTitle title={`Batch # ${batch.id}`} />

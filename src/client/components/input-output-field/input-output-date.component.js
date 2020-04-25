@@ -35,5 +35,5 @@ InputDate.propTypes = {
   placeholder: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
-  disabled:PropTypes.bool,
+  disabled: PropTypes.bool,
 };

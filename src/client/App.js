@@ -66,7 +66,6 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-
           </Switch>
         </Router>
       </UserRoleContext.Provider>
@@ -80,7 +79,11 @@ function App() {
           />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-          <PrivateRoute exact path="/batch-details" component={BatchDetailPage} />
+          <PrivateRoute
+            exact
+            path="/batch-details"
+            component={BatchDetailPage}
+          />
 
           <PublicRoute component={Page404} />
         </Switch>
