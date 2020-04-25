@@ -7,7 +7,7 @@ import Button from '../button/button.component';
 import PropTypes from 'prop-types';
 import './form-view-batch-details.style.css';
 
-export default function FormViewBatchDetails({batch,crop}) {
+export default function FormViewBatchDetails({ batch, crop }) {
   // const [cropName, setCropName] = useState(value);
   // const [setStartSeedDate] = useState('');
   // const [setSeedPot] = useState('');
@@ -17,7 +17,6 @@ export default function FormViewBatchDetails({batch,crop}) {
     e.preventDefault();
   };
 
-
   // const handleDropdown = (e) => {
   //   setCropName(e.target.value);
   // };
@@ -25,7 +24,6 @@ export default function FormViewBatchDetails({batch,crop}) {
     <div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-    
           <InputOutputText
             type="text"
             placeholder="crop name"
@@ -60,5 +58,5 @@ export default function FormViewBatchDetails({batch,crop}) {
 
 FormViewBatchDetails.propTypes = {
   crop: PropTypes.string.isRequired,
-  batch: PropTypes.string.isRequired 
+  batch: PropTypes.string.isRequired,
 };

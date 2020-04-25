@@ -4,10 +4,9 @@ import BatchDetailPage from './view-batch-detail-page.component';
 
 export default {
   component: BatchDetailPage,
-  title: 'view batch details page',
-  // decorators: [withKnobs],
+  title: 'view batch details from containers',
 };
 
 export const batchDetailPage = () => {
-  return <BatchDetailPage batchId="2" />;
+  return <BatchDetailPage />;
 };

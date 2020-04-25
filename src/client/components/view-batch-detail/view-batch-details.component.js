@@ -6,18 +6,8 @@ import PropType from 'prop-types';
 
 import './view-batch-details.style.css';
 
-export default function ViewBatchDetails({batch,crop}) {
-  // const batchId = 1;
-  // const batch= {
-  //   seeding_date: '2020-06-01',
-  //   number_of_seeded_pots: '1500',
-  //   customer_name: 'Netto',
-  // };
-  // const crop= {
-  //   name: 'Cucumber',
-  // };
+export default function ViewBatchDetails({ batch, crop }) {
 
-   
   return (
     <>
       <FormTitle title={`Batch # ${batch.id}`} />
@@ -47,7 +37,7 @@ export default function ViewBatchDetails({batch,crop}) {
   );
 }
 
-ViewBatchDetails.propTypes={
-  batch:PropType.string.isRequired,
-  crop:PropType.string.isRequired,
-}
+ViewBatchDetails.propTypes = {
+  batch: PropType.string.isRequired,
+  crop: PropType.string.isRequired,
+};

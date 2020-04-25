@@ -40,13 +40,13 @@ const BatchDetailPage = () => {
 
   // getData();
 
-   const batch= {
-    id:2,
+  const batch = {
+    id: 2,
     seeding_date: '2020-06-01',
     number_of_seeded_pots: '1500',
     customer_name: 'KFC',
   };
-  const crop= {
+  const crop = {
     name: 'Lattuce',
   };
 
