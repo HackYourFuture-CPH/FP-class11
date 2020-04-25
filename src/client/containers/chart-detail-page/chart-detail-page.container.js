@@ -13,6 +13,7 @@ function getMaterialFromSlug(slug) {
 const ChartDetailsSmartData = () => {
   const { materialSlug } = useParams();
   const material = getMaterialFromSlug(materialSlug);
+  const [logoutModal, setLogoutModal] = useState(false);
   const [boundaryData, setBoundaryData] = useState({});
   const [materialName, setMaterialName] = useState(material.value);
   const [materialId, setMaterialId] = useState(material.id);
@@ -22,6 +23,10 @@ const ChartDetailsSmartData = () => {
   const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
   const [selectedChartButtonId, setSelectedChartButtonId] = useState(null);
+  const [activeChartButton, setActiveChartButton] = useState(false);
+  const [startCustom, setStartCustom] = useState('');
+  const [endCustom, setEndCustom] = useState('');
+  const [updateClick, setUpdateClick] = useState(false);
 
   useEffect(() => {
     const material2 = getMaterialFromSlug(materialSlug);
@@ -120,6 +125,20 @@ const ChartDetailsSmartData = () => {
           );
           setSensorData(lastWeekSensorData);
         }
+        // custom button
+        else if (updateClick) {
+          const splitCustomStartDateValue = startCustom.split('-');
+          const customStartDateValue = splitCustomStartDateValue[2];
+          const splitCustomEndDateValue = endCustom.split('-');
+          const customEndDateValue = splitCustomEndDateValue[2];
+          const customDays = customEndDateValue - customStartDateValue;
+          const selectedCustomDays = customDays * 4;
+          const customSensorData = getAllDataOfTheBatchTillDate.slice(
+            getAllDataOfTheBatchTillDate.length - selectedCustomDays,
+            getAllDataOfTheBatchTillDate.length,
+          );
+          setSensorData(customSensorData);
+        }
         // chartdata based on current day of the Batch
         else {
           setSensorData(getAllDataOfTheBatchTillDate);
@@ -135,7 +154,15 @@ const ChartDetailsSmartData = () => {
     ) {
       fetchSensorReadingByMaterialId();
     }
-  }, [materialId, currentDate, startDate, selectedChartButtonId]);
+  }, [
+    materialId,
+    currentDate,
+    startDate,
+    selectedChartButtonId,
+    updateClick,
+    startCustom,
+    endCustom,
+  ]);
   // useeffect for progressbar
   useEffect(() => {
     async function fetchProgressBarData() {
@@ -170,6 +197,14 @@ const ChartDetailsSmartData = () => {
         unit,
         selectedChartButtonId,
         setSelectedChartButtonId,
+        activeChartButton,
+        setActiveChartButton,
+        setStartCustom,
+        setEndCustom,
+        updateClick,
+        setUpdateClick,
+        logoutModal,
+        setLogoutModal,
       }}
     >
       <ChartDetailPage />

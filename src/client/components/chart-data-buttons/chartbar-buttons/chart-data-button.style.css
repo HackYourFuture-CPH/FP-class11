@@ -4,12 +4,15 @@
   /* box-shadow: var(--embossed-shadow-medium); */
   color: var(--dark-blue);
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   text-align: right;
-  justify-content:flex-end; 
-  
-  }
-  
-  .btn-wrapper .btn-toggle{
-    margin: 10px;
-  }
+  justify-content: flex-end;
+}
+
+.btn-wrapper .btn-toggle {
+  margin: 10px;
+}
+
+/* .toggled {
+  box-shadow: var(--debossed-shadow-medium);
+} */

@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import SidebarMenu from './sidebar.component';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import '@storybook/addon-knobs/register';
@@ -19,14 +20,16 @@ export const SidebarActive = () => {
   const showAddBatch = action('show add batch');
   const logout = action('logout');
   return (
-    <SidebarMenu
-      text={text}
-      isActive={buttonActive}
-      isVisible={isVisible}
-      showDashboard={showDashboard}
-      showBatchDetails={showBatchDetails}
-      showAddBatch={showAddBatch}
-      logout={logout}
-    />
+    <MemoryRouter>
+      <SidebarMenu
+        text={text}
+        isActive={buttonActive}
+        isVisible={isVisible}
+        showDashboard={showDashboard}
+        showBatchDetails={showBatchDetails}
+        showAddBatch={showAddBatch}
+        logout={logout}
+      />
+    </MemoryRouter>
   );
 };

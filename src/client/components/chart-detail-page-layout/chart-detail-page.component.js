@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import DetailChart from '../detail-chart/detail-chart.component';
 import SidebarMenu from '../side-navigation/sidebar.component';
 import ProgressBar from '../progress-bar/progress-bar.component';
 import './chart-detail-page.css';
-// import UpdateDateRange from '../../components/update-date-range/update-date-range.component';
 import ChartbarMenu from '../chart-data-buttons/chartbar-buttons/chart-data-button.component';
 import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
 import UserRoleContext from '../../helpers/UserRoleContext';
@@ -31,10 +30,17 @@ const ChartDetailPage = () => {
     unit,
     selectedChartButtonId,
     setSelectedChartButtonId,
+    activeChartButton,
+    setActiveChartButton,
+    setStartCustom,
+    setEndCustom,
+    updateClick,
+    setUpdateClick,
+    logoutModal,
+    setLogoutModal,
   } = useContext(ChartDataContext);
   const { userRole, userName } = useContext(UserRoleContext);
   const headingText = materialName.toUpperCase();
-  const [logoutModal, setLogoutModal] = useState(false);
   return (
     <>
       <SidebarMenu
@@ -64,6 +70,12 @@ const ChartDetailPage = () => {
           buttons={dateButtons}
           selectedChartButtonId={selectedChartButtonId}
           setSelectedChartButtonId={setSelectedChartButtonId}
+          setActiveChartButton={setActiveChartButton}
+          activeChartButton={activeChartButton}
+          setStartCustom={setStartCustom}
+          setEndCustom={setEndCustom}
+          updateClick={updateClick}
+          setUpdateClick={setUpdateClick}
         />
         <DetailChart
           data={sensorData}

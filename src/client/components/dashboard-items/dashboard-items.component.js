@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './dashboard-items.style.css';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 const DashboardItems = ({ items }) => {
   return (
@@ -9,7 +9,12 @@ const DashboardItems = ({ items }) => {
       {items.map((item) => (
         <li key={item.id} id={item.id}>
           {item.to ? (
-            <Link to={item.to} onClick={(e) => e.stopPropagation()}>
+            <Link
+              to={item.to}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               {item.value}
             </Link>
           ) : (
