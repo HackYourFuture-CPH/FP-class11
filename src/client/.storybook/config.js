@@ -1,5 +1,4 @@
-import { configure, addDecorator } from '@storybook/react';
-import StoryRouter from 'storybook-react-router';
+import { configure} from '@storybook/react';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
@@ -10,6 +9,6 @@ function loadStories() {
   requireAll(require.context('../components/', true, /.story\.jsx?$/));
 }
 
-addDecorator(StoryRouter());
+
 configure(loadStories, module);
 import '!style-loader!css-loader!../index.css';
