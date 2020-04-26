@@ -104,7 +104,8 @@ const ChartDetailsSmartData = () => {
         const getStartdateValue = startDate.split(',');
         const currentValue = getCurrentdateValue[0].split('/');
         const startValue = getStartdateValue[0].split('/');
-        const getNumberOfdays = Number(currentValue[1]) - Number(startValue[1]);
+        const getNumberOfdays =
+          Number(currentValue[1] + 1) - Number(startValue[1]);
         const getTheDataforCurrentDay = getNumberOfdays * 4;
         const getAllDataOfTheBatchTillDate = sensorBatchIdData.slice(
           0,

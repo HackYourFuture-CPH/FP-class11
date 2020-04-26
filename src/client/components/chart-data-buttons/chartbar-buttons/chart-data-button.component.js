@@ -15,7 +15,7 @@ const ChartbarMenu = ({
   updateClick,
   setUpdateClick,
 }) => {
-  if (activeChartButton && selectedChartButtonId === 5) {
+  if (activeChartButton && selectedChartButtonId === 3) {
     return (
       <UpdateDateRange
         date="date"
