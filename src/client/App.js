@@ -71,6 +71,7 @@ function App() {
             <Route exact path="/batch-details/:id">
               <BatchDetailPage />
             </Route>
+            <PrivateRoute component={Page404} />
           </Switch>
         </Router>
       </UserRoleContext.Provider>
