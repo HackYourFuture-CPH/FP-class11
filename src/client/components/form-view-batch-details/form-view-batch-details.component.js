@@ -8,11 +8,9 @@ import PropTypes from 'prop-types';
 import './form-view-batch-details.style.css';
 
 export default function FormViewBatchDetails({ batch, crop }) {
- 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
   // const handleDropdown = (e) => {
   //   setCropName(e.target.value);
   // };
@@ -30,7 +28,7 @@ export default function FormViewBatchDetails({ batch, crop }) {
           <InputOutputDate
             type="date"
             placeholder="Start seed date"
-            value={batch.seeding_date.slice(0,10)}
+            value={batch.seeding_date.slice(0, 10)}
             // handleChange={(e) => setStartSeedDate(e.target.value)}
           />
           <InputOutputText
