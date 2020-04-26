@@ -542,6 +542,39 @@
           }
         }
       },
+      "/batches/all": {
+        "get": {
+          "tags": ["all batches"],
+          "parameters": [
+            {
+              "name": "authorization",
+              "in": "header",
+              "description": "Firebase token",
+              "required": true,
+              "type": "string",
+              "default": "Bearer ENTER_FIREBASE_TOKEN"
+            }
+          ],
+          "summary": "get list of all batches together with current stage and status",
+          "description": "get list of all batches together with current stage and status",
+          "operationId": "getAllBatches",
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Successful request"
+            },
+            "401": {
+              "description": "Unauthorized request"
+            },
+            "404": {
+              "description": "Not found"
+            },
+            "500": {
+              "description": "Server error"
+            }
+          }
+        }
+      },
       "securityDefinitions": {
         "firebase_auth": {
           "type": "oauth2",
