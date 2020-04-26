@@ -1,4 +1,5 @@
 const knex = require('../../config/db');
+const moment = require('moment');
 
 const createBatch = async (body) => {
   try {
@@ -7,7 +8,7 @@ const createBatch = async (body) => {
       fk_user_id: body.fk_user_id,
       customer_name: body.customer_name,
       number_of_seeded_pots: body.number_of_seeded_pots,
-      seeding_date: body.seeding_date,
+      seeding_date: moment(body.seeding_date).format('YYYY-MM-DD HH:mm:ss'),
       created_at: knex.fn.now(),
       updated_at: knex.fn.now(),
       deleted_at: null,
