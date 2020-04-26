@@ -8,11 +8,7 @@ import PropTypes from 'prop-types';
 import './form-view-batch-details.style.css';
 
 export default function FormViewBatchDetails({ batch, crop }) {
-  // const [cropName, setCropName] = useState(value);
-  // const [setStartSeedDate] = useState('');
-  // const [setSeedPot] = useState('');
-  // const [customerName,setCustomerName] = useState('');
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -26,26 +22,26 @@ export default function FormViewBatchDetails({ batch, crop }) {
         <form onSubmit={handleSubmit}>
           <InputOutputText
             type="text"
-            placeholder="crop name"
+            placeholder="Crop name"
             value={crop.name}
             // handleChange={(e) => setStartSeedDate(e.target.value)}
           />
 
           <InputOutputDate
             type="date"
-            placeholder="Start Seed Date"
-            value={batch.seeding_date}
+            placeholder="Start seed date"
+            value={batch.seeding_date.slice(0,10)}
             // handleChange={(e) => setStartSeedDate(e.target.value)}
           />
           <InputOutputText
             type="number"
-            placeholder="number of seeded pots"
+            placeholder="Number of seeded pots"
             value={batch.number_of_seeded_pots}
             // handleChange={(e) => setStartSeedDate(e.target.value)}
           />
           <InputOutputText
             type="text"
-            placeholder="Cuttomer name"
+            placeholder="Customer name"
             value={batch.customer_name}
             // handleChange={(e) => setCustomerName(e.target.value)}
           />
@@ -57,6 +53,6 @@ export default function FormViewBatchDetails({ batch, crop }) {
 }
 
 FormViewBatchDetails.propTypes = {
-  crop: PropTypes.string.isRequired,
-  batch: PropTypes.string.isRequired,
+  crop: PropTypes.instanceOf(Object).isRequired,
+  batch: PropTypes.instanceOf(Object).isRequired,
 };

@@ -14,8 +14,6 @@ export default function ViewBatchDetails({ batch, crop }) {
       <div className="addbatch-container">
         <Accordion>
           <AccordionItem title="BATCH DETAILS">
-            <br />
-            <br />
             <FormViewBatchDetails batch={batch} crop={crop} />
           </AccordionItem>
 

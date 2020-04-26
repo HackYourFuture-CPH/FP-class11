@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import LoaderAnimation from './components/loader-animation/loader-animation.component';
 import LoginPage from './containers/login-page/login-page.component';
@@ -66,28 +66,14 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            {/* This one should be changed to private route, but can't get 
+                the useParams() hook to work with our PrivateRoute component */}
+            <Route exact path="/batch-details/:id">
+              <BatchDetailPage />
+            </Route>
           </Switch>
         </Router>
       </UserRoleContext.Provider>
-      <Router>
-        <Switch>
-          <PublicRoute exact path="/" component={LoginPage} />
-          <PublicRoute
-            exact
-            path="/forgot-password"
-            component={ForgotPassword}
-          />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-
-          <PrivateRoute
-            exact
-            path="/batch-details"
-            component={BatchDetailPage}
-          />
-
-          <PublicRoute component={Page404} />
-        </Switch>
-      </Router>
     </FirebaseContext.Provider>
   );
 }
