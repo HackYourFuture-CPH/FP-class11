@@ -1,20 +1,16 @@
  .chart-details{
     display: flex;
     flex-direction: column;
-      justify-content:space-around; 
-      height:85vh; 
-     margin-left: 200px; 
-     margin-right:200px; 
+    justify-content:space-around; 
+     
 } 
 
 .btn .btn-primary{
    text-align: right;
 }
+.heading-text{
+   font-size:larger;
+   padding:1em 0;
+}
 
-/* work with units,date on x- axis,grey area button color to black on graph 
-   edeges of component ----done
-   css for list items --- i think its done
-   export button
-   move the component
-    */
 

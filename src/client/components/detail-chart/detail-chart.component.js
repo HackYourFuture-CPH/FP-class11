@@ -24,7 +24,7 @@ export default function DetailChart({ data, boundary, description, unit }) {
     <ResponsiveContainer
       className="detail-chart-container"
       width="100%"
-      height={400}
+      height={320}
     >
       <LineChart data={data} margin={{ right: 80 }}>
         <XAxis

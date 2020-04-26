@@ -7,6 +7,7 @@ import ChartbarMenu from '../chart-data-buttons/chartbar-buttons/chart-data-butt
 import { ChartDataContext } from '../../containers/chart-detail-page/chart-detail-page.context';
 import UserRoleContext from '../../helpers/UserRoleContext';
 import { useHistory } from 'react-router-dom';
+import Footer from '../footer/footer.component';
 import Logout from '../logout/logout.component';
 import Firebase from '../../firebase/index';
 
@@ -59,30 +60,35 @@ const ChartDetailPage = () => {
         closeAction={() => setLogoutModal(false)}
         logoutFunc={() => Firebase.signOut()}
       />
-      <div className="chart-details">
-        <h1>{headingText} GRAPH DETAILS</h1>
-        <ProgressBar
-          startDate={startDate}
-          currentDate={currentDate}
-          stages={stages}
-        />
-        <ChartbarMenu
-          buttons={dateButtons}
-          selectedChartButtonId={selectedChartButtonId}
-          setSelectedChartButtonId={setSelectedChartButtonId}
-          setActiveChartButton={setActiveChartButton}
-          activeChartButton={activeChartButton}
-          setStartCustom={setStartCustom}
-          setEndCustom={setEndCustom}
-          updateClick={updateClick}
-          setUpdateClick={setUpdateClick}
-        />
-        <DetailChart
-          data={sensorData}
-          boundary={boundaryData}
-          description={materialName}
-          unit={unit}
-        />
+      <div className="content">
+        <div className="wrapper">
+          <div className="chart-details">
+            <h1 className="heading-text">{headingText} GRAPH DETAILS</h1>
+            <ProgressBar
+              startDate={startDate}
+              currentDate={currentDate}
+              stages={stages}
+            />
+            <ChartbarMenu
+              buttons={dateButtons}
+              selectedChartButtonId={selectedChartButtonId}
+              setSelectedChartButtonId={setSelectedChartButtonId}
+              setActiveChartButton={setActiveChartButton}
+              activeChartButton={activeChartButton}
+              setStartCustom={setStartCustom}
+              setEndCustom={setEndCustom}
+              updateClick={updateClick}
+              setUpdateClick={setUpdateClick}
+            />
+            <DetailChart
+              data={sensorData}
+              boundary={boundaryData}
+              description={materialName}
+              unit={unit}
+            />
+          </div>
+          <Footer />
+        </div>
       </div>
     </>
   );

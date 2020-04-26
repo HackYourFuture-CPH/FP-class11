@@ -69,7 +69,7 @@ function App() {
               path="/chart-details/:materialSlug?"
               component={ChartDetailsSmartData}
             />
-            <PublicRoute component={Page404} />
+            <PrivateRoute component={Page404} />
           </Switch>
         </Router>
       </UserRoleContext.Provider>

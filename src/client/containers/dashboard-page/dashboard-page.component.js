@@ -122,7 +122,7 @@ const DashboardPageContainer = () => {
       showHumidityDetails={() => history.push('/chart-details/humidity')}
       showPhDetails={() => history.push('/chart-details/ph')}
       showEcDetails={() => history.push('/chart-details/ec')}
-      showWaterDetails={() => history.push('/chart-details/water-level')}
+      showWaterDetails={() => history.push('/chart-details/water')}
     />
   );
 };

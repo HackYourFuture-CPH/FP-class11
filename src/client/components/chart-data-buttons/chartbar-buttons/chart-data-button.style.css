@@ -1,18 +1,15 @@
 .chartbar-button-wrapper {
-  /* background: var(--light-grey); */
   border: var(--border-inputs);
-  /* box-shadow: var(--embossed-shadow-medium); */
   color: var(--dark-blue);
   display: flex;
   flex-direction: row;
   text-align: right;
   justify-content: flex-end;
+  padding:1.5em 0;
 }
 
 .btn-wrapper .btn-toggle {
   margin: 10px;
 }
 
-/* .toggled {
-  box-shadow: var(--debossed-shadow-medium);
-} */
+
