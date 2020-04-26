@@ -5,6 +5,7 @@ const moment = require('moment');
 const currentStage = async (batchId) => {
   const batchesStages = await knex('batches')
     .join('crop_stages', 'crop_stages.fk_crop_id', '=', 'batches.fk_crop_id')
+    .join('crops', 'crops.id', '=', 'crop_stages.fk_crop_id')
     .select('crop_stages.name', 'crop_stages.duration', 'batches.seeding_date')
     .where('batches.id', batchId);
   if (batchesStages.length === 0) {
@@ -22,10 +23,13 @@ const currentStage = async (batchId) => {
   const filterDurationLessThanToday = batchesStages.filter(
     (batch) => batch.duration >= currentDay,
   );
-  const currentStageName =
-    filterDurationLessThanToday.length > 0
-      ? filterDurationLessThanToday[0].name
-      : 'delivered';
+  let currentStageName = '';
+  if (today < seedingDate) currentStageName = 'queued';
+  else
+    currentStageName =
+      filterDurationLessThanToday.length > 0
+        ? filterDurationLessThanToday[0].name
+        : 'delivered';
   if (currentStage.length === 0) {
     throw new Error(`incorrect entry with the id of ${batchId}`, 404);
   }
@@ -39,7 +43,7 @@ const getDefaultValues = async (batchId, requestedStage) => {
       if (requestedStage === 'current') stage = await currentStage(batchId);
       else stage = requestedStage;
     }
-    if (stage === 'delivered') return [];
+    if (stage === 'delivered' || stage === 'queued') return [];
     const query = knex('crop_stage_default_values')
       .join(
         'batches',
