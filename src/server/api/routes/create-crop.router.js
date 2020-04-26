@@ -78,12 +78,11 @@ const createCropController = require('../controllers/create-crop.controller');
  *        description: Unexpected error.
  */
 
-// ENDPOINT: /api/create-crop :POST to create a crop
+// ENDPOINT: /api/create-crop :POST to Create a crop
 router.post(
   '/',
   checkIfAuthorized(ROLES.SUPER_ADMIN, ROLES.ADMIN),
   (req, res, next) => {
-    console.log(req.body);
     createCropController
       .createCrop(req.body)
       .then((result) => res.json(result))
