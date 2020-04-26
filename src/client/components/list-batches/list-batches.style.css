@@ -15,8 +15,12 @@ table tbody tr:hover td {
   border: 1px solid var(--light-grey);
 }
 
-table tbody tr:last-child:hover {
-  border-radius: 0 0 1.2em 1.2em;
+tbody tr:last-child:hover td:first-child {
+  border-radius: 0 0 0 1.2em;
+}
+
+tbody tr:last-child:hover td:last-child {
+  border-radius: 0 0 1.2em 0;
 }
 
 th,
