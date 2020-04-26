@@ -16,9 +16,21 @@ const batchDefaultValuesRouter = require('./batch-default-values.router');
 const batchStatusRouter = require('./batch-status.router');
 const deleteSpecificBatchDataRouter = require('./delete-specific-batch.router');
 
+// Application routes
+router.use('/modules', modulesRouter);
+router.use('/batches', batchesRouter);
+router.use('/crop-stages', cropStagesEndpoint);
+router.use('/sensor-reading', sensorReadingRouter);
+router.use('/crop-stage-parameter-values', cropStageDefaultValuesRouter);
+router.use('/crops', cropsRouter);
+router.use('/users', usersRouter);
+router.use('/create-batch', createBatchRouter);
+router.use('/batch', getBatchRouter);
+router.use('/batch-default-values', batchDefaultValuesRouter);
+router.use('/batch-status/', batchStatusRouter);
+router.use('/delete-specific-batch', deleteSpecificBatchDataRouter);
+
 // swagger-ui-express
-// const swaggerDocument = require('../../config/swagger.json');
-// const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
@@ -51,19 +63,5 @@ const swaggerOptions = {
 // Route for Swagger API Documentation
 const swaggerDocument = swaggerJsDoc(swaggerOptions);
 router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-// Application routes
-router.use('/modules', modulesRouter);
-router.use('/batches', batchesRouter);
-router.use('/crop-stages', cropStagesEndpoint);
-router.use('/sensor-reading', sensorReadingRouter);
-router.use('/crop-stage-parameter-values', cropStageDefaultValuesRouter);
-router.use('/crops', cropsRouter);
-router.use('/users', usersRouter);
-router.use('/create-batch', createBatchRouter);
-router.use('/batch', getBatchRouter);
-router.use('/batch-default-values', batchDefaultValuesRouter);
-router.use('/batch-status/', batchStatusRouter);
-router.use('/delete-specific-batch', deleteSpecificBatchDataRouter);
 
 module.exports = router;

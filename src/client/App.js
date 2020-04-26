@@ -4,6 +4,7 @@ import LoaderAnimation from './components/loader-animation/loader-animation.comp
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
 import Dashboard from './containers/dashboard-page/dashboard-page.container';
+import AddBatchContainer from './containers/add-batch-page/add-batch-page.container';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 import ChartDetailsSmartData from './containers/chart-detail-page/chart-detail-page.container';
@@ -65,10 +66,12 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/add-batch" component={AddBatchContainer} />
             <PrivateRoute
               path="/chart-details/:materialSlug?"
               component={ChartDetailsSmartData}
             />
+
             <PrivateRoute component={Page404} />
           </Switch>
         </Router>
