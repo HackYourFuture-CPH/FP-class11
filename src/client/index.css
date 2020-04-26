@@ -14,6 +14,10 @@ body {
   background-color: var(--light-grey);
 }
 
+main {
+  margin-bottom: 5em;
+}
+
 h1 {
   font-size: 2.2em;
   text-transform: uppercase;
