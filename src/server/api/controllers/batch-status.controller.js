@@ -50,10 +50,13 @@ const currentStage = async (batchId, batchesStages, seedingDate) => {
     const filterDurationLessThanToday = formattedBatchesStages.filter(
       (batch) => batch.duration >= currentDay,
     );
-    const currentStageName =
-      filterDurationLessThanToday.length > 0
-        ? filterDurationLessThanToday[0].name
-        : 'delivered';
+    let currentStageName = '';
+    if (today < seedingDate) currentStageName = 'queued';
+    else
+      currentStageName =
+        filterDurationLessThanToday.length > 0
+          ? filterDurationLessThanToday[0].name
+          : 'delivered';
     if (currentStage.length === 0) {
       throw new Error(
         `currentStage`,
@@ -61,7 +64,7 @@ const currentStage = async (batchId, batchesStages, seedingDate) => {
         404,
       );
     }
-    if (currentStageName === 'delivered')
+    if (currentStageName === 'delivered' || currentStageName === 'queued')
       return { status: currentStageName, day: null };
     return { status: currentStageName, day: currentDay };
   } catch (error) {
@@ -85,13 +88,16 @@ const getDaysTilHarvest = async (batchesStages, seedingDate) => {
     durationDaysBeforeHarvest,
     'days',
   );
+
   if (
-    moment(todayDate).format('DD-MM-YYYY') >=
-    moment(harvestStartDate).format('DD-MM-YYYY')
+    todayDate.startOf('day') >= harvestStartDate.startOf('day') ||
+    todayDate < seedingDate
   )
     return null;
-  const daysTilHarvestFromToday =
-    moment(harvestStartDate).diff(todayDate, 'days') + 1;
+  const daysTilHarvestFromToday = moment(harvestStartDate).diff(
+    todayDate,
+    'days',
+  );
 
   return daysTilHarvestFromToday;
 };
@@ -125,6 +131,7 @@ const getDayLeftToEndBatch = async (seedingDate, totalDays) => {
   const end = moment();
   const daysPassed = end.diff(start, 'days') + 1;
   const daysLeft = totalDays.duration - daysPassed;
+  if (daysLeft < 0 || end < start) return null;
   return daysLeft;
 };
 

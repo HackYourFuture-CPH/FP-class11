@@ -28,6 +28,9 @@ export const Status = ({ stat }) => {
   return <div className={`status ${classname}`}>{msg}</div>;
 };
 
+Status.defaultProps = {
+  stat: 0,
+};
 Status.propTypes = {
-  stat: PropTypes.number.isRequired,
+  stat: PropTypes.number,
 };
