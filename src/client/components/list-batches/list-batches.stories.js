@@ -9,5 +9,6 @@ export const ListBatchesTable = () => (
   <ListBatches
     batchData={data.batchesData}
     openDashboardFunc={action('open dashboard')}
+    openAlertWindowFunc={action('open alert window')}
   />
 );

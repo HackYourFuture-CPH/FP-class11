@@ -3,13 +3,14 @@ import UserRoleContext from '../../helpers/UserRoleContext';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 import { useHistory } from 'react-router-dom';
 import Firebase from '../../firebase/index';
-
+import BatchQueueAlertWindowStory from '../../components/batch-queue-alert-window/batch-queue-alert-window.component';
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import Logout from '../../components/logout/logout.component';
 // import Button from '../../components/button/button.component';
 // import ShowButton from '../../components/list-batches-buttons/list-batches-button-show.component';
 // import SortButton from '../../components/list-batches-buttons/list-batches-button-sort.component';
 import ListBatches from '../../components/list-batches/list-batches.component';
+
 import Footer from '../../components/footer/footer.component';
 import LoaderAnimation from '../../components/loader-animation/loader-animation.component';
 import './list-batches-page.style.css';
@@ -19,6 +20,8 @@ export default function ListBatchesPage() {
   const { userRole, userName } = useContext(UserRoleContext);
 
   const [logoutModal, setLogoutModal] = useState(false);
+  const [itemId, setItemId] = useState(0);
+  const [alertWindow, setAlertWindow] = useState(false);
   const [loading, setLoading] = useState(true);
   const [listBatchData, setListBatchData] = useState(null);
 
@@ -99,6 +102,15 @@ export default function ListBatchesPage() {
                 openDashboardFunc={(batchId) =>
                   history.push('/dashboard', { batchId })
                 }
+                openAlertWindowFunc={(batchId) => {
+                  setItemId(batchId);
+                  return setAlertWindow(true);
+                }}
+              />
+              <BatchQueueAlertWindowStory
+                openState={alertWindow}
+                closeAction={() => setAlertWindow(false)}
+                batchItem={listBatchData[itemId]}
               />
             </div>
             {/* TODO

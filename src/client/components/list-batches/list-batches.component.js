@@ -13,7 +13,11 @@ const headings = [
   'SEEDING DATE',
 ];
 
-export default function ListBatches({ batchData, openDashboardFunc }) {
+export default function ListBatches({
+  batchData,
+  openDashboardFunc,
+  openAlertWindowFunc,
+}) {
   const columns = headings.map((column) => {
     return <th key={column}>{column}</th>;
   });
@@ -26,8 +30,15 @@ export default function ListBatches({ batchData, openDashboardFunc }) {
         </thead>
         <tbody>
           {batchData.length > 0 ? (
-            batchData.map((batch) => (
-              <tr key={batch.id} onClick={() => openDashboardFunc(batch.id)}>
+            batchData.map((batch, id) => (
+              <tr
+                key={batch.id}
+                onClick={() =>
+                  batch.status === 'active'
+                    ? openDashboardFunc(batch.id)
+                    : openAlertWindowFunc(id)
+                }
+              >
                 <td>Batch #{batch.id}</td>
                 <td>
                   {batch.plant_variety}- {batch.name}
@@ -57,4 +68,5 @@ export default function ListBatches({ batchData, openDashboardFunc }) {
 ListBatches.propTypes = {
   batchData: PropTypes.oneOfType([PropTypes.array]).isRequired,
   openDashboardFunc: PropTypes.func.isRequired,
+  openAlertWindowFunc: PropTypes.func.isRequired,
 };
