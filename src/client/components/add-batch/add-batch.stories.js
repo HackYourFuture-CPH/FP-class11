@@ -5,4 +5,13 @@ export default {
   title: 'AddBatch',
 };
 
-export const AddBatchPage = () => <AddBatch />;
+export const AddBatchPage = () => (
+  <AddBatch
+    cropId={1}
+    setCropId={() => null}
+    setStartSeedDate={() => null}
+    setSeedPot={() => null}
+    setCustomerName={() => null}
+    handleSubmit={() => null}
+  />
+);
