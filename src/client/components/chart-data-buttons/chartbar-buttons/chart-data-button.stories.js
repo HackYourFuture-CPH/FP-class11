@@ -19,5 +19,11 @@ const defaultValue = [
 
 export const ChartdataButtons = () => {
   const value = object(label, defaultValue);
-  return <ChartbarMenu buttons={value} defaultSelection={{ id: 2 }} />;
+  return (
+    <ChartbarMenu
+      buttons={value}
+      selectedChartButtonId={defaultValue[0].id}
+      setSelectedChartButtonId={() => null}
+    />
+  );
 };

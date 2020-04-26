@@ -32,7 +32,7 @@ export default function LineChartForDashboard({
       moment(sensor.created_at).format('DD/MM'),
     );
 
-  return (
+  return boundary && Object.keys(boundary).length > 0 ? (
     <ResponsiveContainer width="100%" height={180}>
       <LineChart
         data={filterByMaterialId}
@@ -100,17 +100,20 @@ export default function LineChartForDashboard({
         />
       </LineChart>
     </ResponsiveContainer>
+  ) : (
+    <div>No data</div>
   );
 }
 
 LineChartForDashboard.defaultProps = {
   materialId: 1,
+  boundary: {},
 };
 
 LineChartForDashboard.propTypes = {
   data: PropTypes.oneOfType([PropTypes.object]).isRequired,
   materialId: PropTypes.number,
-  boundary: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  boundary: PropTypes.oneOfType([PropTypes.object]),
   description: PropTypes.string.isRequired,
   unit: PropTypes.string.isRequired,
   showDetailChartFunc: PropTypes.func.isRequired,

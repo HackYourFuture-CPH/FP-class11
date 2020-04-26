@@ -4,7 +4,6 @@ const router = express.Router({ mergeParams: true });
 
 // controllers
 const batchesController = require('../controllers/batches.controller');
-const batchController = require('../controllers/batches.controller');
 
 const {
   checkIfAuthenticated,
@@ -44,7 +43,7 @@ const {
 // ENDPOINT: /api/batches/ :GET to get all batches
 router.get('/', checkIfAuthenticated, (req, res, next) => {
   batchesController
-    .getBatches()
+    .getBatches(req.query.detailed)
     .then((result) => res.json(result))
     .catch(next);
 });
@@ -86,7 +85,7 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
  */
 // ENDPOINT: /api/batch/:id :GET to get one module
 router.get('/:batchId', checkIfAuthenticated, (req, res, next) => {
-  batchController
+  batchesController
     .getBatchById(req.params.batchId)
     .then((result) => res.json(result))
     .catch(next);

@@ -11,11 +11,15 @@
   "paths": {
     "/crops": {
       "get": {
-        "tags": ["crops"],
+        "tags": [
+          "crops"
+        ],
         "summary": "Get all crops",
         "description": "Get all crops",
         "operationId": "getAllCrops",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -41,17 +45,23 @@
           }
         },
         "security": {
-          "firebase_auth": ["read"]
+          "firebase_auth": [
+            "read"
+          ]
         }
       }
     },
     "/batch-default-values/{batchId}": {
       "get": {
-        "tags": ["default values"],
+        "tags": [
+          "default values"
+        ],
         "summary": "Get default values for specific batch by batchId",
         "description": "",
         "operationId": "getDefaultValues",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -90,14 +100,18 @@
         },
         "security": [
           {
-            "fireabse_auth": ["read"]
+            "fireabse_auth": [
+              "read"
+            ]
           }
         ]
       }
     },
     "/batch-status/{batchId}": {
       "get": {
-        "tags": ["batch status"],
+        "tags": [
+          "batch status"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -117,7 +131,9 @@
         "summary": "Get status messages for the batch",
         "description": "",
         "operationId": "getBatchStatus",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successful GET request"
@@ -133,7 +149,9 @@
           }
         },
         "security": {
-          "fireabse_auth": ["read"]
+          "fireabse_auth": [
+            "read"
+          ]
         }
       }
     },
@@ -476,7 +494,9 @@
     },
     "/delete-specific-data/{batchId}": {
       "delete": {
-        "tags": ["specific-batch"],
+        "tags": [
+          "specific-batch"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -496,7 +516,9 @@
         "summary": "delete a specific batch data",
         "description": "delete a specific batch by batchId",
         "operationId": "deleteSpecificBatchById",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "Successful delete request"
@@ -512,7 +534,9 @@
           }
         },
         "security": {
-          "firebase_auth": ["delete"]
+          "firebase_auth": [
+            "delete"
+          ]
         }
       }
     },
@@ -598,6 +622,17 @@
             "write": "write data based on user uid"
           }
         }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "firebase_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "seasony-login.firebaseapp.com",
+      "flow": "accessCode",
+      "scopes": {
+        "read": "read data based on user uid",
+        "write": "write data based on user uid"
       }
     }
   }

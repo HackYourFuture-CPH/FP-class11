@@ -1,8 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import DashboardItems from '../dashbord-items/dashboard-items.component';
-import '../dashbord-items/dashboard-items.style.css';
+import DashboardItems from '../dashboard-items/dashboard-items.component';
+import './navigation-button.style.css';
 
 const NavigationButton = ({
   icon,
@@ -11,23 +11,24 @@ const NavigationButton = ({
   isUser,
   isVisible,
   handleClick,
+  items,
 }) => {
   const className = `${isActive ? 'item-active' : 'item'} ${
     isUser ? 'user' : ''
   } ${isVisible ? 'visible' : 'hidden'}`;
-  const items = [
-    { id: 1, value: 'Temperature' },
-    { id: 2, value: 'Humidity' },
-    { id: 3, value: 'PH' },
-    { id: 4, value: 'EC' },
-    { id: 5, value: 'Water' },
-  ];
   return (
-    <button type="button" className={className} onClick={handleClick}>
-      <FontAwesomeIcon icon={icon} className="icon" />
-      <p className="navtext">{text}</p>
-      {isActive ? <DashboardItems items={items} /> : ''}
-    </button>
+    <section className={className}>
+      <button type="button" onClick={handleClick} className="navigation-btn">
+        <FontAwesomeIcon icon={icon} className="icon" />
+        <p className="navtext">{text}</p>
+      </button>
+
+      {isActive ? (
+        <DashboardItems items={items} handleClick={handleClick} />
+      ) : (
+        ''
+      )}
+    </section>
   );
 };
 NavigationButton.defaultProps = {
@@ -43,5 +44,6 @@ NavigationButton.propTypes = {
   isUser: PropTypes.bool,
   isVisible: PropTypes.bool,
   handleClick: PropTypes.func,
+  items: PropTypes.instanceOf(Array).isRequired,
 };
 export default NavigationButton;
