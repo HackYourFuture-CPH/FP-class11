@@ -44,7 +44,7 @@ const PopupModal = ({ closeAction, children, title }) => {
 const LogoutContent = ({ userName, children }) => {
   return (
     <>
-      <div className="content">
+      <div className="modal-content">
         <p>Hi {userName}</p>
         <p>Do you really want to log out?</p>
       </div>

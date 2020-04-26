@@ -26,3 +26,13 @@ h2 {
 button {
   cursor: pointer;
 }
+
+.content {
+  margin-left: 135px;
+}
+.content .wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  height: calc(100vh - 5em);
+}
