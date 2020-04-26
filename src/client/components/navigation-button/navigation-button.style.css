@@ -67,3 +67,8 @@
 .visible {
   visibility: visible;
 }
+
+.navigation-btn {
+  background-color: transparent;
+  border: none;
+}
