@@ -52,8 +52,8 @@ const AddBatchPage = () => {
             setCustomerName={setCustomerName}
             handleSubmit={createBatch}
           />
+          <Footer />
         </div>
-        <Footer />
       </div>
     </>
   );
