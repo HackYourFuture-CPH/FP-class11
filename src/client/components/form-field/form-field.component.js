@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DropDown from '../drop-down/drop-down.component';
 import InputText from '../input-field/input-text.component';
 import InputDate from '../input-field/input-date.component';
 import Button from '../button/button.component';
+import PropTypes from 'prop-types';
 
 import './form-field.css';
 
-export default function FormField() {
-  const [cropName, setCropName] = useState('');
-  const [setStartSeedDate] = useState('');
-  const [setSeedPot] = useState('');
-  const [setCustomerName] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const handleDropdown = (e) => {
-    setCropName(e.target.value);
-  };
-
+export default function FormField({
+  cropId,
+  setCropId,
+  setStartSeedDate,
+  setSeedPot,
+  setCustomerName,
+  handleSubmit,
+}) {
   return (
     <div>
       <div className="form-container">
@@ -29,9 +24,9 @@ export default function FormField() {
               { value: 1, label: 'Lettuce' },
               { value: 2, label: 'Shiso' },
             ]}
-            value={cropName}
+            value={cropId}
             placeholder="Crop Name"
-            handleChange={handleDropdown}
+            handleChange={(e) => setCropId(e.target.value)}
           />
 
           <InputDate
@@ -55,3 +50,12 @@ export default function FormField() {
     </div>
   );
 }
+
+FormField.propTypes = {
+  cropId: PropTypes.number.isRequired,
+  setCropId: PropTypes.func.isRequired,
+  setStartSeedDate: PropTypes.func.isRequired,
+  setSeedPot: PropTypes.func.isRequired,
+  setCustomerName: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};

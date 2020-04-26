@@ -5,6 +5,7 @@
   text-align: right;
   justify-content: flex-end;
   border: var(--border-inputs);
+  padding:1.5em 0;
 }
 
 .input-date {

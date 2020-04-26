@@ -12,9 +12,7 @@ const label = 'value';
 const defaultValue = [
   { id: 1, label: 'Last 5 Days' },
   { id: 2, label: 'Last Week' },
-  { id: 3, label: 'Last Two Weeks' },
-  { id: 4, label: 'Last Month' },
-  { id: 5, label: 'Custom' },
+  { id: 3, label: 'Custom' },
 ];
 
 export const ChartdataButtons = () => {
