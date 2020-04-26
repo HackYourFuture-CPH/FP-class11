@@ -1,74 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DropDown from '../drop-down/drop-down.component';
 import InputText from '../input-field/input-text.component';
 import InputDate from '../input-field/input-date.component';
 import Button from '../button/button.component';
+import PropTypes from 'prop-types';
 
 import './form-field.css';
 
-const { getTokenWithHeaders } = require('../../firebase/getTokenWithHeaders');
-
-export default function FormField() {
-  const [cropName, setCropName] = useState('');
-  const [startSeedDate, setStartSeedDate] = useState('');
-  const [seedPot, setSeedPot] = useState('');
-  const [customerName, setCustomerName] = useState('');
-
-  const handleOnSubmit = async (e) => {
-    e.preventDefault();
-    const dateTime = new Date(startSeedDate)
-      .toISOString()
-      .slice(0, 19)
-      .replace('T', ' ');
-    setStartSeedDate(dateTime);
-    const headers = await getTokenWithHeaders();
-    let userId = await fetch('http://localhost:5000/api/users/id', {
-      method: 'GET',
-      headers,
-    })
-      .then((id) => {
-        return id.json();
-      })
-      .catch((error) => {
-        return error;
-      });
-    userId = userId[0].id;
-
-    await fetch('http://localhost:5000/api/create-batch', {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({
-        fk_crop_id: cropName,
-        fk_user_id: userId,
-        customer_name: customerName,
-        number_of_seeded_pots: seedPot,
-        seeding_date: startSeedDate,
-      }),
-    })
-      .then((response) => {
-        response.json();
-      })
-      .catch((error) => {
-        return error;
-      });
-  };
-
-  const handleDropdown = (e) => {
-    setCropName(e.target.value);
-  };
-
+export default function FormField({
+  cropId,
+  setCropId,
+  setStartSeedDate,
+  setSeedPot,
+  setCustomerName,
+  handleSubmit,
+}) {
   return (
     <div>
       <div className="form-container">
-        <form onSubmit={handleOnSubmit}>
+        <form onSubmit={handleSubmit}>
           <DropDown
             data={[
               { value: 1, label: 'Lettuce' },
               { value: 2, label: 'Shiso' },
             ]}
-            value={cropName}
+            value={cropId}
             placeholder="Crop Name"
-            handleChange={handleDropdown}
+            handleChange={(e) => setCropId(e.target.value)}
           />
 
           <InputDate
@@ -92,3 +50,12 @@ export default function FormField() {
     </div>
   );
 }
+
+FormField.propTypes = {
+  cropId: PropTypes.number.isRequired,
+  setCropId: PropTypes.func.isRequired,
+  setStartSeedDate: PropTypes.func.isRequired,
+  setSeedPot: PropTypes.func.isRequired,
+  setCustomerName: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
