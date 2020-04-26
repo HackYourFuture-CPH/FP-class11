@@ -28,6 +28,7 @@ const BatchDetailPage = () => {
           setBatch(b[0]);
           return b[0];
         })
+        // eslint-disable-next-line no-console
         .catch((err) => console.log(err));
 
       await fetch(`/api/crops`, {
@@ -39,6 +40,8 @@ const BatchDetailPage = () => {
           const referencedCrop = crops.filter((c) => c.id === b0.fk_crop_id);
           setCrop(referencedCrop[0] ? referencedCrop[0] : null);
         })
+
+        // eslint-disable-next-line no-console
         .catch((err) => console.log(err));
     };
     getData();

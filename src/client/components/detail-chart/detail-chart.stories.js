@@ -36,12 +36,18 @@ const unit = {
   water: 'cm',
 };
 
+const { sensors_readings } = data;
+
+const filterByMaterialId = sensors_readings.filter(
+  (sensor) => sensor.fk_material_id === '1',
+);
+
 export const withRangeBar = () => (
   <DetailChart
-    data={data}
-    materialId={materialId}
+    data={filterByMaterialId}
+    materialId={materialId.temperature}
     boundary={boundary}
-    description={description}
-    unit={unit}
+    description={description.temperature}
+    unit={unit.temperature}
   />
 );

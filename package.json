@@ -91,6 +91,7 @@
     "nodemon": "^2.0.2",
     "poetic": "1.2.6",
     "sequelize-cli": "^5.5.1",
+    "storybook-react-router": "^1.0.8",
     "webpack-dev-server": "3.10.3"
   },
   "jest": {
