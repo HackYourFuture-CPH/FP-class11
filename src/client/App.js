@@ -66,7 +66,7 @@ function App() {
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-            <PublicRoute component={Page404} />
+            <PrivateRoute component={Page404} />
           </Switch>
         </Router>
       </UserRoleContext.Provider>
