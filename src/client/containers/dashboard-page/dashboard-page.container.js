@@ -61,7 +61,7 @@ const DashboardPageContainer = () => {
     ).then((data) => data.json());
     setBoundaryData(defaultValues);
 
-    const statusData = await fetch('/api/batch-status/1', {
+    const statusData = await fetch(`/api/batch-status/${id}`, {
       method: 'GET',
       headers,
     }).then((data) => data.json());

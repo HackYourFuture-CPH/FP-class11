@@ -66,8 +66,8 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PublicRoute exact path="/list-batches" component={ListBatches} />
-            <PublicRoute component={Page404} />
+            <PrivateRoute exact path="/list-batches" component={ListBatches} />
+            <PrivateRoute component={Page404} />
           </Switch>
         </Router>
       </UserRoleContext.Provider>

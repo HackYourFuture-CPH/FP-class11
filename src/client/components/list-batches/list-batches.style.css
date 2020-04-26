@@ -7,6 +7,18 @@ table {
   text-align: center;
 }
 
+table tbody tr:hover {
+  background: var(--grey);
+}
+
+table tbody tr:hover td {
+  border: 1px solid var(--light-grey);
+}
+
+table tbody tr:last-child:hover {
+  border-radius: 0 0 1.2em 1.2em;
+}
+
 th,
 td {
   height: 50px;

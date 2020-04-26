@@ -23,14 +23,6 @@
   width: 100%;
 }
 
-.batch-list .content .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  width: 1100px;
-}
-
 .batch-list header {
   padding: 1em 1em 0;
 }
