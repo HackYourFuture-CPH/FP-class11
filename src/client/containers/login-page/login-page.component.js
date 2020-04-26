@@ -14,7 +14,7 @@ function LoginPage() {
   const user = useContext(FirebaseContext);
 
   useEffect(() => {
-    if (user) history.replace('/dashboard');
+    if (user) history.replace('/list-batches');
   });
 
   return (
@@ -37,7 +37,7 @@ function LoginPage() {
             if (err) {
               setErrorMessage(err.message);
               setErrorNotifications(err.code);
-            } else history.replace('/dashboard');
+            } else history.replace('/list-batches');
           }
         }}
       />

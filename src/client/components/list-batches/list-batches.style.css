@@ -3,7 +3,7 @@ table {
   border-style: hidden;
   border-radius: var(--border-radius-low);
   width: 80%;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
 }
 
@@ -11,4 +11,12 @@ th,
 td {
   height: 50px;
   border: 1px solid var(--grey);
+}
+
+td {
+  font-size: 0.9em;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
