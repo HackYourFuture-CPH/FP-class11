@@ -2,12 +2,13 @@
   background: var(--light-grey);
   display: flex;
   flex-direction: column;
-  position:fixed;
+  position: fixed;
   text-align: center;
   width: 135px;
   min-height: 100vh;
   border: none;
   box-shadow: var(--debossed-shadow-mini-right);
+  z-index: 1;
 }
 
 .sidebar-wrapper .logo {

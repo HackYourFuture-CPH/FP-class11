@@ -1,7 +1,7 @@
 import React from 'react';
 import DashboardPage from './dashboard-page.component.js';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import data from './data.json';
 
@@ -25,6 +25,12 @@ export const Dashboard = () => {
   const showPhDetails = action('open ph details page');
   const showEcDetails = action('open ec details page');
   const showWaterDetails = action('open water level details page');
+  const statusHarvestDayleft = number('days til harvest', 3);
+  const statusProjDayLeft = number('days til end', 10);
+  const statusStartDate = text('production start date', '11/04/2020');
+  const statusEndDate = text('production end date', '23/04/2020');
+  const statusStage = text('current stage', 'seeding');
+  const statusDayCount = number('day stage', 1);
   return (
     <DashboardPage
       isVisible={true}
@@ -44,6 +50,12 @@ export const Dashboard = () => {
       showPhDetails={showPhDetails}
       showEcDetails={showEcDetails}
       showWaterDetails={showWaterDetails}
+      statusHarvestDayleft={statusHarvestDayleft}
+      statusProjDayLeft={statusProjDayLeft}
+      statusStartDate={statusStartDate}
+      statusEndDate={statusEndDate}
+      statusStage={statusStage}
+      statusDayCount={statusDayCount}
     />
   );
 };
