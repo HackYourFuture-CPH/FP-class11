@@ -24,6 +24,7 @@ const DashboardPageContainer = () => {
   const [lineChartDataEc, setLineChartDataEc] = useState(null);
   const [lineChartDataWaterLevel, setLineChartDataWaterLevel] = useState(null);
   const [boundaryData, setBoundaryData] = useState(null);
+  const [showDropdownItems, setShowDropdownItems] = useState(false);
   const [statusBoxData, setStatusBoxData] = useState(null);
 
   const fetchData = async (id) => {
@@ -98,14 +99,21 @@ const DashboardPageContainer = () => {
     boundaryData,
     statusBoxData,
   ]);
+
+  function showDashboard() {
+    setShowDropdownItems(!showDropdownItems);
+    history.push('/dashboard');
+  }
+
   return loading ? (
     <LoaderAnimation />
   ) : (
     <DashboardPage
+      isActive={showDropdownItems}
       isVisible={
         userRole && (userRole === 'admin' || userRole === 'super_admin')
       }
-      showDashboardFunc={() => history.push('/dashboard')}
+      showDashboardFunc={showDashboard}
       showBatchDetailsFunc={() => history.push('/batch-details')}
       showAddBatchFunc={() => history.push('/add-batch')}
       showLogoutModal={() => setLogoutModal(true)}
@@ -128,7 +136,7 @@ const DashboardPageContainer = () => {
       showHumidityDetails={() => history.push('/chart-details/humidity')}
       showPhDetails={() => history.push('/chart-details/ph')}
       showEcDetails={() => history.push('/chart-details/ec')}
-      showWaterDetails={() => history.push('/chart-details/water-level')}
+      showWaterDetails={() => history.push('/chart-details/water')}
       statusHarvestDayleft={statusBoxData.daysLeftToHarvest}
       statusProjDayLeft={statusBoxData.daysLeftToEndBatch}
       statusStartDate={statusBoxData.productionStartDate}
