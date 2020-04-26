@@ -24,6 +24,7 @@ const DashboardPageContainer = () => {
   const [lineChartDataEc, setLineChartDataEc] = useState(null);
   const [lineChartDataWaterLevel, setLineChartDataWaterLevel] = useState(null);
   const [boundaryData, setBoundaryData] = useState(null);
+  const [statusBoxData, setStatusBoxData] = useState(null);
 
   const fetchData = async (id) => {
     const headers = await getTokenWithHeaders();
@@ -33,7 +34,10 @@ const DashboardPageContainer = () => {
         method: 'GET',
         headers,
       }).then((data) => data.json());
-      setSensorsData(sensorsData.slice(-5));
+      const lastFiveReadings = sensorsData.filter(
+        (sensor) => new Date(sensor.created_at) <= new Date(),
+      );
+      setSensorsData(lastFiveReadings.slice(-5));
     };
 
     const stagesData = await fetch(`/api/crop-stages/${id}`, {
@@ -56,6 +60,12 @@ const DashboardPageContainer = () => {
       },
     ).then((data) => data.json());
     setBoundaryData(defaultValues);
+
+    const statusData = await fetch('/api/batch-status/1', {
+      method: 'GET',
+      headers,
+    }).then((data) => data.json());
+    setStatusBoxData(statusData);
   };
 
   useEffect(() => {
@@ -72,7 +82,8 @@ const DashboardPageContainer = () => {
       lineChartDataPh &&
       lineChartDataEc &&
       lineChartDataWaterLevel &&
-      boundaryData
+      boundaryData &&
+      statusBoxData
     )
       setLoading(false);
   }, [
@@ -85,8 +96,8 @@ const DashboardPageContainer = () => {
     lineChartDataEc,
     lineChartDataWaterLevel,
     boundaryData,
+    statusBoxData,
   ]);
-
   return loading ? (
     <LoaderAnimation />
   ) : (
@@ -118,6 +129,12 @@ const DashboardPageContainer = () => {
       showPhDetails={() => history.push('/chart-details/ph')}
       showEcDetails={() => history.push('/chart-details/ec')}
       showWaterDetails={() => history.push('/chart-details/water-level')}
+      statusHarvestDayleft={statusBoxData.daysLeftToHarvest}
+      statusProjDayLeft={statusBoxData.daysLeftToEndBatch}
+      statusStartDate={statusBoxData.productionStartDate}
+      statusEndDate={statusBoxData.productionEndDate}
+      statusStage={statusBoxData.currentStage.status}
+      statusDayCount={statusBoxData.currentStage.day}
     />
   );
 };

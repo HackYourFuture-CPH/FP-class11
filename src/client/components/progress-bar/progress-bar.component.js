@@ -47,7 +47,7 @@ function DayComponent({ classStyle, styling, children }) {
 function ProgressBar({ startDate, currentDate, stages }) {
   const start = moment(startDate);
   const end = moment(currentDate);
-  const daysPassed = end.diff(start, 'days');
+  const daysPassed = end.diff(start, 'days') + 1;
 
   const totalDays = stages.reduce((prev, current) => {
     return prev + current.duration;

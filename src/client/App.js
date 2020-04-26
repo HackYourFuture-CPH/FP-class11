@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import LoaderAnimation from './components/loader-animation/loader-animation.component';
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
-import Dashboard from './containers/dashboard-page/dashboard-page.component';
+import Dashboard from './containers/dashboard-page/dashboard-page.container';
 import Page404 from './containers/404-page/404-page.component';
 import Firebase, { FirebaseContext } from './firebase/index';
 import { getTokenWithHeaders } from './firebase/getTokenWithHeaders';
@@ -66,7 +66,7 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/list-batches" component={ListBatches} />
+            <PublicRoute exact path="/list-batches" component={ListBatches} />
             <PublicRoute component={Page404} />
           </Switch>
         </Router>

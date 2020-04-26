@@ -29,6 +29,12 @@ export default function DashboardPage({
   showPhDetails,
   showEcDetails,
   showWaterDetails,
+  statusHarvestDayleft,
+  statusProjDayLeft,
+  statusStartDate,
+  statusEndDate,
+  statusStage,
+  statusDayCount,
 }) {
   return (
     <div className="dashboard">
@@ -47,79 +53,94 @@ export default function DashboardPage({
         logoutFunc={logoutFunc}
       />
       <div className="content">
-        <header>
-          <h1>Batch overview</h1>
-        </header>
-        <main>
-          <ProgressBar
-            startDate={progressBarData.startDate}
-            currentDate={progressBarData.currentDate}
-            stages={progressBarData.stages}
-          />
-          <div className="cards">
-            <CropSummary />
-            <Card>
-              <CardTitle title="Temperature" />
-              <LineChartForDashboard
-                data={lineChartData}
-                materialId={1}
-                boundary={boundary[0]}
-                description="Temperature"
-                unit="°C"
-                showDetailChartFunc={showTemperatureDetails}
+        <div className="wrapper">
+          <header>
+            <h1>Batch overview</h1>
+          </header>
+          <main>
+            <ProgressBar
+              startDate={progressBarData.startDate}
+              currentDate={progressBarData.currentDate}
+              stages={progressBarData.stages}
+            />
+            <div className="cards">
+              <CropSummary
+                harvestDayLeft={statusHarvestDayleft}
+                projDayLeft={statusProjDayLeft}
+                prodStartDate={statusStartDate}
+                prodEndDate={statusEndDate}
+                stageName={statusStage}
+                dayCount={statusDayCount}
               />
-            </Card>
-            <Card>
-              <CardTitle title="Humidity" />
-              <LineChartForDashboard
-                data={lineChartData}
-                materialId={2}
-                boundary={boundary[1]}
-                description="Humidity"
-                unit="%"
-                showDetailChartFunc={showHumidityDetails}
-              />
-            </Card>
-            <Card>
-              <CardTitle title="Water PH" />
-              <LineChartForDashboard
-                data={lineChartData}
-                materialId={3}
-                boundary={boundary[2]}
-                description="PH"
-                unit="pH"
-                showDetailChartFunc={showPhDetails}
-              />
-            </Card>
-            <Card>
-              <CardTitle title="Water EC" />
-              <LineChartForDashboard
-                data={lineChartData}
-                materialId={4}
-                boundary={boundary[3]}
-                description="EC"
-                unit="ppm"
-                showDetailChartFunc={showEcDetails}
-              />
-            </Card>
-            <Card>
-              <CardTitle title="Water Level" />
-              <LineChartForDashboard
-                data={lineChartData}
-                materialId={5}
-                boundary={boundary[4]}
-                description="Water level"
-                unit="㎥"
-                showDetailChartFunc={showWaterDetails}
-              />
-            </Card>
-          </div>
-        </main>
-        <Footer />
+              <Card>
+                <CardTitle title="Temperature" />
+                <LineChartForDashboard
+                  data={lineChartData}
+                  materialId={1}
+                  boundary={boundary[0]}
+                  description="Temperature"
+                  unit="°C"
+                  showDetailChartFunc={showTemperatureDetails}
+                />
+              </Card>
+              <Card>
+                <CardTitle title="Humidity" />
+                <LineChartForDashboard
+                  data={lineChartData}
+                  materialId={2}
+                  boundary={boundary[1]}
+                  description="Humidity"
+                  unit="%"
+                  showDetailChartFunc={showHumidityDetails}
+                />
+              </Card>
+              <Card>
+                <CardTitle title="Water PH" />
+                <LineChartForDashboard
+                  data={lineChartData}
+                  materialId={3}
+                  boundary={boundary[2]}
+                  description="PH"
+                  unit="pH"
+                  showDetailChartFunc={showPhDetails}
+                />
+              </Card>
+              <Card>
+                <CardTitle title="Water EC" />
+                <LineChartForDashboard
+                  data={lineChartData}
+                  materialId={4}
+                  boundary={boundary[3]}
+                  description="EC"
+                  unit="ppm"
+                  showDetailChartFunc={showEcDetails}
+                />
+              </Card>
+              <Card>
+                <CardTitle title="Water Level" />
+                <LineChartForDashboard
+                  data={lineChartData}
+                  materialId={5}
+                  boundary={boundary[4]}
+                  description="Water level"
+                  unit="㎥"
+                  showDetailChartFunc={showWaterDetails}
+                />
+              </Card>
+            </div>
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   );
 }
+
+DashboardPage.defaultProps = {
+  statusHarvestDayleft: 0,
+  statusProjDayLeft: 0,
+  statusDayCount: 0,
+};
 
 DashboardPage.propTypes = {
   isVisible: PropTypes.bool.isRequired,
@@ -139,4 +160,10 @@ DashboardPage.propTypes = {
   showPhDetails: PropTypes.func.isRequired,
   showEcDetails: PropTypes.func.isRequired,
   showWaterDetails: PropTypes.func.isRequired,
+  statusHarvestDayleft: PropTypes.number,
+  statusProjDayLeft: PropTypes.number,
+  statusStartDate: PropTypes.string.isRequired,
+  statusEndDate: PropTypes.string.isRequired,
+  statusStage: PropTypes.string.isRequired,
+  statusDayCount: PropTypes.number,
 };

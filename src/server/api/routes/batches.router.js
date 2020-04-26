@@ -9,19 +9,19 @@ const {
 
 // controllers
 const batchesController = require('../controllers/batches.controller');
-const batchController = require('../controllers/batches.controller');
 
-// ENDPOINT: /api/batches/ :GET to get all batches
-router.get('/', (req, res, next) => {
+// ENDPOINT: /api/batches/ :GET to get all batches - id, customer_name
+// if /api/batches?detailed=true :GET to get all batches - id, name, plant_variety, customer_name, number_of_seeded_pots, seeding_date, current_stage, status
+router.get('/', checkIfAuthenticated, (req, res, next) => {
   batchesController
-    .getBatches()
+    .getBatches(req.query.detailed)
     .then((result) => res.json(result))
     .catch(next);
 });
 
-// ENDPOINT: /api/batch/:id :GET to get one module
+// ENDPOINT: /api/batches/:id :GET to get specific batch by id
 router.get('/:batchId', checkIfAuthenticated, (req, res, next) => {
-  batchController
+  batchesController
     .getBatchById(req.params.batchId)
     .then((result) => res.json(result))
     .catch(next);

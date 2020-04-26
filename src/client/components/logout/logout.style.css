@@ -34,7 +34,7 @@
   text-transform: uppercase;
   width: 100%;
 }
-.modal > .content {
+.modal > .modal-content {
   width: 100%;
   padding: 1.2em 0;
   text-align: center;
