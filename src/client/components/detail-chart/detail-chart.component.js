@@ -66,8 +66,6 @@ export default function DetailChart({ data, boundary, description, unit }) {
         <ReferenceArea
           y1={boundary.minimum}
           y2={boundary.maximum}
-          // stroke="#808080"
-          // strokeOpacity={0.3}
           fill="#c4c4c4"
           fillOpacity={0.3}
         />
