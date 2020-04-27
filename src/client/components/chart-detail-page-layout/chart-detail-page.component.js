@@ -23,6 +23,7 @@ const ChartDetailPage = () => {
     boundaryData,
     materialName,
     sensorData,
+    chartStartDate,
     startDate,
     currentDate,
     stages,
@@ -63,11 +64,12 @@ const ChartDetailPage = () => {
           <div className="chart-details">
             <h1 className="heading-text">{headingText} GRAPH DETAILS</h1>
             <ProgressBar
-              startDate={startDate}
-              currentDate={currentDate}
+              startDate={startDate.toLocaleString()}
+              currentDate={currentDate.toLocaleString()}
               stages={stages}
             />
             <ChartbarMenu
+              chartStartDate={chartStartDate}
               buttons={dateButtons}
               selectedChartButtonId={selectedChartButtonId}
               setSelectedChartButtonId={setSelectedChartButtonId}

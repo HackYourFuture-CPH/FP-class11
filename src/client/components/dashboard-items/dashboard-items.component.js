@@ -10,6 +10,7 @@ const DashboardItems = ({ items }) => {
         <li key={item.id} id={item.id}>
           {item.to ? (
             <Link
+              className="dropdown-item"
               to={item.to}
               onClick={(e) => {
                 e.stopPropagation();

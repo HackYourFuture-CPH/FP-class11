@@ -3,18 +3,16 @@
 }
 .list li {
   font-size: 0.85em;
-  padding: 0.4em 0.6em;
   width: 98%;
   list-style: none;
   margin: 0;
   text-align: center;
-  
 }
-.list li:hover{
+.list li:hover {
   border-radius: 0.4em;
   background: var(--light-grey);
   box-shadow: var(--debossed-shadow-tiny);
-  color:var(--light-blue);
+  color: var(--light-blue);
 }
 
 .list li a {
@@ -22,12 +20,12 @@
   text-decoration: none;
 }
 
- .list li:hover a {
-  color:var(--light-blue);
-}  
+.list li:hover a {
+  color: var(--light-blue);
+}
 
-
-
-
-
-
+.dropdown-item {
+  width: 100%;
+  padding: 0.4em 0;
+  display: inline-block;
+}
