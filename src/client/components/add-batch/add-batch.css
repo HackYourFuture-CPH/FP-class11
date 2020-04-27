@@ -5,7 +5,6 @@
   border: var(--border-inputs);
   border-radius: var(--border-radius-high);
   font-size: 1em;
-  /* margin: 0.6em 0 0.5em; */
   margin: 0.7em 0.4em 0.8em;
   outline: none;
   padding: 0.5em 1.2em 0.9em;
@@ -25,4 +24,8 @@
   font-size: 1em;
   line-height: 0.2em;
   padding-left: 0em;
+}
+
+.add-batch .form-title {
+  margin-top: 2em;
 }
