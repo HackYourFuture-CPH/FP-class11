@@ -31,7 +31,6 @@ const AddBatchContainer = () => {
         return error;
       });
     userId = userId[0].id;
-    console.log(userId);
     await fetch('api/create-batch', {
       method: 'POST',
       headers,
