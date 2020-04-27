@@ -4,11 +4,10 @@
 .detail-chart-container {
   background: var(--white);
   border-radius: 20px;
-  padding: 2rem 0;
+  padding: 2em 1em;
+  margin: 0 1em;
 }
 
- 
-
-
- 
- 
+tspan {
+  font-size: 0.9rem !important;
+}

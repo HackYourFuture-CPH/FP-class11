@@ -18,12 +18,18 @@ import {
 
 export default function DetailChart({ data, boundary, description, unit }) {
   const formatXAxis = () =>
-    data.map((sensor) => sensor.created_at.slice(0, 13));
+    data.map((sensor) => {
+      // eslint-disable-next-line no-unused-vars
+      const [year, month, datetime] = sensor.created_at.slice(0, 13).split('-');
+      const [date, time] = datetime.split('T');
+      const datetimeTag = `${date}/${month} ${time}h`;
+      return datetimeTag;
+    });
 
   return (
     <ResponsiveContainer
       className="detail-chart-container"
-      width="100%"
+      width="97%"
       height={320}
     >
       <LineChart data={data} margin={{ right: 80 }}>
@@ -52,13 +58,14 @@ export default function DetailChart({ data, boundary, description, unit }) {
           }}
           fill="none"
         />
+
         <Tooltip />
         <ReferenceLine y={boundary.optimum} stroke="#6F9C67" strokeWidth={2} />
         <ReferenceLine y={boundary.maximum} stroke="#9C5256" strokeWidth={2} />
         <ReferenceLine y={boundary.minimum} stroke="#9C5256" strokeWidth={2} />
         <ReferenceArea
-          y1={boundary.minimum + 2}
-          y2={boundary.optimum - 2}
+          y1={boundary.optimum - (boundary.optimum - boundary.minimum) / 2}
+          y2={boundary.optimum + (boundary.maximum - boundary.optimum) / 2}
           stroke="#808080"
           strokeOpacity={0.3}
         />
@@ -74,7 +81,7 @@ export default function DetailChart({ data, boundary, description, unit }) {
         <Brush
           className="range-bar"
           startIndex={0}
-          endIndex={10}
+          x={data.length}
           stroke="#73ABD7"
           height={30}
           travellerWidth={15}

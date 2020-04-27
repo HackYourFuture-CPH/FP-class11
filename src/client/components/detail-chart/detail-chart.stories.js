@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import DetailChart from './detail-chart.component';
 import data from './sensor_readings.json';
