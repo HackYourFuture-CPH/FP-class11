@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ViewBatchDetails from '../../components/view-batch-detail/view-batch-details.component';
 import SidebarMenu from '../../components/side-navigation/sidebar.component';
 import EditBatchImage from '../../components/edit-batch-image/edit-batch-image.component';
@@ -8,9 +8,16 @@ import image from '../../assets/images/crop-image.png';
 import penImage from '../../assets/images/edit-icon.png';
 import './view-batch-detail-page.style.css';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
+import Firebase from '../../firebase/index';
+import UserRoleContext from '../../helpers/UserRoleContext';
+import Logout from '../../components/logout/logout.component';
 
 const BatchDetailPage = () => {
+  const history = useHistory();
+  const { userRole, userName } = useContext(UserRoleContext);
+  const [logoutModal, setLogoutModal] = useState(false);
+
   const [crop, setCrop] = useState(null);
   const [batch, setBatch] = useState(null);
 
@@ -50,25 +57,44 @@ const BatchDetailPage = () => {
 
   return (
     <>
-      <SidebarMenu isActive={false} isVisible={true} />
-      {batch && crop ? (
-        <div className="batchDetail-wrapper">
-          <div className="batchDetail">
-            <ViewBatchDetails batch={batch} crop={crop} />
-          </div>
-          <div className="right-panel">
-            <EditBatchImage
-              srcPath={image}
-              srcPenPath={penImage}
-              altText="A crop"
-              altIconText="A icon"
-            />
-            <h3>{crop.name}</h3>
-            <DeleteBatch />
-          </div>
+      <SidebarMenu
+        isActive={false}
+        isVisible={
+          userRole && (userRole === 'admin' || userRole === 'super_admin')
+        }
+        showDashboard={() => history.push('/dashboard')}
+        showBatchDetails={() => history.push('/batch-details/1')}
+        showAddBatch={() => history.push('/add-batch')}
+        logout={() => setLogoutModal(true)}
+      />
+      <Logout
+        userName={userName}
+        openState={logoutModal}
+        closeAction={() => setLogoutModal(false)}
+        logoutFunc={() => Firebase.signOut()}
+      />
+      <div className="content">
+        <div className="wrapper">
+          {batch && crop ? (
+            <div className="batchDetail-wrapper">
+              <div className="batchDetail">
+                <ViewBatchDetails batch={batch} crop={crop} />
+              </div>
+              <div className="right-panel">
+                <EditBatchImage
+                  srcPath={image}
+                  srcPenPath={penImage}
+                  altText="A crop"
+                  altIconText="A icon"
+                />
+                <h3>{crop.name}</h3>
+                <DeleteBatch />
+              </div>
+            </div>
+          ) : null}
+          <Footer />
         </div>
-      ) : null}
-      <Footer />
+      </div>
     </>
   );
 };

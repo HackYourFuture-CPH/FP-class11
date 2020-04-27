@@ -4,7 +4,6 @@ import ViewBatchDetails from './view-batch-details.component';
 export default {
   title: 'View Batch Detail',
 };
-
 export const ViewBatch = () => (
   <ViewBatchDetails
     batch={{

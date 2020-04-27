@@ -8,7 +8,7 @@
   padding:1.5em 0;
 }
 
-.input-date {
+.date-component-wrapper .input-date {
   width: 11.7em;
   height: 3em;
   background: #ebecf0;
@@ -21,7 +21,7 @@
   box-shadow: var(--debossed-shadow-high);
 }
 
-.btn-wrapper {
+.date-component-wrapper .btn-wrapper {
   margin: 0;
 }
 
