@@ -1,86 +1,64 @@
 .modal-overlay {
   position: absolute;
-  width: 1200px;
-  height: 605px;
+  width: 100%;
+  height: 100%;
   left: 0px;
   top: 0px;
-
   background: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+.modal-overlay .modal-content {
+  position: absolute;
+  background: none;
+  width: auto;
+  margin: auto;
+  top:22%;
+  left: 35%;
+}
+.modal-overlay .modal-wrapper {
+  position: relative;
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-high);
+  font-size: 1.5em;
+  padding: 1em 0;
+  height: 15em !important;
+  width: 18em !important;
+  z-index: 3;
 }
 
-.modal-wrapper {
-  position: absolute;
-  width: 600px;
-  height: 502.86px;
-  left: 300px;
-  top: 80px;
-  margin-bottom: 20px;
-
-  background: #ebecf0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-sizing: border-box;
-
-  box-shadow: -7px -7px 20px rgba(255, 255, 255, 0.8), 5px 5px 20px #c9cbd8;
-  border-radius: 20px;
-}
-
-.modal-close-button {
-  position: absolute;
-  width: 17.86px;
-  height: 43.57px;
-  left: 550px;
-  top: 10.86px;
-
-  font-family: 'Proxima Nova', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 50px;
-  text-align: center;
+.modal-overlay .modal-close-button {
+  border: none;
+  background: transparent;
+  color: var(--dark-grey);
   cursor: pointer;
-
-  color: #666666;
+  display: block;
+  font-size: 1.8em;
+  line-height: 1em;
+  position: absolute;
+  right: 0.4em;
+  top: 0.3em;
 }
-.items-wrapper {
+
+.modal-overlay .items-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15% auto auto auto;
+  margin: 0 auto auto auto;
 }
 
-.text-headline {
-  margin-bottom: 40px;
-  width: 400px;
-  height: 44px;
-  left: 80px;
-  top: 90px;
-
-  font-family: 'Proxima Nova', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 44px;
-
-  text-align: center;
-
-  color: #3b4349;
-}
-
-p {
-  font-family: 'Proxima Nova', sans-serif;
-  font-style: normal;
+.modal-overlay .text-headline {
+  margin: 1em 0 1.2em 0;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 35px;
+  font-size: 1.8em;
+  line-height: 1em;
   text-align: center;
-
-  color: #666666;
 }
 
-.buttons-wrapper {
-  margin-top: 56px;
-  width: 286.79px;
-  height: 200px;
-  left: 150px;
-  top: 300px;
+.modal-overlay .buttons-wrapper {
+  margin-top: 0.8em;
+}
+
+.modal-overlay .buttons-wrapper button {
+  width: 100%;
 }

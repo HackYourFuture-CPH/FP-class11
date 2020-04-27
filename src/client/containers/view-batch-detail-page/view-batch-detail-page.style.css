@@ -22,9 +22,22 @@ main {
 }
 .batchDetail-wrapper{
   display: flex;
-  margin-left: 140px;
+  padding: 0 1.2em;
 }
 /* .centered{
   margin: 0 auto;
   float:right;
 } */
+
+.batchDetail-wrapper .edit-btn {
+  display:none;
+}
+
+.batchDetail-wrapper .panel .btn-primary {
+  display:none;
+}
+
+.batchDetail-wrapper .form-title {
+  margin-top: 2em;
+}
+
