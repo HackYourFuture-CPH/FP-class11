@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:50px;
+  margin-top: 50px;
   line-height: 2em;
 }
 
@@ -11,7 +11,7 @@
   display: none;
 }
 
-.batchDetail-wrapper{
+.batchDetail-wrapper {
   display: flex;
   padding: 0 1.2em;
 }
@@ -21,18 +21,14 @@
 } */
 
 .batchDetail-wrapper .edit-btn {
-  display:none;
+  display: none;
 }
 
 .batchDetail-wrapper .panel .btn-primary {
-  display:none;
+  display: none;
 }
 
-.batchDetail-wrapper .form-title {
-  margin-top: 2em;
-}
-
-.batchDetail .accordion-item:first-of-type .panel{
+.batchDetail .accordion-item:first-of-type .panel {
   max-height: 22em;
   font-style: normal;
   font-weight: bold;
