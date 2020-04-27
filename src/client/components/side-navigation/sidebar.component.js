@@ -57,7 +57,7 @@ const SidebarMenu = ({
       />
       <NavigationButton
         icon={faUserCircle}
-        text="LogOut"
+        text="Log Out"
         isUser={true}
         handleClick={logout}
         items={[]}

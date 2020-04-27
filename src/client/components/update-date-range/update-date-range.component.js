@@ -4,6 +4,7 @@ import './update-date-range.style.css';
 import Button from '../button/button.component';
 
 const UpdateDateRange = ({
+  chartStartDate,
   date,
   text,
   setStartCustom,
@@ -11,6 +12,7 @@ const UpdateDateRange = ({
   updateClick,
   setUpdateClick,
 }) => {
+  const today = String(new Date().toISOString()).slice(0, 10);
   return (
     <div className="date-component-wrapper">
       <label htmlFor="fromDate" className="update-label">
@@ -18,9 +20,11 @@ const UpdateDateRange = ({
         <input
           className="input-date"
           type={date}
+          min={chartStartDate}
+          max={today}
           name="fromDate"
           id="fromDate"
-          onChange={(e) => setStartCustom(e.target.value)}
+          onChange={(e) => setStartCustom(e.target.valueAsDate)}
         />
       </label>
       <label htmlFor="untilDate">
@@ -28,9 +32,13 @@ const UpdateDateRange = ({
         <input
           className="input-date"
           type={date}
+          min={chartStartDate}
+          max={today}
           name="untilDate"
           id="untilDate"
-          onChange={(e) => setEndCustom(e.target.value)}
+          onChange={(e) => {
+            setEndCustom(new Date(new Date(e.target.valueAsDate).getTime()));
+          }}
         />
       </label>
       <Button
@@ -46,6 +54,7 @@ const UpdateDateRange = ({
 };
 
 UpdateDateRange.propTypes = {
+  chartStartDate: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   setEndCustom: PropTypes.func.isRequired,
