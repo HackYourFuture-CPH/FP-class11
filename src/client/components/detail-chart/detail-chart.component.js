@@ -60,14 +60,16 @@ export default function DetailChart({ data, boundary, description, unit }) {
         />
 
         <Tooltip />
-        <ReferenceLine y={boundary.optimum} stroke="#6F9C67" strokeWidth={2} />
-        <ReferenceLine y={boundary.maximum} stroke="#9C5256" strokeWidth={2} />
-        <ReferenceLine y={boundary.minimum} stroke="#9C5256" strokeWidth={2} />
+        <ReferenceLine y={boundary.optimum} stroke="#709d68" strokeWidth={2} />
+        <ReferenceLine y={boundary.maximum} stroke="#f27eb1" strokeWidth={2} />
+        <ReferenceLine y={boundary.minimum} stroke="#f27eb1" strokeWidth={2} />
         <ReferenceArea
-          y1={boundary.optimum - (boundary.optimum - boundary.minimum) / 2}
-          y2={boundary.optimum + (boundary.maximum - boundary.optimum) / 2}
-          stroke="#808080"
-          strokeOpacity={0.3}
+          y1={boundary.minimum}
+          y2={boundary.maximum}
+          // stroke="#808080"
+          // strokeOpacity={0.3}
+          fill="#c4c4c4"
+          fillOpacity={0.3}
         />
         <Line
           type="monotone"
