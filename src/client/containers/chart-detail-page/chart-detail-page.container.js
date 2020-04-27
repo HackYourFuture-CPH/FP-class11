@@ -97,31 +97,28 @@ const ChartDetailsSmartData = () => {
           { method: 'GET', headers },
         );
         const sensorReadingsJson = await getSensorReadings.json();
-        const sensorBatchIdData = await sensorReadingsJson.filter(
-          (sensorBatchId) => sensorBatchId.fk_batch_id === 1,
-        );
         const getCurrentdateValue = currentDate.split(',');
         const getStartdateValue = startDate.split(',');
         const currentValue = getCurrentdateValue[0].split('/');
         const startValue = getStartdateValue[0].split('/');
         const getNumberOfdays =
-          Number(currentValue[1] + 1) - Number(startValue[1]);
+          Number(currentValue[1]) - Number(startValue[1]) + Number(1);
         const getTheDataforCurrentDay = getNumberOfdays * 4;
-        const getAllDataOfTheBatchTillDate = sensorBatchIdData.slice(
+        const getAllDataOfTheBatchTillDate = sensorReadingsJson.slice(
           0,
           getTheDataforCurrentDay,
         );
         // Last 5 days
         if (selectedChartButtonId === 1) {
           const lastFiveDaysSensorData = getAllDataOfTheBatchTillDate.slice(
-            getAllDataOfTheBatchTillDate.length - 20,
+            -20,
             getAllDataOfTheBatchTillDate.length,
           );
           setSensorData(lastFiveDaysSensorData);
         } // Last Week
         else if (selectedChartButtonId === 2) {
           const lastWeekSensorData = getAllDataOfTheBatchTillDate.slice(
-            getAllDataOfTheBatchTillDate.length - 28,
+            -28,
             getAllDataOfTheBatchTillDate.length,
           );
           setSensorData(lastWeekSensorData);
@@ -169,6 +166,7 @@ const ChartDetailsSmartData = () => {
     async function fetchProgressBarData() {
       try {
         const headers = await getTokenWithHeaders();
+        // BatchId hardcoded considering only 1 batch
         const getBatchProgressBarValues = await fetch('api/crop-stages/1', {
           method: 'GET',
           headers,
