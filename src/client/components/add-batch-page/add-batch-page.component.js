@@ -31,7 +31,7 @@ const AddBatchPage = () => {
             userRole && (userRole === 'admin' || userRole === 'super_admin')
           }
           showDashboard={() => history.push('/dashboard')}
-          showBatchDetails={() => history.push('/batch-details')}
+          showBatchDetails={() => history.push('/batch-details/1')}
           showAddBatch={() => history.push('/add-batch')}
           logout={() => setLogoutModal(true)}
         />

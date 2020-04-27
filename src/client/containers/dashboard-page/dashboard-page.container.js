@@ -112,7 +112,7 @@ const DashboardPageContainer = () => {
         userRole && (userRole === 'admin' || userRole === 'super_admin')
       }
       showDashboardFunc={showDashboard}
-      showBatchDetailsFunc={() => history.push('/batch-details')}
+      showBatchDetailsFunc={() => history.push('/batch-details/1')}
       showAddBatchFunc={() => history.push('/add-batch')}
       showLogoutModal={() => setLogoutModal(true)}
       userName={userName}
