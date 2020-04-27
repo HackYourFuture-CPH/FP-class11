@@ -5,6 +5,7 @@ import Button from '../../button/button.component';
 import UpdateDateRange from '../../update-date-range/update-date-range.component';
 
 const ChartbarMenu = ({
+  chartStartDate,
   buttons,
   selectedChartButtonId,
   setSelectedChartButtonId,
@@ -18,6 +19,7 @@ const ChartbarMenu = ({
   if (activeChartButton && selectedChartButtonId === 3) {
     return (
       <UpdateDateRange
+        chartStartDate={chartStartDate}
         date="date"
         text="Update"
         setStartCustom={setStartCustom}
@@ -51,10 +53,12 @@ const ChartbarMenu = ({
 
 ChartbarMenu.defaultProps = {
   buttons: [],
+  selectedChartButtonId: null,
 };
 
 ChartbarMenu.propTypes = {
-  selectedChartButtonId: PropTypes.number.isRequired,
+  chartStartDate: PropTypes.string.isRequired,
+  selectedChartButtonId: PropTypes.number,
   setSelectedChartButtonId: PropTypes.func.isRequired,
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
@@ -63,7 +67,7 @@ ChartbarMenu.propTypes = {
     }),
   ),
   setActiveChartButton: PropTypes.func.isRequired,
-  activeChartButton: PropTypes.func.isRequired,
+  activeChartButton: PropTypes.bool.isRequired,
   setStartCustom: PropTypes.func.isRequired,
   setEndCustom: PropTypes.func.isRequired,
   updateClick: PropTypes.bool.isRequired,
