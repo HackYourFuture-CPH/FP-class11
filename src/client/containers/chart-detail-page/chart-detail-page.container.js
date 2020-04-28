@@ -116,9 +116,15 @@ const ChartDetailsSmartData = () => {
         const sensorReadingsJson = await getSensorReadings.json();
         const getAllDataOfTheBatchTillDate = sensorReadingsJson.map(
           (datapoint) => {
-            const convertedDate = moment(datapoint.created_at)
-              .tz(timezone)
-              .format();
+            const convertedDate = String(
+              moment
+                .utc(datapoint.created_at)
+                .tz(timezone)
+                .format(),
+            )
+              .slice(0, 19)
+              .split('T')
+              .join(' ');
             return { ...datapoint, created_at: convertedDate };
           },
         );
@@ -130,11 +136,9 @@ const ChartDetailsSmartData = () => {
           return Date.parse(a) > Date.parse(b);
         });
 
-        const earliestDate = moment(orderedDates[0])
-          .tz(timezone)
-          .format();
+        const earliestDate = orderedDates[0];
 
-        setChartStartDate(earliestDate.slice(0, 10));
+        setChartStartDate(earliestDate);
 
         const dataToDisplay = getAllDataOfTheBatchTillDate.filter(
           (datapoint) => {
