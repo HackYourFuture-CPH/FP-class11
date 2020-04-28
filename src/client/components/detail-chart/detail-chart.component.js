@@ -19,10 +19,10 @@ import {
 export default function DetailChart({ data, boundary, description, unit }) {
   const formatXAxis = () =>
     data.map((sensor) => {
+      const [date, time] = sensor.created_at.split(' ');
       // eslint-disable-next-line no-unused-vars
-      const [year, month, datetime] = sensor.created_at.slice(0, 13).split('-');
-      const [date, time] = datetime.split('T');
-      const datetimeTag = `${date}/${month} ${time}h`;
+      const [year, month, day] = date.split('-');
+      const datetimeTag = `${day}/${month} ${time.slice(0, 2)}h`;
       return datetimeTag;
     });
 
