@@ -138,7 +138,7 @@ const ChartDetailsSmartData = () => {
 
         const earliestDate = orderedDates[0];
 
-        setChartStartDate(earliestDate);
+        setChartStartDate(earliestDate.split(' ')[0]);
 
         const dataToDisplay = getAllDataOfTheBatchTillDate.filter(
           (datapoint) => {
