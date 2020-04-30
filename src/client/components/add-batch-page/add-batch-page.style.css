@@ -1,0 +1,18 @@
+.add-batch {
+  padding: 0 2em;
+}
+
+.add-batch .accordion-item:first-of-type .panel {
+  max-height: 22em;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 0.2em;
+  padding-left: 0em;
+}
+
+.add-batch .accordion-item:nth-child(2),
+.add-batch .accordion-item:nth-child(3),
+.add-batch .accordion-item:nth-child(4) {
+  display: none;
+}

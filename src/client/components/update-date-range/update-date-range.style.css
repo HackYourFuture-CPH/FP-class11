@@ -1,0 +1,30 @@
+.date-component-wrapper {
+  color: var(--dark-blue);
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  justify-content: flex-end;
+  border: var(--border-inputs);
+  padding:1.5em 0;
+}
+
+.date-component-wrapper .input-date {
+  width: 11.7em;
+  height: 3em;
+  background: #ebecf0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  padding: 0 1em;
+  font-size: 14px;
+  margin: 0.7em 0.5em;
+  border-radius: var(--border-radius-high);
+  box-shadow: var(--debossed-shadow-high);
+}
+
+.date-component-wrapper .btn-wrapper {
+  margin: 0;
+}
+
+.update-label {
+  margin-left: 2em;
+}

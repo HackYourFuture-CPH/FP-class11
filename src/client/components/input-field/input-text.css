@@ -1,0 +1,19 @@
+.input-text {
+  display: flex;
+  background: var(--light-grey);
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-high);
+  box-shadow: var(--debossed-shadow-high);
+  font-size: 1em;
+  margin: 1em 0 0.5em;
+  outline: none;
+  padding: 0.5em 1.2em 0.9em;
+  width: 39em;
+}
+.input-text:hover {
+  background-color: #f2f2f5;
+  cursor: pointer;
+}
+.input-text:active {
+  background-color: #f2f2f5;
+}

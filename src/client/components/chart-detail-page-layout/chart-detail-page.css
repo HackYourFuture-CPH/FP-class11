@@ -1,0 +1,13 @@
+.chart-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.btn .btn-primary {
+  text-align: right;
+}
+.heading-text {
+  font-size: larger;
+  padding: 1em;
+}

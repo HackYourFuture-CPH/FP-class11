@@ -1,0 +1,73 @@
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.dashboard .content {
+  height: 100vh;
+  margin-left: 130px;
+  width: 100%;
+}
+
+.dashboard header {
+  padding: 0 1em;
+}
+
+.dashboard header h1 {
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0 1em;
+}
+
+.dashboard main {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  padding: 0 1em;
+  width: 100%;
+}
+
+.dashboard .cards {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  margin: 2em 0;
+}
+
+.cards .card {
+  margin: 1em 1.2em;
+  min-width: 19.5em;
+}
+
+.cards .card:first-child {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+.cards .card:first-child h3 {
+  margin-bottom: 0;
+}
+
+.dashboard .modal > .content {
+  display: block;
+  height: auto;
+  margin-left: 0;
+}
+
+.dashboard .recharts-text tspan {
+  font-size: 0.7rem !important;
+}
+
+/* no need for this css if we have extended sidebar on every page
+.dashboard .sidebar-wrapper button:first-of-type {
+  background: var(--light-grey);
+  box-shadow: var(--debossed-shadow-medium);
+}
+
+.dashboard .sidebar-wrapper button:first-of-type path,
+.dashboard .sidebar-wrapper button:first-of-type .navtext {
+  color: var(--light-blue);
+} */

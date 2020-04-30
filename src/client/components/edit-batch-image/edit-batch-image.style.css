@@ -1,0 +1,28 @@
+@import '/../theme.css';
+
+.crop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+}
+.edit-image {
+  border-radius: 50%;
+  border: 3px solid var(--light-grey);
+}
+.edit-btn {
+  background: var(--light-blue);
+  border-radius: 50%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 190px;
+  top: 16px;
+  border: none;
+}
+
+.batch-image-wrapper {
+  position: relative;
+}

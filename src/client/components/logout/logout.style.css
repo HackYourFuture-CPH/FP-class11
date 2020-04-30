@@ -1,0 +1,103 @@
+/*Log button on front end styling */
+.logout-button {
+  position: absolute;
+  color: var(--font-color);
+  border: 2px solid var(--pink);
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  left: 80%;
+  top: 2%;
+}
+
+.logout-button:hover {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.modal {
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-high);
+  font-size: 1.5em;
+  padding: 1em 0;
+  height: 15em !important;
+  width: 18em !important;
+}
+
+/*styling modal header*/
+.modal > .header {
+  font-size: 1.2em;
+  margin: 1em 0 0.5em 0;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.modal > .modal-content {
+  width: 100%;
+  padding: 1.2em 0;
+  text-align: center;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+
+/*close button on top right corner of pop up window styling*/
+.modal > .close {
+  border: none;
+  background: transparent;
+  color: var(--dark-grey);
+  cursor: pointer;
+  display: block;
+  font-size: 1.8em;
+  line-height: 1em;
+  position: absolute;
+  right: 0.4em;
+  top: 0.3em;
+}
+
+/* Confoirm Logout button on pop up window styling */
+.confirm-logout {
+  background: var(--danger-color);
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-high);
+  box-shadow: var(--embossed-shadow-medium);
+  color: var(--white);
+  font-size: 1.7em;
+  line-height: 1.2em;
+  outline: none;
+  padding: 0.3em 3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.confirm-logout:active {
+  box-shadow: var(--debossed-shadow-medium);
+}
+
+/* Confoirm Cancellation button on pop up window styling*/
+.confirm-cancel {
+  background: var(--grey);
+  box-shadow: var(--embossed-shadow-medium);
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-high);
+  font-size: 1.7em;
+  line-height: 1.2em;
+  margin-top: 0.7em;
+  outline: none;
+  padding: 0.3em 3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.confirm-cancel:active {
+  box-shadow: var(--debossed-shadow-medium);
+}
+
+.sb-show-main .popup-content {
+  position: absolute !important;
+}

@@ -1,0 +1,24 @@
+.check-ph {
+  background: var(--pink);
+}
+
+.finished {
+  background: var(--light-blue);
+}
+
+.on-time {
+  background: var(--green);
+}
+
+.cancelled {
+  background: var(--pink);
+}
+
+.status {
+  border-radius: 0.3em;
+  color: var(--white);
+  font-size: 0.8em;
+  height: 100%;
+  padding: 0.3em 1em;
+  text-transform: lowercase;
+}

@@ -1,0 +1,32 @@
+.card-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-contents {
+  margin-top: 2.2em;
+  padding: 0;
+}
+
+.card-contents > li {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.8em;
+}
+
+.harvest-days {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-top: -2em;
+}
+
+.card-contents > li > p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.current-stage + p {
+  text-transform: capitalize;
+}

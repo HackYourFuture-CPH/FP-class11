@@ -6,7 +6,6 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const modulesController = require('../controllers/modules.controller');
 
-// ENDPOINT: /api/modules/ :GET to get all modules
 router.get('/', (req, res, next) => {
   modulesController
     .getModules()
@@ -17,7 +16,7 @@ router.get('/', (req, res, next) => {
 // ENDPOINT: /api/modules/:id :GET to get one module
 router.get('/:id', (req, res, next) => {
   modulesController
-    .getModuleById(req.params.id)
+    .getModules(req.params.id)
     .then((result) => res.json(result))
     .catch(next);
 });

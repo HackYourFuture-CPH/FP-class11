@@ -1,0 +1,12 @@
+.card {
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-high);
+  line-height: 1rem;
+  padding: 1em;
+  background-color: var(--light-grey);
+}
+
+.card h3 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}

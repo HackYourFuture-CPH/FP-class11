@@ -10,3 +10,4 @@ function loadStories() {
 }
 
 configure(loadStories, module);
+import '!style-loader!css-loader!../index.css';

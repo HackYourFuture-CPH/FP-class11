@@ -1,0 +1,54 @@
+.btn-wrapper {
+  display: flex;
+  margin: 1.4em 0;
+}
+
+.btn-wrapper .btn {
+  background: var(--interaction-color);
+  box-shadow: var(--embossed-shadow-low);
+  border-radius: var(--border-radius-high);
+  border: var(--border-inputs);
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3em;
+  justify-content: center;
+  outline: none;
+  padding: 0.4em 1.3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-wrapper .btn:active {
+  box-shadow: var(--debossed-shadow-low);
+}
+
+.btn-wrapper .btn-danger {
+  background: var(--pink);
+}
+
+.btn-wrapper .btn-secondary {
+  background: var(--grey);
+  color: var(--font-color);
+}
+
+.btn-wrapper .btn-large {
+  font-size: 1.7em;
+  line-height: 1.2em;
+  padding: 0.3em 3em;
+}
+
+.btn-wrapper .btn-toggle {
+  background: var(--light-grey);
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--embossed-shadow-medium);
+  color: var(--font-color);
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: none;
+  padding: 0.7em 1.2em;
+}
+
+.btn-wrapper .btn.toggled {
+  box-shadow: var(--debossed-shadow-medium);
+}

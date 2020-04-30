@@ -1,0 +1,15 @@
+div.error {
+  background: var(--danger-color);
+  border-radius: var(--border-radius-high);
+  color: var(--white);
+  padding: 0.4em 1.6em;
+  text-align: left;
+}
+
+.error span {
+  display: inline-block;
+  color: var(--white);
+  font-size: 0.9em;
+  line-height: 1.15em;
+  padding: 0.2em;
+}

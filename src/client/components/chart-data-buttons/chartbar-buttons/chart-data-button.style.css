@@ -1,0 +1,13 @@
+.chartbar-button-wrapper {
+  border: var(--border-inputs);
+  color: var(--dark-blue);
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  justify-content: flex-end;
+  padding: 1.5em 1em 1em 1em;
+}
+
+.btn-wrapper .btn-toggle {
+  margin: 10px;
+}

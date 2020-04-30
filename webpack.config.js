@@ -1,7 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const outputDirectory = 'dist';
 
@@ -25,7 +25,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=100000',
       },
     ],
@@ -37,7 +37,7 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
     port: parseInt(process.env.CLIENT_PORT, 10),
-    open: process.env.OPEN_BROWSER === 'true' ? true : false,
+    open: process.env.OPEN_BROWSER === 'true',
     proxy: {
       '/api': `http://localhost:${process.env.API_PORT}`,
     },
@@ -51,6 +51,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico',
+      ...process.env,
+    }),
+    new Dotenv({
+      path: './.env',
     }),
   ],
 };

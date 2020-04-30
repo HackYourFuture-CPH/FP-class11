@@ -1,0 +1,90 @@
+.progress-bar-container {
+  padding: 0 1em;
+  text-align: center;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: var(--light-grey);
+  border: var(--border-inputs);
+  border-radius: var(--border-radius-low);
+  box-shadow: var(--debossed-shadow-high);
+  height: 2.3em;
+  margin: 2em auto 0 auto;
+  width: 100%;
+}
+
+.day-components {
+  background: transparent;
+  border-right: 0 solid transparent;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.passed-days {
+  background-color: var(--interaction-color);
+}
+
+.day-components:first-child {
+  border-radius: var(--border-radius-low) 0 0 var(--border-radius-low);
+}
+
+.day-components:last-child {
+  border-radius: 0 var(--border-radius-low) var(--border-radius-low) 0;
+  border-width: 0 !important;
+}
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  background-color: var(--interaction-color);
+  bottom: 125%;
+  border-radius: 0.5em;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 0.8em;
+  left: -2em;
+  padding: 0.3em 0.4em;
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  width: 4em;
+}
+
+.tooltip .tooltip-text::after {
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--interaction-color) transparent transparent transparent;
+  content: '';
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: 100%;
+}
+
+.tooltip .tooltip-text {
+  visibility: visible;
+}
+
+.tooltip-stage {
+  border-color: var(--interaction-color);
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip-stage .tooltip-text-stage {
+  font-size: 0.7em;
+  left: 0.5em;
+  position: absolute;
+  text-align: left;
+  top: 110%;
+  visibility: hidden;
+  width: auto;
+}
+
+.tooltip-stage .tooltip-text-stage {
+  visibility: hidden;
+}

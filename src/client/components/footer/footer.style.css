@@ -1,0 +1,15 @@
+footer {
+  background-color: var(--light-grey);
+  height: 5em;
+  line-height: 5em;
+  text-align: center;
+}
+
+.footer-hr {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
