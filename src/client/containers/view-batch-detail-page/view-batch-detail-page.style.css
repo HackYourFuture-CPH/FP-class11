@@ -1,0 +1,44 @@
+.batchDetail-wrapper .right-panel {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  line-height: 2em;
+}
+
+.batchDetail-wrapper .right-panel .btn-danger {
+  display: none;
+}
+
+.batchDetail-wrapper {
+  display: flex;
+  padding: 0 1.2em;
+}
+/* .centered{
+  margin: 0 auto;
+  float:right;
+} */
+
+.batchDetail-wrapper .edit-btn {
+  display: none;
+}
+
+.batchDetail-wrapper .panel .btn-primary {
+  display: none;
+}
+
+.batchDetail .accordion-item:first-of-type .panel {
+  max-height: 22em;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 0.2em;
+  padding-left: 0em;
+}
+
+.batchDetail .accordion-item:nth-child(2),
+.batchDetail .accordion-item:nth-child(3),
+.batchDetail .accordion-item:nth-child(4) {
+  display: none;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoaderAnimation from './components/loader-animation/loader-animation.component';
 import LoginPage from './containers/login-page/login-page.component';
 import ForgotPassword from './containers/forgot-password/forgot-password.component';
@@ -14,6 +14,7 @@ import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import signInAsDefaultUser from './helpers/signInAsDefaultUser';
 import ListBatches from './containers/list-batches-page/list-batches-page.component';
+import BatchDetailPage from './containers/view-batch-detail-page/view-batch-detail-page.component';
 
 function App() {
   const [userState, setUserState] = useState(null);
@@ -68,6 +69,11 @@ function App() {
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/list-batches" component={ListBatches} />
+            {/* This one should be changed to private route, but can't get 
+                the useParams() hook to work with our PrivateRoute component */}
+            <Route exact path="/batch-details/:id">
+              <BatchDetailPage />
+            </Route>
             <PrivateRoute path="/add-batch" component={AddBatchContainer} />
             <PrivateRoute
               path="/chart-details/:materialSlug?"

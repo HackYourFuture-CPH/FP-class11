@@ -23,6 +23,7 @@ const ChartDetailPage = () => {
     boundaryData,
     materialName,
     sensorData,
+    chartStartDate,
     startDate,
     currentDate,
     stages,
@@ -48,7 +49,7 @@ const ChartDetailPage = () => {
           userRole && (userRole === 'admin' || userRole === 'super_admin')
         }
         showDashboard={() => history.push('/dashboard')}
-        showBatchDetails={() => history.push('/batch-details')}
+        showBatchDetails={() => history.push('/batch-details/1')}
         showAddBatch={() => history.push('/add-batch')}
         logout={() => setLogoutModal(true)}
       />
@@ -63,11 +64,12 @@ const ChartDetailPage = () => {
           <div className="chart-details">
             <h1 className="heading-text">{headingText} GRAPH DETAILS</h1>
             <ProgressBar
-              startDate={startDate}
-              currentDate={currentDate}
+              startDate={startDate.toLocaleString()}
+              currentDate={currentDate.toLocaleString()}
               stages={stages}
             />
             <ChartbarMenu
+              chartStartDate={chartStartDate}
               buttons={dateButtons}
               selectedChartButtonId={selectedChartButtonId}
               setSelectedChartButtonId={setSelectedChartButtonId}

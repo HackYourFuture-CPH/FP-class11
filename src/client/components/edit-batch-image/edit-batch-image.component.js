@@ -9,7 +9,7 @@ export default function BatchImage({
   altIconText,
 }) {
   return (
-    <div>
+    <div className="batch-image-wrapper">
       <img className="edit-image" src={srcPath} alt={altText} />
       <button type="submit" className="edit-btn">
         <img src={srcPenPath} alt={altIconText} />

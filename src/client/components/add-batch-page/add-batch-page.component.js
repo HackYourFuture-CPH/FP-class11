@@ -24,26 +24,24 @@ const AddBatchPage = () => {
   const history = useHistory();
   return (
     <>
-      <div>
-        <SidebarMenu
-          isActive={false}
-          isVisible={
-            userRole && (userRole === 'admin' || userRole === 'super_admin')
-          }
-          showDashboard={() => history.push('/dashboard')}
-          showBatchDetails={() => history.push('/batch-details')}
-          showAddBatch={() => history.push('/add-batch')}
-          logout={() => setLogoutModal(true)}
-        />
-        <Logout
-          userName={userName}
-          openState={logoutModal}
-          closeAction={() => setLogoutModal(false)}
-          logoutFunc={() => Firebase.signOut()}
-        />
-      </div>
-      <div>
-        <div className="add-batch">
+      <SidebarMenu
+        isActive={false}
+        isVisible={
+          userRole && (userRole === 'admin' || userRole === 'super_admin')
+        }
+        showDashboard={() => history.push('/dashboard')}
+        showBatchDetails={() => history.push('/batch-details/1')}
+        showAddBatch={() => history.push('/add-batch')}
+        logout={() => setLogoutModal(true)}
+      />
+      <Logout
+        userName={userName}
+        openState={logoutModal}
+        closeAction={() => setLogoutModal(false)}
+        logoutFunc={() => Firebase.signOut()}
+      />
+      <div className="content">
+        <div className="wrapper add-batch">
           <AddBatch
             cropId={cropId}
             setCropId={setCropId}

@@ -5,11 +5,9 @@
   flex-direction: row;
   text-align: right;
   justify-content: flex-end;
-  padding:1.5em 0;
+  padding: 1.5em 1em 1em 1em;
 }
 
 .btn-wrapper .btn-toggle {
   margin: 10px;
 }
-
-

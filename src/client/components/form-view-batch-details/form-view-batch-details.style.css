@@ -1,0 +1,13 @@
+.form-container {
+  margin-top: 1em;
+  border-radius: var(--border-radius-high);
+  font-size: 1em;
+  align-items: left;
+  width: 39em;
+  margin: 0.8em 0.5em 1em;
+}
+
+.form-container .btn-wrapper {
+  float: right;
+  margin:0.5em;
+}

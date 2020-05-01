@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+import moment from 'moment-timezone';
+
 import ChartDetailPage from '../../components/chart-detail-page-layout/chart-detail-page.component';
 import { getTokenWithHeaders } from '../../firebase/getTokenWithHeaders';
 import { ChartDataContext } from './chart-detail-page.context';
@@ -17,15 +20,17 @@ const ChartDetailsSmartData = () => {
   const [boundaryData, setBoundaryData] = useState({});
   const [materialName, setMaterialName] = useState(material.value);
   const [materialId, setMaterialId] = useState(material.id);
-  const [sensorData, setSensorData] = useState([]);
   const [unit, setUnit] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [currentDate, setCurrentDate] = useState('');
   const [stages, setStages] = useState([]);
+
+  const [sensorData, setSensorData] = useState([]);
+  const [startDate, setStartDate] = useState('');
+  const [chartStartDate, setChartStartDate] = useState('');
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedChartButtonId, setSelectedChartButtonId] = useState(null);
   const [activeChartButton, setActiveChartButton] = useState(false);
   const [startCustom, setStartCustom] = useState('');
-  const [endCustom, setEndCustom] = useState('');
+  const [endCustom, setEndCustom] = useState(new Date());
   const [updateClick, setUpdateClick] = useState(false);
 
   useEffect(() => {
@@ -87,8 +92,20 @@ const ChartDetailsSmartData = () => {
     }
   }, [materialName]);
 
+  useEffect(() => {
+    const today = new Date();
+
+    if (selectedChartButtonId === 1) {
+      setStartCustom(new Date(today.getTime() - 24 * 60 * 60 * 1000 * 5));
+    } else if (selectedChartButtonId === 2) {
+      setStartCustom(new Date(today.getTime() - 24 * 60 * 60 * 1000 * 7));
+    }
+  }, [selectedChartButtonId]);
+
   // useeffect for sensorvalues
   useEffect(() => {
+    const timezone = moment.tz.guess();
+
     async function fetchSensorReadingByMaterialId() {
       try {
         const headers = await getTokenWithHeaders();
@@ -97,53 +114,40 @@ const ChartDetailsSmartData = () => {
           { method: 'GET', headers },
         );
         const sensorReadingsJson = await getSensorReadings.json();
-        const sensorBatchIdData = await sensorReadingsJson.filter(
-          (sensorBatchId) => sensorBatchId.fk_batch_id === 1,
+        const getAllDataOfTheBatchTillDate = sensorReadingsJson.map(
+          (datapoint) => {
+            const convertedDate = moment(datapoint.created_at)
+              .tz(timezone)
+              .format();
+            return { ...datapoint, created_at: convertedDate };
+          },
         );
-        const getCurrentdateValue = currentDate.split(',');
-        const getStartdateValue = startDate.split(',');
-        const currentValue = getCurrentdateValue[0].split('/');
-        const startValue = getStartdateValue[0].split('/');
-        const getNumberOfdays =
-          Number(currentValue[1] + 1) - Number(startValue[1]);
-        const getTheDataforCurrentDay = getNumberOfdays * 4;
-        const getAllDataOfTheBatchTillDate = sensorBatchIdData.slice(
-          0,
-          getTheDataforCurrentDay,
+
+        const dateArr = getAllDataOfTheBatchTillDate.map(
+          (datapoint) => datapoint.created_at,
         );
-        // Last 5 days
-        if (selectedChartButtonId === 1) {
-          const lastFiveDaysSensorData = getAllDataOfTheBatchTillDate.slice(
-            getAllDataOfTheBatchTillDate.length - 20,
-            getAllDataOfTheBatchTillDate.length,
-          );
-          setSensorData(lastFiveDaysSensorData);
-        } // Last Week
-        else if (selectedChartButtonId === 2) {
-          const lastWeekSensorData = getAllDataOfTheBatchTillDate.slice(
-            getAllDataOfTheBatchTillDate.length - 28,
-            getAllDataOfTheBatchTillDate.length,
-          );
-          setSensorData(lastWeekSensorData);
-        }
-        // custom button
-        else if (updateClick) {
-          const splitCustomStartDateValue = startCustom.split('-');
-          const customStartDateValue = splitCustomStartDateValue[2];
-          const splitCustomEndDateValue = endCustom.split('-');
-          const customEndDateValue = splitCustomEndDateValue[2];
-          const customDays = customEndDateValue - customStartDateValue;
-          const selectedCustomDays = customDays * 4;
-          const customSensorData = getAllDataOfTheBatchTillDate.slice(
-            getAllDataOfTheBatchTillDate.length - selectedCustomDays,
-            getAllDataOfTheBatchTillDate.length,
-          );
-          setSensorData(customSensorData);
-        }
-        // chartdata based on current day of the Batch
-        else {
-          setSensorData(getAllDataOfTheBatchTillDate);
-        }
+        const orderedDates = dateArr.sort((a, b) => {
+          return Date.parse(a) > Date.parse(b);
+        });
+
+        const earliestDate = moment(orderedDates[0])
+          .tz(timezone)
+          .format();
+
+        setChartStartDate(earliestDate.slice(0, 10));
+
+        const dataToDisplay = getAllDataOfTheBatchTillDate.filter(
+          (datapoint) => {
+            if (startCustom) {
+              return (
+                new Date(datapoint.created_at) >= new Date(startCustom) &&
+                new Date(datapoint.created_at) <= new Date(endCustom)
+              );
+            }
+            return new Date(datapoint.created_at) <= new Date(endCustom);
+          },
+        );
+        setSensorData(dataToDisplay);
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log(error);
@@ -164,11 +168,13 @@ const ChartDetailsSmartData = () => {
     startCustom,
     endCustom,
   ]);
+
   // useeffect for progressbar
   useEffect(() => {
     async function fetchProgressBarData() {
       try {
         const headers = await getTokenWithHeaders();
+        // BatchId hardcoded considering only 1 batch
         const getBatchProgressBarValues = await fetch('api/crop-stages/1', {
           method: 'GET',
           headers,
@@ -186,12 +192,14 @@ const ChartDetailsSmartData = () => {
       fetchProgressBarData();
     }
   }, [materialId]);
+
   return (
     <ChartDataContext.Provider
       value={{
         boundaryData,
         materialName,
         sensorData,
+        chartStartDate,
         startDate,
         currentDate,
         stages,

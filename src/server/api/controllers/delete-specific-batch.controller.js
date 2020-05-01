@@ -3,14 +3,11 @@ const knex = require('../../config/db');
 const deleteSpecificBatchById = async (batchId) => {
   try {
     await knex('batches')
-      .where({ id: batchId })
-      .del()
-      .forUpdate()
-      .insert([{ deleted_at: new Date().toLocaleString() }], ['batchId'])
-      .into('batches');
-    return 'The batch is deleted';
+      .where('id', '=', batchId)
+      .update({ deleted_at: knex.fn.now() });
+    return { message: 'deleted_at is set to today' };
   } catch (error) {
-    return error.message;
+    throw error.message;
   }
 };
 
