@@ -13,6 +13,7 @@ import UserRoleContext from './helpers/UserRoleContext';
 import PrivateRoute from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import signInAsDefaultUser from './helpers/signInAsDefaultUser';
+import ListBatches from './containers/list-batches-page/list-batches-page.component';
 import BatchDetailPage from './containers/view-batch-detail-page/view-batch-detail-page.component';
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
             />
             <PublicRoute exact path="/" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/list-batches" component={ListBatches} />
             {/* This one should be changed to private route, but can't get 
                 the useParams() hook to work with our PrivateRoute component */}
             <Route exact path="/batch-details/:id">

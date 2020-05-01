@@ -1,0 +1,96 @@
+.batch-list {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.batch-list main {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  padding: 0 1em;
+  width: 100%;
+}
+
+.batch-list .content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  margin-left: 130px;
+  width: 100%;
+}
+
+.batch-list header {
+  padding: 1em 1em 0;
+}
+
+.batch-list header h1 {
+  font-size: 1.3em;
+  margin: 1em 0 0;
+  padding: 0 1em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  padding: 1em 1em 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em 2em 0 1em;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1em;
+}
+
+.filter-labels {
+  font-weight: bold;
+}
+
+.batch-table {
+  padding: 1em 1em 0;
+  margin: 2em 0 0;
+  width: 100%;
+}
+
+.batch-table table {
+  text-align: left;
+  width: 100%;
+}
+
+.batch-table table tbody tr {
+  cursor: pointer;
+}
+
+.batch-table table th {
+  padding: 2em 0.5em 0.5em;
+}
+
+.batch-table table td {
+  padding: 0 0.6em;
+}
+
+.export-button {
+  margin: 0 1em 2em auto;
+}
+
+.batch-list .modal > .content {
+  display: block;
+  height: auto;
+  margin-left: 0;
+}
+
+.batch-list .sidebar-wrapper button:first-of-type,
+.batch-list .sidebar-wrapper button:nth-of-type(2) {
+  display: none;
+}

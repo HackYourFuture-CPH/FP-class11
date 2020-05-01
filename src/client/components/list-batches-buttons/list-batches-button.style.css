@@ -1,0 +1,14 @@
+.batches-button-wrapper {
+  background: var(--light-grey);
+  color: var(--dark-blue);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-start;
+  padding: 0.5em 0;
+  transition: none;
+  width: 100%;
+  outline: none;
+  position: relative;
+}
