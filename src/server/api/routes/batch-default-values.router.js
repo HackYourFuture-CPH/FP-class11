@@ -37,8 +37,21 @@ const {
  *        required: true
  *      - name: stage
  *        in: query
- *        type: string
- *        required: true
+ *        description: Stage default values for a batch.
+ *        required: false
+ *        type: array
+ *        items:
+ *          type: string
+ *          enum:
+ *          - current
+ *          - storage
+ *          - seeding
+ *          - propagation
+ *          - maturity
+ *          - harvest
+ *          - delivery
+ *          default: current
+ *        collectionFormat: multi
  *     security:
  *        fireabse_auth:
  *        - read
