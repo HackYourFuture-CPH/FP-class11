@@ -19,7 +19,10 @@ const {
  *       Get default values for specific batch by batchId
  *
  *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code>
+ *
+ *
+ *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Default Values
  *     operationId: getDefaultValues
@@ -44,13 +47,12 @@ const {
  *          type: string
  *          enum:
  *          - current
- *          - storage
  *          - seeding
  *          - propagation
  *          - maturity
  *          - harvest
+ *          - storage
  *          - delivery
- *          default: current
  *        collectionFormat: multi
  *     security:
  *        fireabse_auth:

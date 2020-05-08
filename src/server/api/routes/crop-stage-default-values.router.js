@@ -19,7 +19,10 @@ const {
  *       Get default parameter values for a specific crop by cropId
  *
  *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code>
+ *
+ *
+ *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Default Values
  *     operationId: getCropStageDefaultValuesByCropId

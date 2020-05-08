@@ -19,7 +19,10 @@ const {
  *       Get crop stages.
  *
  *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code>
+ *
+ *
+ *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Crops
  *     operationId: batchId

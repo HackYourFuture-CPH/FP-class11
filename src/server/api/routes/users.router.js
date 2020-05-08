@@ -18,7 +18,10 @@ const {
  *     description: Get a role for specific user by uid
  *
  *
- *        Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code>
+ *
+ *
+ *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - User
  *     operationId: getRole
@@ -61,7 +64,10 @@ router.get('/role', checkIfAuthenticated, (req, res, next) => {
  *     description: Get a name for specific user by uid
  *
  *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code> <code>user</code>
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code>
+ *
+ *
+ *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - User
  *     operationId: getName
