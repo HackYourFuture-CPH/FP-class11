@@ -16,12 +16,8 @@ const {
  *   get:
  *     summary: Get crop stages
  *     description:
- *       Get crop stages.
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get crop stages.<br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Crops

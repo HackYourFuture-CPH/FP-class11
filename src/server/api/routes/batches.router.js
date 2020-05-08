@@ -57,12 +57,8 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
  *   get:
  *     summary: Get default parameter values for a specific batch
  *     description:
- *       Get default parameter values for a specific batch by batchId
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get default parameter values for a specific batch by batchId<br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Batches

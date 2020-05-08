@@ -16,12 +16,8 @@ const {
  *   get:
  *     summary: Get sensor readings.
  *     description:
- *       Get sensor readings.
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get sensor readings.<br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Sensor Reading

@@ -16,12 +16,8 @@ const {
  *   get:
  *     summary: Get default values for specific batch
  *     description:
- *       Get default values for specific batch by batchId
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get default values for specific batch by batchId<br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Default Values

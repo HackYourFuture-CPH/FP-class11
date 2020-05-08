@@ -16,12 +16,8 @@ const {
  *   get:
  *     summary: Get default values for a specific crop
  *     description:
- *       Get default parameter values for a specific crop by cropId
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get default parameter values for a specific crop by cropId<br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Default Values

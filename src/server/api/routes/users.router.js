@@ -61,12 +61,8 @@ router.get('/role', checkIfAuthenticated, (req, res, next) => {
  * /users/name:
  *   get:
  *     summary: Get a name for specific user by uid
- *     description: Get a name for specific user by uid
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *     description: Get a name for specific user by uid <br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - User

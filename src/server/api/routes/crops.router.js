@@ -16,12 +16,8 @@ const {
  *   get:
  *     summary: Get all crops
  *     description:
- *       Get all crops
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get all crops<br /><br />
+ *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Crops
