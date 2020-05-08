@@ -15,12 +15,7 @@ const {
  *   get:
  *     summary: Get all batches
  *     description:
- *       Get default parameter values for all batches
- *
- *
- *       Authentication&#58; <code>super_admin</code> <code>admin</code>
- *
- *
+ *       Get default parameter values for all batches<br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Batches
@@ -33,13 +28,16 @@ const {
  *        required: true
  *        default: Bearer ENTER_FIREBASE_TOKEN
  *        type: string
+ *     security:
+ *        fireabse_auth:
+ *        - read
  *     responses:
  *       200:
  *         description: Successful request
  *       401:
  *         description: You are not authorized to view this content.
  *       404:
- *         description: A batch with the specified id was not found.
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
  */
@@ -58,7 +56,6 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
  *     summary: Get default parameter values for a specific batch
  *     description:
  *       Get default parameter values for a specific batch by batchId<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Batches
@@ -75,13 +72,16 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
  *        in: path
  *        required: true
  *        type: integer
+ *     security:
+ *        fireabse_auth:
+ *        - read
  *     responses:
  *       200:
  *         description: Successful request
  *       401:
  *         description: You are not authorized to view this content.
  *       404:
- *         description: A batch with the specified id was not found.
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
  */

@@ -17,7 +17,6 @@ const {
  *     summary: Get all crops
  *     description:
  *       Get all crops<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Crops
@@ -30,13 +29,16 @@ const {
  *        required: true
  *        default: Bearer ENTER_FIREBASE_TOKEN
  *        type: string
+ *     security:
+ *        fireabse_auth:
+ *        - read
  *     responses:
  *       200:
  *         description: Successful request
  *       401:
  *         description: You are not authorized to view this content.
  *       404:
- *         description: A batch with the specified id was not found.
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
  */

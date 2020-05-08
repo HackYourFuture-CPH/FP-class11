@@ -17,7 +17,6 @@ const {
  *     summary: Get default values for a specific crop
  *     description:
  *       Get default parameter values for a specific crop by cropId<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Default Values
@@ -34,18 +33,18 @@ const {
  *        in: path
  *        type: integer
  *        required: true
+ *     security:
+ *        fireabse_auth:
+ *        - read
  *     responses:
  *       200:
  *         description: Successful request
  *       401:
  *         description: Authorization information is missing or invalid.
  *       404:
- *         description: A batch with the specified id was not found.
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
- *     security:
- *         firebase_auth:
- *         - read
  */
 // ENDPOINT: /api/modules/:cropId :GET to get one crop's default values
 router.get('/:cropId', checkIfAuthenticated, (req, res, next) => {

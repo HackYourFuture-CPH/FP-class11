@@ -17,7 +17,6 @@ const {
  *     summary: Get sensor readings.
  *     description:
  *       Get sensor readings.<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Sensor Reading
@@ -34,9 +33,16 @@ const {
  *        in: path
  *        type: integer
  *        required: true
+ *     security:
+ *        fireabse_auth:
+ *        - read
  *     responses:
  *       200:
  *         description: Successful request
+ *       401:
+ *         description: You are not authorized to view this content.
+ *       404:
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
  */

@@ -17,7 +17,6 @@ const {
  *     summary: Get crop stages
  *     description:
  *       Get crop stages.<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Crops
@@ -34,9 +33,16 @@ const {
  *        in: path
  *        required: true
  *        type: integer
+ *     security:
+ *        fireabse_auth:
+ *        - read
  *     responses:
  *       200:
  *         description: Successful request
+ *       401:
+ *         description: Authorization information is missing or invalid.
+ *       404:
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
  */

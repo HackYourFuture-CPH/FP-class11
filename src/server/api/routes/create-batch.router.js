@@ -65,7 +65,7 @@ const createBatchController = require('../controllers/create-batch.controller');
  *      200:
  *        description: Successful request
  *      401:
- *        description: Unauthorized request.
+ *         description: You are not authorized to view this content.
  *      404:
  *        description: Not found.
  *      5XX:

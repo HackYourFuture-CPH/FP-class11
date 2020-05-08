@@ -17,7 +17,6 @@ const {
  *     summary: Get default values for specific batch
  *     description:
  *       Get default values for specific batch by batchId<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
  *       Authorization&#58;  <code>user</code>
  *     tags:
  *       - Default Values
@@ -59,7 +58,7 @@ const {
  *       401:
  *         description: You are not authorized to view this content.
  *       404:
- *         description: A batch with the specified id was not found.
+ *         description: Not found.
  *       5XX:
  *         description: Unexpected error.
  */
