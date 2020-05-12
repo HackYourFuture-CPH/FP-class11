@@ -15,9 +15,9 @@ const {
  * /users/role:
  *   get:
  *     summary: Get a role for specific user by uid
- *     description: Get a role for specific user by uid<br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
- *       Authorization&#58;  <code>user</code>
+ *     description: 'Get a role for specific user by uid<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - User
  *     operationId: getRole
@@ -57,9 +57,9 @@ router.get('/role', checkIfAuthenticated, (req, res, next) => {
  * /users/name:
  *   get:
  *     summary: Get a name for specific user by uid
- *     description: Get a name for specific user by uid <br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
- *       Authorization&#58;  <code>user</code>
+ *     description: 'Get a name for specific user by uid <br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - User
  *     operationId: getName
@@ -98,9 +98,9 @@ router.get('/name', checkIfAuthenticated, (req, res, next) => {
  * /users/id:
  *   get:
  *     summary: Get the ID for specific user by uid
- *     description: Get the ID for specific user by uid <br /><br />
- *       Authentication&#58; <code>super_admin</code> <code>admin</code><br /><br />
- *       Authorization&#58;  <code>user</code>
+ *     description: 'Get the ID for specific user by uid <br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - User
  *     operationId: getName

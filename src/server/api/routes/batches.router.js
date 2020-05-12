@@ -15,8 +15,9 @@ const {
  *   get:
  *     summary: Get all batches
  *     description:
- *       Get default parameter values for all batches<br /><br />
- *       Authorization&#58;  <code>user</code>
+ *       'Get default parameter values for all batches<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - Batches
  *     operationId: getBatches
@@ -55,8 +56,9 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
  *   get:
  *     summary: Get default parameter values for a specific batch
  *     description:
- *       Get default parameter values for a specific batch by batchId<br /><br />
- *       Authorization&#58;  <code>user</code>
+ *       'Get default parameter values for a specific batch by batchId<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - Batches
  *     operationId: getBatchById

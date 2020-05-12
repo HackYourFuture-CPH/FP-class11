@@ -16,8 +16,9 @@ const {
  *   get:
  *     summary: Get all crops
  *     description:
- *       Get all crops<br /><br />
- *       Authorization&#58;  <code>user</code>
+ *       'Get all crops<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - Crops
  *     operationId: getAllCrops

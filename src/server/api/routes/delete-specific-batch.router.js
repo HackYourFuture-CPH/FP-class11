@@ -16,8 +16,9 @@ const deleteSpecificBatchController = require('../controllers/delete-specific-ba
  *   patch:
  *     summary: Delete a batch by id number
  *     description:
- *       Delete a batch by batch id number<br /><br />
- *        Authentication&#58; <code>super_admin</code> only.<br /><br />
+ *       'Delete a batch by batch id number<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authentication\: <code>super_admin</code> only.<br /><br />'
  *     tags:
  *       - Batches
  *     operationId: deleteSpecificBatchById

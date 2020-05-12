@@ -16,8 +16,9 @@ const {
  *   get:
  *     summary: Get default values for specific batch
  *     description:
- *       Get default values for specific batch by batchId<br /><br />
- *       Authorization&#58;  <code>user</code>
+ *       'Get default values for specific batch by batchId<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\: <code>user</code>'
  *     tags:
  *       - Default Values
  *     operationId: getDefaultValues
@@ -49,9 +50,6 @@ const {
  *          - storage
  *          - delivery
  *        collectionFormat: multi
- *     security:
- *        fireabse_auth:
- *        - read
  *     responses:
  *       200:
  *         description: Successful request

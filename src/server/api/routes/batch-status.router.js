@@ -16,8 +16,9 @@ const batchStatusController = require('../controllers/batch-status.controller');
  *   get:
  *     summary: Get batch status for specific batch
  *     description:
- *       Get batch status for specific batch by batchId<br /><br />
- *       Authorization&#58;  <code>user</code>
+ *       'Get batch status for specific batch by batchId<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - Batches
  *     operationId: getBatchStatus

@@ -16,8 +16,9 @@ const {
  *   get:
  *     summary: Get default values for a specific crop
  *     description:
- *       Get default parameter values for a specific crop by cropId<br /><br />
- *       Authorization&#58;  <code>user</code>
+ *       'Get default parameter values for a specific crop by cropId<br /><br />
+ *       Authentication\: <code>true</code><br /><br />
+ *       Authorization\:  <code>user</code>'
  *     tags:
  *       - Default Values
  *     operationId: getCropStageDefaultValuesByCropId
