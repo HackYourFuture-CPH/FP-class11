@@ -55,7 +55,7 @@
     "interactjs": "^1.9.7",
     "jest-css-modules-transform": "^4.0.0",
     "jest-styled-components": "^7.0.0",
-    "knex": "^0.20.13",
+    "knex": "^2.4.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.28",
     "morgan": "^1.10.0",
